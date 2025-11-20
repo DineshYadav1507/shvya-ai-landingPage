@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shvya Ai - CRM ERP Products</title>
+    <meta name="description" content="Deploy AI-powered business software solutions in just 4 hours. CRM, ERP, HRM, and automation tools ready for immediate use with Shvya AI.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
+    
+    <!-- Splide CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'shvya-navy': '#1a1d29',
+                        'shvya-blue': '#0066ff',
+                        'shvya-orange': '#ff6b35',
+                        'shvya-charcoal': '#2d3748',
+                        'shvya-green': '#10b981'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #1a1d29 0%, #2d3748 100%);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #0066ff, #ff6b35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .product-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 25px 50px rgba(0, 102, 255, 0.2);
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 2px solid #0066ff;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #0066ff; }
+        }
+        
+        .deployment-stage {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        
+        .deployment-stage.active {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 0.5s ease;
+        }
+        
+        .particle-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+        .content-overlay {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .ai-glow {
+            box-shadow: 0 0 20px rgba(0, 102, 255, 0.3);
+        }
+        
+        .pulse-ai {
+            animation: pulse-ai 2s infinite;
+        }
+        
+        @keyframes pulse-ai {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.7); }
+            50% { box-shadow: 0 0 0 10px rgba(0, 102, 255, 0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-shvya-navy">
+                        <span class="text-shvya-blue">Shvya</span> Ai
+                    </div>
+                    <div class="ml-2 text-xs bg-shvya-orange text-white px-2 py-1 rounded font-mono">CRM ERP Inventory</div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-shvya-blue font-semibold">Home</a>
+                    <a href="products.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Products</a>
+                    <a href="shvya-services.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Services</a>
+                    <a href="shvya-about.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">About</a>
+                    <a href="shvya-deployment.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">4HR Deploy</a>
+                    <a href="shvya-contact.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button id="chat-toggle" class="bg-shvya-blue text-white px-4 py-2 rounded-lg hover:bg-shvya-blue/90 transition-colors">
+                        Book a Call
+                    </button>
+                    <!-- <button class="bg-shvya-navy text-white px-6 py-2 rounded-lg hover:bg-shvya-navy/90 transition-colors font-semibold">
+                        Start Deploy
+                    </button> -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========  ATTRACTIVE LIVE INVENTORY DEMO  ======== -->
+<section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+    <div id="particle-container" class="particle-bg"></div>
+
+    <div class="content-overlay max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center text-white">
+        <!-- Heading -->
+        <div class="mb-12">
+            <div class="inline-block bg-gradient-to-r from-shvya-orange to-rose-500 text-white px-5 py-2 rounded-full text-sm font-semibold mb-4 pulse-ai shadow-lg shadow-shvya-orange/40">
+                ⚡ Live Inventory & Billing – 4-Hour Deploy
+            </div>
+            <h1 class="text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
+                <span class="gradient-text">Try the Real Thing</span><br>
+                <span class="typewriter">Zero Setup. One Click.</span>
+            </h1>
+        </div>
+
+        <!-- Glass-morphic Card Deck -->
+        <div class="grid md:grid-cols-2 gap-8 perspective-1000">
+            <!-- Admin Card -->
+            <div class="group">
+                <div class="relative glass-card rounded-3xl p-8 text-white
+                            border border-white/20
+                            shadow-2xl shadow-shvya-blue/30
+                            transform-gpu transition-all duration-500
+                            hover:scale-105 hover:-translate-y-2
+                            hover:shadow-shvya-blue/50
+                            backdrop-blur-xl
+                            bg-gradient-to-br from-white/10 to-white/5">
+                    <div class="absolute -top-3 -right-3 bg-shvya-orange text-xs px-3 py-1 rounded-full font-bold shadow-lg">
+                        FULL ACCESS
+                    </div>
+                    <h3 class="text-2xl font-bold mb-5 flex items-center justify-center gap-3">
+                        <span class="text-3xl">👑</span> Admin Portal
+                    </h3>
+                    <div class="space-y-3 font-mono text-sm text-left">
+                        <div class="flex items-center gap-2"><span class="text-shvya-blue">URL:</span> <span class="truncate">digitalshop.blacksilvertechnology.com</span></div>
+                        <div class="flex items-center gap-2"><span class="text-shvya-blue">Email:</span> admin@gmail.com</div>
+                        <div class="flex items-center gap-2"><span class="text-shvya-blue">Pass:</span> Admin@123</div>
+                    </div>
+                    <a href="https://digitalshop.blacksilvertechnology.com/public" target="_blank" rel="noopener"
+                       class="mt-6 block w-full bg-gradient-to-r from-shvya-green to-emerald-500 text-center text-white font-semibold py-3 rounded-xl
+                              hover:from-emerald-500 hover:to-shvya-green transition-all transform hover:scale-105 shadow-lg shadow-emerald-500/30">
+                        Launch Admin →
+                    </a>
+                </div>
+            </div>
+
+            <!-- User Card -->
+            <div class="group">
+                <div class="relative glass-card rounded-3xl p-8 text-white
+                            border border-white/20
+                            shadow-2xl shadow-shvya-orange/30
+                            transform-gpu transition-all duration-500
+                            hover:scale-105 hover:-translate-y-2
+                            hover:shadow-shvya-orange/50
+                            backdrop-blur-xl
+                            bg-gradient-to-br from-white/10 to-white/5">
+                    <div class="absolute -top-3 -right-3 bg-shvya-blue text-xs px-3 py-1 rounded-full font-bold shadow-lg">
+                        LIMITED RIGHTS
+                    </div>
+                    <h3 class="text-2xl font-bold mb-5 flex items-center justify-center gap-3">
+                        <span class="text-3xl">🙂</span> User Portal
+                    </h3>
+                    <div class="space-y-3 font-mono text-sm text-left">
+                        <div class="flex items-center gap-2"><span class="text-shvya-orange">URL:</span> <span class="truncate">digitalshop.blacksilvertechnology.com</span></div>
+                        <div class="flex items-center gap-2"><span class="text-shvya-orange">Email:</span> user@gmail.com</div>
+                        <div class="flex items-center gap-2"><span class="text-shvya-orange">Pass:</span> User@123</div>
+                    </div>
+                    <a href="https://digitalshop.blacksilvertechnology.com/public" target="_blank" rel="noopener"
+                       class="mt-6 block w-full bg-gradient-to-r from-shvya-blue to-cyan-500 text-center text-white font-semibold py-3 rounded-xl
+                              hover:from-cyan-500 hover:to-shvya-blue transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/30">
+                        Launch User →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature pills -->
+        <div class="flex flex-wrap justify-center gap-3 mt-12 text-xs font-semibold">
+            <span class="glass-card px-4 py-2 rounded-full border border-white/20">Stock-In</span>
+            <span class="glass-card px-4 py-2 rounded-full border border-white/20">Stock-Out</span>
+            <span class="glass-card px-4 py-2 rounded-full border border-white/20">Live Billing</span>
+            <span class="glass-card px-4 py-2 rounded-full border border-white/20">Analytics</span>
+            <span class="glass-card px-4 py-2 rounded-full border border-white/20">4-Hour Deploy</span>
+        </div>
+    </div>
+</section>
+<!-- ========================================================= -->
+<!-- Inventory Billing Pro — Product Overview -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <!-- LEFT SIDE: PRODUCT IMAGE -->
+      <div class="relative order-1 lg:order-none">
+        <img src="shvya-resources/inventory f.png" alt="Inventory Billing Pro" class="w-full h-auto rounded-lg shadow-md">
+        <div class="absolute top-4 left-4">
+          <span class="feature-badge bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-semibold">Inventory • ERP</span>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE: PRODUCT DETAILS -->
+      <div class="order-2 lg:order-none">
+        <h2 class="text-4xl font-bold text-shvya-charcoal mb-4">Inventory Billing ERP</h2>
+        <p class="text-lg text-gray-600 mb-6">
+          End-to-end warehouse & billing solution for retail and distribution — real-time stock tracking, barcode scanning,
+          multi-warehouse support and automated reordering. Built for rapid deployment and enterprise reliability.
+        </p>
+
+        <!-- Quick Stats -->
+        <div class="flex items-center space-x-6 mb-6">
+          <div class="text-center">
+            <div class="text-2xl font-bold text-charcoal">4hr</div>
+            <div class="text-xs text-gray-500">Rapid Deployment</div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl font-bold text-charcoal">99.9%</div>
+            <div class="text-xs text-gray-500">Uptime SLA</div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl font-bold text-charcoal">PCI / GST</div>
+            <div class="text-xs text-gray-500">Billing & Compliance</div>
+          </div>
+        </div>
+
+        <!-- Features List -->
+        <div class="grid sm:grid-cols-2 gap-4 mb-6">
+          <div class="space-y-3">
+            <div class="flex items-start space-x-3">
+              <div class="text-cyan mt-1">✓</div>
+              <div>
+                <div class="font-semibold text-sm text-shvya-charcoal">Real-time Stock Tracking</div>
+                <div class="text-xs text-gray-500">Instant visibility of inventory across locations.</div>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3">
+              <div class="text-cyan mt-1">✓</div>
+              <div>
+                <div class="font-semibold text-sm text-shvya-charcoal">Multi-Warehouse Support</div>
+                <div class="text-xs text-gray-500">Centralized control for multiple storage sites.</div>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3">
+              <div class="text-cyan mt-1">✓</div>
+              <div>
+                <div class="font-semibold text-sm text-shvya-charcoal">Barcode & Mobile Scanning</div>
+                <div class="text-xs text-gray-500">Fast picking, receiving and cycle counts using scanners or phones.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex items-start space-x-3">
+              <div class="text-cyan mt-1">✓</div>
+              <div>
+                <div class="font-semibold text-sm text-shvya-charcoal">Automated Reordering</div>
+                <div class="text-xs text-gray-500">Set reorder points and generate PO suggestions automatically.</div>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3">
+              <div class="text-cyan mt-1">✓</div>
+              <div>
+                <div class="font-semibold text-sm text-shvya-charcoal">Billing & GST Invoicing</div>
+                <div class="text-xs text-gray-500">Compliant invoices, tax summaries and export-ready reports.</div>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3">
+              <div class="text-cyan mt-1">✓</div>
+              <div>
+                <div class="font-semibold text-sm text-shvya-charcoal">Integrations</div>
+                <div class="text-xs text-gray-500">ERP/accounting (Tally/Xero), eCommerce, couriers & payment gateways.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modules / What’s included -->
+        <div class="mb-6">
+          <h4 class="text-sm font-semibold text-shvya-charcoal mb-2">Included Modules</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs px-3 py-1 bg-gray-100 rounded-full">Inventory Management</span>
+            <span class="text-xs px-3 py-1 bg-gray-100 rounded-full">Purchase Orders</span>
+            <span class="text-xs px-3 py-1 bg-gray-100 rounded-full">Sales & POS</span>
+            <span class="text-xs px-3 py-1 bg-gray-100 rounded-full">Warehouse Transfers</span>
+            <span class="text-xs px-3 py-1 bg-gray-100 rounded-full">Barcode Scanner App</span>
+            <span class="text-xs px-3 py-1 bg-gray-100 rounded-full">Billing & GST</span>
+            <span class="text-xs px-3 py-1 bg-gray-100 rounded-full">Reporting & Exports</span>
+          </div>
+        </div>
+
+        <!-- Pricing & CTA -->
+        <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-6 gap-4">
+          <div class="p-4 rounded-lg border border-gray-100 bg-gray-50">
+            <div class="text-xs text-gray-500">Starting at</div>
+            <div class="text-xs text-gray-500">or one-time deployment fee available</div>
+          </div>
+
+          <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="inventory-billing.html" class="flex-1 bg-cyan text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-cyan/90 transition-all block">
+              View Full Demo
+            </a>
+            <a href="bookacall.html" class="flex-1 bg-navy text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-navy/90 transition-all block">
+              Book A Demo Call
+            </a>
+          </div>
+        </div>
+
+        <!-- Technical & Support Notes -->
+        <div class="mt-6 text-xs text-gray-500">
+          <p class="mb-1">Tech stack: MySQL | Node/Go | React | Docker — optional Kubernetes for scale.</p>
+          <p>Includes onboarding, training session and 30-day support. Enterprise SLA & custom integrations available.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    <!-- =====================  FEATURES  ===================== -->
+<section id="features" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-shvya-charcoal mb-4">Built for Retail & Distribution</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Everything you need to control stock, billing and compliance—without spreadsheets.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="group product-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100">
+                <div class="w-14 h-14 bg-gradient-to-br from-shvya-blue to-cyan-400 rounded-xl flex items-center justify-center text-white text-2xl mb-5">📦</div>
+                <h3 class="text-xl font-semibold text-shvya-charcoal mb-3">Multi-Location Stock</h3>
+                <p class="text-gray-600">Track inventory across warehouses, stores and vans in real-time with location-wise AI predictions.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="group product-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100">
+                <div class="w-14 h-14 bg-gradient-to-br from-shvya-orange to-rose-500 rounded-xl flex items-center justify-center text-white text-2xl mb-5">🧾</div>
+                <h3 class="text-xl font-semibold text-shvya-charcoal mb-3">GST Billing & e-Invoicing</h3>
+                <p class="text-gray-600">Generate GST compliant invoices, e-Way bills and print receipts faster than a calculator.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="group product-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100">
+                <div class="w-14 h-14 bg-gradient-to-br from-shvya-green to-emerald-400 rounded-xl flex items-center justify-center text-white text-2xl mb-5">📊</div>
+                <h3 class="text-xl font-semibold text-shvya-charcoal mb-3">Low-Stock AI Alerts</h3>
+                <p class="text-gray-600">Never lose a sale—get WhatsApp & email alerts before stock hits reorder level.</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="group product-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100">
+                <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center text-white text-2xl mb-5">📱</div>
+                <h3 class="text-xl font-semibold text-shvya-charcoal mb-3">Barcode & QR Scan</h3>
+                <p class="text-gray-600">Use your phone camera or scanner for instant stock-in, stock-out and billing.</p>
+            </div>
+            <!-- Card 5 -->
+            <div class="group product-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100">
+                <div class="w-14 h-14 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-xl flex items-center justify-center text-white text-2xl mb-5">🔐</div>
+                <h3 class="text-xl font-semibold text-shvya-charcoal mb-3">Role-Based Access</h3>
+                <p class="text-gray-600">Admin, manager, salesperson—each sees only what they need. No training drama.</p>
+            </div>
+            <!-- Card 6 -->
+            <div class="group product-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100">
+                <div class="w-14 h-14 bg-gradient-to-br from-shvya-navy to-gray-700 rounded-xl flex items-center justify-center text-white text-2xl mb-5">⚡</div>
+                <h3 class="text-xl font-semibold text-shvya-charcoal mb-3">4-Hour Deployment</h3>
+                <p class="text-gray-600">We spin up your branded portal on your domain before your coffee gets cold.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- ===== Services Overview 2 – UPDATED: “Daily chaos WITHOUT an integrated system” ===== -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <!-- LEFT: same visual -->
+      <div class="relative order-1 lg:order-none">
+        <img src="shvya-resources/inventroy ishuu.png" alt="Daily chaos" class="w-full h-auto">
+        <div class="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent rounded-lg"></div>
+      </div>
+
+      <!-- RIGHT: re-written pain-point copy -->
+      <div class="order-2 lg:order-none">
+        <h2 class="text-4xl font-bold text-shvya-charcoal mb-6">
+          Every-Day Gaps That quietly Eat Profit
+        </h2>
+        <p class="text-xl text-gray-600 mb-8">
+          No real-time stock, no daily P&L, no update trail = invisible leaks.  
+          We plug them with an AI business layer that runs in 4 hours.
+        </p>
+
+        <div class="space-y-6">
+          <!-- 1. Daily update mess -->
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-rose-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-xl">📅</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Yesterday’s Data Today</h3>
+              <p class="text-gray-600">Sales, purchase & wastage updated next morning—decisions already late, discounts already given.</p>
+            </div>
+          </div>
+
+          <!-- 2. Profit-loss blind spot -->
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-xl">💔</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Month-end Profit Shock</h3>
+              <p class="text-gray-600">No daily gross-margin view—only discover you lost money after the month is locked.</p>
+            </div>
+          </div>
+
+          <!-- 3. Stock accountability gap -->
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-xl">🔍</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">“Who Moved My Stock?”</h3>
+              <p class="text-gray-600">No user-wise trail—shortages blamed on “system error”, real cause stays hidden.</p>
+            </div>
+          </div>
+
+          <!-- 4. Accounting reconciliation hell -->
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-xl">🧮</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Books vs Warehouse Never Match</h3>
+              <p class="text-gray-600">Finance uses one sheet, ops uses another. 3 days wasted every quarter finding 2 000 missing pieces.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <a href="bookacall.html" class="bg-shvya-navy text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-shvya-navy/90 transition-all inline-block">
+            "Many Problems. One Solution. Your Book Inventory ERP."</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+ <!-- Services Overview 3 -->
+  <!-- ===== Benefits of Using Inventory CRM ===== -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <!-- TEXT BLOCK -->
+      <div>
+        <h2 class="text-4xl font-bold text-shvya-charcoal mb-6">
+          What Happens When Inventory + CRM Work as One
+        </h2>
+        <p class="text-xl text-gray-600 mb-8">
+          Real-time stock, live customer insights and auto-workflows that
+          recover hidden cash and lost hours—starting day one.
+        </p>
+
+        <div class="space-y-6">
+          <!-- 1. Zero stock-outs -->
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl">📦</div>
+            <div>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Never Say “Out of Stock”</h3>
+              <p class="text-gray-600">AI reorder points + CRM sales-pipeline visibility = purchase order auto-triggered before you hit safety level.</p>
+            </div>
+          </div>
+
+          <!-- 2. Same-day ROI visibility -->
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl">📊</div>
+            <div>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Gross-Profit Dashboard Today, Not Next Month</h3>
+              <p class="text-gray-600">Every invoice pushes landed cost & margin live—know which SKU/customer is making (or losing) money while you sip coffee.</p>
+            </div>
+          </div>
+
+          <!-- 3. One-click traceability -->
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl">🔍</div>
+            <div>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">“Who Moved My Stock?”—Answer in 1 Click</h3>
+              <p class="text-gray-600">User-wise stock log + customer order history linked inside the CRM—audits finish before lunch.</p>
+            </div>
+          </div>
+
+          <!-- 4. Cash-flow acceleration -->
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl">⚡</div>
+            <div>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Collect Receivables 30 % Faster</h3>
+              <p class="text-gray-600">CRM auto-reminds customers when stock is delivered; payment link inside email → money in bank sooner.</p>
+            </div>
+          </div>
+
+          <!-- 5.Expiry & return alerts -->
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl">⏰</div>
+            <div>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Expiry & Return Alerts Save Lakhs</h3>
+              <p class="text-gray-600">Batch-tracker pings sales team 30 days before expiry—push near-expiry stock first, cut dump-costs.</p>
+            </div>
+          </div>
+
+          <!-- 6. 4-hour set-up -->
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-shvya-blue/10 text-shvya-blue rounded-xl flex items-center justify-center flex-shrink-0 text-2xl">🚀</div>
+            <div>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Go-Live in 4 Hours, Not 4 Weeks</h3>
+              <p class="text-gray-600">Pre-built Laravel portal branded with your logo & domain—data imported, users trained, invoices raised same evening.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <a href="bookacall.html" class="bg-shvya-navy text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-shvya-navy/90 transition-all inline-block">
+            Stop Managing Problems. Start Managing with ERP.
+          </a>
+        </div>
+      </div>
+
+      <!-- IMAGE -->
+      <div class="relative">
+        <img src="shvya-resources/invetory happy.png" alt="Inventory CRM benefits" class="w-full h-auto">
+        <div class="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent rounded-lg"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ===========  SECTION: PROBLEMS WITHOUT INVENTORY CRM  =========== -->
+<section class="py-20 bg-gradient-to-br from-rose-50 to-orange-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl lg:text-5xl font-extrabold text-shvya-charcoal mb-4">
+        Still Using Excel, WhatsApp & Memory?
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        These everyday gaps quietly drain margin, cash & customer-trust—until one bad day they explode.
+      </p>
+    </div>
+
+    <!-- Problems Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- 1. Stock-outs -->
+      <div class="group bg-white rounded-2xl p-6 shadow-lg border border-rose-100 hover:shadow-2xl hover:-translate-y-1 transition-all">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-xl flex items-center justify-center text-2xl">📉</div>
+          <h3 class="text-lg font-semibold text-shvya-charcoal">Invisible Stock-outs</h3>
+        </div>
+        <p class="text-gray-600">Hot SKU hits zero but sales keeps promising delivery—customer cancels, reputation dents, competitor wins.</p>
+      </div>
+
+      <!-- 2. Over-stock -->
+      <div class="group bg-white rounded-2xl p-6 shadow-lg border border-orange-100 hover:shadow-2xl hover:-translate-y-1 transition-all">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center text-2xl">💸</div>
+          <h3 class="text-lg font-semibold text-shvya-charcoal">Cash Locked in Over-stock</h3>
+        </div>
+        <p class="text-gray-600">Fear of stock-out pushes panic buying—capital sits idle, expiry nears, warehouse rent climbs.</p>
+      </div>
+
+      <!-- 3. Excel Chaos -->
+      <div class="group bg-white rounded-2xl p-6 shadow-lg border border-yellow-100 hover:shadow-2xl hover:-translate-y-1 transition-all">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-yellow-100 text-yellow-700 rounded-xl flex items-center justify-center text-2xl">🔄</div>
+          <h3 class="text-lg font-semibold text-shvya-charcoal">Excel-version Hell</h3>
+        </div>
+        <p class="text-gray-600">"Final-final-v3.xlsx" emailed across team—wrong file edited, quantities mismatch, month-end nightmare.</p>
+      </div>
+
+      <!-- 4. Manual Billing -->
+      <div class="group bg-white rounded-2xl p-6 shadow-lg border border-blue-100 hover:shadow-2xl hover:-translate-y-1 transition-all">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-2xl">⏱️</div>
+          <h3 class="text-lg font-semibold text-shvya-charcoal">Hand-written Invoices</h3>
+        </div>
+        <p class="text-gray-600">Calculator typo → under-charging. GST wrong → penalty. Duplicate serial → angry customer.</p>
+      </div>
+
+      <!-- 5. No History -->
+      <div class="group bg-white rounded-2xl p-6 shadow-lg border border-purple-100 hover:shadow-2xl hover:-translate-y-1 transition-all">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-2xl">📜</div>
+          <h3 class="text-lg font-semibold text-shvya-charcoal">Zero Purchase History</h3>
+        </div>
+        <p class="text-gray-600">Buyer calls for repeat order—no clue what he paid last time; negotiation starts from scratch.</p>
+      </div>
+
+      <!-- 6. Expiry Shock -->
+      <div class="group bg-white rounded-2xl p-6 shadow-lg border border-green-100 hover:shadow-2xl hover:-translate-y-1 transition-all">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-green-100 text-green-700 rounded-xl flex items-center justify-center text-2xl">🗑️</div>
+          <h3 class="text-lg font-semibold text-shvya-charcoal">Expiry & Wastage</h3>
+        </div>
+        <p class="text-gray-600">Batch-tracked items expire in dark corner—dumped worth lakhs, auditor flags shrinkage.</p>
+      </div>
+
+    </div>
+
+    <!-- CTA Band -->
+    <div class="mt-12 text-center">
+      <a href="bookacall.html" class="inline-flex items-center gap-3 bg-shvya-orange text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-shvya-orange/90 transition-all transform hover:scale-105 shadow-lg shadow-shvya-orange/30">
+        Multiple Issues? One Smart ERP</a>
+    </div>
+
+  </div>
+</section>
+<!-- ====== RESULTS YOU CAN EXPECT WITH SHVYA AI-CRM ====== -->
+<section class="py-20 bg-gradient-to-br from-shvya-blue/5 via-white to-shvya-orange/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl lg:text-5xl font-extrabold text-shvya-charcoal mb-4">
+            Results You Can Expect With <span class="gradient-text">Shvya AI-CRM</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Businesses using our lead-management + inventory layer see measurable wins in weeks, not quarters.
+      </p>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+
+      <!-- Card 1 -->
+      <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center group hover:shadow-2xl hover:-translate-y-1 transition-all">
+        <div class="text-5xl font-bold text-shvya-blue mb-2">3×</div>
+        <div class="text-gray-700 font-semibold">Faster Lead Response</div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center group hover:shadow-2xl hover:-translate-y-1 transition-all">
+        <div class="text-5xl font-bold text-shvya-green mb-2">40%</div>
+        <div class="text-gray-700 font-semibold">Sales Productivity Up</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center group hover:shadow-2xl hover:-translate-y-1 transition-all">
+        <div class="text-5xl font-bold text-shvya-orange mb-2">50%</div>
+        <div class="text-gray-700 font-semibold">Fewer Missed Deals</div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center group hover:shadow-2xl hover:-translate-y-1 transition-all">
+        <div class="text-5xl font-bold text-purple-600 mb-2">60%</div>
+        <div class="text-gray-700 font-semibold">Higher Conversion</div>
+      </div>
+    </div>
+
+    <!-- Case-Study Block -->
+    <div class="bg-white rounded-3xl p-8 lg:p-12 shadow-2xl border border-gray-100 grid lg:grid-cols-3 gap-8 items-center">
+      <!-- Quote -->
+      <div class="lg:col-span-2">
+        <div class="text-6xl text-shvya-orange opacity-20">“</div>
+        <p class="text-xl text-gray-700 italic -mt-6">
+          Within 30 days our average response time dropped from 8 hrs to 18 min,  
+          pipeline visibility jumped and we closed 27% more deals with the same team size.
+        </p>
+        <div class="mt-6 text-shvya-charcoal font-semibold">— Head of Sales, 120-person financial-services firm</div>
+      </div>
+
+      <!-- Visual -->
+      <div class="flex justify-center">
+        <img src="shvya-resources/Banner-gif-new.gif" alt="Case study graph" class="w-full max-w-xs">
+      </div>
+    </div>
+
+    <!-- Iconic Benefits Row -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 text-center">
+
+      <div class="flex flex-col items-center">
+        <div class="w-16 h-16 bg-shvya-blue/10 text-shvya-blue rounded-2xl flex items-center justify-center text-3xl mb-4">🔄</div>
+        <h4 class="font-bold text-shvya-charcoal mb-1">Streamlined Sales Process</h4>
+        <p class="text-sm text-gray-600">Auto-assign, auto-follow-up, auto-report.</p>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <div class="w-16 h-16 bg-shvya-green/10 text-shvya-green rounded-2xl flex items-center justify-center text-3xl mb-4">🤝</div>
+        <h4 class="font-bold text-shvya-charcoal mb-1">Enhanced Team Collaboration</h4>
+        <p class="text-sm text-gray-600">Shared notes, tasks & WhatsApp inside the deal.</p>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <div class="w-16 h-16 bg-shvya-orange/10 text-shvya-orange rounded-2xl flex items-center justify-center text-3xl mb-4">💬</div>
+        <h4 class="font-bold text-shvya-charcoal mb-1">Increased Lead Engagement</h4>
+        <p class="text-sm text-gray-600">AI sends the right message at the right time.</p>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center text-3xl mb-4">📈</div>
+        <h4 class="font-bold text-shvya-charcoal mb-1">Improved Conversion Rates</h4>
+        <p class="text-sm text-gray-600">Pipeline heat-map shows where to push or pivot.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <a href="bookacall.html" class="inline-flex items-center gap-3 bg-shvya-orange text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-shvya-orange/90 transition-all transform hover:scale-105 shadow-lg shadow-shvya-orange/30">
+        Book a Live Demo →
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CTA Start  -->
+<section class="w-full py-16 bg-[#F4F7FB]">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="bg-[#FFF7F0] rounded-3xl p-10 lg:p-14 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center shadow-sm">
+
+            <!-- LEFT CONTENT -->
+            <div>
+                <h2 class="text-3xl lg:text-2xl font-bold text-gray-900 leading-snug">
+                    Supercharge your 
+                    <span class="bg-blue-600 text-white px-4 py-1 rounded-lg">
+                        Operations
+                    </span>
+                    with Shvya!
+                </h2>
+
+                <p class="text-gray-600 mt-6 leading-relaxed">
+                    Whether you want to simplify your CRM, automate HR, or streamline
+                    operations across every department. 
+                    <span class="font-semibold text-gray-800">
+                        Shvya helps your business scale, not struggle.
+                    </span>
+                </p>
+
+                <!-- BUTTON -->
+                <a href="bookacall.html"
+                   class="inline-block mt-10 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold px-10 py-4 rounded-full text-lg shadow-md hover:opacity-90 transition-all">
+                    Book A Free Demo
+                </a>
+
+                <p class="mt-6 font-semibold text-gray-800 text-lg">
+                    Your Business, Simplified with Shvya.
+                </p>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="flex justify-center">
+                <img src="shvya-resources/Banner-gif-new.gif" 
+                     alt="Operations Illustration" 
+                     class="w-full max-w-md">
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- CTA END  -->
+
+    <!-- Footer -->
+    <footer class="bg-shvya-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-bold mb-4">
+                        <span class="text-shvya-blue">Shvya</span> AI
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        AI-powered business solutions deployed in 4 hours. Your intelligent technology partner for rapid digital transformation.
+                    </p>
+                    <div class="text-sm text-gray-400">
+                        © 2025 Shvya AI. All rights reserved.
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="shvya-products.html" class="hover:text-shvya-blue transition-colors">Shvya CRM</a></li>
+                        <li><a href="shvya-products.html" class="hover:text-shvya-blue transition-colors">Smart Billing Inventory</a></li>
+                        <li><a href="shvya-products.html" class="hover:text-shvya-blue transition-colors">School ERP</a></li>
+                        <li><a href="shvya-products.html" class="hover:text-shvya-blue transition-colors">Hospital ERP</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="shvya-services.html" class="hover:text-shvya-blue transition-colors">Web Development</a></li>
+                        <li><a href="shvya-services.html" class="hover:text-shvya-blue transition-colors">Digital Marketing</a></li>
+                        <li><a href="shvya-services.html" class="hover:text-shvya-blue transition-colors">AI Automation</a></li>
+                        <li><a href="shvya-services.html" class="hover:text-shvya-blue transition-colors">E-commerce Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">Video Tutorials</a></li>
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">AI Community</a></li>
+                        <li><a href="shvya-contact.html" class="hover:text-shvya-blue transition-colors">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Live Chat Widget -->
+    <div id="chat-widget" class="fixed bottom-4 right-4 z-50 hidden">
+        <div class="bg-white rounded-lg shadow-2xl w-80 h-96 flex flex-col">
+            <div class="bg-shvya-blue text-white p-4 rounded-t-lg flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                    <span class="font-semibold">Shvya AI Assistant</span>
+                </div>
+                <button id="chat-close" class="text-white hover:text-gray-200">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="flex-1 p-4 overflow-y-auto">
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-2">
+                        <div class="w-8 h-8 bg-shvya-blue rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                            🤖
+                        </div>
+                        <div class="bg-gray-100 rounded-lg p-3 max-w-xs">
+                            <p class="text-sm">Hello! I'm your Shvya AI assistant. How can I help you with AI-powered solutions today?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-4 border-t">
+                <div class="flex space-x-2">
+                    <input type="text" placeholder="Ask me about AI solutions..." class="flex-1 p-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-shvya-blue focus:border-transparent">
+                    <button class="bg-shvya-blue text-white px-4 py-2 rounded-lg hover:bg-shvya-blue/90 transition-colors">
+                        Send
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="shvya-main.js"></script>
+</body>
+</html>
