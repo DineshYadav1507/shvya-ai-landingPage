@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Shvya AI - Leading AI-Powered Business Solutions</title>
+    <meta name="description" content="Learn about Shvya AI's mission to democratize artificial intelligence for businesses. Our team, values, and commitment to AI innovation.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'shvya-navy': '#1a1d29',
+                        'shvya-blue': '#0066ff',
+                        'shvya-orange': '#ff6b35',
+                        'shvya-charcoal': '#2d3748',
+                        'shvya-green': '#10b981'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .team-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 102, 255, 0.2);
+        }
+        
+        .value-card {
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .ai-glow {
+            box-shadow: 0 0 20px rgba(0, 102, 255, 0.3);
+        }
+        
+        .pulse-ai {
+            animation: pulse-ai 2s infinite;
+        }
+        
+        @keyframes pulse-ai {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.7); }
+            50% { box-shadow: 0 0 0 10px rgba(0, 102, 255, 0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="shvya-index.html" class="text-2xl font-bold text-shvya-navy">
+                        <span class="text-shvya-blue">Shvya</span> AI
+                    </a>
+                    <div class="ml-2 text-xs bg-shvya-orange text-white px-2 py-1 rounded font-mono">4HR DEPLOY</div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="shvya-index.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Home</a>
+                    <a href="shvya-products.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Products</a>
+                    <a href="shvya-services.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Services</a>
+                    <a href="shvya-about.html" class="text-shvya-blue font-semibold">About</a>
+                    <a href="shvya-deployment.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">4HR Deploy</a>
+                    <a href="shvya-contact.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="bg-shvya-blue text-white px-4 py-2 rounded-lg hover:bg-shvya-blue/90 transition-colors">
+                        🤖 AI Chat
+                    </button>
+                    <button class="bg-shvya-navy text-white px-6 py-2 rounded-lg hover:bg-shvya-navy/90 transition-colors font-semibold">
+                        Start Deploy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-shvya-navy to-shvya-charcoal pt-20 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-white">
+                <h1 class="text-5xl font-bold mb-6">About Shvya AI</h1>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                    Democratizing artificial intelligence for businesses worldwide. We're on a mission to make 
+                    AI accessible, affordable, and actionable for organizations of all sizes.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <button class="bg-shvya-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-shvya-blue/90 transition-all ai-glow">
+                        Our Mission
+                    </button>
+                    <button class="border-2 border-shvya-blue text-shvya-blue px-6 py-3 rounded-lg font-semibold hover:bg-shvya-blue hover:text-white transition-all">
+                        Meet the Team
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Story -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-shvya-charcoal mb-6">Our Story</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Founded in 2023, Shvya AI emerged from a simple observation: while artificial intelligence 
+                        was transforming industries, most businesses were left behind due to complexity, cost, and 
+                        implementation challenges.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        We believed there had to be a better way. Our team of AI researchers, software engineers, 
+                        and business strategists came together with a revolutionary idea: make AI deployment as 
+                        simple as ordering a service, with guaranteed results in hours, not months.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Today, Shvya AI serves over 1,000 businesses across 15 countries, delivering intelligent 
+                        solutions that transform operations, boost efficiency, and drive growth through the power 
+                        of accessible artificial intelligence.
+                    </p>
+                    
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-shvya-blue">1000+</div>
+                            <div class="text-sm text-gray-600">Businesses Served</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-shvya-blue">15</div>
+                            <div class="text-sm text-gray-600">Countries</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-shvya-blue">98%</div>
+                            <div class="text-sm text-gray-600">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-shvya-blue/10 to-shvya-orange/10 rounded-2xl p-8">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-shvya-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                                <span class="text-4xl text-white">🤖</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-shvya-charcoal mb-4">Our Mission</h3>
+                            <p class="text-gray-600 mb-6">
+                                To democratize artificial intelligence by making it accessible, affordable, 
+                                and actionable for every business, regardless of size or technical expertise.
+                            </p>
+                            <div class="flex justify-center space-x-2">
+                                <div class="w-3 h-3 bg-shvya-blue rounded-full animate-pulse"></div>
+                                <div class="w-3 h-3 bg-shvya-orange rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+                                <div class="w-3 h-3 bg-shvya-green rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Expertise -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-shvya-charcoal mb-4">Our AI Expertise</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Cutting-edge artificial intelligence technologies and methodologies that drive our intelligent solutions.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="value-card bg-white rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🧠</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">Machine Learning</h3>
+                    <p class="text-gray-600 text-sm">
+                        Advanced algorithms that learn from data to provide predictive insights and automated decision-making capabilities.
+                    </p>
+                </div>
+                
+                <div class="value-card bg-white rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">👁️</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">Computer Vision</h3>
+                    <p class="text-gray-600 text-sm">
+                        AI-powered visual recognition and analysis for automated quality control, security, and data extraction.
+                    </p>
+                </div>
+                
+                <div class="value-card bg-white rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">💬</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">Natural Language Processing</h3>
+                    <p class="text-gray-600 text-sm">
+                        Intelligent text and speech analysis for automated customer service, content analysis, and communication.
+                    </p>
+                </div>
+                
+                <div class="value-card bg-white rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">⚡</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">Intelligent Automation</h3>
+                    <p class="text-gray-600 text-sm">
+                        Smart process automation that eliminates manual tasks and optimizes workflows across your organization.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-shvya-charcoal mb-4">Meet Our AI Team</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A diverse team of AI researchers, software engineers, and business strategists united by our passion 
+                    for making artificial intelligence accessible to everyone.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="team-card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <div class="w-24 h-24 bg-shvya-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl text-white">👨‍💼</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-2">Dr. Arjun Patel</h3>
+                    <p class="text-shvya-blue font-medium mb-3">Chief AI Officer</p>
+                    <p class="text-gray-600 text-sm mb-4">
+                        PhD in Machine Learning from MIT. 15+ years in AI research and development. 
+                        Former lead AI researcher at Google.
+                    </p>
+                    <div class="flex justify-center space-x-2">
+                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">ML</span>
+                        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">NLP</span>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <div class="w-24 h-24 bg-shvya-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl text-white">👩‍💻</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-2">Priya Sharma</h3>
+                    <p class="text-shvya-blue font-medium mb-3">Head of Engineering</p>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Computer Science from Stanford. Expert in scalable AI systems. 
+                        Previously led engineering at Microsoft AI division.
+                    </p>
+                    <div class="flex justify-center space-x-2">
+                        <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded">Systems</span>
+                        <span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs rounded">Cloud</span>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <div class="w-24 h-24 bg-shvya-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl text-white">👨‍🔬</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-2">Dr. Michael Chen</h3>
+                    <p class="text-shvya-blue font-medium mb-3">AI Research Director</p>
+                    <p class="text-gray-600 text-sm mb-4">
+                        PhD in Computer Vision from Carnegie Mellon. 12+ years in AI research. 
+                        Published 50+ papers in top-tier AI conferences.
+                    </p>
+                    <div class="flex justify-center space-x-2">
+                        <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded">Vision</span>
+                        <span class="px-2 py-1 bg-teal-100 text-teal-800 text-xs rounded">Research</span>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <div class="w-24 h-24 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl text-white">👩‍🎨</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-2">Sarah Johnson</h3>
+                    <p class="text-shvya-blue font-medium mb-3">UX Design Lead</p>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Human-Computer Interaction from MIT. Specialist in AI-human interfaces. 
+                        Former design lead at Apple AI team.
+                    </p>
+                    <div class="flex justify-center space-x-2">
+                        <span class="px-2 py-1 bg-pink-100 text-pink-800 text-xs rounded">Design</span>
+                        <span class="px-2 py-1 bg-indigo-100 text-indigo-800 text-xs rounded">UX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section class="py-20 bg-shvya-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Our Values</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    The principles that guide our approach to AI development and business relationships.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-shvya-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl">🎯</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Accessibility</h3>
+                    <p class="text-gray-300">
+                        AI should be available to everyone, not just large corporations with deep pockets. 
+                        We democratize artificial intelligence.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-shvya-orange rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl">⚡</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Speed</h3>
+                    <p class="text-gray-300">
+                        Time is money in business. Our 4-hour deployment guarantee ensures you get results 
+                        fast without compromising quality.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-shvya-green rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl">🔒</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Reliability</h3>
+                    <p class="text-gray-300">
+                        Our 99.9% uptime SLA and intelligent monitoring ensure your AI solutions work 
+                        when you need them most.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl">🤝</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Partnership</h3>
+                    <p class="text-gray-300">
+                        We're not just a vendor - we're your AI partner. Your success is our success, 
+                        and we grow together.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl">🚀</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Innovation</h3>
+                    <p class="text-gray-300">
+                        We constantly push the boundaries of what's possible with AI, bringing you 
+                        cutting-edge solutions that give you a competitive edge.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl">🌱</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Sustainability</h3>
+                    <p class="text-gray-300">
+                        We believe in responsible AI development that benefits both businesses and society, 
+                        creating a better future for all.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-shvya-charcoal mb-4">Our Achievements</h2>
+                <p class="text-xl text-gray-600">
+                    Milestones in our journey to democratize artificial intelligence.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 bg-gray-50 rounded-xl">
+                    <div class="text-3xl font-bold text-shvya-blue mb-2">2023</div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-2">Company Founded</h3>
+                    <p class="text-gray-600 text-sm">Shvya AI established with mission to democratize AI</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gray-50 rounded-xl">
+                    <div class="text-3xl font-bold text-shvya-blue mb-2">100+</div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-2">First 100 Deployments</h3>
+                    <p class="text-gray-600 text-sm">Reached milestone of 100 successful AI deployments</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gray-50 rounded-xl">
+                    <div class="text-3xl font-bold text-shvya-blue mb-2">15</div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-2">Global Expansion</h3>
+                    <p class="text-gray-600 text-sm">Expanded services to 15 countries across 4 continents</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gray-50 rounded-xl">
+                    <div class="text-3xl font-bold text-shvya-blue mb-2">2025</div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-2">AI Innovation Award</h3>
+                    <p class="text-gray-600 text-sm">Recognized as "Most Innovative AI Company" by TechCrunch</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-br from-shvya-blue to-shvya-orange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Join the AI Revolution?</h2>
+            <p class="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+                Be part of the AI transformation that's reshaping businesses worldwide. Let's work together 
+                to unlock the power of artificial intelligence for your organization.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-shvya-blue px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all">
+                    Start Your AI Journey
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-shvya-blue transition-all">
+                    Schedule AI Consultation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-shvya-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-bold mb-4">
+                        <span class="text-shvya-blue">Shvya</span> AI
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        AI-powered business solutions deployed in 4 hours. Your intelligent technology partner for rapid digital transformation.
+                    </p>
+                    <div class="text-sm text-gray-400">
+                        © 2025 Shvya AI. All rights reserved.
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="shvya-products.html" class="hover:text-shvya-blue transition-colors">Shvya CRM</a></li>
+                        <li><a href="shvya-products.html" class="hover:text-shvya-blue transition-colors">Smart Billing Inventory</a></li>
+                        <li><a href="shvya-products.html" class="hover:text-shvya-blue transition-colors">School ERP</a></li>
+                        <li><a href="shvya-products.html" class="hover:text-shvya-blue transition-colors">Hospital ERP</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="shvya-services.html" class="hover:text-shvya-blue transition-colors">Web Development</a></li>
+                        <li><a href="shvya-services.html" class="hover:text-shvya-blue transition-colors">Digital Marketing</a></li>
+                        <li><a href="shvya-services.html" class="hover:text-shvya-blue transition-colors">AI Automation</a></li>
+                        <li><a href="shvya-services.html" class="hover:text-shvya-blue transition-colors">E-commerce Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">Video Tutorials</a></li>
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">AI Community</a></li>
+                        <li><a href="shvya-contact.html" class="hover:text-shvya-blue transition-colors">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate team cards on load
+            const teamCards = document.querySelectorAll('.team-card');
+            teamCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    anime({
+                        targets: card,
+                        opacity: 1,
+                        translateY: 0,
+                        duration: 600,
+                        delay: index * 150,
+                        easing: 'easeOutCubic'
+                    });
+                }, 300);
+            });
+
+            // Animate value cards
+            const valueCards = document.querySelectorAll('.value-card');
+            valueCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    anime({
+                        targets: card,
+                        opacity: 1,
+                        translateY: 0,
+                        duration: 600,
+                        delay: index * 100,
+                        easing: 'easeOutCubic'
+                    });
+                }, 600);
+            });
+
+            // Button click handlers
+            document.querySelectorAll('button').forEach(button => {
+                button.addEventListener('click', function() {
+                    if (this.textContent.includes('Start Your AI Journey') || this.textContent.includes('Schedule AI Consultation')) {
+                        alert('🤖 AI Assistant: Thank you for your interest in Shvya AI! Our intelligent scheduling system will help you book a consultation with our AI specialists. You will be redirected to our booking portal where you can choose a convenient time for your AI transformation discussion.');
+                    }
+                    
+                    if (this.textContent.includes('Our Mission')) {
+                        document.querySelector('.bg-gradient-to-br').scrollIntoView({ behavior: 'smooth' });
+                    }
+                    
+                    if (this.textContent.includes('Meet the Team')) {
+                        document.querySelector('.team-card').scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

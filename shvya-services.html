@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shvya AI Services - AI-Powered Digital Solutions</title>
+    <meta name="description" content="Comprehensive AI-powered digital services including web development, digital marketing, automation, and e-commerce solutions.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'shvya-navy': '#1a1d29',
+                        'shvya-blue': '#0066ff',
+                        'shvya-orange': '#ff6b35',
+                        'shvya-charcoal': '#2d3748',
+                        'shvya-green': '#10b981'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .service-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 25px 50px rgba(0, 102, 255, 0.2);
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid #0066ff;
+            transform: scale(1.05);
+        }
+        
+        .process-step {
+            position: relative;
+        }
+        
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #0066ff, transparent);
+            transform: translateY(-50%);
+        }
+        
+        .process-step:last-child::after {
+            display: none;
+        }
+        
+        .case-study {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(255, 107, 53, 0.1));
+        }
+        
+        .ai-glow {
+            box-shadow: 0 0 20px rgba(0, 102, 255, 0.3);
+        }
+        
+        .pulse-ai {
+            animation: pulse-ai 2s infinite;
+        }
+        
+        @keyframes pulse-ai {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.7); }
+            50% { box-shadow: 0 0 0 10px rgba(0, 102, 255, 0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="shvya-index.html" class="text-2xl font-bold text-shvya-navy">
+                        <span class="text-shvya-blue">Shvya</span> AI
+                    </a>
+                    <div class="ml-2 text-xs bg-shvya-orange text-white px-2 py-1 rounded font-mono">4HR DEPLOY</div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="shvya-index.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Home</a>
+                    <a href="shvya-products.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Products</a>
+                    <a href="shvya-services.html" class="text-shvya-blue font-semibold">Services</a>
+                    <a href="shvya-about.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">About</a>
+                    <a href="shvya-deployment.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">4HR Deploy</a>
+                    <a href="shvya-contact.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="bg-shvya-blue text-white px-4 py-2 rounded-lg hover:bg-shvya-blue/90 transition-colors">
+                        🤖 AI Chat
+                    </button>
+                    <button class="bg-shvya-navy text-white px-6 py-2 rounded-lg hover:bg-shvya-navy/90 transition-colors font-semibold">
+                        Start Project
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-shvya-navy to-shvya-charcoal pt-20 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h1 class="text-5xl font-bold mb-6">AI-Powered Digital Services</h1>
+                    <p class="text-xl text-gray-300 mb-8">
+                        From custom AI web development to intelligent digital marketing, we provide comprehensive 
+                        digital solutions powered by artificial intelligence to accelerate your business growth.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <button class="bg-shvya-blue text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-shvya-blue/90 transition-all ai-glow">
+                            Start AI Project
+                        </button>
+                        <button class="border-2 border-shvya-blue text-shvya-blue px-8 py-4 rounded-lg font-semibold text-lg hover:bg-shvya-blue hover:text-white transition-all">
+                            View AI Portfolio
+                        </button>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-6 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-shvya-blue">300+</div>
+                            <div class="text-gray-300 text-sm">AI Projects</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-shvya-blue">98%</div>
+                            <div class="text-gray-300 text-sm">AI Success Rate</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-shvya-blue">24/7</div>
+                            <div class="text-gray-300 text-sm">AI Support</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <img src="shvya-resources/shvya-services.png" alt="AI Services" class="w-full h-auto">
+                    <div class="absolute inset-0 bg-gradient-to-t from-shvya-navy/20 to-transparent rounded-lg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-shvya-charcoal mb-4">Our AI Service Portfolio</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive AI-powered digital solutions designed to transform your business operations 
+                    and accelerate growth through intelligent automation.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Custom Website Development -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">🌐</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-shvya-charcoal mb-4">Custom Website Development</h3>
+                    <p class="text-gray-600 mb-6 text-sm">
+                        AI-powered web solutions with intelligent automation, performance optimization, and predictive user experience enhancement.
+                    </p>
+                    <ul class="text-left space-y-2 mb-6 text-sm text-gray-600">
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">🤖</span> AI-Powered Design</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">⚡</span> Performance Optimization</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">🔒</span> AI Security Implementation</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">📱</span> Responsive AI Layouts</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">🎯</span> Predictive UX Enhancement</li>
+                    </ul>
+                    <button class="w-full bg-shvya-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-shvya-blue/90 transition-all">
+                        Learn More
+                    </button>
+                </div>
+                
+                <!-- Digital Marketing & Social Media -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">📈</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-shvya-charcoal mb-4">Digital Marketing & Social Media</h3>
+                    <p class="text-gray-600 mb-6 text-sm">
+                        AI-driven marketing strategies that deliver measurable ROI through intelligent targeting, automation, and predictive analytics.
+                    </p>
+                    <ul class="text-left space-y-2 mb-6 text-sm text-gray-600">
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">🎯</span> AI Audience Targeting</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">🤖</span> Automated Campaign Management</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">📊</span> Predictive Analytics</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">💬</span> AI Social Media Management</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">🔄</span> Conversion Optimization</li>
+                    </ul>
+                    <button class="w-full bg-shvya-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-shvya-blue/90 transition-all">
+                        Learn More
+                    </button>
+                </div>
+                
+                <!-- Custom Software & Business Support -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">⚙️</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-shvya-charcoal mb-4">Custom Software & Business Support</h3>
+                    <p class="text-gray-600 mb-6 text-sm">
+                        Tailored AI automation solutions designed specifically for your unique business processes and operational requirements.
+                    </p>
+                    <ul class="text-left space-y-2 mb-6 text-sm text-gray-600">
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">🤖</span> Intelligent Process Automation</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">📊</span> AI Business Intelligence</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">🔧</span> Custom AI Integrations</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">📈</span> Performance Monitoring</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">💡</span> Smart Decision Support</li>
+                    </ul>
+                    <button class="w-full bg-shvya-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-shvya-blue/90 transition-all">
+                        Learn More
+                    </button>
+                </div>
+                
+                <!-- CRM/ERP Automation & Chatbots -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">🤖</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-shvya-charcoal mb-4">CRM/ERP Automation & Chatbots</h3>
+                    <p class="text-gray-600 mb-6 text-sm">
+                        Intelligent business process automation with AI-powered chatbots, automated workflows, and smart system integrations.
+                    </p>
+                    <ul class="text-left space-y-2 mb-6 text-sm text-gray-600">
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">💬</span> AI Chatbot Development</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">🔄</span> Workflow Automation</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">🔗</span> System Integration</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">🎯</span> Intelligent Lead Management</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">📊</span> Predictive Analytics</li>
+                    </ul>
+                    <button class="w-full bg-shvya-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-shvya-blue/90 transition-all">
+                        Learn More
+                    </button>
+                </div>
+                
+                <!-- Shopify Stores & E-commerce -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">🛒</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-shvya-charcoal mb-4">Shopify Stores & E-commerce</h3>
+                    <p class="text-gray-600 mb-6 text-sm">
+                        AI-enhanced e-commerce solutions with intelligent product recommendations, automated inventory, and predictive sales analytics.
+                    </p>
+                    <ul class="text-left space-y-2 mb-6 text-sm text-gray-600">
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">🎯</span> AI Product Recommendations</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">📦</span> Smart Inventory Management</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">💰</span> Dynamic Pricing AI</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">📊</span> Predictive Sales Analytics</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">🤖</span> Customer Service Automation</li>
+                    </ul>
+                    <button class="w-full bg-shvya-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-shvya-blue/90 transition-all">
+                        Learn More
+                    </button>
+                </div>
+                
+                <!-- Ready-to-use Software -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">⚡</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-shvya-charcoal mb-4">Ready-to-use Software</h3>
+                    <p class="text-gray-600 mb-6 text-sm">
+                        Pre-built AI applications ready for immediate deployment with 4-hour setup guarantee and intelligent customization options.
+                    </p>
+                    <ul class="text-left space-y-2 mb-6 text-sm text-gray-600">
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">⚡</span> 4-Hour Deployment</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">🤖</span> AI-Powered Features</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">🔧</span> Intelligent Customization</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">📊</span> Built-in Analytics</li>
+                        <li class="flex items-center"><span class="text-shvya-blue mr-2">🔄</span> Automated Updates</li>
+                    </ul>
+                    <button class="w-full bg-shvya-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-shvya-blue/90 transition-all">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Process Timeline -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-shvya-charcoal mb-4">Our AI Development Process</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A proven AI-first methodology that ensures your project is delivered with intelligent automation, 
+                    on time, on budget, and exceeds expectations.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="process-step text-center">
+                    <div class="w-20 h-20 bg-shvya-blue rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                        1
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">AI Discovery & Strategy</h3>
+                    <p class="text-gray-600 text-sm">
+                        We analyze your business needs using AI tools and create an intelligent strategic roadmap for maximum impact.
+                    </p>
+                </div>
+                
+                <div class="process-step text-center">
+                    <div class="w-20 h-20 bg-shvya-blue rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                        2
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">AI Design & Development</h3>
+                    <p class="text-gray-600 text-sm">
+                        Our AI-enhanced design process creates intelligent solutions using the latest AI technologies and automation.
+                    </p>
+                </div>
+                
+                <div class="process-step text-center">
+                    <div class="w-20 h-20 bg-shvya-blue rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                        3
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">AI Testing & Optimization</h3>
+                    <p class="text-gray-600 text-sm">
+                        Automated AI testing ensures everything works perfectly with intelligent optimization across all platforms.
+                    </p>
+                </div>
+                
+                <div class="process-step text-center">
+                    <div class="w-20 h-20 bg-shvya-orange rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                        4
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">AI Launch & Support</h3>
+                    <p class="text-gray-600 text-sm">
+                        Intelligent deployment with AI monitoring and continuous support to ensure optimal performance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Success Stories -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-shvya-charcoal mb-4">AI Success Stories</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Real AI transformation results from real clients. See how our intelligent solutions have revolutionized businesses across industries.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Case Study 1 -->
+                <div class="case-study rounded-xl p-8">
+                    <div class="mb-6">
+                        <div class="text-3xl font-bold text-shvya-blue mb-2">+300%</div>
+                        <div class="text-sm text-gray-600">AI Conversion Rate Increase</div>
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">E-commerce AI Optimization</h3>
+                    <p class="text-gray-600 text-sm mb-4">
+                        AI-powered product recommendations and dynamic pricing increased conversion rates by 300% 
+                        and improved customer lifetime value by 45% through intelligent personalization.
+                    </p>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span>AI E-commerce + Marketing</span>
+                        <span>3 months</span>
+                    </div>
+                </div>
+                
+                <!-- Case Study 2 -->
+                <div class="case-study rounded-xl p-8">
+                    <div class="mb-6">
+                        <div class="text-3xl font-bold text-shvya-blue mb-2">+250%</div>
+                        <div class="text-sm text-gray-600">AI Lead Generation</div>
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">B2B AI Lead Generation</h3>
+                    <p class="text-gray-600 text-sm mb-4">
+                        AI-powered lead scoring and automated nurturing campaigns generated 250% more qualified leads 
+                        with intelligent chatbots handling 80% of initial inquiries automatically.
+                    </p>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span>AI CRM + Chatbots</span>
+                        <span>2 months</span>
+                    </div>
+                </div>
+                
+                <!-- Case Study 3 -->
+                <div class="case-study rounded-xl p-8">
+                    <div class="mb-6">
+                        <div class="text-3xl font-bold text-shvya-blue mb-2">+400%</div>
+                        <div class="text-sm text-gray-600">AI Efficiency Gain</div>
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">Manufacturing AI Automation</h3>
+                    <p class="text-gray-600 text-sm mb-4">
+                        AI-powered process automation and predictive maintenance increased operational efficiency by 400% 
+                        while reducing downtime by 60% through intelligent monitoring systems.
+                    </p>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span>AI Automation + Analytics</span>
+                        <span>4 months</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Service Packages -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-shvya-charcoal mb-4">AI Service Packages</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Flexible AI-powered service plans designed to fit businesses of all sizes, from startups to enterprises.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- AI Starter Package -->
+                <div class="pricing-card bg-white rounded-xl shadow-lg p-8">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-shvya-charcoal mb-2">AI Starter</h3>
+                        <p class="text-gray-600 mb-6">Perfect for small businesses starting with AI</p>
+                        <div class="text-4xl font-bold text-shvya-blue mb-2">$5,000</div>
+                        <div class="text-sm text-gray-500">per project</div>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            AI Website (5 pages)
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            Basic AI Chatbot
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            AI Analytics Setup
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            Mobile Responsive AI
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            1 Month AI Support
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            Basic AI Training
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-shvya-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-shvya-blue/90 transition-all">
+                        Start AI Project
+                    </button>
+                </div>
+                
+                <!-- AI Professional Package (Featured) -->
+                <div class="pricing-card featured bg-white rounded-xl shadow-lg p-8">
+                    <div class="text-center mb-8">
+                        <div class="inline-block bg-shvya-blue text-white px-3 py-1 rounded-full text-xs font-semibold mb-4">
+                            MOST POPULAR
+                        </div>
+                        <h3 class="text-2xl font-bold text-shvya-charcoal mb-2">AI Professional</h3>
+                        <p class="text-gray-600 mb-6">Comprehensive AI solution for growing businesses</p>
+                        <div class="text-4xl font-bold text-shvya-blue mb-2">$12,000</div>
+                        <div class="text-sm text-gray-500">per project</div>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            AI Website (10 pages)
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            Advanced AI Chatbot
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            AI Digital Marketing
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            AI Social Media Setup
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            3 Months AI Support
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            AI Automation Tools
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            Advanced AI Analytics
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-shvya-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-shvya-blue/90 transition-all">
+                        Start AI Project
+                    </button>
+                </div>
+                
+                <!-- AI Enterprise Package -->
+                <div class="pricing-card bg-white rounded-xl shadow-lg p-8">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-shvya-charcoal mb-2">AI Enterprise</h3>
+                        <p class="text-gray-600 mb-6">Complete AI transformation for large organizations</p>
+                        <div class="text-4xl font-bold text-shvya-blue mb-2">$25,000</div>
+                        <div class="text-sm text-gray-500">per project</div>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            AI Platform Development
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            Full AI Marketing Suite
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            AI Social Media Management
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            6 Months AI Support
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            Custom AI Analytics
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            AI Strategy Consulting
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <span class="text-shvya-blue mr-3">✓</span>
+                            Dedicated AI Team
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-shvya-navy text-white px-6 py-3 rounded-lg font-semibold hover:bg-shvya-navy/90 transition-all">
+                        Contact AI Sales
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-shvya-charcoal mb-4">Start Your AI Transformation</h2>
+                <p class="text-xl text-gray-600">
+                    Ready to revolutionize your business with AI? Let's discuss your intelligent solution requirements.
+                </p>
+            </div>
+            
+            <div class="bg-gray-50 rounded-xl p-8">
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-shvya-charcoal mb-2">Full Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-shvya-blue focus:border-transparent" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-shvya-charcoal mb-2">Email Address</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-shvya-blue focus:border-transparent" required>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-shvya-charcoal mb-2">Company Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-shvya-blue focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-shvya-charcoal mb-2">Budget Range</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-shvya-blue focus:border-transparent">
+                                <option>$5,000 - $12,000</option>
+                                <option>$12,000 - $25,000</option>
+                                <option>$25,000 - $50,000</option>
+                                <option>$50,000+</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-shvya-charcoal mb-2">AI Services Needed</label>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 text-shvya-blue focus:ring-shvya-blue">
+                                <span class="text-sm">Web Development</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 text-shvya-blue focus:ring-shvya-blue">
+                                <span class="text-sm">Digital Marketing</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 text-shvya-blue focus:ring-shvya-blue">
+                                <span class="text-sm">AI Automation</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 text-shvya-blue focus:ring-shvya-blue">
+                                <span class="text-sm">Chatbots</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 text-shvya-blue focus:ring-shvya-blue">
+                                <span class="text-sm">E-commerce</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 text-shvya-blue focus:ring-shvya-blue">
+                                <span class="text-sm">Custom Software</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-shvya-charcoal mb-2">Project Description</label>
+                        <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-shvya-blue focus:border-transparent" placeholder="Tell us about your AI project requirements..."></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="bg-shvya-navy text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-shvya-navy/90 transition-all">
+                            Send AI Project Inquiry
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-shvya-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-bold mb-4">
+                        <span class="text-shvya-blue">Shvya</span> AI
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        AI-powered business solutions deployed in 4 hours. Your intelligent technology partner for rapid digital transformation.
+                    </p>
+                    <div class="text-sm text-gray-400">
+                        © 2025 Shvya AI. All rights reserved.
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="shvya-products.html" class="hover:text-shvya-blue transition-colors">Shvya CRM</a></li>
+                        <li><a href="shvya-products.html" class="hover:text-shvya-blue transition-colors">Smart Billing Inventory</a></li>
+                        <li><a href="shvya-products.html" class="hover:text-shvya-blue transition-colors">School ERP</a></li>
+                        <li><a href="shvya-products.html" class="hover:text-shvya-blue transition-colors">Hospital ERP</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">Web Development</a></li>
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">Digital Marketing</a></li>
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">AI Automation</a></li>
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">E-commerce Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">Video Tutorials</a></li>
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">AI Community</a></li>
+                        <li><a href="shvya-contact.html" class="hover:text-shvya-blue transition-colors">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate service cards on load
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    anime({
+                        targets: card,
+                        opacity: 1,
+                        translateY: 0,
+                        duration: 800,
+                        delay: index * 200,
+                        easing: 'easeOutCubic'
+                    });
+                }, 300);
+            });
+
+            // Animate process steps
+            const processSteps = document.querySelectorAll('.process-step');
+            processSteps.forEach((step, index) => {
+                step.style.opacity = '0';
+                step.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    anime({
+                        targets: step,
+                        opacity: 1,
+                        translateY: 0,
+                        duration: 600,
+                        delay: index * 150,
+                        easing: 'easeOutCubic'
+                    });
+                }, 600);
+            });
+
+            // Contact form handling
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Animate form submission
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                
+                submitBtn.textContent = 'Processing with AI...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    alert('🤖 AI Assistant: Thank you for your AI project inquiry! Our intelligent system has analyzed your requirements and our AI specialist will contact you within 15 minutes to discuss your intelligent solution.');
+                    contactForm.reset();
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            });
+
+            // Pricing card interactions
+            const pricingCards = document.querySelectorAll('.pricing-card');
+            pricingCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('featured')) {
+                        anime({
+                            targets: this,
+                            scale: 1.02,
+                            duration: 300,
+                            easing: 'easeOutCubic'
+                        });
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('featured')) {
+                        anime({
+                            targets: this,
+                            scale: 1,
+                            duration: 300,
+                            easing: 'easeOutCubic'
+                        });
+                    }
+                });
+            });
+
+            // Button click handlers
+            document.querySelectorAll('button').forEach(button => {
+                button.addEventListener('click', function() {
+                    if (this.textContent.includes('Start AI Project') || this.textContent.includes('Start Project')) {
+                        document.querySelector('#contact-form').scrollIntoView({ behavior: 'smooth' });
+                    }
+                    
+                    if (this.textContent.includes('Contact AI Sales')) {
+                        alert('🤖 AI Sales Team: Enterprise AI solutions specialist will contact you within 30 minutes to discuss your comprehensive AI transformation requirements.');
+                    }
+                    
+                    if (this.textContent.includes('Learn More')) {
+                        const serviceCard = this.closest('.service-card');
+                        if (serviceCard) {
+                            const serviceName = serviceCard.querySelector('h3').textContent;
+                            showAIServiceDetails(serviceName);
+                        }
+                    }
+                });
+            });
+        });
+
+        function showAIServiceDetails(serviceName) {
+            const serviceDetails = {
+                'Custom Website Development': 'Our AI-powered web development service includes:\n\n• AI-driven design and layout optimization\n• Intelligent performance monitoring\n• Predictive user experience enhancement\n• Automated security implementation\n• AI-powered content optimization\n• Smart mobile responsiveness\n• Machine learning-based A/B testing',
+                'Digital Marketing & Social Media': 'Our AI digital marketing services include:\n\n• Intelligent audience targeting and segmentation\n• AI-powered campaign automation and optimization\n• Predictive analytics and performance forecasting\n• Automated social media content creation and scheduling\n• AI chatbot integration for customer engagement\n• Smart conversion rate optimization\n• Machine learning-based ROI prediction',
+                'Custom Software & Business Support': 'Our AI automation solutions include:\n\n• Intelligent process automation and optimization\n• AI-powered business intelligence and analytics\n• Custom machine learning model development\n• Smart system integrations and APIs\n• Predictive maintenance and monitoring\n• AI decision support systems\n• Automated workflow optimization',
+                'CRM/ERP Automation & Chatbots': 'Our AI automation services include:\n\n• Advanced AI chatbot development with NLP\n• Intelligent workflow automation and optimization\n• Smart CRM/ERP system integrations\n• Automated lead scoring and qualification\n• AI-powered customer service automation\n• Predictive customer behavior analysis\n• Intelligent data synchronization',
+                'Shopify Stores & E-commerce': 'Our AI e-commerce solutions include:\n\n• AI-powered product recommendation engines\n• Smart inventory management and forecasting\n• Dynamic pricing optimization algorithms\n• Predictive sales analytics and forecasting\n• AI customer service chatbots\n• Intelligent cart abandonment recovery\n• Automated personalization systems',
+                'Ready-to-use Software': 'Our ready-to-deploy AI solutions include:\n\n• 4-hour intelligent deployment guarantee\n• AI-powered features and automation\n• Smart customization and configuration\n• Built-in predictive analytics and reporting\n• Automated update and maintenance systems\n• Intelligent user onboarding\n• AI-powered performance optimization'
+            };
+            
+            alert(serviceDetails[serviceName] || '🤖 AI Assistant: More details about this intelligent service will be available soon. Our AI specialist will contact you within 15 minutes to discuss your specific requirements.');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-Hour AI Deployment - Shvya AI</title>
+    <meta name="description" content="Experience the fastest AI software deployment in the industry. Get your AI-powered business solutions live in just 4 hours with Shvya AI.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'shvya-navy': '#1a1d29',
+                        'shvya-blue': '#0066ff',
+                        'shvya-orange': '#ff6b35',
+                        'shvya-charcoal': '#2d3748',
+                        'shvya-green': '#10b981'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .deployment-stage {
+            transition: all 0.3s ease;
+        }
+        
+        .deployment-stage.active {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.2);
+        }
+        
+        .timeline-connector {
+            position: relative;
+        }
+        
+        .timeline-connector::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #0066ff, transparent);
+            transform: translateY(-50%);
+        }
+        
+        .timeline-connector:last-child::after {
+            display: none;
+        }
+        
+        .ai-glow {
+            box-shadow: 0 0 20px rgba(0, 102, 255, 0.3);
+        }
+        
+        .pulse-ai {
+            animation: pulse-ai 2s infinite;
+        }
+        
+        @keyframes pulse-ai {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.7); }
+            50% { box-shadow: 0 0 0 10px rgba(0, 102, 255, 0); }
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, #0066ff, #ff6b35);
+            height: 4px;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="shvya-index.html" class="text-2xl font-bold text-shvya-navy">
+                        <span class="text-shvya-blue">Shvya</span> AI
+                    </a>
+                    <div class="ml-2 text-xs bg-shvya-orange text-white px-2 py-1 rounded font-mono">4HR DEPLOY</div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="shvya-index.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Home</a>
+                    <a href="shvya-products.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Products</a>
+                    <a href="shvya-services.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Services</a>
+                    <a href="shvya-about.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">About</a>
+                    <a href="shvya-deployment.html" class="text-shvya-blue font-semibold">4HR Deploy</a>
+                    <a href="shvya-contact.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="bg-shvya-blue text-white px-4 py-2 rounded-lg hover:bg-shvya-blue/90 transition-colors">
+                        🤖 AI Chat
+                    </button>
+                    <button class="bg-shvya-navy text-white px-6 py-2 rounded-lg hover:bg-shvya-navy/90 transition-colors font-semibold">
+                        Start Deploy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-shvya-navy to-shvya-charcoal pt-20 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-white">
+                <h1 class="text-5xl font-bold mb-6">4-Hour AI Deployment</h1>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                    The fastest AI software deployment in the industry. Get your intelligent business solutions 
+                    live and operational in just 4 hours with our AI-powered deployment process.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <button class="bg-shvya-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-shvya-blue/90 transition-all ai-glow">
+                        Start Deployment
+                    </button>
+                    <button class="border-2 border-shvya-blue text-shvya-blue px-6 py-3 rounded-lg font-semibold hover:bg-shvya-blue hover:text-white transition-all">
+                        Watch Process Video
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deployment Promise -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-shvya-charcoal mb-4">The 4-Hour Promise</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    While competitors take weeks or months to deploy AI solutions, Shvya AI delivers intelligent 
+                    business software in just 4 hours. Here's how we achieve the impossible.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="text-center p-8 rounded-xl bg-gray-50">
+                    <div class="w-16 h-16 bg-shvya-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl text-white">⚡</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-shvya-charcoal mb-4">Lightning Fast</h3>
+                    <p class="text-gray-600">
+                        Traditional AI deployments take 3-6 months. We deliver in 4 hours. That's 99.7% faster 
+                        than industry standards, without compromising quality or functionality.
+                    </p>
+                </div>
+                
+                <div class="text-center p-8 rounded-xl bg-gray-50">
+                    <div class="w-16 h-16 bg-shvya-orange rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl text-white">🤖</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-shvya-charcoal mb-4">AI-Powered Process</h3>
+                    <p class="text-gray-600">
+                        Our deployment process is itself powered by AI. Intelligent automation handles setup, 
+                        configuration, testing, and optimization with minimal human intervention.
+                    </p>
+                </div>
+                
+                <div class="text-center p-8 rounded-xl bg-gray-50">
+                    <div class="w-16 h-16 bg-shvya-green rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl text-white">🎯</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-shvya-charcoal mb-4">Guaranteed Success</h3>
+                    <p class="text-gray-600">
+                        99.9% uptime SLA with intelligent monitoring. If we don't deliver within 4 hours, 
+                        your deployment is completely free. That's how confident we are in our process.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Deployment Process -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-shvya-charcoal mb-4">The AI Deployment Process</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A meticulously engineered 4-stage process that leverages artificial intelligence to accelerate 
+                    every aspect of software deployment.
+                </p>
+            </div>
+            
+            <div class="relative mb-16">
+                <img src="shvya-resources/ai-deployment.png" alt="AI Deployment Process" class="w-full max-w-4xl mx-auto mb-12">
+                
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="deployment-stage timeline-connector text-center" data-stage="1">
+                        <div class="w-20 h-20 bg-shvya-blue rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                            1
+                        </div>
+                        <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">AI Environment Setup</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Intelligent infrastructure provisioning and AI-powered configuration optimization. 
+                            Our systems automatically select the optimal environment for your specific requirements.
+                        </p>
+                        <div class="bg-shvya-blue/10 rounded-lg p-3 mb-4">
+                            <div class="text-sm font-semibold text-shvya-charcoal">Duration: 30 minutes</div>
+                            <div class="text-xs text-gray-600">AI handles: Server selection, security setup, resource allocation</div>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="progress-bar w-full"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="deployment-stage timeline-connector text-center" data-stage="2">
+                        <div class="w-20 h-20 bg-shvya-blue rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                            2
+                        </div>
+                        <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">Smart Data Migration</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            AI-driven data transfer with intelligent validation and transformation. 
+                            Our algorithms ensure data integrity while optimizing for performance.
+                        </p>
+                        <div class="bg-shvya-blue/10 rounded-lg p-3 mb-4">
+                            <div class="text-sm font-semibold text-shvya-charcoal">Duration: 90 minutes</div>
+                            <div class="text-xs text-gray-600">AI handles: Data mapping, validation, transformation, optimization</div>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="progress-bar w-full"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="deployment-stage timeline-connector text-center" data-stage="3">
+                        <div class="w-20 h-20 bg-shvya-blue rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                            3
+                        </div>
+                        <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">AI Testing & QA</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Automated testing powered by machine learning algorithms. Our AI systems perform 
+                            comprehensive testing across all scenarios and edge cases.
+                        </p>
+                        <div class="bg-shvya-blue/10 rounded-lg p-3 mb-4">
+                            <div class="text-sm font-semibold text-shvya-charcoal">Duration: 90 minutes</div>
+                            <div class="text-xs text-gray-600">AI handles: Test generation, execution, performance validation</div>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="progress-bar w-full"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="deployment-stage text-center" data-stage="4">
+                        <div class="w-20 h-20 bg-shvya-orange rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                            4
+                        </div>
+                        <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">Intelligent Go-Live</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Smart deployment with AI monitoring and optimization. Real-time performance tuning 
+                            ensures optimal operation from day one.
+                        </p>
+                        <div class="bg-shvya-orange/10 rounded-lg p-3 mb-4">
+                            <div class="text-sm font-semibold text-shvya-charcoal">Duration: 30 minutes</div>
+                            <div class="text-xs text-gray-600">AI handles: Deployment, monitoring, optimization, user training</div>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="progress-bar w-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Automation Benefits -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-shvya-charcoal mb-4">Why AI Automation Works</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Traditional deployment methods rely on human intervention at every step. Our AI-powered approach 
+                    eliminates bottlenecks and accelerates every phase of the process.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl">
+                    <div class="w-16 h-16 bg-shvya-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white">🤖</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">No Human Error</h3>
+                    <p class="text-gray-600 text-sm">
+                        AI systems don't make mistakes. Every configuration is optimized and validated by 
+                        machine learning algorithms.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-xl">
+                    <div class="w-16 h-16 bg-shvya-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white">⚡</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">Parallel Processing</h3>
+                    <p class="text-gray-600 text-sm">
+                        AI can handle multiple tasks simultaneously. While humans work sequentially, 
+                        AI works in parallel across all deployment phases.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl">
+                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white">🧠</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">Intelligent Decisions</h3>
+                    <p class="text-gray-600 text-sm">
+                        AI makes optimal decisions based on data. Every configuration choice is backed by 
+                        machine learning analysis.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl">
+                    <div class="w-16 h-16 bg-shvya-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white">🔄</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">24/7 Operation</h3>
+                    <p class="text-gray-600 text-sm">
+                        AI doesn't sleep, take breaks, or have off days. Our deployment systems work 
+                        around the clock to deliver your solution.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Metrics -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-shvya-charcoal mb-4">Proven Results</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our 4-hour deployment process has been tested and refined across thousands of deployments. 
+                    The numbers speak for themselves.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-8 bg-white rounded-xl shadow-lg">
+                    <div class="text-4xl font-bold text-shvya-blue mb-2">1000+</div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-2">Successful Deployments</h3>
+                    <p class="text-gray-600 text-sm">Businesses transformed through our 4-hour AI deployment process</p>
+                </div>
+                
+                <div class="text-center p-8 bg-white rounded-xl shadow-lg">
+                    <div class="text-4xl font-bold text-shvya-blue mb-2">99.8%</div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-2">On-Time Delivery</h3>
+                    <p class="text-gray-600 text-sm">Deployments completed within the 4-hour guarantee window</p>
+                </div>
+                
+                <div class="text-center p-8 bg-white rounded-xl shadow-lg">
+                    <div class="text-4xl font-bold text-shvya-blue mb-2">0.2%</div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-2">Failure Rate</h3>
+                    <p class="text-gray-600 text-sm">Industry-leading success rate with comprehensive quality assurance</p>
+                </div>
+                
+                <div class="text-center p-8 bg-white rounded-xl shadow-lg">
+                    <div class="text-4xl font-bold text-shvya-blue mb-2">99.9%</div>
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-2">Uptime SLA</h3>
+                    <p class="text-gray-600 text-sm">Guaranteed availability with intelligent monitoring and support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-shvya-charcoal mb-4">4-Hour Success Stories</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Real businesses, real results, real fast. See how our 4-hour deployment has transformed 
+                    operations across different industries.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Case Study 1 -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-shvya-blue rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">🏥</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-shvya-charcoal">City Hospital</h3>
+                            <p class="text-sm text-gray-600">Healthcare ERP</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-semibold">Deployment Time</span>
+                            <span class="text-sm text-shvya-blue font-bold">3h 45m</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-semibold">Staff Trained</span>
+                            <span class="text-sm text-shvya-blue font-bold">200+</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-semibold">Efficiency Gain</span>
+                            <span class="text-sm text-shvya-blue font-bold">+45%</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">
+                        "The 4-hour deployment was incredible. Our entire hospital management system was live 
+                        with AI-powered patient care optimization before lunch. Amazing technology and service."
+                    </p>
+                </div>
+                
+                <!-- Case Study 2 -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-shvya-green rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">🍽️</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-shvya-charcoal">FoodChain Restaurants</h3>
+                            <p class="text-sm text-gray-600">Restaurant ERP</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-semibold">Deployment Time</span>
+                            <span class="text-sm text-shvya-green font-bold">3h 20m</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-semibold">Locations</span>
+                            <span class="text-sm text-shvya-green font-bold">15</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-semibold">Waste Reduction</span>
+                            <span class="text-sm text-shvya-green font-bold">-60%</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">
+                        "Shvya AI deployed our restaurant management system across 15 locations in under 4 hours. 
+                        The AI demand forecasting has revolutionized our inventory management."
+                    </p>
+                </div>
+                
+                <!-- Case Study 3 -->
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">🎓</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-shvya-charcoal">Global Education Academy</h3>
+                            <p class="text-sm text-gray-600">School ERP</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-semibold">Deployment Time</span>
+                            <span class="text-sm text-purple-600 font-bold">3h 55m</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-semibold">Students</span>
+                            <span class="text-sm text-purple-600 font-bold">5000+</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-semibold">Admin Efficiency</span>
+                            <span class="text-sm text-purple-600 font-bold">+70%</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">
+                        "The AI-powered school management system was deployed during our lunch break. Students 
+                        and teachers were using it by the end of the day. Truly remarkable technology."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-shvya-charcoal mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600">
+                    Everything you need to know about our revolutionary 4-hour AI deployment process.
+                </p>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">How is 4-hour deployment possible?</h3>
+                    <p class="text-gray-600">
+                        Our deployment process is powered by artificial intelligence that automates every step. 
+                        While traditional methods rely on human intervention, our AI systems work in parallel across 
+                        all phases, eliminating bottlenecks and human error.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">What if deployment takes longer than 4 hours?</h3>
+                    <p class="text-gray-600">
+                        In the rare case that we exceed 4 hours (less than 0.2% of deployments), your entire 
+                        deployment is completely free. That's our guarantee. We're that confident in our process.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">Is quality compromised for speed?</h3>
+                    <p class="text-gray-600">
+                        Absolutely not. Our AI systems actually improve quality by eliminating human error and 
+                        optimizing configurations based on data from thousands of successful deployments. We 
+                        maintain 99.9% uptime SLA with comprehensive testing.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">What about data migration and training?</h3>
+                    <p class="text-gray-600">
+                        Our AI handles intelligent data migration with real-time validation and transformation. 
+                        We also provide AI-powered training modules and 24/7 support to ensure your team is 
+                        comfortable with the new system from day one.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">Can you deploy to multiple locations?</h3>
+                    <p class="text-gray-600">
+                        Yes! Our AI can deploy to multiple locations simultaneously. We've successfully deployed 
+                        to organizations with 50+ locations in the same 4-hour window. Each deployment is 
+                        optimized for its specific environment.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="text-lg font-semibold text-shvya-charcoal mb-3">What happens after deployment?</h3>
+                    <p class="text-gray-600">
+                        Our AI monitoring systems continuously optimize performance. We provide 24/7 support, 
+                        automated updates, and intelligent scaling. Your AI solution keeps getting better over time 
+                        through machine learning optimization.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-shvya-blue to-shvya-orange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready for 4-Hour AI Deployment?</h2>
+            <p class="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+                Join thousands of businesses that have transformed their operations with our lightning-fast AI deployment. 
+                Your intelligent solution is just 4 hours away.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-shvya-blue px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all">
+                    Start 4-Hour Deployment
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-shvya-blue transition-all">
+                    Schedule AI Demo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-shvya-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-bold mb-4">
+                        <span class="text-shvya-blue">Shvya</span> AI
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        AI-powered business solutions deployed in 4 hours. Your intelligent technology partner for rapid digital transformation.
+                    </p>
+                    <div class="text-sm text-gray-400">
+                        © 2025 Shvya AI. All rights reserved.
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="shvya-products.html" class="hover:text-shvya-blue transition-colors">Shvya CRM</a></li>
+                        <li><a href="shvya-products.html" class="hover:text-shvya-blue transition-colors">Smart Billing Inventory</a></li>
+                        <li><a href="shvya-products.html" class="hover:text-shvya-blue transition-colors">School ERP</a></li>
+                        <li><a href="shvya-products.html" class="hover:text-shvya-blue transition-colors">Hospital ERP</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="shvya-services.html" class="hover:text-shvya-blue transition-colors">Web Development</a></li>
+                        <li><a href="shvya-services.html" class="hover:text-shvya-blue transition-colors">Digital Marketing</a></li>
+                        <li><a href="shvya-services.html" class="hover:text-shvya-blue transition-colors">AI Automation</a></li>
+                        <li><a href="shvya-services.html" class="hover:text-shvya-blue transition-colors">E-commerce Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">Video Tutorials</a></li>
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">AI Community</a></li>
+                        <li><a href="shvya-contact.html" class="hover:text-shvya-blue transition-colors">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate deployment stages
+            const stages = document.querySelectorAll('.deployment-stage');
+            stages.forEach((stage, index) => {
+                setTimeout(() => {
+                    stage.classList.add('active');
+                }, index * 500);
+            });
+
+            // Animate progress bars
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach((bar, index) => {
+                setTimeout(() => {
+                    anime({
+                        targets: bar,
+                        width: '100%',
+                        duration: 1000,
+                        easing: 'easeOutCubic'
+                    });
+                }, index * 500);
+            });
+
+            // Button click handlers
+            document.querySelectorAll('button').forEach(button => {
+                button.addEventListener('click', function() {
+                    if (this.textContent.includes('Start 4-Hour Deployment')) {
+                        alert('🤖 AI Deployment System: Initiating 4-hour deployment process. Our intelligent automation will begin provisioning your AI solution immediately. You will receive real-time updates via our AI chat system throughout the deployment process.');
+                    }
+                    
+                    if (this.textContent.includes('Schedule AI Demo')) {
+                        alert('🤖 AI Assistant: Demo scheduling system activated. Our AI specialist will contact you within 15 minutes to schedule a personalized demonstration of our 4-hour deployment process. You can also experience a live simulation of the deployment timeline.');
+                    }
+                    
+                    if (this.textContent.includes('Watch Process Video')) {
+                        alert('🤖 AI Media System: Preparing 4-hour deployment process visualization. This interactive video will show you exactly how our AI systems work together to deliver your solution in record time. The video includes real-time monitoring footage from actual deployments.');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

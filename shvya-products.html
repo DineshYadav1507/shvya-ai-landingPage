@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shvya AI Products - Intelligent Business Solutions</title>
+    <meta name="description" content="Explore Shvya AI's complete suite of AI-powered business solutions. CRM, ERP, HRM, and automation tools ready for 4-hour deployment.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    
+    <!-- Splide CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'shvya-navy': '#1a1d29',
+                        'shvya-blue': '#0066ff',
+                        'shvya-orange': '#ff6b35',
+                        'shvya-charcoal': '#2d3748',
+                        'shvya-green': '#10b981'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .product-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 25px 50px rgba(0, 102, 255, 0.2);
+        }
+        
+        .demo-preview {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        
+        .demo-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(0, 102, 255, 0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+        
+        .demo-preview:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .feature-badge {
+            background: linear-gradient(135deg, #0066ff, #0052cc);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .ai-glow {
+            box-shadow: 0 0 20px rgba(0, 102, 255, 0.3);
+        }
+        
+        .pulse-ai {
+            animation: pulse-ai 2s infinite;
+        }
+        
+        @keyframes pulse-ai {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.7); }
+            50% { box-shadow: 0 0 0 10px rgba(0, 102, 255, 0); }
+        }
+        
+        .book-call-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #0066ff, #ff6b35);
+            z-index: 40;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .book-call-cta.visible {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="shvya-index.html" class="text-2xl font-bold text-shvya-navy">
+                        <span class="text-shvya-blue">Shvya</span> AI
+                    </a>
+                    <div class="ml-2 text-xs bg-shvya-orange text-white px-2 py-1 rounded font-mono">4HR DEPLOY</div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="shvya-index.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Home</a>
+                    <a href="shvya-products.html" class="text-shvya-blue font-semibold">Products</a>
+                    <a href="shvya-services.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Services</a>
+                    <a href="shvya-about.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">About</a>
+                    <a href="shvya-deployment.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">4HR Deploy</a>
+                    <a href="shvya-contact.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="bg-shvya-blue text-white px-4 py-2 rounded-lg hover:bg-shvya-blue/90 transition-colors">
+                        🤖 AI Chat
+                    </button>
+                    <button class="bg-shvya-navy text-white px-6 py-2 rounded-lg hover:bg-shvya-navy/90 transition-colors font-semibold">
+                        Start Deploy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-shvya-navy to-shvya-charcoal pt-20 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-white">
+                <h1 class="text-5xl font-bold mb-6">Shvya AI Product Suite</h1>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                    Discover our comprehensive collection of AI-powered enterprise solutions, each designed for 
+                    intelligent automation, predictive analytics, and rapid 4-hour deployment.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <button class="bg-shvya-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-shvya-blue/90 transition-all ai-glow">
+                        Compare All Products
+                    </button>
+                    <button class="border-2 border-shvya-blue text-shvya-blue px-6 py-3 rounded-lg font-semibold hover:bg-shvya-blue hover:text-white transition-all">
+                        View AI Demos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Filter -->
+    <section class="py-8 bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm font-semibold text-shvya-charcoal">Filter by:</span>
+                    <select id="category-filter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-shvya-blue focus:border-transparent">
+                        <option value="all">All AI Solutions</option>
+                        <option value="crm">Customer Management</option>
+                        <option value="erp">Enterprise Resource Planning</option>
+                        <option value="hr">Human Resources</option>
+                        <option value="inventory">Inventory & Billing</option>
+                        <option value="location">Location Services</option>
+                    </select>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <input type="text" id="search-input" placeholder="Search AI products..." class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-shvya-blue focus:border-transparent">
+                    <button id="search-btn" class="bg-shvya-blue text-white px-4 py-2 rounded-lg hover:bg-shvya-blue/90 transition-colors">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="products-grid" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                
+                <!-- Shvya CRM -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-category="crm" data-name="shvya crm">
+                    <div class="demo-preview h-48 bg-gradient-to-br from-blue-50 to-blue-100">
+                        <div class="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-6xl mb-2">🤖</div>
+                                <div class="text-sm font-semibold text-shvya-charcoal">AI CRM Dashboard</div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="feature-badge">AI-CRM</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-bold text-shvya-charcoal">Shvya CRM</h3>
+                            <div class="text-right">
+                                <div class="text-sm text-shvya-green font-semibold">AI-Enhanced</div>
+                                <div class="text-xs text-gray-500">4hr deploy</div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4 text-sm">
+                            AI-powered customer relationship management with predictive analytics, automated lead scoring, and intelligent workflow optimization.
+                        </p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">🤖</span>
+                                AI-powered lead scoring
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">📊</span>
+                                Predictive analytics
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">🔄</span>
+                                Automated workflows
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">💡</span>
+                                Intelligent insights
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-xs text-gray-500">
+                                <span class="font-semibold text-shvya-orange">4hr</span> deployment
+                            </div>
+                            <div class="text-xs text-gray-500">
+                                99.9% uptime SLA
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-shvya-blue text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-shvya-blue/90 transition-all">
+                                View AI Demo
+                            </button>
+                            <button class="flex-1 bg-shvya-navy text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-shvya-navy/90 transition-all">
+                                Deploy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smart Billing Inventory -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-category="inventory" data-name="smart billing inventory">
+                    <div class="demo-preview h-48 bg-gradient-to-br from-green-50 to-green-100">
+                        <div class="w-full h-full bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-6xl mb-2">💰</div>
+                                <div class="text-sm font-semibold text-shvya-charcoal">AI Billing Dashboard</div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="feature-badge">AI-Billing</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-bold text-shvya-charcoal">Smart Billing Inventory</h3>
+                            <div class="text-right">
+                                <div class="text-sm text-shvya-green font-semibold">AI-Enhanced</div>
+                                <div class="text-xs text-gray-500">4hr deploy</div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4 text-sm">
+                            AI-driven inventory management with automated billing, demand forecasting, and intelligent stock optimization.
+                        </p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">📈</span>
+                                AI demand forecasting
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">🤖</span>
+                                Automated billing
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">📊</span>
+                                Stock optimization
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">💡</span>
+                                Financial analytics
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-xs text-gray-500">
+                                <span class="font-semibold text-shvya-orange">4hr</span> deployment
+                            </div>
+                            <div class="text-xs text-gray-500">
+                                99.9% uptime SLA
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-shvya-blue text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-shvya-blue/90 transition-all">
+                                View AI Demo
+                            </button>
+                            <button class="flex-1 bg-shvya-navy text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-shvya-navy/90 transition-all">
+                                Deploy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- School ERP -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-category="erp" data-name="school erp">
+                    <div class="demo-preview h-48 bg-gradient-to-br from-purple-50 to-purple-100">
+                        <div class="w-full h-full bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-6xl mb-2">🎓</div>
+                                <div class="text-sm font-semibold text-shvya-charcoal">AI School Dashboard</div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="feature-badge">AI-School</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-bold text-shvya-charcoal">School ERP</h3>
+                            <div class="text-right">
+                                <div class="text-sm text-shvya-green font-semibold">AI-Enhanced</div>
+                                <div class="text-xs text-gray-500">4hr deploy</div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4 text-sm">
+                            AI-enhanced educational management with smart attendance, automated grading, and predictive student performance analysis.
+                        </p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">👁️</span>
+                                AI attendance tracking
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">📝</span>
+                                Automated grading
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">📊</span>
+                                Performance analytics
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">🔮</span>
+                                Predictive modeling
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-xs text-gray-500">
+                                <span class="font-semibold text-shvya-orange">4hr</span> deployment
+                            </div>
+                            <div class="text-xs text-gray-500">
+                                99.9% uptime SLA
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-shvya-blue text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-shvya-blue/90 transition-all">
+                                View AI Demo
+                            </button>
+                            <button class="flex-1 bg-shvya-navy text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-shvya-navy/90 transition-all">
+                                Deploy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hospital ERP -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-category="erp" data-name="hospital erp">
+                    <div class="demo-preview h-48 bg-gradient-to-br from-red-50 to-red-100">
+                        <div class="w-full h-full bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-6xl mb-2">🏥</div>
+                                <div class="text-sm font-semibold text-shvya-charcoal">AI Hospital Dashboard</div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="feature-badge">AI-Hospital</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-bold text-shvya-charcoal">Hospital ERP</h3>
+                            <div class="text-right">
+                                <div class="text-sm text-shvya-green font-semibold">AI-Enhanced</div>
+                                <div class="text-xs text-gray-500">4hr deploy</div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4 text-sm">
+                            AI-powered healthcare management with predictive patient care, automated diagnostics, and intelligent resource allocation.
+                        </p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">🤖</span>
+                                AI patient care
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">🔬</span>
+                                Automated diagnostics
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">📊</span>
+                                Resource optimization
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">💡</span>
+                                Clinical decision support
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-xs text-gray-500">
+                                <span class="font-semibold text-shvya-orange">4hr</span> deployment
+                            </div>
+                            <div class="text-xs text-gray-500">
+                                99.9% uptime SLA
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-shvya-blue text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-shvya-blue/90 transition-all">
+                                View AI Demo
+                            </button>
+                            <button class="flex-1 bg-shvya-navy text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-shvya-navy/90 transition-all">
+                                Deploy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant ERP -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-category="erp" data-name="restaurant erp">
+                    <div class="demo-preview h-48 bg-gradient-to-br from-orange-50 to-orange-100">
+                        <div class="w-full h-full bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-6xl mb-2">🍽️</div>
+                                <div class="text-sm font-semibold text-shvya-charcoal">AI Restaurant Dashboard</div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="feature-badge">AI-Restaurant</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-bold text-shvya-charcoal">Restaurant ERP</h3>
+                            <div class="text-right">
+                                <div class="text-sm text-shvya-green font-semibold">AI-Enhanced</div>
+                                <div class="text-xs text-gray-500">4hr deploy</div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4 text-sm">
+                            AI-optimized food service management with demand forecasting, automated inventory, and intelligent menu optimization.
+                        </p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">📈</span>
+                                AI demand forecasting
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">📦</span>
+                                Automated inventory
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">🍽️</span>
+                                Menu optimization
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">👥</span>
+                                Smart scheduling
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-xs text-gray-500">
+                                <span class="font-semibold text-shvya-orange">4hr</span> deployment
+                            </div>
+                            <div class="text-xs text-gray-500">
+                                99.9% uptime SLA
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-shvya-blue text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-shvya-blue/90 transition-all">
+                                View AI Demo
+                            </button>
+                            <button class="flex-1 bg-shvya-navy text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-shvya-navy/90 transition-all">
+                                Deploy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HRM + Payroll -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-category="hr" data-name="hrm payroll">
+                    <div class="demo-preview h-48 bg-gradient-to-br from-indigo-50 to-indigo-100">
+                        <div class="w-full h-full bg-gradient-to-br from-indigo-50 to-indigo-100 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-6xl mb-2">👥</div>
+                                <div class="text-sm font-semibold text-shvya-charcoal">AI HRM Dashboard</div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="feature-badge">AI-HRM</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-bold text-shvya-charcoal">HRM + Payroll</h3>
+                            <div class="text-right">
+                                <div class="text-sm text-shvya-green font-semibold">AI-Enhanced</div>
+                                <div class="text-xs text-gray-500">4hr deploy</div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4 text-sm">
+                            AI-driven human resources with automated payroll, intelligent recruitment screening, and predictive employee retention modeling.
+                        </p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">🔍</span>
+                                AI recruitment screening
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">💰</span>
+                                Automated payroll
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">📊</span>
+                                Performance evaluation
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">🔮</span>
+                                Retention prediction
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-xs text-gray-500">
+                                <span class="font-semibold text-shvya-orange">4hr</span> deployment
+                            </div>
+                            <div class="text-xs text-gray-500">
+                                99.9% uptime SLA
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-shvya-blue text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-shvya-blue/90 transition-all">
+                                View AI Demo
+                            </button>
+                            <button class="flex-1 bg-shvya-navy text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-shvya-navy/90 transition-all">
+                                Deploy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geofencing -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-category="location" data-name="geofencing">
+                    <div class="demo-preview h-48 bg-gradient-to-br from-teal-50 to-teal-100">
+                        <div class="w-full h-full bg-gradient-to-br from-teal-50 to-teal-100 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-6xl mb-2">📍</div>
+                                <div class="text-sm font-semibold text-shvya-charcoal">AI Geofencing Dashboard</div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="feature-badge">AI-Location</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-bold text-shvya-charcoal">Geofencing</h3>
+                            <div class="text-right">
+                                <div class="text-sm text-shvya-green font-semibold">AI-Enhanced</div>
+                                <div class="text-xs text-gray-500">4hr deploy</div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4 text-sm">
+                            AI-powered location-based services with smart automation, predictive location analytics, and intelligent route optimization.
+                        </p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">🗺️</span>
+                                AI location analytics
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">⏰</span>
+                                Automated attendance
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">🛣️</span>
+                                Route optimization
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">🔮</span>
+                                Predictive alerts
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-xs text-gray-500">
+                                <span class="font-semibold text-shvya-orange">4hr</span> deployment
+                            </div>
+                            <div class="text-xs text-gray-500">
+                                99.9% uptime SLA
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-shvya-blue text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-shvya-blue/90 transition-all">
+                                View AI Demo
+                            </button>
+                            <button class="flex-1 bg-shvya-navy text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-shvya-navy/90 transition-all">
+                                Deploy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-commerce Platform -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-category="inventory" data-name="ecommerce">
+                    <div class="demo-preview h-48 bg-gradient-to-br from-pink-50 to-pink-100">
+                        <div class="w-full h-full bg-gradient-to-br from-pink-50 to-pink-100 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-6xl mb-2">🛒</div>
+                                <div class="text-sm font-semibold text-shvya-charcoal">AI E-commerce Dashboard</div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="feature-badge">AI-Ecom</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-bold text-shvya-charcoal">E-commerce Platform</h3>
+                            <div class="text-right">
+                                <div class="text-sm text-shvya-green font-semibold">AI-Enhanced</div>
+                                <div class="text-xs text-gray-500">4hr deploy</div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4 text-sm">
+                            AI-enhanced online commerce with predictive product recommendations, automated inventory, and intelligent pricing optimization.
+                        </p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">🎯</span>
+                                AI product recommendations
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">📦</span>
+                                Automated inventory
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">💰</span>
+                                Dynamic pricing
+                            </div>
+                            <div class="flex items-center text-xs text-gray-600">
+                                <span class="text-shvya-blue mr-2">📈</span>
+                                Sales analytics
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-xs text-gray-500">
+                                <span class="font-semibold text-shvya-orange">4hr</span> deployment
+                            </div>
+                            <div class="text-xs text-gray-500">
+                                99.9% uptime SLA
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-shvya-blue text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-shvya-blue/90 transition-all">
+                                View AI Demo
+                            </button>
+                            <button class="flex-1 bg-shvya-navy text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-shvya-navy/90 transition-all">
+                                Deploy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Comparison Table -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-shvya-charcoal mb-4">AI Product Comparison</h2>
+                <p class="text-lg text-gray-600">Compare AI features and capabilities across our product suite</p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-shvya-navy text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left">AI Feature</th>
+                                <th class="px-6 py-4 text-center">Shvya CRM</th>
+                                <th class="px-6 py-4 text-center">Smart Billing</th>
+                                <th class="px-6 py-4 text-center">School ERP</th>
+                                <th class="px-6 py-4 text-center">Hospital ERP</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 font-semibold">Machine Learning</td>
+                                <td class="px-6 py-4 text-center">🤖</td>
+                                <td class="px-6 py-4 text-center">🤖</td>
+                                <td class="px-6 py-4 text-center">🤖</td>
+                                <td class="px-6 py-4 text-center">🤖</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 font-semibold">Predictive Analytics</td>
+                                <td class="px-6 py-4 text-center">✓</td>
+                                <td class="px-6 py-4 text-center">✓</td>
+                                <td class="px-6 py-4 text-center">✓</td>
+                                <td class="px-6 py-4 text-center">✓</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-semibold">Computer Vision</td>
+                                <td class="px-6 py-4 text-center">-</td>
+                                <td class="px-6 py-4 text-center">✓</td>
+                                <td class="px-6 py-4 text-center">✓</td>
+                                <td class="px-6 py-4 text-center">✓</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 font-semibold">Natural Language Processing</td>
+                                <td class="px-6 py-4 text-center">✓</td>
+                                <td class="px-6 py-4 text-center">-</td>
+                                <td class="px-6 py-4 text-center">✓</td>
+                                <td class="px-6 py-4 text-center">✓</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-semibold">Automation</td>
+                                <td class="px-6 py-4 text-center">✓</td>
+                                <td class="px-6 py-4 text-center">✓</td>
+                                <td class="px-6 py-4 text-center">✓</td>
+                                <td class="px-6 py-4 text-center">✓</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book a Call CTA -->
+    <div class="book-call-cta py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <div class="text-white">
+                    <h3 class="text-lg font-semibold">Ready to deploy AI solutions?</h3>
+                    <p class="text-sm opacity-90">Book a consultation call with our AI specialists</p>
+                </div>
+                <div class="flex space-x-4">
+                    <button class="bg-white text-shvya-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all">
+                        Book AI Demo Call
+                    </button>
+                    <button class="bg-shvya-navy text-white px-6 py-3 rounded-lg font-semibold hover:bg-shvya-navy/90 transition-all">
+                        Start Deployment
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-shvya-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-bold mb-4">
+                        <span class="text-shvya-blue">Shvya</span> AI
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        AI-powered business solutions deployed in 4 hours. Your intelligent technology partner for rapid digital transformation.
+                    </p>
+                    <div class="text-sm text-gray-400">
+                        © 2025 Shvya AI. All rights reserved.
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">Shvya CRM</a></li>
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">Smart Billing Inventory</a></li>
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">School ERP</a></li>
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">Hospital ERP</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="shvya-services.html" class="hover:text-shvya-blue transition-colors">Web Development</a></li>
+                        <li><a href="shvya-services.html" class="hover:text-shvya-blue transition-colors">Digital Marketing</a></li>
+                        <li><a href="shvya-services.html" class="hover:text-shvya-blue transition-colors">AI Automation</a></li>
+                        <li><a href="shvya-services.html" class="hover:text-shvya-blue transition-colors">E-commerce Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">Video Tutorials</a></li>
+                        <li><a href="#" class="hover:text-shvya-blue transition-colors">AI Community</a></li>
+                        <li><a href="shvya-contact.html" class="hover:text-shvya-blue transition-colors">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryFilter = document.getElementById('category-filter');
+            const searchInput = document.getElementById('search-input');
+            const searchBtn = document.getElementById('search-btn');
+            const productsGrid = document.getElementById('products-grid');
+            const products = productsGrid.querySelectorAll('.product-card');
+            const bookCallCTA = document.querySelector('.book-call-cta');
+
+            // Show book call CTA on scroll
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 500) {
+                    bookCallCTA.classList.add('visible');
+                } else {
+                    bookCallCTA.classList.remove('visible');
+                }
+            });
+
+            // Filter by category
+            categoryFilter.addEventListener('change', function() {
+                const selectedCategory = this.value.toLowerCase();
+                
+                products.forEach(product => {
+                    const productCategory = product.dataset.category.toLowerCase();
+                    const shouldShow = selectedCategory === 'all' || productCategory === selectedCategory;
+                    
+                    if (shouldShow) {
+                        product.style.display = 'block';
+                        anime({
+                            targets: product,
+                            opacity: [0, 1],
+                            translateY: [20, 0],
+                            duration: 300,
+                            easing: 'easeOutCubic'
+                        });
+                    } else {
+                        anime({
+                            targets: product,
+                            opacity: [1, 0],
+                            translateY: [0, -20],
+                            duration: 200,
+                            easing: 'easeOutCubic',
+                            complete: () => {
+                                product.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Search functionality
+            function performSearch() {
+                const searchTerm = searchInput.value.toLowerCase();
+                
+                products.forEach(product => {
+                    const productName = product.dataset.name.toLowerCase();
+                    const shouldShow = productName.includes(searchTerm);
+                    
+                    if (shouldShow) {
+                        product.style.display = 'block';
+                        anime({
+                            targets: product,
+                            opacity: [0, 1],
+                            translateY: [20, 0],
+                            duration: 300,
+                            easing: 'easeOutCubic'
+                        });
+                    } else {
+                        anime({
+                            targets: product,
+                            opacity: [1, 0],
+                            translateY: [0, -20],
+                            duration: 200,
+                            easing: 'easeOutCubic',
+                            complete: () => {
+                                product.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            }
+
+            searchBtn.addEventListener('click', performSearch);
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+
+            // Animate product cards on load
+            products.forEach((product, index) => {
+                product.style.opacity = '0';
+                product.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    anime({
+                        targets: product,
+                        opacity: 1,
+                        translateY: 0,
+                        duration: 600,
+                        delay: index * 100,
+                        easing: 'easeOutCubic'
+                    });
+                }, 200);
+            });
+
+            // Demo button functionality
+            document.querySelectorAll('button').forEach(button => {
+                if (button.textContent.includes('View AI Demo')) {
+                    button.addEventListener('click', function() {
+                        const productCard = this.closest('.product-card');
+                        const productName = productCard.querySelector('h3').textContent;
+                        showAIDemoModal(productName);
+                    });
+                }
+                
+                if (button.textContent.includes('Deploy Now')) {
+                    button.addEventListener('click', function() {
+                        const productCard = this.closest('.product-card');
+                        const productName = productCard.querySelector('h3').textContent;
+                        showAIDeployModal(productName);
+                    });
+                }
+            });
+        });
+
+        function showAIDemoModal(productName) {
+            alert(`🤖 AI Demo System\n\nLaunching live AI demo for ${productName}...\n\nThis would open an interactive AI demonstration showing:\n• Real-time AI analytics and insights\n• Predictive modeling in action\n• Automated workflow processes\n• AI-powered recommendations\n\nOur AI specialist will guide you through the intelligent features.`);
+        }
+
+        function showAIDeployModal(productName) {
+            alert(`🤖 AI Deployment System\n\nStarting 4-hour AI deployment for ${productName}...\n\nAI-Powered Process:\n• Intelligent environment setup (30 mins)\n• Smart data migration with AI validation (90 mins)\n• Automated AI testing & optimization (90 mins)\n• Intelligent go-live with AI monitoring (30 mins)\n\nTotal: 4 hours maximum with AI acceleration`);
+        }
+    </script>
+</body>
+</html>
