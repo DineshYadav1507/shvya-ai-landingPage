@@ -7,6 +7,7 @@
     <meta name="description" content="Deploy AI-powered business software solutions in just 4 hours. CRM, ERP, HRM, and automation tools ready for immediate use with Shvya AI.">
     
     <!-- Fonts -->
+     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
@@ -20,121 +21,12 @@
     
     <!-- Splide CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+     <link rel="stylesheet" href="allcss.css">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'shvya-navy': '#1a1d29',
-                        'shvya-blue': '#0066ff',
-                        'shvya-orange': '#ff6b35',
-                        'shvya-charcoal': '#2d3748',
-                        'shvya-green': '#10b981'
-                    },
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                        'mono': ['JetBrains Mono', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
     
-    <style>
-        .hero-bg {
-            background: linear-gradient(135deg, #1a1d29 0%, #2d3748 100%);
-        }
-        
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #0066ff, #ff6b35);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .product-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-style: preserve-3d;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-8px) rotateX(5deg) rotateY(5deg);
-            box-shadow: 0 25px 50px rgba(0, 102, 255, 0.2);
-        }
-        
-        .floating-animation {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        .typewriter {
-            overflow: hidden;
-            border-right: 2px solid #0066ff;
-            white-space: nowrap;
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-        }
-        
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: #0066ff; }
-        }
-        
-        .deployment-stage {
-            opacity: 0;
-            transform: translateX(-50px);
-        }
-        
-        .deployment-stage.active {
-            opacity: 1;
-            transform: translateX(0);
-            transition: all 0.5s ease;
-        }
-        
-        .particle-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-        
-        .content-overlay {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .ai-glow {
-            box-shadow: 0 0 20px rgba(0, 102, 255, 0.3);
-        }
-        
-        .pulse-ai {
-            animation: pulse-ai 2s infinite;
-        }
-        
-        @keyframes pulse-ai {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.7); }
-            50% { box-shadow: 0 0 0 10px rgba(0, 102, 255, 0); }
-        }
-    </style>
+
 </head>
 <body class="bg-gray-50 font-inter">
     <!-- Navigation -->
@@ -145,7 +37,7 @@
                     <div class="text-2xl font-bold text-shvya-navy">
                         <span class="text-shvya-blue">Shvya</span> Ai
                     </div>
-                    <div class="ml-2 text-xs bg-shvya-orange text-white px-2 py-1 rounded font-mono">CRM ERP Inventory</div>
+                    <!-- <div class="ml-2 text-xs bg-shvya-orange text-white px-2 py-1 rounded font-mono">CRM ERP Inventory</div> -->
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-8">
@@ -215,7 +107,7 @@
                 </div>
                 
                 <div class="relative">
-                    <img src="shvya-resources/shvya-hero.png" alt="Shvya AI Solutions" class="w-full h-auto floating-animation">
+                    <img src="shvya-resources/indexmain.png" alt="Shvya AI Solutions" class="w-full h-auto floating-animation">
                     <div class="absolute -top-4 -right-4 bg-shvya-orange text-white px-4 py-2 rounded-lg font-bold animate-pulse">
                         Live Demo Available
                     </div>
@@ -226,252 +118,148 @@
 
     <!-- AI Product Showcase -->
    
- <!-- Product Showcase  -->
-<section id="products" class="py-1 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <!-- Product Showcase (UPDATED: full product list & refreshed content) -->
+<section id="enrollment-section" aria-labelledby="enroll-head" class="enroll-section">
+  <div class="container">
+    <!-- <div class="heading-row">
+      <div>
+        <h2 id="enroll-head" class="title"><strong>Product Suite — Solutions for Every Business</strong></h2>
+        <div class="subtitle"><strong>Inventory Billing System · School ERP · Hospital Management · HRM + Payroll · Ecommerce · Lead CRM · Learn LMS · Restaurant ERP</strong></div>
+      </div> -->
 
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-charcoal mb-4">Complete SaaS Product Suite</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Choose from our comprehensive collection of enterprise-grade software solutions,
-                each designed for rapid deployment and maximum performance.
-            </p>
+      <div class="controls">
+        <div class="pill-group" role="tablist" aria-label="Product filters">
+          <button class="pill active" data-filter="all" aria-pressed="true">All</button>
+          <button class="pill" data-filter="inventory">Inventory Billing</button>
+          <button class="pill" data-filter="school">School ERP</button>
+          <button class="pill" data-filter="hospital">Hospital</button>
+          <button class="pill" data-filter="hrm">HRM + Payroll</button>
+          <button class="pill" data-filter="ecom">Ecommerce</button>
+          <button class="pill" data-filter="crm">Lead CRM Master</button>
+          <!-- <button class="pill" data-filter="lms">Learn LMS Hub</button> -->
+          <button class="pill" data-filter="restaurant">Restaurant ERP</button>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-
-           <a href="Inventory Billing.html" class="block">
-    <div class="product-card bg-white rounded-xl shadow-lg p-6 cursor-pointer" data-product="inventory">
-        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">📦</span>
-        </div>
-        <h3 class="text-xl font-semibold text-charcoal mb-2">Inventory Billing</h3>
-        <p class="text-gray-600 mb-4">
-            Smart inventory, stock control & automated billing for retail and wholesale businesses.
-        </p>
-        <div class="mt-4 h-32 bg-gray-100 rounded-lg overflow-hidden">
-            <img src="https://kimi-web-img.moonshot.cn/img/www.veeqo.com/9f23316a0a99b2a3d32fe7860156f54cd518a6a2"
-                alt="Inventory Dashboard" class="w-full h-full object-cover">
-        </div>
+        <!-- <div class="search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 21l-4.35-4.35" stroke="#334155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <input id="search-input" placeholder="Search products" aria-label="Search products" />
+        </div> -->
+      </div>
     </div>
-</a>
 
+    <div class="grid" id="product-cards">
+      <!-- Inventory Billing System -->
+      <a class="card-link" href="Inventory Billing.html" data-tags="inventory">
+        <article class="card" tabindex="0">
+          <img class="card-img" src="shvya-resources/inventory2.png" alt="Inventory Billing">
+          <div class="card-header">
+            <h3>Inventory Billing System (POS)</h3>
+            <span class="tag">New</span>
+          </div>
+          <p class="card-desc">Complete POS + inventory control with barcode scanning, multi-location stock, billing and GST-ready invoices.</p>
+          <div class="card-meta">
+            <span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span>
+          </div>
+        </article>
+      </a>
 
-<!-- 2. CRM & Lead Management -->
-<a href="CRM & Lead Manager.html" class="block">
-    <div class="product-card bg-white rounded-xl shadow-lg p-6 cursor-pointer" data-product="crm">
-        <div class="w-16 h-16 bg-cyan-100 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">📞</span>
-        </div>
-        <h3 class="text-xl font-semibold text-charcoal mb-2">CRM & Lead Manager</h3>
-        <p class="text-gray-600 mb-4">
-            Manage leads, automate follow-ups, track sales activities and boost conversions.
-        </p>
-        <div class="mt-4 h-32 bg-gray-100 rounded-lg overflow-hidden">
-            <img src="https://kimi-web-img.moonshot.cn/img/www.clickmaint.com/5dd4b0fc95ae6b230dea9fd316bfabecd1f4cd07.png"
-                alt="CRM Dashboard" class="w-full h-full object-cover">
-        </div>
+      <!-- School ERP -->
+      <a class="card-link" href="School ERP.html" data-tags="school crm">
+        <article class="card" tabindex="0">
+          <img class="card-img" src="shvya-resources/school.png" alt="School ERP">
+          <div class="card-header">
+            <h3>School ERP</h3>
+          </div>
+          <p class="card-desc">Manage admissions, fees, attendance, timetables, parent communications and student records — centralised and secure.</p>
+          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+        </article>
+      </a>
+
+      <!-- Hospital Management -->
+      <a class="card-link" href="Hospital ERP.html" data-tags="hospital">
+        <article class="card" tabindex="0">
+          <img class="card-img" src="shvya-resources/docker.png" alt="Hospital Management">
+          <div class="card-header">
+            <h3>Hospital Management</h3>
+            <span class="tag" style="background:#fff4e6;color:#92400e">HIPAA-Ready</span>
+          </div>
+          <p class="card-desc">Patient records, appointments, pharmacy, lab integration and billing — built for clinics and hospitals.</p>
+          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+        </article>
+      </a>
+
+      <!-- HRM + Payroll -->
+      <a class="card-link" href="hrm.html" data-tags="hrm payroll">
+        <article class="card" tabindex="0">
+          <img class="card-img" src="shvya-resources/hrm pic.png" alt="HRM Payroll">
+          <div class="card-header">
+            <h3>HRM + Payroll</h3>
+          </div>
+          <p class="card-desc">Employee lifecycle, attendance, payroll processing, statutory reports and compliance — automated and auditable.</p>
+          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+        </article>
+      </a>
+
+      <!-- Ecommerce Website -->
+      <a class="card-link" href="Ecommerce.html" data-tags="ecom">
+        <article class="card" tabindex="0">
+          <!-- Using uploaded high-res city banner as visual placeholder -->
+          <img class="card-img" src="shvya-resources/ecomerce.png" alt="Ecommerce Website">
+          <div class="card-header">
+            <h3>Ecommerce Website</h3>
+          </div>
+          <p class="card-desc">Modern online storefronts, secure checkout, payments, shipping integrations and admin dashboards to scale sales.</p>
+          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+        </article>
+      </a>
+
+      <!-- Lead CRM Master -->
+      <a class="card-link" href="Lead CRM Master.html" data-tags="crm leads">
+        <article class="card" tabindex="0">
+          <img class="card-img" src="shvya-resources/lead.png" alt="Lead CRM Master">
+          <div class="card-header">
+            <h3>Lead CRM Master</h3>
+          </div>
+          <p class="card-desc">Lead capture, nurturing, pipeline management, automated workflows and reporting — close more deals, faster.</p>
+          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+        </article>
+      </a>
+
+      <!-- Learn LMS Hub -->
+      <a class="card-link" href="Learn LMS Hub.html" data-tags="lms learning">
+        <article class="card" tabindex="0">
+          <img class="card-img" src="shvya-resources/lern lms.png" alt="Learn LMS Hub">
+          <div class="card-header">
+            <h3>Learn LMS Hub</h3>
+          </div>
+          <p class="card-desc">Course management, assessments, certificates, blended learning and analytics for institutions and enterprises.</p>
+          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+        </article>
+      </a>
+
+      <!-- Restaurant ERP -->
+      <a class="card-link" href="Restaurant ERP.html" data-tags="restaurant pos">
+        <article class="card" tabindex="0">
+          <img class="card-img" src="shvya-resources/restorent.png" alt="Restaurant ERP">
+          <div class="card-header">
+            <h3>Restaurant ERP</h3>
+          </div>
+          <p class="card-desc">Kitchen orders, table management, inventory-to-recipe, billing and delivery — one system for Dine-in & Cloud kitchens.</p>
+          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+        </article>
+      </a>
     </div>
-</a>
 
-
-<!-- 3. School ERP -->
-<a href="School ERP.html" class="block">
-    <div class="product-card bg-white rounded-xl shadow-lg p-6 cursor-pointer" data-product="school">
-        <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">🎓</span>
-        </div>
-        <h3 class="text-xl font-semibold text-charcoal mb-2">School ERP</h3>
-        <p class="text-gray-600 mb-4">
-            Modern school management with student data, attendance, exams, fees & communication.
-        </p>
-        <div class="mt-4 h-32 bg-gray-100 rounded-lg overflow-hidden">
-            <img src="https://kimi-web-img.moonshot.cn/img/eskooly.com/3972e8d1cd8095efb5fd264fd6337700cb1e5e19.png"
-                alt="School Dashboard" class="w-full h-full object-cover">
-        </div>
-    </div>
-</a>
-
-
-<!-- 4. Hospital ERP -->
-<a href="Hospital ERP.html" class="block">
-    <div class="product-card bg-white rounded-xl shadow-lg p-6 cursor-pointer" data-product="hospital">
-        <div class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">🏥</span>
-        </div>
-        <h3 class="text-xl font-semibold text-charcoal mb-2">Hospital ERP</h3>
-        <p class="text-gray-600 mb-4">
-            Patient management, OPD/IPD, billing, pharmacy, labs & complete hospital automation.
-        </p>
-        <div class="mt-4 h-32 bg-gray-100 rounded-lg overflow-hidden">
-            <img src="https://kimi-web-img.moonshot.cn/img/peoplemanagingpeople.com/59ecd7ded045e83d040b931514b8203ed3abf3f3.png"
-                alt="Hospital ERP" class="w-full h-full object-cover">
-        </div>
-    </div>
-</a>
-
-
-<!-- View All Button -->
-<div class="w-full flex justify-center mt-10">
-    <a href="products.html"
-        class="px-8 py-4 bg-blue-600 text-white text-lg font-semibold rounded-lg hover:bg-blue-700 transition-all inline-block text-center">
-        View All Products
-    </a>
-</div>
-
-    </div>
+    <div id="no-results" class="empty" style="display:none">No products match your search/filter.</div>
+  </div>
 </section>
+<!-- card end  -->
+
+
 
 
     <!-- Services Overview 1 -->
-    <!-- Problem / System Gap Section (HTML + CSS + JS inside section) -->
-<section id="problem-gap" class="py-12">
-  <style>
-    :root{
-      --bg:#f7fbfd;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --accent:#e6eefc;
-      --pill:#eef4ff;
-      --title:#1f2937;
-      --card-shadow: 0 10px 24px rgba(13,34,64,0.06);
-      --radius:14px;
-    }
-
-    /* Section wrapper */
-    #problem-gap{
-      background: var(--bg);
-      padding-left: 3.5rem;
-      padding-right: 3.5rem;
-    }
-
-    #problem-gap .container{
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Heading */
-    #problem-gap .heading {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    #problem-gap .heading h2{
-      font-size: 28px;
-      color: var(--title);
-      margin: 0 0 6px;
-      font-weight: 800;
-      letter-spacing: -0.2px;
-    }
-    #problem-gap .heading p{
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    /* Grid */
-    #problem-gap .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px 26px;
-      margin-top: 28px;
-    }
-
-    /* Card */
-    .gap-card{
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--card-shadow);
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      position: relative;
-      border: 1px solid rgba(15, 40, 75, 0.04);
-    }
-
-    /* icon pill */
-    .gap-card .icon-pill{
-      width: 56px;
-      height: 56px;
-      border-radius: 12px;
-      background: var(--pill);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:20px;
-      flex-shrink:0;
-      box-shadow: 0 6px 18px rgba(30,64,175,0.03) inset;
-    }
-
-    .gap-card .content{
-      flex:1;
-    }
-
-    .gap-card .title-row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 8px;
-    }
-
-    .gap-card h3{
-      margin:0;
-      font-size:16px;
-      color: #12223b;
-      font-weight:700;
-    }
-
-    .gap-card p.desc{
-      margin:8px 0 0;
-      color: var(--muted);
-      font-size:14px;
-      line-height:1.45;
-    }
-
-    /* Details box (hidden by default) */
-    .gap-card .details {
-      margin-top:12px;
-      background: linear-gradient(180deg, rgba(230,240,255,0.9), rgba(243,247,255,0.9));
-      padding: 12px;
-      border-radius: 10px;
-      color: #123047;
-      font-size: 13px;
-      display: none;
-    }
-
-    .details .label{font-weight:700; display:block; margin-bottom:6px;}
-    .details .small{ font-weight:600; color:#0e243a; margin-bottom:6px; }
-
-    /* Toggle arrow */
-    .toggle-arrow{
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      transition: transform 0.25s ease;
-      color: rgba(15,30,60,0.6);
-      flex-shrink:0;
-    }
-    .toggle-arrow svg{ display:block; }
-
-    /* Active states */
-    .gap-card.open {
-      border-color: rgba(30,64,175,0.12);
-      box-shadow: 0 18px 40px rgba(15,30,60,0.05);
-    }
-    .gap-card.open .details{ display:block; }
-    .gap-card.open .toggle-arrow{ transform: rotate(180deg); }
-
-    /* Responsive */
-    @media (max-width: 900px){
-      #problem-gap .grid{ grid-template-columns: 1fr; }
-      #problem-gap { padding-left: 1.25rem; padding-right: 1.25rem; }
-      .gap-card{ padding:14px; }
-      .gap-card .icon-pill{ width:48px; height:48px; font-size:18px; }
-    }
+<section id="problem-gap" class="py-12"></section>
   </style>
 
   <div class="container">
@@ -709,249 +497,7 @@
 </section>
 
  <!-- Services Overview 3 -->
-  <!-- Combined Why Choose Shvya & What You Can Achieve (2x2) -->
-<section id="shvya-combined" class="py-16">
-  <style>
-    :root{
-      --bg: #f6f9fb;
-      --dark-1: #072b3a;
-      --dark-2: #093241;
-      --muted: #6b7280;
-      --accent-green: #06b6a4;
-      --card-white: #ffffff;
-      --radius: 14px;
-    }
-
-    #shvya-combined{ background: var(--bg); padding-left: 1.5rem; padding-right: 1.5rem; }
-    .shvya-inner{ max-width:1180px; margin:0 auto; display:grid; grid-template-columns: 1fr 420px; gap:28px; align-items:start; }
-
-    /* Heading above left card */
-    .shvya-title h2{ font-size:28px; margin:0 0 6px; color:#0f1724; font-weight:800; }
-    .shvya-title p{ margin:0 0 18px; color:var(--muted); font-size:15px; }
-
-    /* Left big dark card */
-    .why-card{
-      background: linear-gradient(180deg, var(--dark-1), var(--dark-2));
-      color: #e6fbff;
-      padding: 28px;
-      border-radius: var(--radius);
-      box-shadow: 0 14px 40px rgba(6,32,44,0.08);
-      border: 1px solid rgba(255,255,255,0.03);
-    }
-    .why-list{ margin-top: 6px; }
-    .why-row{ display:flex; gap:12px; margin-bottom:12px; align-items:flex-start; }
-    .why-check{
-      width:36px;height:36px;border-radius:8px;background:var(--accent-green);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;flex-shrink:0;
-      box-shadow: 0 6px 18px rgba(6,182,164,0.12) inset;
-    }
-    .why-row h4{ margin:0; font-size:15px; color:#e9fbff; font-weight:700; }
-    .why-row p{ margin:6px 0 0; color: rgba(235,248,255,0.95); font-size:13px; line-height:1.45; opacity:0.95; }
-
-    .testimonial{
-      margin-top:18px;
-      background: rgba(255,255,255,0.04);
-      padding:14px;border-radius:10px;color:rgba(230,245,255,0.95);
-      font-size:13px; line-height:1.45;
-    }
-    .testimonial .who{ display:block; margin-top:10px; font-weight:700; opacity:0.9; font-size:13px; }
-
-    /* Right KPI small card (2x2) */
-    .kpi-card{
-      background: var(--card-white);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: 0 14px 32px rgba(11,22,40,0.06);
-      border: 1px solid rgba(10,20,35,0.04);
-    }
-    .kpi-title{ font-weight:700; margin:0 0 12px; color:#0f1724; font-size:16px; }
-    .kpi-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; }
-
-    .kpi-tile{
-      background: linear-gradient(180deg, #fbfdff, #f6fbff);
-      border-radius:12px;
-      padding:12px;
-      display:flex;
-      gap:12px;
-      align-items:center;
-      border: 1px solid rgba(10,20,35,0.03);
-      transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s;
-    }
-    .kpi-tile:hover{ transform: translateY(-6px); box-shadow: 0 18px 40px rgba(12,34,60,0.08); }
-
-    .kpi-ring{
-      width:76px;height:76px; display:flex;align-items:center;justify-content:center;flex-shrink:0;border-radius:12px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(246,250,255,0.9));
-      box-shadow: inset 0 -6px 18px rgba(12,34,60,0.03);
-    }
-    .kpi-info{ font-size:13px; color:#12223b; }
-    .kpi-info .num{ font-weight:800; display:block; font-size:17px; }
-    .kpi-info .label{ color:var(--muted); font-weight:600; font-size:12px; margin-top:6px; }
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .shvya-inner{ grid-template-columns: 1fr; }
-      .kpi-grid{ grid-template-columns: repeat(2,1fr); }
-    }
-    @media (max-width:520px){
-      .kpi-grid{ grid-template-columns: 1fr 1fr; gap:10px; }
-      .kpi-ring{ width:64px;height:64px; }
-    }
-  </style>
-
-  <div class="shvya-inner">
-    <div>
-      <div class="shvya-title">
-        <h2>We Don’t Just Build Software — We Solve Business Problems</h2>
-        <p>Our goal is simple: To help you run your business, not *chase* after it. Shvya is built for business owners who are done with chaos — who want systems that *just work*.</p>
-      </div>
-
-      <div class="why-card" role="region" aria-label="Why Choose Shyva">
-        <div class="why-list">
-          <div class="why-row">
-            <div class="why-check">✓</div>
-            <div>
-              <h4>All-in-One Platform</h4>
-              <p>CRM, HR, Inventory, ERP, Billing — all connected.</p>
-            </div>
-          </div>
-
-          <div class="why-row">
-            <div class="why-check">✓</div>
-            <div>
-              <h4>Tailored for Indian Businesses</h4>
-              <p>Local compliance, support, and user-friendly design.</p>
-            </div>
-          </div>
-
-          <div class="why-row">
-            <div class="why-check">✓</div>
-            <div>
-              <h4>Instant Deployment</h4>
-              <p>Get started in days, not weeks.</p>
-            </div>
-          </div>
-
-          <div class="why-row">
-            <div class="why-check">✓</div>
-            <div>
-              <h4>Scalable for Every Size</h4>
-              <p>From startups to enterprises.</p>
-            </div>
-          </div>
-
-          <div class="why-row">
-            <div class="why-check">✓</div>
-            <div>
-              <h4>Data Transparency</h4>
-              <p>Visibility that drives decisions.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial" aria-label="Customer testimonial">
-          “With Shyva, we finally stopped using 5 different tools. Now everything — leads, HR, billing, and analytics — runs in one place.”
-          <span class="who">CEO, Tech Training Company</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right side: 2x2 KPI card -->
-    <aside class="kpi-card" aria-label="What You Can Achieve">
-      <h3 class="kpi-title">What You Can Achieve</h3>
-
-      <div class="kpi-grid">
-        <!-- KPI 1 -->
-        <div class="kpi-tile" data-percent="75" data-value="3x">
-          <div class="kpi-ring" aria-hidden="true">
-            <svg viewBox="0 0 36 36" width="56" height="56" class="donut">
-              <defs><linearGradient id="a1"><stop offset="0%" stop-color="#ff8a66"/><stop offset="100%" stop-color="#ff6b4b"/></linearGradient></defs>
-              <circle r="15.9155" cx="18" cy="18" fill="none" stroke="#eef3f7" stroke-width="4"></circle>
-              <circle r="15.9155" cx="18" cy="18" fill="none" stroke="url(#a1)" stroke-width="4" stroke-linecap="round" stroke-dasharray="0,100" transform="rotate(-90 18 18)"></circle>
-              <text x="18" y="20.5" font-size="6.2" text-anchor="middle" fill="#12223b" font-weight="700">3x</text>
-            </svg>
-          </div>
-          <div class="kpi-info">
-            <span class="num">3x</span>
-            <span class="label">faster lead response</span>
-          </div>
-        </div>
-
-        <!-- KPI 2 -->
-        <div class="kpi-tile" data-percent="50" data-value="2x">
-          <div class="kpi-ring" aria-hidden="true">
-            <svg viewBox="0 0 36 36" width="56" height="56" class="donut">
-              <circle r="15.9155" cx="18" cy="18" fill="none" stroke="#eef3f7" stroke-width="4"></circle>
-              <circle r="15.9155" cx="18" cy="18" fill="none" stroke="#7dd3fc" stroke-width="4" stroke-linecap="round" stroke-dasharray="0,100" transform="rotate(-90 18 18)"></circle>
-              <text x="18" y="20.5" font-size="6.2" text-anchor="middle" fill="#12223b" font-weight="700">2x</text>
-            </svg>
-          </div>
-          <div class="kpi-info">
-            <span class="num">2x</span>
-            <span class="label">higher team productivity</span>
-          </div>
-        </div>
-
-        <!-- KPI 3 -->
-        <div class="kpi-tile" data-percent="60" data-value="60%">
-          <div class="kpi-ring" aria-hidden="true">
-            <svg viewBox="0 0 36 36" width="56" height="56" class="donut">
-              <circle r="15.9155" cx="18" cy="18" fill="none" stroke="#eef3f7" stroke-width="4"></circle>
-              <circle r="15.9155" cx="18" cy="18" fill="none" stroke="#ffd27a" stroke-width="4" stroke-linecap="round" stroke-dasharray="0,100" transform="rotate(-90 18 18)"></circle>
-              <text x="18" y="20.5" font-size="6.2" text-anchor="middle" fill="#12223b" font-weight="700">60%</text>
-            </svg>
-          </div>
-          <div class="kpi-info">
-            <span class="num">60%</span>
-            <span class="label">reduction in manual tasks</span>
-          </div>
-        </div>
-
-        <!-- KPI 4 -->
-        <div class="kpi-tile" data-percent="100" data-value="100%">
-          <div class="kpi-ring" aria-hidden="true">
-            <svg viewBox="0 0 36 36" width="56" height="56" class="donut">
-              <circle r="15.9155" cx="18" cy="18" fill="none" stroke="#eef3f7" stroke-width="4"></circle>
-              <circle r="15.9155" cx="18" cy="18" fill="none" stroke="#7c83ff" stroke-width="4" stroke-linecap="round" stroke-dasharray="0,100" transform="rotate(-90 18 18)"></circle>
-              <text x="18" y="20.5" font-size="6.2" text-anchor="middle" fill="#12223b" font-weight="700">100%</text>
-            </svg>
-          </div>
-          <div class="kpi-info">
-            <span class="num">100%</span>
-            <span class="label">visibility into daily operations</span>
-          </div>
-        </div>
-
-      </div>
-    </aside>
-  </div>
-
-  <script>
-    (function(){
-      // Animate donut stroke when tile becomes visible
-      const tiles = document.querySelectorAll('#shvya-combined .kpi-tile');
-
-      function setDash(circle, percent) {
-        circle.setAttribute('stroke-dasharray', percent + ',100');
-      }
-
-      const io = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          const tile = entry.target;
-          const percent = Number(tile.getAttribute('data-percent')) || 0;
-          const svg = tile.querySelector('svg.donut');
-          const prog = svg.querySelectorAll('circle')[1];
-          prog.style.transition = 'stroke-dasharray 900ms cubic-bezier(.2,.9,.2,1)';
-          setTimeout(() => setDash(prog, percent), 80);
-          obs.unobserve(tile);
-        });
-      }, { threshold: 0.28 });
-
-      tiles.forEach(t => io.observe(t));
-    })();
-  </script>
-</section>
-
+ 
 
  <!-- Services Overview 4 -->
     <section class="py-20 bg-white">
@@ -1403,5 +949,6 @@
     </div>
 
     <script src="shvya-main.js"></script>
+    <script src="alljs.js"></script>
 </body>
 </html>

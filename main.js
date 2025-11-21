@@ -590,3 +590,5 @@ function addHoverEffects() {
 
 // Initialize hover effects after DOM is loaded
 document.addEventListener('DOMContentLoaded', addHoverEffects);
+
+
