@@ -1,217 +1,180 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Enrollment & CRM Section — Demo</title>
-  <style>
-    :root{
-      --bg:#f7fafc; --card:#ffffff; --muted:#6b7280; --accent:#2563eb; --accent-2:#06b6d4; --radius:12px;
-      --shadow: 0 6px 18px rgba(16,24,40,0.06);
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-    body{margin:0;background:var(--bg);color:#0f172a}
-    .section{max-width:1100px;margin:56px auto;padding:24px}
-    .heading-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
-    .title{font-size:20px;font-weight:600}
-    .subtitle{color:var(--muted);font-size:13px}
-
-    /* buttons */
-    .pill-group{display:flex;gap:10px;flex-wrap:wrap}
-    .pill{background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(15,23,42,0.06);padding:10px 14px;border-radius:999px;font-weight:600;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:8px;box-shadow:var(--shadow);transition:all .18s}
-    .pill svg{opacity:.85}
-    .pill.active{color:#fff;background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 10px 30px rgba(37,99,235,0.14);transform:translateY(-3px)}
-
-    /* grid */
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
-    @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:600px){.grid{grid-template-columns:1fr}}
-
-    .card{background:var(--card);border-radius:var(--radius);padding:18px;border:1px solid rgba(15,23,42,0.04);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
-    .card h4{margin:0;font-size:16px}
-    .card p{margin:0;color:var(--muted);font-size:13px}
-    .card .meta{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--muted)}
-    .tag{background:#eef2ff;color:#3730a3;padding:6px 8px;border-radius:8px;font-weight:600;font-size:12px}
-
-    /* controls */
-    .controls{display:flex;gap:12px;align-items:center}
-    .search{border:1px solid rgba(15,23,42,0.06);background:#fff;padding:8px 12px;border-radius:999px;display:flex;align-items:center;gap:8px}
-    .search input{border:0;outline:0;font-size:14px}
-
-    /* empty state */
-    .empty{padding:28px;border:2px dashed rgba(2,6,23,0.06);border-radius:10px;text-align:center;color:var(--muted)}
-
-    /* micro */
-    .badge{background:#ecfeff;color:#036666;padding:6px 8px;border-radius:8px;font-weight:700;font-size:12px}
-    .kpi{display:flex;gap:10px;align-items:center}
-    .kpi strong{font-size:18px}
-    /* added styling: modern card visuals, hover, responsive images */
-    .card-link{display:block;text-decoration:none;color:inherit}
-    .card img{width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:12px}
-    .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.12)}
-    .card{transition:transform .18s,box-shadow .18s}
-    .subtitle{opacity:0.85}
-    @media(max-width:600px){.section{padding:16px;margin:24px auto}.title{font-size:18px}.subtitle{display:none}.card img{height:140px}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blank Page - Shvya AI</title>
+<!-- Fonts -->
+     
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
-  </style>
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
+    
+    <!-- Splide CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+     <link rel="stylesheet" href="allcss.css">
+
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'shvya-navy': '#1a1d29',
+                        'shvya-blue': '#0066ff',
+                        'shvya-orange': '#ff6b35',
+                        'shvya-charcoal': '#2d3748',
+                        'shvya-green': '#10b981'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Minimal custom styles for header/footer only */
+        .hero-bg {
+            background: linear-gradient(135deg, #1a1d29 0%, #2d3748 100%);
+        }
+    </style>
 </head>
-<body>
-  <section class="section" aria-labelledby="enroll-head">
-    <div class="heading-row">
-      <div>
-        <div class="title" id="enroll-head">Enrollment Cloud — Product Suite</div>
-        <div class="subtitle">Enrollment Cloud · Education CRM · Application Platform · Education Payment Cloud · Modern Engagement Suite · Mio AI</div>
-      </div>
+<body class="bg-gray-50 font-inter min-h-screen flex flex-col">
 
-      <div class="controls">
-        <div class="pill-group" role="tablist" aria-label="Product filters">
-          <button class="pill active" data-filter="all" aria-pressed="true">All</button>
-          <button class="pill" data-filter="enrollment">Enrollment Cloud</button>
-          <button class="pill" data-filter="crm">Education CRM</button>
-          <button class="pill" data-filter="platform">Application Platform</button>
-          <button class="pill" data-filter="payment">Education Payment</button>
-          <button class="pill" data-filter="engagement">Engagement Suite</button>
-          <button class="pill" data-filter="ai">Mio AI</button>
-        </div>
-        <div class="search" style="margin-left:12px">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 21l-4.35-4.35" stroke="#334155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <input id="search" placeholder="Search products" aria-label="Search products" />
+  <!-- Navigation (Header) – now with mobile menu -->
+<nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+
+      <!-- Brand -->
+      <div class="flex items-center">
+        <div class="text-2xl font-bold text-shvya-navy">
+          <span class="text-shvya-blue">Shvya</span> Ai
         </div>
       </div>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="text-shvya-blue font-semibold">Home</a>
+        <a href="products.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Products</a>
+        <a href="shvya-services.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Services</a>
+        <a href="shvya-about.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">About</a>
+        <a href="shvya-deployment.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">4HR Deploy</a>
+        <a href="shvya-contact.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Contact</a>
+      </div>
+
+      <!-- Right CTA + hamburger -->
+      <div class="flex items-center space-x-4">
+        <a href="bookacall.html" class="hidden md:inline-block bg-shvya-blue text-white px-4 py-2 rounded-lg hover:bg-shvya-blue/90 transition-colors">
+          Book a Call
+        </a>
+
+        <!-- Hamburger (mobile only) -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-shvya-charcoal hover:text-shvya-blue focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
+  </div>
 
-    <div class="grid" id="cards">
-      <!-- card: Enrollment Cloud -->
-      <a href="product-details.html" class="card-link"><article class="card" data-tags="enrollment platform" tabindex="0">
-        <img src="product-image.png" alt="Enrollment Image" style="width:100%;border-radius:10px;margin-bottom:12px">
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <h4>Enrollment Cloud</h4>
-          <div class="tag">New</div>
-        </div>
-        <p>Streamline student admissions with forms, verifications, and automated workflows. Integrated with CRM for follow-ups.</p>
-        <!-- price section removed -->
-        <div class="meta">
-          <div style="flex:1"></div>
-          <div class="badge">SaaS</div>
-        </div>
-      </article></a>
-
-      <!-- card: Education CRM -->
-      <a href="product-details.html" class="card-link"><article class="card" data-tags="crm engagement" tabindex="0">
-        <img src="product-image.png" alt="CRM Image" style="width:100%;border-radius:10px;margin-bottom:12px">
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <h4>Education CRM</h4>
-          <svg width="38" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 7h18" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/><path d="M7 11h10" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/><path d="M10 15h4" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <p>Manage student & parent relationships, communications, segmentation, and activity tracking tailored for institutions.</p>
-        <!-- price section removed -->
-        <div class="meta">
-          <div style="flex:1"></div>
-          <div class="badge">CRM</div>
-        </div>
-      </article></a>
-
-      <!-- card: Application Platform -->
-      <a href="product-details.html" class="card-link"><article class="card" data-tags="platform enrollment" tabindex="0">
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <h4>Application Platform</h4>
-          <div class="tag" style="background:#fff4e6;color:#92400e">Beta</div>
-        </div>
-        <p>Customize admission forms, build multi-step flows and validations, publish to web and mobile with one click.</p>
-        <!-- price section removed -->
-        <div class="meta">
-          <div style="flex:1"></div>
-          <div class="badge">Platform</div>
-        </div>
-      </article></a>
-
-      <!-- card: Education Payment Cloud -->
-      <a href="product-details.html" class="card-link"><article class="card" data-tags="payment" tabindex="0">
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <h4>Education Payment Cloud</h4>
-          <div class="tag" style="background:#eef2ff;color:#1e40af">PCI</div>
-        </div>
-        <p>Secure fee payments, auto-reconciliation, scholarships, and instalment plans — built for educational billing needs.</p>
-        <!-- price section removed -->
-        <div class="meta">
-          <div style="flex:1"></div>
-          <div class="badge">Payments</div>
-        </div>
-      </article></a>
-
-      <!-- card: Modern Engagement Suite -->
-      <a href="product-details.html" class="card-link"><article class="card" data-tags="engagement crm" tabindex="0">
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <h4>Modern Engagement Suite</h4>
-          <svg width="36" height="28" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="2" stroke="#0f172a" stroke-width="1.4"/><circle cx="12" cy="12" r="2" stroke="#0f172a" stroke-width="1.4"/><circle cx="18" cy="12" r="2" stroke="#0f172a" stroke-width="1.4"/></svg>
-        </div>
-        <p>Multi-channel messaging, automated campaigns, surveys, and in-app notifications to nurture students & alumni.</p>
-        <!-- price section removed -->
-        <div class="meta">
-          <div style="flex:1"></div>
-          <div class="badge">Engage</div>
-        </div>
-      </article></a>
-
-      <!-- card: Mio AI -->
-      <a href="product-details.html" class="card-link"><article class="card" data-tags="ai crm" tabindex="0">
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <h4>Mio AI</h4>
-          <div class="tag" style="background:#e6fffa;color:#065f46">AI</div>
-        </div>
-        <p>AI assistants for enrollment screening, auto-responses, sentiment analysis, and predictive lead scoring.</p>
-        <!-- price section removed -->
-        <div class="meta">
-          <div style="flex:1"></div>
-          <div class="badge">AI</div>
-        </div>
-      </article></a>
-
+  <!-- Mobile drawer -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+    <div class="px-4 pt-2 pb-4 space-y-2">
+      <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-shvya-blue">Home</a>
+      <a href="products.html" class="block px-3 py-2 rounded-md text-base text-shvya-charcoal hover:text-shvya-blue">Products</a>
+      <a href="shvya-services.html" class="block px-3 py-2 rounded-md text-base text-shvya-charcoal hover:text-shvya-blue">Services</a>
+      <a href="shvya-about.html" class="block px-3 py-2 rounded-md text-base text-shvya-charcoal hover:text-shvya-blue">About</a>
+      <a href="shvya-deployment.html" class="block px-3 py-2 rounded-md text-base text-shvya-charcoal hover:text-shvya-blue">4HR Deploy</a>
+      <a href="shvya-contact.html" class="block px-3 py-2 rounded-md text-base text-shvya-charcoal hover:text-shvya-blue">Contact</a>
+      <a href="bookacall.html" class="inline-block mt-3 bg-shvya-blue text-white px-4 py-2 rounded-lg hover:bg-shvya-blue/90 transition-colors">
+        Book a Call
+      </a>
     </div>
+  </div>
+</nav>
 
-    <div id="empty" class="empty" style="display:none;margin-top:18px">No products match your search/filter.</div>
-  </section>
+<!-- Tiny inline script to toggle the drawer -->
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+</script>
 
-  <script>
-    // Simple interactive behaviour: filter pills + search
-    const pills = Array.from(document.querySelectorAll('.pill'));
-    const cards = Array.from(document.querySelectorAll('#cards .card'));
-    const search = document.getElementById('search');
-    const empty = document.getElementById('empty');
 
-    function normalize(s){return (s||'').toString().toLowerCase().trim()}
 
-    function applyFilter(){
-      const active = document.querySelector('.pill.active');
-      const filter = active ? active.dataset.filter : 'all';
-      const q = normalize(search.value);
-      let visibleCount = 0;
-      cards.forEach(card => {
-        const tags = normalize(card.dataset.tags || '');
-        const text = normalize(card.innerText || card.textContent);
-        const matchesFilter = filter === 'all' || tags.split(/\s+/).includes(filter);
-        const matchesSearch = !q || text.includes(q);
-        const show = matchesFilter && matchesSearch;
-        card.style.display = show ? 'flex' : 'none';
-        if(show) visibleCount++;
-      });
-      empty.style.display = visibleCount ? 'none' : 'block';
-    }
 
-    pills.forEach(p => p.addEventListener('click', e => {
-      pills.forEach(x=>{x.classList.remove('active');x.setAttribute('aria-pressed','false')});
-      p.classList.add('active');
-      p.setAttribute('aria-pressed','true');
-      applyFilter();
-    }));
 
-    search.addEventListener('input', applyFilter);
 
-    // keyboard accessibility: focus outlines
-    cards.forEach(c=>{c.addEventListener('keydown', e=>{if(e.key==='Enter') c.click();})});
-
-    // initial filter
-    applyFilter();
-  </script>
+    <!-- Footer -->
+    <footer class="bg-shvya-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-bold mb-4">
+                        <span class="text-shvya-blue">Shvya</span> Ai
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        AI-powered business solutions deployed in 4 hours. Your intelligent technology partner for rapid digital transformation.
+                    </p>
+                    <div class="text-sm text-gray-400">
+                        © 2025 Shvya AI. All rights reserved.
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="leadcrm.html" class="hover:text-shvya-blue transition-colors">Shvya CRM</a></li>
+                        <li><a href="Inventory Billing.html" class="hover:text-shvya-blue transition-colors">Smart Billing Inventory</a></li>
+                        <li><a href="School ERP.html" class="hover:text-shvya-blue transition-colors">School ERP</a></li>
+                        <li><a href="Hospital ERP.html" class="hover:text-shvya-blue transition-colors">Hospital ERP</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="Web Development.html" class="hover:text-shvya-blue transition-colors">Web Development</a></li>
+                        <li><a href="Digital Marketing.html" class="hover:text-shvya-blue transition-colors">Digital Marketing</a></li>
+                        <li><a href="AI Automation.html" class="hover:text-shvya-blue transition-colors">AI Automation</a></li>
+                        <li><a href="E-commerce Solutions.html" class="hover:text-shvya-blue transition-colors">E-commerce Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="https://wa.me/918563019149" class="hover:text-shvya-blue transition-colors">WhatsApp Live</a></li>
+                        <li><a href="bookacall.html" class="hover:text-shvya-blue transition-colors">Book A Call</a></li>
+                        <li><a href="mailto:dineshmca500@gmail.com" class="hover:text-shvya-blue transition-colors">Email</a></li>
+                        <li><a href="shvya-contact.html" class="hover:text-shvya-blue transition-colors">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="shvya-main.js"></script>
+    <script src="alljs.js"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
 </body>
 </html>

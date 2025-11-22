@@ -134,7 +134,6 @@
     }
 
 
-
     /* prodct card  */
 
         /* <!-- Problem / System Gap Section (HTML + CSS + JS inside section) --> */
@@ -285,3 +284,34 @@
       .gap-card{ padding:14px; }
       .gap-card .icon-pill{ width:48px; height:48px; font-size:18px; }
     }
+
+    /* <!-- Minimal supporting styles (include into your CSS or Tailwind utilities) --> */
+
+  /* If you use Tailwind, you can convert these to utilities; these are small helpers */
+  .floating-animation { transform: translateY(0); transition: transform 0.9s ease-in-out; }
+  .floating-animation:hover { transform: translateY(-6px) rotate(-0.3deg); }
+
+  /* small pulse helper for the tag */
+  .pulse-ai { position:relative; }
+  .pulse-ai::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 999px;
+    filter: blur(8px);
+    opacity: .12;
+    background: radial-gradient(circle, rgba(255,140,54,0.12), transparent 40%);
+    z-index: -1;
+  }
+
+  /* particle container - mobile-friendly sized */
+  #particle-container { position:absolute; inset:0; pointer-events:none; opacity:0.06; }
+
+  /* ensure hero min height feels right on small screens */
+  @media (max-width: 420px) {
+    .hero-bg { min-height: 640px; /* shorter mobile hero if needed */ }
+    .content-overlay { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  }
+
+
+  

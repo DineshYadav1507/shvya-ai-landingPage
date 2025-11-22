@@ -14,6 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="allcss.css">
     
     <!-- Splide CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
@@ -111,9 +112,8 @@
                 </div>
                 
                 <div class="flex items-center space-x-4">
-                    <button id="chat-toggle" class="bg-shvya-blue text-white px-4 py-2 rounded-lg hover:bg-shvya-blue/90 transition-colors">
-                        Book a Call
-                    </button>
+                    <button id="chat-toggle" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition-colors">
+                     Book a Call</button>
                     <!-- <button class="bg-shvya-navy text-white px-6 py-2 rounded-lg hover:bg-shvya-navy/90 transition-colors font-semibold">
                         Start Deploy
                     </button> -->
@@ -140,308 +140,172 @@
         </div>
     </section>
 <!-- Products Grid -->
-<section class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div id="products-grid" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            
-            <!-- Inventory Billing Pro -->
-            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-category="erp" data-name="inventory pro">
-                <div class="demo-preview h-48 bg-gradient-to-br from-blue-50 to-blue-100 relative">
-                    <img src="https://kimi-web-img.moonshot.cn/img/www.veeqo.com/9f23316a0a99b2a3d32fe7860156f54cd518a6a2"
-                         alt="Inventory Pro Dashboard" class="w-full h-full object-cover">
-                    <div class="absolute top-4 left-4">
-                        <span class="feature-badge">ERP</span>
-                    </div>
-                </div>
-                
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="text-xl font-bold text-charcoal">Inventory Billing System</h3>
-                    </div>
-                    
-                    <p class="text-gray-600 mb-4 text-sm">
-                        Complete warehouse and inventory management with real-time tracking, barcode scanning, and automated reordering.
-                    </p>
-                    
-                    <div class="space-y-2 mb-4">
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Real-time stock tracking</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Multi-warehouse support</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Barcode scanning</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Automated reordering</div>
-                    </div>
+<!-- Product Showcase (UPDATED: full product list & refreshed content) -->
+<section id="enrollment-section" aria-labelledby="enroll-head" class="enroll-section">
+  <div class="container">
 
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="text-xs text-gray-500"><span class="font-semibold text-orange">4hr</span> deployment</div>
-                        <div class="text-xs text-gray-500">99.9% uptime SLA</div>
-                    </div>
-
-                    <div class="flex space-x-2">
-                        <a href="Inventory Billing.html" class="flex-1 bg-cyan text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-cyan/90 text-center block">
-                            View Live Demo
-                        </a>
-                        <a href="bookacall.html" class="flex-1 bg-navy text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-navy/90 text-center block">
-                            Book A Call
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- EduManage -->
-            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-category="education" data-name="edumanage">
-                <div class="demo-preview h-48 bg-gradient-to-br from-green-50 to-green-100 relative">
-                    <img src="https://kimi-web-img.moonshot.cn/img/eskooly.com/3972e8d1cd8095efb5fd264fd6337700cb1e5e19.png" class="w-full h-full object-cover">
-                    <div class="absolute top-4 left-4"><span class="feature-badge">Education</span></div>
-                </div>
-                
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="text-xl font-bold text-charcoal">School ERP</h3>
-                        
-                    </div>
-
-                    <p class="text-gray-600 mb-4 text-sm">
-                        Comprehensive school management with attendance, parent portal, and student records.
-                    </p>
-
-                    <div class="space-y-2 mb-4">
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Student records management</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Attendance tracking</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Parent portal</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Grade management</div>
-                    </div>
-
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="text-xs text-gray-500"><span class="font-semibold text-orange">4hr</span> deployment</div>
-                        <div class="text-xs text-gray-500">99.9% uptime SLA</div>
-                    </div>
-
-                    <div class="flex space-x-2">
-                        <a href="School ERP.html" class="flex-1 bg-cyan text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">
-                            View Live Demo
-                        </a>
-                        <a href="bookacall.html" class="flex-1 bg-navy text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">
-                            Book A Call
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MediCore -->
-            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-category="healthcare" data-name="medicore">
-                <div class="demo-preview h-48 bg-gradient-to-br from-red-50 to-red-100 relative">
-                    <img src="https://kimi-web-img.moonshot.cn/img/graffersid.com/db72abf0eefd82e897baab04310fa4576f213f05.webp" class="w-full h-full object-cover">
-                    <div class="absolute top-4 left-4"><span class="feature-badge">Healthcare</span></div>
-                </div>
-
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="text-xl font-bold text-charcoal">Hospital Management</h3>
-                        
-                    </div>
-
-                    <p class="text-gray-600 mb-4 text-sm">
-                        AI-powered hospital management with EHR, diagnostics, appointment scheduling.
-                    </p>
-
-                    <div class="space-y-2 mb-4">
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Electronic health records</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>AI diagnostics</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Appointment scheduling</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Pharmacy management</div>
-                    </div>
-
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="text-xs text-gray-500"><span class="font-semibold text-orange">4hr</span> deployment</div>
-                        <div class="text-xs text-gray-500">99.9% uptime SLA</div>
-                    </div>
-
-                    <div class="flex space-x-2">
-                        <a href="Hospital ERP.html" class="flex-1 bg-cyan text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">View Live Demo</a>
-                        <a href="bookacall.html" class="flex-1 bg-navy text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">Book A Call</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- WorkForce -->
-            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-category="hr" data-name="workforce">
-                <div class="demo-preview h-48 bg-gradient-to-br from-purple-50 to-purple-100 relative">
-                    <img src="https://kimi-web-img.moonshot.cn/img/peoplemanagingpeople.com/59ecd7ded045e83d040b931514b8203ed3abf3f3.png" class="w-full h-full object-cover">
-                    <div class="absolute top-4 left-4"><span class="feature-badge">HRM</span></div>
-                </div>
-
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="text-xl font-bold text-charcoal">HRM + Payroll</h3>
-                        
-                    </div>
-
-                    <p class="text-gray-600 mb-4 text-sm">
-                        HR management with payroll, leave management, and performance tracking.
-                    </p>
-
-                    <div class="space-y-2 mb-4">
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Employee records</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Payroll processing</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Leave management</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Performance reviews</div>
-                    </div>
-
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="text-xs text-gray-500"><span class="font-semibold text-orange">4hr</span> deployment</div>
-                        <div class="text-xs text-gray-500">99.9% uptime SLA</div>
-                    </div>
-
-                    <div class="flex space-x-2">
-                        <a href="hrm.html" class="flex-1 bg-cyan text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">View Live Demo</a>
-                        <a href="bookacall.html" class="flex-1 bg-navy text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">Book A Call</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ShopFlow -->
-            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-category="ecommerce" data-name="shopflow">
-                <div class="demo-preview h-48 bg-gradient-to-br from-yellow-50 to-yellow-100 relative">
-                    <img src="https://kimi-web-img.moonshot.cn/img/res.cloudinary.com/1e67eced19c0f462805dff0dd18d17541c6d3156.jpg" class="w-full h-full object-cover">
-                    <div class="absolute top-4 left-4"><span class="feature-badge">eCommerce</span></div>
-                </div>
-
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="text-xl font-bold text-charcoal">Ecommerce Website</h3>
-                        
-                    </div>
-
-                    <p class="text-gray-600 mb-4 text-sm">
-                        Omni-channel eCommerce platform with payments and shipping integration.
-                    </p>
-
-                    <div class="space-y-2 mb-4">
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Online store builder</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Payment processing</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Shipping integration</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Multi-channel sales</div>
-                    </div>
-
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="text-xs text-gray-500"><span class="font-semibold text-orange">4hr</span> deployment</div>
-                        <div class="text-xs text-gray-500">99.9% uptime SLA</div>
-                    </div>
-
-                    <div class="flex space-x-2">
-                        <a href="Ecommerce.html" class="flex-1 bg-cyan text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">View Live Demo</a>
-                        <a href="bookacall.html" class="flex-1 bg-navy text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">Book A Call</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- LeadMaster -->
-            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-category="sales" data-name="leadmaster">
-                <div class="demo-preview h-48 bg-gradient-to-br from-indigo-50 to-indigo-100 relative">
-                    <img src="https://kimi-web-img.moonshot.cn/img/www.leadsquared.com/7a6884c4e13b740852048379654ddc6661f95802.jpg" class="w-full h-full object-cover">
-                    <div class="absolute top-4 left-4"><span class="feature-badge">CRM</span></div>
-                </div>
-
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="text-xl font-bold text-charcoal">Lead CRM Master</h3>
-                        
-                    </div>
-
-                    <p class="text-gray-600 mb-4 text-sm">
-                        AI-powered CRM with pipeline management and customer analytics.
-                    </p>
-
-                    <div class="space-y-2 mb-4">
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Lead tracking</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Sales pipeline</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Customer management</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>AI analytics</div>
-                    </div>
-
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="text-xs text-gray-500"><span class="font-semibold text-orange">4hr</span> deployment</div>
-                        <div class="text-xs text-gray-500">99.9% uptime SLA</div>
-                    </div>
-
-                    <div class="flex space-x-2">
-                        <a href="leadcrm.html" class="flex-1 bg-cyan text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">View Live Demo</a>
-                        <a href="bookacall.html" class="flex-1 bg-navy text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">Book A Call</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- LearnHub -->
-            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-category="education" data-name="learnhub">
-                <div class="demo-preview h-48 bg-gradient-to-br from-teal-50 to-teal-100 relative">
-                    <img src="https://kimi-web-img.moonshot.cn/img/www.jotform.com/1446c03cf880b59525045bb39561c27b19ee6334.webp" class="w-full h-full object-cover">
-                    <div class="absolute top-4 left-4"><span class="feature-badge">LMS</span></div>
-                </div>
-
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="text-xl font-bold text-charcoal">Learn LMS Hub</h3>
-                        
-                    </div>
-
-                    <p class="text-gray-600 mb-4 text-sm">
-                        LMS with AI course creation, virtual classrooms, and progress tracking.
-                    </p>
-
-                    <div class="space-y-2 mb-4">
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Course management</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>AI content creation</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Progress tracking</div>
-                        <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Virtual classrooms</div>
-                    </div>
-
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="text-xs text-gray-500"><span class="font-semibold text-orange">4hr</span> deployment</div>
-                        <div class="text-xs text-gray-500">99.9% uptime SLA</div>
-                    </div>
-
-                    <div class="flex space-x-2">
-                        <a href="lms.html" class="flex-1 bg-cyan text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">View Live Demo</a>
-                        <a href="bookacall.html" class="flex-1 bg-navy text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">Book A Call</a>
-                    </div>
-                </div>
-            </div>
-
-         <!-- Restaurant & Hotel Manager -->
-<div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-category="hospitality" data-name="restrohotel">
-    <div class="demo-preview h-48 bg-gradient-to-br from-orange-50 to-orange-100 relative">
-        <img src="shvya-resources/hotal.png" class="w-full h-full object-cover">
-        <div class="absolute top-4 left-4"><span class="feature-badge">Hospitality</span></div>
+    <div class="controls">
+      <div class="pill-group" role="tablist" aria-label="Product filters">
+        <button class="pill active" data-filter="all" aria-pressed="true">All</button>
+        <button class="pill" data-filter="inventory">Inventory Billing System (POS)</button>
+        <button class="pill" data-filter="school">School ERP</button>
+        <button class="pill" data-filter="hospital">Hospital</button>
+        <button class="pill" data-filter="hrm">HRM + Payroll</button>
+        <button class="pill" data-filter="ecom">Ecommerce</button>
+        <button class="pill" data-filter="crm">Lead CRM Master</button>
+        <button class="pill" data-filter="restaurant">Restaurant ERP</button>
+      </div>
     </div>
 
-    <div class="p-6">
-        <div class="flex items-center justify-between mb-3">
-            <h3 class="text-xl font-bold text-charcoal">Restaurant ERP</h3>
-        </div>
+    <div class="grid" id="product-cards">
 
-        <p class="text-gray-600 mb-4 text-sm">
-            Complete restaurant & hotel management with online orders, table booking, room booking, billing, and staff operations.
-        </p>
+      <!-- Inventory Billing System -->
+      <a class="card-link" href="Inventory Billing.html" data-tags="inventory,billing,pos">
+        <article class="card" tabindex="0">
+          <img class="card-img" src="shvya-resources/inventory2.png" alt="Inventory Billing">
+          <div class="card-header">
+            <h3>Inventory Billing System (POS)</h3>
+            <span class="tag">New</span>
+          </div>
+          <p class="card-desc">Complete POS + inventory control with barcode scanning, multi-location stock, billing and GST-ready invoices.</p>
+          <div class="card-meta">
+            <span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span>
+          </div>
+        </article>
+      </a>
 
-        <div class="space-y-2 mb-4">
-            <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Table & Room Booking</div>
-            <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Kitchen Order (KOT) Management</div>
-            <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Restaurant Billing & GST</div>
-            <div class="flex items-center text-xs text-gray-600"><span class="text-cyan mr-2">✓</span>Inventory & Stock Control</div>
-        </div>
+      <!-- School ERP -->
+      <a class="card-link" href="School ERP.html" data-tags="school,education,erp">
+        <article class="card" tabindex="0">
+          <img class="card-img" src="shvya-resources/school.png" alt="School ERP">
+          <div class="card-header">
+            <h3>School ERP</h3>
+          </div>
+          <p class="card-desc">Manage admissions, fees, attendance, timetables, parent communications and student records — centralised and secure.</p>
+          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+        </article>
+      </a>
 
-        <div class="flex items-center justify-between mb-4">
-            <div class="text-xs text-gray-500"><span class="font-semibold text-orange">4hr</span> deployment</div>
-            <div class="text-xs text-gray-500">99.9% uptime SLA</div>
-        </div>
+      <!-- Hospital Management -->
+      <a class="card-link" href="Hospital ERP.html" data-tags="hospital,clinic,healthcare">
+        <article class="card" tabindex="0">
+          <img class="card-img" src="shvya-resources/docker.png" alt="Hospital Management">
+          <div class="card-header">
+            <h3>Hospital Management</h3>
+            <span class="tag" style="background:#fff4e6;color:#92400e">HIPAA-Ready</span>
+          </div>
+          <p class="card-desc">Patient records, appointments, pharmacy, lab integration and billing — built for clinics and hospitals.</p>
+          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+        </article>
+      </a>
 
-        <div class="flex space-x-2">
-            <a href="hotel.html" class="flex-1 bg-cyan text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">View Live Demo</a>
-            <a href="bookacall.html" class="flex-1 bg-navy text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">Book A Call</a>
-        </div>
+      <!-- HRM + Payroll -->
+      <a class="card-link" href="hrm.html" data-tags="hrm,payroll,hr">
+        <article class="card" tabindex="0">
+          <img class="card-img" src="shvya-resources/hrm pic.png" alt="HRM Payroll">
+          <div class="card-header">
+            <h3>HRM + Payroll</h3>
+          </div>
+          <p class="card-desc">Employee lifecycle, attendance, payroll processing, statutory reports and compliance — automated and auditable.</p>
+          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+        </article>
+      </a>
+
+      <!-- Ecommerce Website -->
+      <a class="card-link" href="Ecommerce.html" data-tags="ecom,ecommerce,shop">
+        <article class="card" tabindex="0">
+          <img class="card-img" src="shvya-resources/ecomerce.png" alt="Ecommerce Website">
+          <div class="card-header">
+            <h3>Ecommerce Website</h3>
+          </div>
+          <p class="card-desc">Modern online storefronts, secure checkout, payments, shipping integrations and admin dashboards to scale sales.</p>
+          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+        </article>
+      </a>
+
+      <!-- Lead CRM Master -->
+      <a class="card-link" href="Lead CRM Master.html" data-tags="crm,leads,marketing">
+        <article class="card" tabindex="0">
+          <img class="card-img" src="shvya-resources/lead.png" alt="Lead CRM Master">
+          <div class="card-header">
+            <h3>Lead CRM Master</h3>
+          </div>
+          <p class="card-desc">Lead capture, nurturing, pipeline management, automated workflows and reporting — close more deals, faster.</p>
+          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+        </article>
+      </a>
+
+      <!-- Learn LMS Hub -->
+      <a class="card-link" href="Learn LMS Hub.html" data-tags="lms,learning,courses">
+        <article class="card" tabindex="0">
+          <img class="card-img" src="shvya-resources/lern lms.png" alt="Learn LMS Hub">
+          <div class="card-header">
+            <h3>Learn LMS Hub</h3>
+          </div>
+          <p class="card-desc">Course management, assessments, certificates, blended learning and analytics for institutions and enterprises.</p>
+          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+        </article>
+      </a>
+
+      <!-- Restaurant ERP -->
+      <a class="card-link" href="Restaurant ERP.html" data-tags="restaurant,food,pos">
+        <article class="card" tabindex="0">
+          <img class="card-img" src="shvya-resources/restorent.png" alt="Restaurant ERP">
+          <div class="card-header">
+            <h3>Restaurant ERP</h3>
+          </div>
+          <p class="card-desc">Kitchen orders, table management, inventory-to-recipe, billing and delivery — one system for Dine-in & Cloud kitchens.</p>
+          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+        </article>
+      </a>
+
     </div>
-</div>
 
+    <div id="no-results" class="empty" style="display:none">No products match your filter.</div>
+
+  </div>
 </section>
+
+<!-- MAP + FILTER SCRIPT (WORKING) -->
+<script>
+(function(){
+  const pills = Array.from(document.querySelectorAll('#enrollment-section .pill'));
+  const cards = Array.from(document.querySelectorAll('#product-cards .card-link'));
+  const noResults = document.getElementById('no-results');
+
+  const normalize = s => (s||'').toString().toLowerCase().trim();
+
+  function applyFilter(){
+    const active = document.querySelector('#enrollment-section .pill.active');
+    const filterTag = normalize(active ? active.dataset.filter : 'all');
+
+    const visible = cards
+      .map(card => {
+        const tags = normalize(card.dataset.tags || '');
+        const text = normalize(card.innerText || '');
+        const match = filterTag === 'all' || tags.includes(filterTag) || text.includes(filterTag);
+        return { card, match };
+      })
+      .filter(x => x.match);
+
+    cards.forEach(c => c.style.display = 'none');
+    visible.forEach(v => v.card.style.display = 'block');
+
+    noResults.style.display = visible.length ? 'none' : 'block';
+  }
+
+  pills.forEach(p => {
+    p.addEventListener('click', () => {
+      pills.forEach(x => x.classList.remove('active'));
+      p.classList.add('active');
+      applyFilter();
+    });
+  });
+
+  applyFilter();
+})();
+</script>
+<!-- Product Detail Sections -->
 
 <!-- Inventory Billing Pro — Product Overview -->
 <section class="py-20 bg-white">
@@ -763,47 +627,51 @@
     </div>
 </section>
 <!-- CTA END  -->
-    <!-- Footer -->
-    <footer class="bg-navy text-white py-12">
+     <!-- Footer -->
+    <footer class="bg-shvya-navy text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <div class="text-2xl font-bold mb-4">SaaS Pro</div>
-                    <p class="text-gray-300 mb-4">
-                        Enterprise SaaS solutions deployed in 4 hours. Your complete technology partner for rapid digital transformation.
-                    </p>
+                    <div class="text-2xl font-bold mb-4">
+                        <span class="text-shvya-blue">Shvya</span> Ai
+                    </div>
+                  <p class="text-gray-300 mb-4">
+                    AI solutions deployed in 4 hours. Ready-to-use CRM, CMS, and ERP systems with one-time fast deployment.
+                  </p>
+
+
                     <div class="text-sm text-gray-400">
-                        © 2025 SaaS Pro. All rights reserved.
+                       <a href="https://shvya-ai.com">© 2025 ❤️ Shvya AI. All rights reserved.</a>
                     </div>
                 </div>
                 
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Products</h3>
                     <ul class="space-y-2 text-gray-300">
-                        <li><a href="#" class="hover:text-cyan transition-colors">Inventory Pro</a></li>
-                        <li><a href="#" class="hover:text-cyan transition-colors">EduManage</a></li>
-                        <li><a href="#" class="hover:text-cyan transition-colors">MediCore</a></li>
-                        <li><a href="#" class="hover:text-cyan transition-colors">WorkForce</a></li>
+                        <li><a href="leadcrm.html" class="hover:text-shvya-blue transition-colors">Shvya CRM</a></li>
+                        <li><a href="Inventory Billing.html" class="hover:text-shvya-blue transition-colors">Smart Billing Inventory</a></li>
+                        <li><a href="School ERP.html" class="hover:text-shvya-blue transition-colors">School ERP</a></li>
+                        <li><a href="Hospital ERP.html" class="hover:text-shvya-blue transition-colors">Hospital ERP</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Services</h3>
                     <ul class="space-y-2 text-gray-300">
-                        <li><a href="services.html" class="hover:text-cyan transition-colors">Web Development</a></li>
-                        <li><a href="services.html" class="hover:text-cyan transition-colors">SEO Services</a></li>
-                        <li><a href="services.html" class="hover:text-cyan transition-colors">Digital Marketing</a></li>
-                        <li><a href="services.html" class="hover:text-cyan transition-colors">Social Media</a></li>
+                        <li><a href="Web Development.html" class="hover:text-shvya-blue transition-colors">Web Development</a></li>
+                        <li><a href="Digital Marketing.html" class="hover:text-shvya-blue transition-colors">Digital Marketing</a></li>
+                        <li><a href="AI Automation.html" class="hover:text-shvya-blue transition-colors">AI Automation</a></li>
+                        <li><a href="E-commerce Solutions.html" class="hover:text-shvya-blue transition-colors">E-commerce Solutions</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Support</h3>
                     <ul class="space-y-2 text-gray-300">
-                        <li><a href="#" class="hover:text-cyan transition-colors">Documentation</a></li>
-                        <li><a href="#" class="hover:text-cyan transition-colors">Video Tutorials</a></li>
-                        <li><a href="#" class="hover:text-cyan transition-colors">Community Forum</a></li>
-                        <li><a href="#" class="hover:text-cyan transition-colors">Contact Support</a></li>
+                        <li><a href="https://wa.me/918563019149" class="hover:text-shvya-blue transition-colors">WhatsApp Live</a></li>
+                        <li><a href="bookacall.html" class="hover:text-shvya-blue transition-colors">Book A Call</a></li>
+                        <li><a href="mailto:dineshmca500@gmail.com" class="hover:text-shvya-blue transition-colors">Email</a></li>
+                        <li><a href="shvya-contact.html" class="hover:text-shvya-blue transition-colors">Contact Support</a></li>
                     </ul>
                 </div>
             </div>
@@ -935,5 +803,10 @@
             alert(`Starting 4-hour deployment for ${productName}...\n\nThis would initiate the rapid deployment process:\n\n• Environment Setup (30 mins)\n• Data Migration (90 mins)\n• Testing & QA (90 mins)\n• Go Live (30 mins)\n\nTotal: 4 hours maximum`);
         }
     </script>
+<script src="shvya-main.js"></script>
+    <script src="alljs.js"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
 </body>
 </html>
