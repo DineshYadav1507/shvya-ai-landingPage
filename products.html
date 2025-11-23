@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shvya-ai product</title>
+    <title>Shvya-ai CRM ERP product</title>
     <meta name="description" content="Explore our complete suite of enterprise SaaS products. Inventory, School, Hospital, HRM, eCommerce, CRM, LMS solutions ready for 4-hour deployment.">
     
     <!-- Fonts -->
@@ -125,20 +125,20 @@
     <section class="bg-gradient-to-br from-navy to-charcoal pt-20 pb-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center text-white">
-                <h1 class="text-5xl font-bold mb-6">Complete SaaS Product Suite</h1>
+                <h1 class="text-5xl font-bold mb-6">Better Systems. Faster Growth.<br>One Shvya Ecosystem.</h1>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                    Explore our comprehensive collection of enterprise-grade software solutions, 
-                    each designed for rapid deployment and maximum performance in just 4 hours.
-                </p>
+                    Shvya replaces chaos with one connected ecosystem deployed in just 4 hours so your team operates faster, smarter, and with complete control.</p>
                 <div class="flex justify-center space-x-4">
                    
                     <button class="border-2 border-cyan text-cyan px-6 py-3 rounded-lg font-semibold hover:bg-cyan hover:text-white transition-all">
-                        Starting one-time deployment Free available
+                        Explore Solutions That Fix Real Problems
                     </button>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- 11111111111111111111111111111111111111 -->
 <!-- Products Grid -->
 <!-- Product Showcase (UPDATED: full product list & refreshed content) -->
 <section id="enrollment-section" aria-labelledby="enroll-head" class="enroll-section">
@@ -581,193 +581,197 @@
   </div>
 </section>
 
-School Erp  Start 
-<section class="shvya-section-white" style="padding:40px 20px; background:#ffffff; font-family:'Segoe UI',sans-serif;">
+<!-- School Erp  Start End -->
+<section id="premium-hub-section" aria-labelledby="hub-heading" style="background:#ffffff;">
 
-    <style>
-        .shvya-section-white * {
-            box-sizing: border-box;
-        }
+  <!-- include uploaded file path so it is available (hidden by default) -->
+  <img src="/mnt/data/48e26167-9942-4e49-ab20-a4073a656926.png" alt="" style="display:none" aria-hidden="true">
 
-        .shvya-title {
-            text-align: center;
-            color: #1a1a1a;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            font-weight: 700;
-        }
+  <style>
+    :root{
+      --hub-bg: #ffffff;
+      --hub-ink: #0f1720;
+      --hub-muted: #667085;
+      --hub-accentA: #4db6ff;
+      --hub-accentB: #2573ff;
+      --hub-card: #ffffff;
+      --hub-glass: rgba(37,99,235,0.06);
+      --hub-radius: 14px;
+      --hub-max: 1140px;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Arial;
+    }
 
-        .main-card-white {
-            background: #ffffff;
-            border-radius: 30px;
-            padding: 50px;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-            max-width: 1200px;
-            margin: auto;
-            border: 1px solid #e6e6e6;
-        }
+    /* base */
+    #premium-hub-section{ color:var(--hub-ink); padding:64px 20px; position:relative; font-family:var(--font,Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Arial); }
+    #premium-hub-section *{box-sizing:border-box}
 
-        .headline h2 {
-            text-align: center;
-            color: #1a1a1a;
-            font-size: 2rem;
-            margin-bottom: 40px;
-        }
+    /* decorative soft blobs (renamed) */
+    .blob {
+      position:absolute; z-index:0; pointer-events:none; filter: blur(36px); opacity:0.12;
+    }
+    .blob-left{width:420px;height:420px;left:-8%;top:-8%; background:linear-gradient(135deg,var(--hub-accentA),var(--hub-accentB)); border-radius:50%}
+    .blob-right{width:360px;height:360px;right:-6%;bottom:-6%; background:linear-gradient(135deg,#bfe9ff, #dfeaff); border-radius:50%}
 
-        .headline .highlight {
-            color: #2196f3;
-            font-weight: bold;
-        }
+    .container-hub{position:relative; z-index:1; max-width:var(--hub-max); margin:0 auto;}
 
-        /* Grid */
-        .features-grid-white {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-bottom: 40px;
-        }
+    /* header */
+    .header-hub { text-align:center; max-width:820px; margin:0 auto 36px; }
+    .label-pill { display:inline-block; padding:8px 14px; border-radius:999px; color:var(--hub-accentB); font-weight:700; background:linear-gradient(90deg,rgba(77,182,255,0.12),rgba(37,115,255,0.06)); border:1px solid rgba(37,115,255,0.06); margin-bottom:14px; }
+    h2#hub-heading{font-size:clamp(28px,4.2vw,44px); margin:12px 0; line-height:1.02; font-weight:800}
+    .lead-text{color:var(--hub-muted); font-size:1.05rem; margin:10px 0 0; max-width:820px; margin-left:auto;margin-right:auto;}
 
-        @media(max-width:900px) {
-            .features-grid-white {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+    /* layout: two-column panel (renamed) */
+    .layout-grid{display:grid; grid-template-columns:1fr 360px; gap:28px; align-items:start;}
+    @media (max-width:980px){ .layout-grid{grid-template-columns:1fr} }
 
-        @media(max-width:600px) {
-            .features-grid-white {
-                grid-template-columns: 1fr;
-            }
-        }
+    /* rotator (renamed) */
+    .carousel { background: linear-gradient(180deg, rgba(37,115,255,0.03), rgba(77,182,255,0.02)); border-radius:var(--hub-radius); padding:16px; border:1px solid rgba(15,23,42,0.04); }
+    .carousel-window{height:76px; position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; border-radius:10px; background:var(--hub-card); box-shadow:0 10px 30px rgba(16,24,40,0.04) }
+    .carousel-item{ position:absolute; inset:0; display:flex; gap:14px; align-items:center; justify-content:center; padding:8px 18px; opacity:0; transform:translateX(20px); transition:all .55s cubic-bezier(.2,.9,.3,1); }
+    .carousel-item.active{ opacity:1; transform:translateX(0) }
+    .carousel-icon{ width:54px; height:54px; border-radius:12px; display:grid; place-items:center; background:linear-gradient(180deg, rgba(77,182,255,0.12), rgba(37,115,255,0.06)); color:var(--hub-accentB); border:1px solid rgba(37,115,255,0.06); flex:0 0 54px }
+    .carousel-text{ font-weight:700; color:var(--hub-ink); font-size:1.05rem; text-align:left; max-width:720px }
 
-        /* Card */
-        .feature-card-white {
-            background: #f8faff;
-            border-radius: 18px;
-            padding: 28px;
-            transition: 0.3s;
-            cursor: pointer;
-            border: 1px solid #e1e8f5;
-            position: relative;
-            overflow: hidden;
-        }
+    .carousel-controls{ display:flex; gap:8px; justify-content:center; margin-top:12px }
+    .carousel-dot{ width:8px; height:8px; border-radius:999px; background:rgba(15,23,42,0.06); transition:all .25s; border:0; }
+    .carousel-dot.active{ width:56px; height:10px; border-radius:10px; background:linear-gradient(90deg,var(--hub-accentA),var(--hub-accentB)) }
 
-        .feature-card-white:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.10);
-            background: #ffffff;
-        }
+    /* problems grid (renamed) */
+    .feature-grid { margin-top:22px; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:16px; }
+    .feature-card {
+      background:var(--hub-card); border-radius:12px; padding:18px; border:1px solid rgba(15,23,42,0.04);
+      display:flex; gap:12px; align-items:flex-start; box-shadow:0 6px 18px rgba(16,24,40,0.03); transition:transform .22s ease, box-shadow .22s ease;
+      transform:translateY(10px); opacity:0;
+    }
+    .feature-card.visible{ transform:translateY(0); opacity:1 }
+    .feature-card:hover{ transform:translateY(-6px); box-shadow:0 26px 50px rgba(37,115,255,0.08); border-color: rgba(37,115,255,0.10) }
+    .feature-icon{ width:46px; height:46px; display:grid; place-items:center; border-radius:10px; background:linear-gradient(180deg, rgba(77,182,255,0.08), rgba(37,115,255,0.04)); color:var(--hub-accentB); border:1px solid rgba(37,115,255,0.06) }
+    .feature-card h4{ margin:0; font-size:1rem; font-weight:800; color:var(--hub-ink) }
+    .feature-card p{ margin:4px 0 0; color:var(--hub-muted); font-size:0.95rem; line-height:1.45 }
 
-        /* Gradient border on hover */
-        .feature-card-white::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            padding: 2px;
-            border-radius: 18px;
-            background: linear-gradient(135deg, #4db8ff, #2a8cff);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: 0.3s ease;
-        }
+    /* CTA aside (renamed) */
+    .cta-panel { background:linear-gradient(180deg, #f8fcff, #ffffff); border-radius:12px; padding:20px; border:1px solid rgba(37,115,255,0.06); box-shadow:0 12px 36px rgba(16,24,40,0.04); text-align:center }
+    .cta-panel h3{ margin:0 0 8px; font-size:1.15rem; color:var(--hub-ink) }
+    .cta-panel p{ margin:0 0 14px; color:var(--hub-muted) }
+    .action-row{ display:flex; gap:10px; justify-content:center }
+    .action-btn{ padding:10px 16px; border-radius:10px; font-weight:800; cursor:pointer; border:none }
+    .action-btn.primary{ background:linear-gradient(90deg,var(--hub-accentA),var(--hub-accentB)); color:white; box-shadow:0 10px 30px rgba(37,115,255,0.12) }
+    .action-btn.ghost{ background:transparent; border:1px solid rgba(15,23,42,0.06); color:var(--hub-ink) }
 
-        .feature-card-white:hover::before {
-            opacity: 1;
-        }
+    .kpis{ display:flex; gap:10px; justify-content:center; margin-top:14px; flex-wrap:wrap }
+    .kpi{ background:#ffffff; border-radius:10px; padding:10px 12px; border:1px solid rgba(15,23,42,0.04); min-width:110px; text-align:center }
+    .kpi strong{ display:block; color:var(--hub-ink); font-size:1.05rem }
+    .kpi small{ color:var(--hub-muted); font-size:0.85rem }
 
-        .icon {
-            font-size: 2.4rem;
-            margin-bottom: 10px;
-        }
+    @media (max-width:980px){ .layout-grid{grid-template-columns:1fr} .cta-panel{order:2} .feature-grid{grid-template-columns:1fr 1fr} }
+    @media (max-width:640px){ .feature-grid{grid-template-columns:1fr} .carousel-text{font-size:0.98rem} }
+  </style>
 
-        .feature-title {
-            color: #1a1a1a;
-            font-weight: 700;
-            margin-bottom: 8px;
-            font-size: 1.2rem;
-        }
+  <!-- decorative blobs -->
+  <div class="blob blob-left" aria-hidden="true"></div>
+  <div class="blob blob-right" aria-hidden="true"></div>
 
-        .feature-desc {
-            color: #555;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
+  <div class="container-hub" role="region" aria-label="Shvya overview">
+    <header class="header-hub" aria-labelledby="hub-heading">
+      <div class="label-pill">The Problem</div>
+      <h2 id="hub-heading">If This Sounds Familiar - You’re in the Right Place.</h2>
+      <p class="lead-text">That’s not a people problem. It’s a system problem. And that’s exactly what Shvya was built to solve.</p>
+    </header>
 
-        /* Footer text */
-        .footer-text {
-            text-align: center;
-            color: #555;
-            font-size: 1.1rem;
-            padding-top: 20px;
-            border-top: 1px solid #dedede;
-            font-style: italic;
-        }
-
-        /* Floating Animation */
-        @keyframes float {
-            0%,100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
-
-    </style>
-
-
-    <h1 class="shvya-title">Why Businesses Choose Shvya</h1>
-
-    <div class="main-card-white">
-
-        <div class="headline">
-            <h2>Because Every Business Wants One Thing-<span class="highlight">Clarity</span>.</h2>
+    <div class="layout-grid">
+      <!-- LEFT: carousel + grid -->
+      <div>
+        <!-- carousel -->
+        <div class="carousel" aria-live="polite">
+          <div class="carousel-window" id="carousel-window" role="region" aria-label="Rotating problems">
+            <!-- slides inserted by JS -->
+          </div>
+          <div class="carousel-controls" id="carousel-controls" role="tablist" aria-label="Rotate problems"></div>
         </div>
 
-        <div class="features-grid-white">
-
-            <div class="feature-card-white">
-                <span class="icon">🧠</span>
-                <div class="feature-title">AI-Driven Automation</div>
-                <div class="feature-desc">Respond, qualify, and nurture instantly.</div>
-            </div>
-
-            <div class="feature-card-white">
-                <span class="icon">🔗</span>
-                <div class="feature-title">All-In-One Ecosystem</div>
-                <div class="feature-desc">Every module talks to each other seamlessly.</div>
-            </div>
-
-            <div class="feature-card-white">
-                <span class="icon">⏱️</span>
-                <div class="feature-title">Time-Saving Efficiency</div>
-                <div class="feature-desc">What took hours now takes seconds.</div>
-            </div>
-
-            <div class="feature-card-white">
-                <span class="icon">🔒</span>
-                <div class="feature-title">Security First</div>
-                <div class="feature-desc">Enterprise-grade protection for your data and users.</div>
-            </div>
-
-            <div class="feature-card-white">
-                <span class="icon">📈</span>
-                <div class="feature-title">Data-Driven Growth</div>
-                <div class="feature-desc">Dashboards that reveal powerful insights.</div>
-            </div>
-
-            <div class="feature-card-white">
-                <span class="icon">💡</span>
-                <div class="feature-title">Complete Clarity</div>
-                <div class="feature-desc">Full visibility into every aspect of your business.</div>
-            </div>
-
+        <!-- grid -->
+        <div class="feature-grid" id="feature-grid" aria-label="Common founder problems" style="margin-top:18px">
+          <!-- cards inserted by JS -->
         </div>
+      </div>
+  <script>
+  (function(){
+    const data = [
+      { icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path d="M4 7h16M4 12h10M4 17h16" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>', text: 'My team wastes hours updating Excel sheets.' },
+      { icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path d="M3 6h18M8 6v12a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4V6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>', text: 'Leads come in from everywhere and half go cold.' },
+      { icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path d="M3 12h18M12 3v18" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>', text: 'We never know where our stock stands.' },
+      { icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path d="M3 21l9-18 9 18" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>', text: 'Orders get delayed, bills get mixed up, and customers leave frustrated.' },
+      { icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path d="M12 2l2 4 4 .5-3 2 1 4-4-2-4 2 1-4-3-2 4-.5L12 2z" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>', text: 'Attendance tracking is a mess we still do it manually.' },
+      { icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="3" stroke-width="1.4"/><path d="M5 21v-1a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v1" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>', text: 'We lose patient details, and departments don’t communicate.' }
+      //  { icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path d="M4 7h16M4 12h10M4 17h16" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>', text: 'Payroll takes days every month.' },
+      //   { icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path d="M4 7h16M4 12h10M4 17h16" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>', text: 'Field staff says they’re on-site, but we can’t verify it.' },
+    ];
 
-        <div class="footer-text">
-            When clarity drives your business, growth becomes effortless.
-        </div>
-    </div>
+    const carouselWindow = document.getElementById('carousel-window');
+    const carouselControls = document.getElementById('carousel-controls');
+    const gridWrap = document.getElementById('feature-grid');
+
+    // build carousel items & controls
+    data.forEach((item, i) => {
+      const slide = document.createElement('div');
+      slide.className = 'carousel-item';
+      slide.innerHTML = `<div class="carousel-icon">${item.icon}</div><div class="carousel-text"><span class="sr-only">Problem ${i+1}: </span>${item.text}</div>`;
+      carouselWindow.appendChild(slide);
+
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot';
+      dot.type = 'button';
+      dot.setAttribute('aria-label', 'Show item '+(i+1));
+      dot.addEventListener('click', ()=> goTo(i));
+      carouselControls.appendChild(dot);
+    });
+
+    // build feature grid cards
+    data.forEach((item, i)=>{
+      const c = document.createElement('div');
+      c.className = 'feature-card';
+      c.innerHTML = `<div class="feature-icon" aria-hidden="true">${item.icon}</div><div><h4>${item.text.split('.')[0]}</h4><p>${item.text}</p></div>`;
+      gridWrap.appendChild(c);
+    });
+
+    const slides = Array.from(carouselWindow.querySelectorAll('.carousel-item'));
+    const dots = Array.from(carouselControls.querySelectorAll('.carousel-dot'));
+    const cards = Array.from(gridWrap.querySelectorAll('.feature-card'));
+    let idx = 0, inter = null;
+
+    function show(n){
+      slides.forEach((s,i)=> s.classList.toggle('active', i===n));
+      dots.forEach((d,i)=> d.classList.toggle('active', i===n));
+    }
+    function next(){ idx = (idx+1) % slides.length; show(idx); }
+    function reset(){ clearInterval(inter); inter = setInterval(next, 3500); }
+
+    show(0); reset();
+    carouselWindow.addEventListener('mouseenter', ()=> clearInterval(inter));
+    carouselWindow.addEventListener('mouseleave', reset);
+
+    function goTo(i){ idx = i; show(idx); reset(); }
+
+    // reveal cards staggered
+    const io = new IntersectionObserver((entries, obs)=>{
+      entries.forEach((e, i)=>{
+        if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, {threshold:0.12});
+    cards.forEach((c,i)=>{ c.style.transitionDelay = `${i*70}ms`; io.observe(c); });
+
+    // CTA hooks (replace with real behavior)
+    document.getElementById('demo-request').addEventListener('click', ()=> window.alert('Request demo — integrate your flow here.'));
+    document.getElementById('demo-tour').addEventListener('click', ()=> window.alert('See how — link to tour or video.'));
+
+    // keyboard accessible dots
+    dots.forEach((d,i)=> d.addEventListener('keydown', (e)=> { if(e.key==='Enter' || e.key===' ') { e.preventDefault(); goTo(i); } }));
+  })();
+  </script>
 
 </section>
+ <!-- ################################# -->
+
 
 <script>
     // Floating card animations
@@ -1103,33 +1107,30 @@ School Erp  Start
 
 <!-- CTA -->
 <div class="cta-buttons">
-    <a href="#" class="btn btn-primary">Request a Demo</a>
-    <a href="#" class="btn btn-secondary">See How It Works</a>
+    <a href="bookacall.html" class="btn btn-primary">Request a Demo</a>
+    <a href="products.html" class="btn btn-secondary">Explore Shvya Services</a>
 </div>
 
 <!-- STATS -->
 <div class="stats-section">
     
-    <div class="stats-brand">Shvya Ai</div>
+    <div class="stats-brand">Real Business Impact</div>
     <p class="stats-description">
-        Missed follow-ups become scheduled actions. Scattered data becomes a single source of truth.
-        Shvya maps to the way people actually work — with clarity, control, and confidence.
-    </p>
-
+        From Chaos to Control — See the Difference.</p>
     <div class="stats-grid">
         <div class="stat-item">
-            <span class="stat-number">85%</span>
-            <span class="stat-label">Faster Follow-up</span>
+            <span class="stat-number">200%</span>
+            <span class="stat-label">Faster Lead Response</span>
         </div>
 
         <div class="stat-item">
-            <span class="stat-number">40+</span>
-            <span class="stat-label">Hours Saved / Week</span>
+            <span class="stat-number">70%</span>
+            <span class="stat-label">Time Saved</span>
         </div>
 
         <div class="stat-item">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Centralized Data</span>
+            <span class="stat-number">3x</span>
+            <span class="stat-label">ROI on Automation</span>
         </div>
     </div>
 </div>
@@ -1156,210 +1157,192 @@ School Erp  Start
 
 </section>
 
-<section id="premium-hub-section" aria-labelledby="hub-heading" style="background:#ffffff;">
+<!-- 444444444444444444444444444444444444444444444444444444444444444444444 -->
 
-  <!-- include uploaded file path so it is available (hidden by default) -->
-  <img src="/mnt/data/48e26167-9942-4e49-ab20-a4073a656926.png" alt="" style="display:none" aria-hidden="true">
+<section class="shvya-section-white" style="padding:40px 20px; background:#ffffff; font-family:'Segoe UI',sans-serif;">
 
-  <style>
-    :root{
-      --hub-bg: #ffffff;
-      --hub-ink: #0f1720;
-      --hub-muted: #667085;
-      --hub-accentA: #4db6ff;
-      --hub-accentB: #2573ff;
-      --hub-card: #ffffff;
-      --hub-glass: rgba(37,99,235,0.06);
-      --hub-radius: 14px;
-      --hub-max: 1140px;
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Arial;
-    }
+    <style>
+        .shvya-section-white * {
+            box-sizing: border-box;
+        }
 
-    /* base */
-    #premium-hub-section{ color:var(--hub-ink); padding:64px 20px; position:relative; font-family:var(--font,Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Arial); }
-    #premium-hub-section *{box-sizing:border-box}
+        .shvya-title {
+            text-align: center;
+            color: #1a1a1a;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
 
-    /* decorative soft blobs (renamed) */
-    .blob {
-      position:absolute; z-index:0; pointer-events:none; filter: blur(36px); opacity:0.12;
-    }
-    .blob-left{width:420px;height:420px;left:-8%;top:-8%; background:linear-gradient(135deg,var(--hub-accentA),var(--hub-accentB)); border-radius:50%}
-    .blob-right{width:360px;height:360px;right:-6%;bottom:-6%; background:linear-gradient(135deg,#bfe9ff, #dfeaff); border-radius:50%}
+        .main-card-white {
+            background: #ffffff;
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+            max-width: 1200px;
+            margin: auto;
+            border: 1px solid #e6e6e6;
+        }
 
-    .container-hub{position:relative; z-index:1; max-width:var(--hub-max); margin:0 auto;}
+        .headline h2 {
+            text-align: center;
+            color: #1a1a1a;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
 
-    /* header */
-    .header-hub { text-align:center; max-width:820px; margin:0 auto 36px; }
-    .label-pill { display:inline-block; padding:8px 14px; border-radius:999px; color:var(--hub-accentB); font-weight:700; background:linear-gradient(90deg,rgba(77,182,255,0.12),rgba(37,115,255,0.06)); border:1px solid rgba(37,115,255,0.06); margin-bottom:14px; }
-    h2#hub-heading{font-size:clamp(28px,4.2vw,44px); margin:12px 0; line-height:1.02; font-weight:800}
-    .lead-text{color:var(--hub-muted); font-size:1.05rem; margin:10px 0 0; max-width:820px; margin-left:auto;margin-right:auto;}
+        .headline .highlight {
+            color: #2196f3;
+            font-weight: bold;
+        }
 
-    /* layout: two-column panel (renamed) */
-    .layout-grid{display:grid; grid-template-columns:1fr 360px; gap:28px; align-items:start;}
-    @media (max-width:980px){ .layout-grid{grid-template-columns:1fr} }
+        /* Grid */
+        .features-grid-white {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
+        }
 
-    /* rotator (renamed) */
-    .carousel { background: linear-gradient(180deg, rgba(37,115,255,0.03), rgba(77,182,255,0.02)); border-radius:var(--hub-radius); padding:16px; border:1px solid rgba(15,23,42,0.04); }
-    .carousel-window{height:76px; position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; border-radius:10px; background:var(--hub-card); box-shadow:0 10px 30px rgba(16,24,40,0.04) }
-    .carousel-item{ position:absolute; inset:0; display:flex; gap:14px; align-items:center; justify-content:center; padding:8px 18px; opacity:0; transform:translateX(20px); transition:all .55s cubic-bezier(.2,.9,.3,1); }
-    .carousel-item.active{ opacity:1; transform:translateX(0) }
-    .carousel-icon{ width:54px; height:54px; border-radius:12px; display:grid; place-items:center; background:linear-gradient(180deg, rgba(77,182,255,0.12), rgba(37,115,255,0.06)); color:var(--hub-accentB); border:1px solid rgba(37,115,255,0.06); flex:0 0 54px }
-    .carousel-text{ font-weight:700; color:var(--hub-ink); font-size:1.05rem; text-align:left; max-width:720px }
+        @media(max-width:900px) {
+            .features-grid-white {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-    .carousel-controls{ display:flex; gap:8px; justify-content:center; margin-top:12px }
-    .carousel-dot{ width:8px; height:8px; border-radius:999px; background:rgba(15,23,42,0.06); transition:all .25s; border:0; }
-    .carousel-dot.active{ width:56px; height:10px; border-radius:10px; background:linear-gradient(90deg,var(--hub-accentA),var(--hub-accentB)) }
+        @media(max-width:600px) {
+            .features-grid-white {
+                grid-template-columns: 1fr;
+            }
+        }
 
-    /* problems grid (renamed) */
-    .feature-grid { margin-top:22px; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:16px; }
-    .feature-card {
-      background:var(--hub-card); border-radius:12px; padding:18px; border:1px solid rgba(15,23,42,0.04);
-      display:flex; gap:12px; align-items:flex-start; box-shadow:0 6px 18px rgba(16,24,40,0.03); transition:transform .22s ease, box-shadow .22s ease;
-      transform:translateY(10px); opacity:0;
-    }
-    .feature-card.visible{ transform:translateY(0); opacity:1 }
-    .feature-card:hover{ transform:translateY(-6px); box-shadow:0 26px 50px rgba(37,115,255,0.08); border-color: rgba(37,115,255,0.10) }
-    .feature-icon{ width:46px; height:46px; display:grid; place-items:center; border-radius:10px; background:linear-gradient(180deg, rgba(77,182,255,0.08), rgba(37,115,255,0.04)); color:var(--hub-accentB); border:1px solid rgba(37,115,255,0.06) }
-    .feature-card h4{ margin:0; font-size:1rem; font-weight:800; color:var(--hub-ink) }
-    .feature-card p{ margin:4px 0 0; color:var(--hub-muted); font-size:0.95rem; line-height:1.45 }
+        /* Card */
+        .feature-card-white {
+            background: #f8faff;
+            border-radius: 18px;
+            padding: 28px;
+            transition: 0.3s;
+            cursor: pointer;
+            border: 1px solid #e1e8f5;
+            position: relative;
+            overflow: hidden;
+        }
 
-    /* CTA aside (renamed) */
-    .cta-panel { background:linear-gradient(180deg, #f8fcff, #ffffff); border-radius:12px; padding:20px; border:1px solid rgba(37,115,255,0.06); box-shadow:0 12px 36px rgba(16,24,40,0.04); text-align:center }
-    .cta-panel h3{ margin:0 0 8px; font-size:1.15rem; color:var(--hub-ink) }
-    .cta-panel p{ margin:0 0 14px; color:var(--hub-muted) }
-    .action-row{ display:flex; gap:10px; justify-content:center }
-    .action-btn{ padding:10px 16px; border-radius:10px; font-weight:800; cursor:pointer; border:none }
-    .action-btn.primary{ background:linear-gradient(90deg,var(--hub-accentA),var(--hub-accentB)); color:white; box-shadow:0 10px 30px rgba(37,115,255,0.12) }
-    .action-btn.ghost{ background:transparent; border:1px solid rgba(15,23,42,0.06); color:var(--hub-ink) }
+        .feature-card-white:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+            background: #ffffff;
+        }
 
-    .kpis{ display:flex; gap:10px; justify-content:center; margin-top:14px; flex-wrap:wrap }
-    .kpi{ background:#ffffff; border-radius:10px; padding:10px 12px; border:1px solid rgba(15,23,42,0.04); min-width:110px; text-align:center }
-    .kpi strong{ display:block; color:var(--hub-ink); font-size:1.05rem }
-    .kpi small{ color:var(--hub-muted); font-size:0.85rem }
+        /* Gradient border on hover */
+        .feature-card-white::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 2px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #4db8ff, #2a8cff);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: 0.3s ease;
+        }
 
-    @media (max-width:980px){ .layout-grid{grid-template-columns:1fr} .cta-panel{order:2} .feature-grid{grid-template-columns:1fr 1fr} }
-    @media (max-width:640px){ .feature-grid{grid-template-columns:1fr} .carousel-text{font-size:0.98rem} }
-  </style>
+        .feature-card-white:hover::before {
+            opacity: 1;
+        }
 
-  <!-- decorative blobs -->
-  <div class="blob blob-left" aria-hidden="true"></div>
-  <div class="blob blob-right" aria-hidden="true"></div>
+        .icon {
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+        }
 
-  <div class="container-hub" role="region" aria-label="Shvya overview">
-    <header class="header-hub" aria-labelledby="hub-heading">
-      <div class="label-pill">Personal &amp; Powerful</div>
-      <h2 id="hub-heading">We don’t just build software — we fix what’s broken in businesses.</h2>
-      <p class="lead-text">Shvya was created from real operational pain: missed follow-ups, scattered teams, disconnected data, and endless manual work. We build systems that think like business owners.</p>
-    </header>
+        .feature-title {
+            color: #1a1a1a;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
 
-    <div class="layout-grid">
-      <!-- LEFT: carousel + grid -->
-      <div>
-        <!-- carousel -->
-        <div class="carousel" aria-live="polite">
-          <div class="carousel-window" id="carousel-window" role="region" aria-label="Rotating problems">
-            <!-- slides inserted by JS -->
-          </div>
-          <div class="carousel-controls" id="carousel-controls" role="tablist" aria-label="Rotate problems"></div>
+        .feature-desc {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Footer text */
+        .footer-text {
+            text-align: center;
+            color: #555;
+            font-size: 1.1rem;
+            padding-top: 20px;
+            border-top: 1px solid #dedede;
+            font-style: italic;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%,100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+    </style>
+
+
+    <h1 class="shvya-title">Why Businesses Choose Shvya</h1>
+
+    <div class="main-card-white">
+
+        <div class="headline">
+            <h2>Because Every Business Wants One Thing-<span class="highlight">Clarity</span>.</h2>
         </div>
 
-        <!-- grid -->
-        <div class="feature-grid" id="feature-grid" aria-label="Common founder problems" style="margin-top:18px">
-          <!-- cards inserted by JS -->
-        </div>
-      </div>
+        <div class="features-grid-white">
 
-      <!-- RIGHT: CTA -->
-      <aside class="cta-panel" role="complementary" aria-labelledby="cta-title">
-        <h3 id="cta-title">Stop fighting these battles</h3>
-        <p>Schedule a demo to see how Shvya automates follow-ups, centralizes data, and frees your team to focus on growth.</p>
+            <div class="feature-card-white">
+                <span class="icon">🧠</span>
+                <div class="feature-title">AI-Driven Automation</div>
+                <div class="feature-desc">Respond, qualify, and nurture instantly.</div>
+            </div>
 
-        <div class="action-row" role="toolbar" aria-label="Demo actions">
-          <button class="action-btn primary" id="demo-request">Request Demo</button>
-          <button class="action-btn ghost" id="demo-tour">See How It Works</button>
+            <div class="feature-card-white">
+                <span class="icon">🔗</span>
+                <div class="feature-title">All-In-One Ecosystem</div>
+                <div class="feature-desc">Every module talks to each other seamlessly.</div>
+            </div>
+
+            <div class="feature-card-white">
+                <span class="icon">⏱️</span>
+                <div class="feature-title">Time-Saving Efficiency</div>
+                <div class="feature-desc">What took hours now takes seconds.</div>
+            </div>
+
+            <div class="feature-card-white">
+                <span class="icon">🔒</span>
+                <div class="feature-title">Security First</div>
+                <div class="feature-desc">Enterprise-grade protection for your data and users.</div>
+            </div>
+
+            <div class="feature-card-white">
+                <span class="icon">📈</span>
+                <div class="feature-title">Data-Driven Growth</div>
+                <div class="feature-desc">Dashboards that reveal powerful insights.</div>
+            </div>
+
+            <div class="feature-card-white">
+                <span class="icon">💡</span>
+                <div class="feature-title">Complete Clarity</div>
+                <div class="feature-desc">Full visibility into every aspect of your business.</div>
+            </div>
+
         </div>
 
-        <div class="kpis" aria-hidden="true">
-          <div class="kpi"><strong>85%</strong><small>Faster follow-up</small></div>
-          <div class="kpi"><strong>40+</strong><small>Hours saved / week</small></div>
-          <div class="kpi"><strong>100%</strong><small>Centralized data</small></div>
+        <div class="footer-text">
+            When clarity drives your business, growth becomes effortless.
         </div>
-      </aside>
     </div>
-  </div>
-
-  <script>
-  (function(){
-    const data = [
-      { icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path d="M4 7h16M4 12h10M4 17h16" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>', text: 'Talk like humans — not forms. Conversational flows that guide users and shorten time-to-action.' },
-      { icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path d="M3 6h18M8 6v12a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4V6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>', text: 'Automate the boring work. Reliable workflows that free your team for decisions.' },
-      { icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path d="M3 12h18M12 3v18" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>', text: 'Turn chaos into clarity. Real-time dashboards and alerts that help you act.' },
-      { icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path d="M3 21l9-18 9 18" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>', text: 'Scale your business, not your workload. Systems that grow with you.' },
-      { icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path d="M12 2l2 4 4 .5-3 2 1 4-4-2-4 2 1-4-3-2 4-.5L12 2z" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>', text: 'Protect your business with confidence. Enterprise-grade security and audit trails.' },
-      { icon: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="3" stroke-width="1.4"/><path d="M5 21v-1a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v1" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>', text: 'See everything in one place. Unified data views remove blind spots.' }
-    ];
-
-    const carouselWindow = document.getElementById('carousel-window');
-    const carouselControls = document.getElementById('carousel-controls');
-    const gridWrap = document.getElementById('feature-grid');
-
-    // build carousel items & controls
-    data.forEach((item, i) => {
-      const slide = document.createElement('div');
-      slide.className = 'carousel-item';
-      slide.innerHTML = `<div class="carousel-icon">${item.icon}</div><div class="carousel-text"><span class="sr-only">Problem ${i+1}: </span>${item.text}</div>`;
-      carouselWindow.appendChild(slide);
-
-      const dot = document.createElement('button');
-      dot.className = 'carousel-dot';
-      dot.type = 'button';
-      dot.setAttribute('aria-label', 'Show item '+(i+1));
-      dot.addEventListener('click', ()=> goTo(i));
-      carouselControls.appendChild(dot);
-    });
-
-    // build feature grid cards
-    data.forEach((item, i)=>{
-      const c = document.createElement('div');
-      c.className = 'feature-card';
-      c.innerHTML = `<div class="feature-icon" aria-hidden="true">${item.icon}</div><div><h4>${item.text.split('.')[0]}</h4><p>${item.text}</p></div>`;
-      gridWrap.appendChild(c);
-    });
-
-    const slides = Array.from(carouselWindow.querySelectorAll('.carousel-item'));
-    const dots = Array.from(carouselControls.querySelectorAll('.carousel-dot'));
-    const cards = Array.from(gridWrap.querySelectorAll('.feature-card'));
-    let idx = 0, inter = null;
-
-    function show(n){
-      slides.forEach((s,i)=> s.classList.toggle('active', i===n));
-      dots.forEach((d,i)=> d.classList.toggle('active', i===n));
-    }
-    function next(){ idx = (idx+1) % slides.length; show(idx); }
-    function reset(){ clearInterval(inter); inter = setInterval(next, 3500); }
-
-    show(0); reset();
-    carouselWindow.addEventListener('mouseenter', ()=> clearInterval(inter));
-    carouselWindow.addEventListener('mouseleave', reset);
-
-    function goTo(i){ idx = i; show(idx); reset(); }
-
-    // reveal cards staggered
-    const io = new IntersectionObserver((entries, obs)=>{
-      entries.forEach((e, i)=>{
-        if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
-      });
-    }, {threshold:0.12});
-    cards.forEach((c,i)=>{ c.style.transitionDelay = `${i*70}ms`; io.observe(c); });
-
-    // CTA hooks (replace with real behavior)
-    document.getElementById('demo-request').addEventListener('click', ()=> window.alert('Request demo — integrate your flow here.'));
-    document.getElementById('demo-tour').addEventListener('click', ()=> window.alert('See how — link to tour or video.'));
-
-    // keyboard accessible dots
-    dots.forEach((d,i)=> d.addEventListener('keydown', (e)=> { if(e.key==='Enter' || e.key===' ') { e.preventDefault(); goTo(i); } }));
-  })();
-  </script>
 
 </section>
 
@@ -1486,8 +1469,8 @@ School Erp  Start
   </style>
 
   <div class="channels-wrap">
-    <h2 id="channels-heading">Deliver right content at the right time through the right channel</h2>
-    <p class="channels-sub">Engage your prospects across multiple touchpoints that lead to faster and increased conversions.</p>
+    <h2 id="channels-heading">Deliver the Right Experience at Every Stage With Shvya</h2>
+    <p class="channels-sub">Your business grows when every interaction is fast, consistent, and automated. Shvya makes sure the right action happens at the right moment without manual effort.</p>
 
     <div class="channels-grid" role="list">
       <!-- Calls -->
@@ -1498,8 +1481,8 @@ School Erp  Start
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.08 4.18 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.72c.12.98.35 1.95.67 2.86a2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 6 6l1.23-1.23a2 2 0 0 1 2.11-.45c.91.32 1.88.55 2.86.67A2 2 0 0 1 22 16.92z"></path>
           </svg>
         </div>
-        <div class="channel-title">Calls</div>
-        <div class="channel-desc">Call leads directly through the web or via app, with a single click.</div>
+        <div class="channel-title">Client Conversations</div>
+        <div class="channel-desc">Give your team a smarter way to respond. Shvya ensures every inquiry is handled instantly with zero missed follow-ups.</div>
       </div>
 
       <!-- Emails -->
@@ -1511,8 +1494,8 @@ School Erp  Start
             <path d="M22 5a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v1l10 6 10-6V5z"></path>
           </svg>
         </div>
-        <div class="channel-title">Emails</div>
-        <div class="channel-desc">Create and send personalized emails quickly with an advanced drag-and-drop email builder.</div>
+        <div class="channel-title">Smart Notifications</div>
+        <div class="channel-desc">Automated alerts and reminders that keep teams and customers aligned effortlessly.</div>
       </div>
 
       <!-- WhatsApp -->
@@ -1525,8 +1508,8 @@ School Erp  Start
             <path d="M7 7l4 4"></path>
           </svg>
         </div>
-        <div class="channel-title">WhatsApp Business API</div>
-        <div class="channel-desc">Engage deeply with rich media messaging through your verified WhatsApp account.</div>
+        <div class="channel-title">Task & Workflow Actions</div>
+        <div class="channel-desc">Trigger actions the moment something happens: auto-assign tasks, update statuses, notify teams, or launch workflows instantly.</div>
       </div>
 
       <!-- Chatbot (special) -->
@@ -1534,11 +1517,11 @@ School Erp  Start
         <div class="icon-wrap" aria-hidden="true" style="background:transparent; box-shadow:none; border:none;">
           <span class="avatar" aria-hidden="true">
             <!-- local image path included as requested -->
-            <img src="/mnt/data/48c39e98-29ea-4cc2-aaef-a16efcac8a16.png" alt="Niaa chatbot avatar">
+            <img src="shvya-resources/datascan.png" alt="Data Sync">
           </span>
         </div>
-        <div class="channel-title">Niaa - The Education Chatbot</div>
-        <div class="channel-desc">Nurture prospects 24×7×365 with an AI-based conversational chatbot on Web and WhatsApp.</div>
+        <div class="channel-title">Data Sync Across Departments</div>
+        <div class="channel-desc">One update refreshes everything - sales, ops, finance, support. No confusion. Full clarity.</div>
       </div>
 
       <!-- SMS -->
@@ -1549,8 +1532,8 @@ School Erp  Start
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
           </svg>
         </div>
-        <div class="channel-title">SMS</div>
-        <div class="channel-desc">Broadcast personalized, multilingual text messages to your leads.</div>
+        <div class="channel-title">Customer Engagement</div>
+        <div class="channel-desc">Send timely, personalized messages that build trust and improve retention.</div>
       </div>
 
       <!-- Remarketing -->
@@ -1563,8 +1546,8 @@ School Erp  Start
             <path d="M7 8l3-3 3 3"></path>
           </svg>
         </div>
-        <div class="channel-title">Remarketing Connectors</div>
-        <div class="channel-desc">Retarget your candidates with relevant ads to convert faster.</div>
+        <div class="channel-title">Operational Insights</div>
+        <div class="channel-desc">Real-time visibility into bottlenecks, progress, and performance all from one unified dashboard.</div>
       </div>
     </div>
   </div>
@@ -1702,68 +1685,63 @@ School Erp  Start
         <span class="cd-dot green"></span>
       </div>
 
-      <img src="shvya-resources/hotal.png"
+      <img src="shvya-resources/growth.png"
            class="cd-img"
            alt="Counselor Dashboard Preview">
     </div>
 
     <div class="cd-content">
-      <h2>Enhance productivity with counselor dashboard</h2>
+      <h2>What Exactly Changes With Shvya?</h2>
       <p>
-        Ensure accountability for guidance teams with a glanceable preview feature of the 
-        Counselor and Intake Productivity Dashboard. Monitor and improve the performance of your 
-        outreach teams with built-in analytics and easy-to-share counselor productivity exports.
-        Access follow-up insights to boost timely admissions.
+        Manual work depends on memory. Shvya replaces memory with systems, your business runs smoothly, automatically, and without constant supervision.
       </p>
-    </div>
+    </div>  
   </div>
-
-
   <!-- TABLE SECTION -->
   <div class="cd-table-wrap">
     <table class="cd-table">
       <thead>
         <tr>
           <th>Features</th>
-          <th>Lead Nurturing (Auto-Flows)</th>
-          <th>Lead Nurturing (Manual Workflows)</th>
+          <th>With Shvya</th>
+          <th>Manual Work</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="cd-name">Template Creator</td>
+          <td class="cd-name">Everything-in-One Place</td>
           <td><span class="cd-chip yes">Yes</span></td>
-          <td><span class="cd-chip no">Partial</span></td>
+          <td><span class="cd-chip no">✘ Scattered Everywhere</span></td>
         </tr>
         <tr>
-          <td class="cd-name">Campaign Segmentation</td>
+          <td class="cd-name">Automatic Follow-ups</td>
           <td><span class="cd-chip yes">Yes</span></td>
-          <td><span class="cd-chip no">Partial</span></td>
+          <td><span class="cd-chip no">✘ Team Forgets / Delays</span></td>
         </tr>
         <tr>
-          <td class="cd-name">Custom Automation</td>
+          <td class="cd-name">Instant Clarity</td>
           <td><span class="cd-chip yes">Yes</span></td>
-          <td><span class="cd-chip no">No</span></td>
+          <td><span class="cd-chip no">✘ No Real-Time Visibility</span></td>
         </tr>
         <tr>
-          <td class="cd-name">Counselor Dashboard</td>
+          <td class="cd-name">Work That Runs Itself</td>
           <td><span class="cd-chip yes">Yes</span></td>
-          <td><span class="cd-chip no">No</span></td>
+          <td><span class="cd-chip no">✘ Manual Tasks Slow Work</span></td>
         </tr>
         <tr>
-          <td class="cd-name">Lead Scoring</td>
+          <td class="cd-name">No More Miscommunication</td>
           <td><span class="cd-chip yes">Yes</span></td>
-          <td><span class="cd-chip no">Partial</span></td>
+          <td><span class="cd-chip no">✘ Constant Confusion</span></td>
         </tr>
         <tr>
-          <td class="cd-name">Bulk Messaging</td>
+          <td class="cd-name">Founder Has Full Control</td>
           <td><span class="cd-chip yes">Yes</span></td>
-          <td><span class="cd-chip no">No</span></td>
+          <td><span class="cd-chip no">✘ Founder Must Micromanage</span></td>
         </tr>
         <tr>
-          <td class="cd-name">User Permissions</td>
+          <td class="cd-name">Smart Reporting & Insights</td>
           <td><span class="cd-chip yes">Yes</span></td>
-          <td><span class="cd-chip no">Partial</span></td>
+          <td><span class="cd-chip no">✘ Delayed / No Reports</span></td>
         </tr>
       </tbody>
     </table>
@@ -1788,10 +1766,9 @@ School Erp  Start
                 </h2>
 
                 <p class="text-gray-600 mt-6 leading-relaxed">
-                    Whether you want to simplify your CRM, automate HR, or streamline
-                    operations across every department. 
+                    our business grows faster when everything works together — Shvya makes that possible.
                     <span class="font-semibold text-gray-800">
-                        Shvya helps your business scale, not struggle.
+                        Start running your business with clarity, speed, and control.
                     </span>
                 </p>
 

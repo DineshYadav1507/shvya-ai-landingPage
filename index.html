@@ -52,6 +52,7 @@
         .hero-bg {
             background: linear-gradient(135deg, #1a1d29 0%, #2d3748 100%);
         }
+        
     </style>
 </head>
 <body class="bg-gray-50 font-inter min-h-screen flex flex-col">
@@ -64,7 +65,7 @@
       <!-- Brand -->
       <div class="flex items-center">
         <div class="text-2xl font-bold text-shvya-navy">
-          <span class="text-shvya-blue">Shvya</span> Ai
+          <span class="text-shvya-blue">Shvya</span> AI
         </div>
       </div>
 
@@ -80,9 +81,36 @@
 
       <!-- Right CTA + hamburger -->
       <div class="flex items-center space-x-4">
-        <a href="bookacall.html" class="hidden md:inline-block bg-shvya-blue text-white px-4 py-2 rounded-lg hover:bg-shvya-blue/90 transition-colors">
-          Book a Call
-        </a>
+        <a href="bookacall.html"
+   style="
+      display:inline-block;
+      margin-top:12px;
+      background:#1e57ff;
+      color:#fff;
+      padding:12px 20px;
+      border-radius:8px;
+      font-weight:600;
+      text-decoration:none;
+      transition:all .3s ease;
+      position:relative;
+      overflow:hidden;
+      animation:livePulse 1.8s infinite ease-in-out;
+      box-shadow:0 0 18px rgba(30,87,255,0.4);
+   "
+   onmouseover="this.style.transform='scale(1.06)'; this.style.boxShadow='0 0 25px rgba(30,87,255,0.6)';"
+   onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 18px rgba(30,87,255,0.4)';"
+>
+    Book a Call
+</a>
+
+<style>
+@keyframes livePulse {
+    0% { transform: scale(1); box-shadow:0 0 0 0 rgba(30,87,255,0.55); }
+    70% { transform: scale(1.04); box-shadow:0 0 12px 10px rgba(30,87,255,0); }
+    100% { transform: scale(1); box-shadow:0 0 0 0 rgba(30,87,255,0); }
+}
+</style>
+
 
         <!-- Hamburger (mobile only) -->
         <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-shvya-charcoal hover:text-shvya-blue focus:outline-none">
@@ -103,9 +131,10 @@
       <a href="shvya-about.html" class="block px-3 py-2 rounded-md text-base text-shvya-charcoal hover:text-shvya-blue">About</a>
       <a href="shvya-deployment.html" class="block px-3 py-2 rounded-md text-base text-shvya-charcoal hover:text-shvya-blue">4HR Deploy</a>
       <a href="shvya-contact.html" class="block px-3 py-2 rounded-md text-base text-shvya-charcoal hover:text-shvya-blue">Contact</a>
-      <a href="bookacall.html" class="inline-block mt-3 bg-shvya-blue text-white px-4 py-2 rounded-lg hover:bg-shvya-blue/90 transition-colors">
-        Book a Call
-      </a>
+      <a href="bookacall.html" class="inline-block mt-3 bg-shvya-blue text-white px-4 py-2 rounded-lg hover:bg-shvya-blue/90 transition-colors pulse-ai">
+    Book a Call
+</a>
+
     </div>
   </div>
 </nav>
@@ -128,27 +157,28 @@
       <div class="text-white">
         <div class="mb-6">
           <div class="inline-block bg-shvya-orange text-white px-4 py-2 rounded-full text-sm font-semibold mb-4 pulse-ai">
-          AI-Powered CRM • ERP • Inventory — 4-Hour Deployment
+          Go Live Today. Deploy in 4 Hours.
           </div>
 
           <!-- Headline: mobile font sizes, larger on lg -->
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 leading-tight">
-            <span class="gradient-text">Shvya CRM ERP Inventory for</span><br>
-            <span class="typewriter block text-xl sm:text-2xl lg:text-3xl">Next-Generation Retail & Distribution</span>
+            <span class="gradient-text">Shvya</span><br>
+            <span class="typewriter block text-xl sm:text-2xl lg:text-3xl">One Platform. Total Control.</span>
           </h1>
 
           <p class="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 lg:mb-8 leading-relaxed">
-            Your Complete AI Business Stack: CRM, ERP, Inventory,<br>E-commerce & Hospital-Fast, flexible & ready in 4 hours.
+           Built for founders who want clarity, control, and growth without juggling multiple tools.
+           One unified system to run sales, operations, finance, HR, and workflows effortlessly.
           </p>
         </div>
 
         <!-- CTA: stacked on mobile, inline on sm+ -->
         <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 lg:mb-12">
           <button class="bg-shvya-blue text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-shvya-blue/90 transition-all transform hover:scale-105 ai-glow">
-            Explore AI Products
+            Explore Products
           </button>
           <button class="border-2 border-shvya-blue text-shvya-blue px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-shvya-blue hover:text-white transition-all">
-            Book a Demo Call
+            Book a Demo
           </button>
         </div>
 
@@ -156,15 +186,15 @@
         <div class="grid grid-cols-3 gap-4 text-center text-sm sm:text-base">
           <div>
             <div class="text-xl sm:text-2xl font-bold text-shvya-blue">1000+</div>
-            <div class="text-gray-300">AI Deployments</div>
+            <div class="text-gray-300">Businesses Empowered</div>
           </div>
           <div>
             <div class="text-xl sm:text-2xl font-bold text-shvya-blue">4hrs</div>
-            <div class="text-gray-300">Avg Deploy Time</div>
+            <div class="text-gray-300">Avg Deployment Time</div>
           </div>
           <div>
             <div class="text-xl sm:text-2xl font-bold text-shvya-blue">99.9%</div>
-            <div class="text-gray-300">AI Uptime SLA</div>
+            <div class="text-gray-300">System Uptime</div>
           </div>
         </div>
       </div>
@@ -555,10 +585,9 @@
 
       <!-- RIGHT SIDE: TEXT -->
       <div class="order-2 lg:order-none">
-        <h2 class="text-4xl font-bold text-shvya-charcoal mb-6">The Shvya Ecosystem</h2>
+        <h2 class="text-4xl font-bold text-shvya-charcoal mb-6">The Shvya Solution One Ecosystem for All Your Operations</h2>
         <p class="text-xl text-gray-600 mb-8">
-          An integrated suite of SaaS products built to run your business end-to-end — from leads to billing to operations.
-          Deploy individual modules or the full ecosystem for unified data, faster teams and predictable growth.
+          Instead of juggling 10 tools, Shvya brings everything into one connected SaaS platform built for clarity, speed, and growth.
         </p>
 
         <div class="space-y-6">
@@ -568,8 +597,9 @@
               <span class="text-xl">🎓</span>
             </div>
             <div>
-              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">School ERP</h3>
-              <p class="text-gray-600">Student management, attendance, exams, fee collection & parent communication.</p>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Shvya CRM</h3>
+              <p class="text-gray-600">Manage your leads, clients, and deals with simplicity.
+              No clutter,  just visibility, speed, and control.</p>
             </div>
           </div>
 
@@ -578,8 +608,8 @@
               <span class="text-xl">🏥</span>
             </div>
             <div>
-              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Hospital ERP</h3>
-              <p class="text-gray-600">OPD/IPD, patient records, pharmacy, labs, billing and healthcare workflows.</p>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Shvya Inventory System</h3>
+              <p class="text-gray-600">Stay in control of every item, vendor, and order, reduce stock chaos and improve planning.</p>
             </div>
           </div>
 
@@ -589,8 +619,8 @@
               <span class="text-xl">🛒</span>
             </div>
             <div>
-              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">E-commerce</h3>
-              <p class="text-gray-600">Storefront, catalog, payments, order management and integrations for fast online selling.</p>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Shvya HRM + Payroll</h3>
+              <p class="text-gray-600">Simplify attendance, performance, and salary management in one clean dashboard.</p>
             </div>
           </div>
 
@@ -599,8 +629,9 @@
               <span class="text-xl">📦</span>
             </div>
             <div>
-              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Inventory Billing</h3>
-              <p class="text-gray-600">Stock control, multi-warehouse inventory & automated billing for retail and wholesale.</p>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Shvya AI</h3>
+              <p class="text-gray-600">Your 24×7 smart assistant for lead qualification, follow-ups, and client engagement.
+               Never miss a lead again.</p>
             </div>
           </div>
 
@@ -610,8 +641,8 @@
               <span class="text-xl">📞</span>
             </div>
             <div>
-              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Lead CRM</h3>
-              <p class="text-gray-600">Lead capture, pipeline tracking, automated follow-ups and sales analytics.</p>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Shvya School ERP</h3>
+              <p class="text-gray-600">Digitize attendance, exams, fees, and communication everything a modern institution needs.</p>
             </div>
           </div>
 
@@ -620,12 +651,42 @@
               <span class="text-xl">💬</span>
             </div>
             <div>
-              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Chatbot</h3>
-              <p class="text-gray-600">AI chatbots for lead qualification, FAQs and 24/7 customer touchpoints — integrated with CRM.</p>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Shvya Hospital ERP</h3>
+              <p class="text-gray-600">From patient registration to billing, manage your hospital’s operations seamlessly.</p>
             </div>
           </div>
         </div>
-
+<!-- 3333333333333333333333333333333333333333333 -->
+  <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-xl">💬</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Shvya Restaurant ERP</h3>
+              <p class="text-gray-600">Simplify kitchen orders, table billing, and stock tracking all in real-time.</p>
+            </div>
+          </div>
+        </div>
+         <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-xl">💬</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Shvya Geo-Fencing Employee Management</h3>
+              <p class="text-gray-600">Track field staff, monitor attendance, and improve workforce accountability with live GPS tracking.</p>
+            </div>
+          </div>
+        </div>
+         <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-xl">💬</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Shvya Smart Billing System</h3>
+              <p class="text-gray-600">Create GST-compliant invoices, track payments, and get real-time financial clarity.</p>
+            </div>
+          </div>
+        </div>
         <div class="mt-8 flex flex-wrap gap-4">
           <a href="shvya-ecosystem.html" class="bg-shvya-navy text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-shvya-navy/90 transition-all inline-block">
             Explore the Ecosystem
@@ -635,7 +696,7 @@
             Book a Demo Call
           </a>
         </div>
-      </div>
+    
 
     </div>
   </div>
@@ -657,11 +718,10 @@
 
             <!-- RIGHT SIDE: TEXT -->
             <div class="order-2 lg:order-none">
-                <h2 class="text-4xl font-bold text-shvya-charcoal mb-6">Beyond AI Software</h2>
+                <h2 class="text-4xl font-bold text-shvya-charcoal mb-6">Our Services</h2>
                 <p class="text-xl text-gray-600 mb-8">
-                    We offer comprehensive digital services powered by artificial intelligence to help your business 
-                    thrive in the digital transformation era. From custom development to AI strategy consulting.
-                </p>
+                    Because not every business fits one box.
+                    Alongside our products, we also build customized digital solutions to match your goals.</p>
                 
                 <div class="space-y-6">
                     <div class="flex items-start space-x-4">
@@ -670,7 +730,7 @@
                         </div>
                         <div>
                             <h3 class="text-lg font-semibold text-shvya-charcoal mb-2">Custom Website Development</h3>
-                            <p class="text-gray-600">AI-powered web solutions with intelligent automation and optimization</p>
+                            <p class="text-gray-600">Conversion-focused websites built to help you get more leads, more clarity, and more sales not just “a website”.</p>
                         </div>
                     </div>
                     
@@ -679,8 +739,8 @@
                             <span class="text-xl">📈</span>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-shvya-charcoal mb-2">Digital Marketing & Social Media</h3>
-                            <p class="text-gray-600">AI-driven marketing strategies that deliver measurable ROI and growth</p>
+                            <h3 class="text-lg font-semibold text-shvya-charcoal mb-2">App Development</h3>
+                            <p class="text-gray-600">Smooth, fast, user-friendly mobile apps that simplify operations and keep your customers connected to your business 24/7.</p>
                         </div>
                     </div>
                     
@@ -689,15 +749,15 @@
                             <span class="text-xl">⚙️</span>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-shvya-charcoal mb-2">Custom Software & Business Support</h3>
-                            <p class="text-gray-600">Tailored AI automation solutions for your unique business needs</p>
+                            <h3 class="text-lg font-semibold text-shvya-charcoal mb-2">Custom Software & Business Systems</h3>
+                            <p class="text-gray-600">Tailored automation + business tools built exactly around your workflow so you reduce manual work and scale faster.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="mt-8">
                     <a href="shvya-services.html" class="bg-shvya-navy text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-shvya-navy/90 transition-all inline-block">
-                        Explore AI Services
+                        Explore Our Services
                     </a>
                     <a href="shvya-services.html" class="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-red-700 transition-all inline-block">
                         Book a Demo Call
@@ -714,7 +774,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-charcoal mb-4">Trusted by Industry Leaders</h2>
-                <p class="text-xl text-gray-600">See what our clients say about our 4-hour deployment service</p>
+                <p class="text-xl text-gray-600">See what founders and managers say after shifting their operations to Shvya’s unified business system.</p>
             </div>
             
             <div class="splide" id="testimonial-slider">
@@ -724,22 +784,23 @@
                             <div class="bg-white rounded-xl shadow-lg p-8 text-center">
                                 <div class="text-4xl mb-4">⭐⭐⭐⭐⭐</div>
                                 <p class="text-lg text-gray-600 mb-6 italic">
-                                    "SaaS Pro deployed our entire inventory management system in exactly 3 hours and 45 minutes. 
-                                    The speed and professionalism were incredible. Our team was operational the same day."
-                                </p>
-                                <div class="font-semibold text-charcoal">Sarah Johnson</div>
-                                <div class="text-gray-500">Operations Director, TechCorp</div>
+                                    "Shvya simplified our entire workflow. Lead management, HR, billing everything is finally organized and accessible in one system. The productivity boost is real."</p>
+                                <div class="font-semibold text-charcoal">Alex </div>
+                                <div class="text-gray-500">Hade, HPL</div>
                             </div>
                         </li>
                         <li class="splide__slide">
                             <div class="bg-white rounded-xl shadow-lg p-8 text-center">
                                 <div class="text-4xl mb-4">⭐⭐⭐⭐⭐</div>
                                 <p class="text-lg text-gray-600 mb-6 italic">
-                                    "The hospital management system deployment was flawless. Zero downtime, perfect data migration, 
-                                    and our staff was trained within the 4-hour window. Highly recommended."
+                                    "We shifted our entire operations to Shvya- CRM, HRM, Inventory, Billing and the impact was visible within days.
+                                     What earlier took three different tools and constant manual follow-ups now runs in one clean system.
+                                     Our team finally has clarity, our reporting is accurate, and we’ve stopped losing customers due to delays.
+                                     Shvya didn’t just streamline our processes… it gave us back control of our business."
+
                                 </p>
-                                <div class="font-semibold text-charcoal">Dr. Michael Chen</div>
-                                <div class="text-gray-500">Chief Medical Officer, City Hospital</div>
+                                <div class="font-semibold text-charcoal">Mr. Vicky Mishra</div>
+                                <div class="text-gray-500">CEO , KV Pump</div>
                             </div>
                         </li>
                         <li class="splide__slide">
@@ -749,8 +810,8 @@
                                     "Our eCommerce platform was live and processing orders in under 4 hours. 
                                     The ROI was immediate, and the support team was exceptional throughout the process."
                                 </p>
-                                <div class="font-semibold text-charcoal">Emily Rodriguez</div>
-                                <div class="text-gray-500">E-commerce Manager, RetailPlus</div>
+                                <div class="font-semibold text-charcoal">Salish Murya</div>
+                                <div class="text-gray-500">E-commerce Manager, Estamp</div>
                             </div>
                         </li>
                     </ul>
