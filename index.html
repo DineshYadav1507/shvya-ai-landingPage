@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shvya AI - CRM CMS ERP Solutions</title>
 <!-- Fonts -->
+ <!-- Favicon -->
+       <link rel="icon" type="image/png" href="shvya-porduct/favicon.jpg">
+       <link rel="shortcut icon" href="shvya-porduct/favicon.jpg" type="image/png">
      
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -63,11 +66,19 @@
     <div class="flex justify-between items-center h-16">
 
       <!-- Brand -->
-      <div class="flex items-center">
-        <div class="text-2xl font-bold text-shvya-navy">
-          <span class="text-shvya-blue">Shvya</span> AI
-        </div>
-      </div>
+      <!-- Inline heading with badge — keeps everything on one line -->
+<div class="flex items-center whitespace-nowrap">
+  <div class="text-2xl font-bold text-shvya-navy flex items-center">
+    <span class="text-shvya-blue">Shvya</span>
+    <span class="ml-1">AI</span>
+
+    <!-- Use an inline <a> + <span> badge so it will NEVER force a new line -->
+    <a href="#" class="ml-3 inline-flex items-center">
+      <span class="text-xs bg-shvya-orange text-white px-2 py-1 rounded font-mono">4HR DEPLOY</span>
+    </a>
+  </div>
+</div>
+
 
       <!-- Desktop links -->
       <div class="hidden md:flex items-center space-x-8">
@@ -95,7 +106,7 @@
       position:relative;
       overflow:hidden;
       animation:livePulse 1.8s infinite ease-in-out;
-      box-shadow:0 0 18px rgba(30,87,255,0.4);
+      box-shadow:0 0 18px rgba(228, 56, 4, 0.4);
    "
    onmouseover="this.style.transform='scale(1.06)'; this.style.boxShadow='0 0 25px rgba(30,87,255,0.6)';"
    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 18px rgba(30,87,255,0.4)';"
@@ -175,10 +186,13 @@
         <!-- CTA: stacked on mobile, inline on sm+ -->
         <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 lg:mb-12">
           <button class="bg-shvya-blue text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-shvya-blue/90 transition-all transform hover:scale-105 ai-glow">
-            Explore Products
+            <a href="products.html" class="explore-products-btn">
+             Explore Products</a>
+
           </button>
           <button class="border-2 border-shvya-blue text-shvya-blue px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-shvya-blue hover:text-white transition-all">
-            Book a Demo
+           <a href="bookacall.html" class="explore-products-btn">
+             Book a Call</a>
           </button>
         </div>
 
@@ -729,71 +743,73 @@
         }
     </style>
 
-    <div class="container">
-        <div class="section-header">
-            <h1 class="section-title">The Shvya Solution One Ecosystem for All Your Operations</h1>
-            <p class="section-subtitle">
-                Instead of juggling 10 tools, Shvya brings everything into one connected SaaS platform built for clarity, speed, and growth.
-            </p>
-        </div>
+   <div class="container">
+    <div class="section-header">
+        <h1 class="section-title">The Shvya Solution One Ecosystem for All Your Operations</h1>
+        <p class="section-subtitle">
+            Instead of juggling 10 tools, Shvya brings everything into one connected SaaS platform built for clarity, speed, and growth.
+        </p>
+    </div>
 
-        <div class="ecosystem-grid">
+    <div class="ecosystem-grid">
 
-            <div class="ecosystem-card">
-                <div class="card-icon"><i class="fas fa-users"></i></div>
-                <h3 class="card-title">Shvya CRM</h3>
-                <p class="card-description">Manage your leads, clients, and deals with simplicity. No clutter, just visibility, speed, and control.</p>
-            </div>
+        <a href="CRM & Lead Manager.html" class="ecosystem-card">
+            <div class="card-icon"><i class="fas fa-users"></i></div>
+            <h3 class="card-title">Shvya CRM</h3>
+            <p class="card-description">Manage your leads, clients, and deals with simplicity. No clutter, just visibility, speed, and control.</p>
+        </a>
 
-            <div class="ecosystem-card">
-                <div class="card-icon"><i class="fas fa-boxes-stacked"></i></div>
-                <h3 class="card-title">Shvya Inventory System</h3>
-                <p class="card-description">Stay in control of every item, vendor, and order, reduce stock chaos and improve planning.</p>
-            </div>
+        <a href="Inventory Billing.html" class="ecosystem-card">
+            <div class="card-icon"><i class="fas fa-boxes-stacked"></i></div>
+            <h3 class="card-title">Shvya Inventory System</h3>
+            <p class="card-description">Stay in control of every item, vendor, and order, reduce stock chaos and improve planning.</p>
+        </a>
 
-            <div class="ecosystem-card">
-                <div class="card-icon"><i class="fas fa-user-check"></i></div>
-                <h3 class="card-title">Shvya HRM + Payroll</h3>
-                <p class="card-description">Simplify attendance, performance, and salary management in one clean dashboard.</p>
-            </div>
+        <a href="hrm.html" class="ecosystem-card">
+            <div class="card-icon"><i class="fas fa-user-check"></i></div>
+            <h3 class="card-title">Shvya HRM + Payroll</h3>
+            <p class="card-description">Simplify attendance, performance, and salary management in one clean dashboard.</p>
+        </a>
 
-            <div class="ecosystem-card">
-                <div class="card-icon"><i class="fas fa-robot"></i></div>
-                <h3 class="card-title">Shvya AI</h3>
-                <p class="card-description">Your 24×7 smart assistant for lead qualification, follow-ups, and client engagement. Never miss a lead again.</p>
-            </div>
+        <a href="Shvya AI.html" class="ecosystem-card">
+            <div class="card-icon"><i class="fas fa-robot"></i></div>
+            <h3 class="card-title">Shvya AI</h3>
+            <p class="card-description">Your 24×7 smart assistant for lead qualification, follow-ups, and client engagement. Never miss a lead again.</p>
+        </a>
 
-            <div class="ecosystem-card">
-                <div class="card-icon"><i class="fas fa-school"></i></div>
-                <h3 class="card-title">Shvya School ERP</h3>
-                <p class="card-description">Digitize attendance, exams, fees, and communication everything a modern institution needs.</p>
-            </div>
+        <a href="School ERP.html" class="ecosystem-card">
+            <div class="card-icon"><i class="fas fa-school"></i></div>
+            <h3 class="card-title">Shvya School ERP</h3>
+            <p class="card-description">Digitize attendance, exams, fees, and communication everything a modern institution needs.</p>
+        </a>
 
-            <div class="ecosystem-card">
-                <div class="card-icon"><i class="fas fa-hospital"></i></div>
-                <h3 class="card-title">Shvya Hospital ERP</h3>
-                <p class="card-description">From patient registration to billing, manage your hospital’s operations seamlessly.</p>
-            </div>
+        <a href="Hospital ERP.html" class="ecosystem-card">
+            <div class="card-icon"><i class="fas fa-hospital"></i></div>
+            <h3 class="card-title">Shvya Hospital ERP</h3>
+            <p class="card-description">From patient registration to billing, manage your hospital’s operations seamlessly.</p>
+        </a>
 
-            <div class="ecosystem-card">
-                <div class="card-icon"><i class="fas fa-utensils"></i></div>
-                <h3 class="card-title">Shvya Restaurant ERP</h3>
-                <p class="card-description">Simplify kitchen orders, table billing, and stock tracking all in real-time.</p>
-            </div>
+        <a href="hotel.html" class="ecosystem-card">
+            <div class="card-icon"><i class="fas fa-utensils"></i></div>
+            <h3 class="card-title">Shvya Restaurant ERP</h3>
+            <p class="card-description">Simplify kitchen orders, table billing, and stock tracking all in real-time.</p>
+        </a>
 
-            <div class="ecosystem-card">
-                <div class="card-icon"><i class="fas fa-location-crosshairs"></i></div>
-                <h3 class="card-title">Shvya Geo-Fencing Employee Management</h3>
-                <p class="card-description">Track field staff, monitor attendance, and improve workforce accountability with live GPS tracking.</p>
-            </div>
+        <a href="CRM & Lead Manager.html" class="ecosystem-card">
+            <div class="card-icon"><i class="fas fa-location-crosshairs"></i></div>
+            <h3 class="card-title">Shvya Geo-Fencing Employee Management</h3>
+            <p class="card-description">Track field staff, monitor attendance, and improve workforce accountability with live GPS tracking.</p>
+        </a>
 
-            <div class="ecosystem-card">
-                <div class="card-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-                <h3 class="card-title">Shvya Smart Billing System</h3>
-                <p class="card-description">Create GST-compliant invoices, track payments, and get real-time financial clarity.</p>
-            </div>
+        <a href="Inventory Billing.html" class="ecosystem-card">
+            <div class="card-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+            <h3 class="card-title">Shvya Smart Billing System</h3>
+            <p class="card-description">Create GST-compliant invoices, track payments, and get real-time financial clarity.</p>
+        </a>
 
-        </div>
+    </div>
+</div>
+
 
         <div class="cta-section">
             <a href="bookacall.html" class="cta-button"><i class="fas fa-rocket"></i> Book a Demo Call</a>
@@ -860,7 +876,7 @@
                     <a href="shvya-services.html" class="bg-shvya-navy text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-shvya-navy/90 transition-all inline-block">
                         Explore Our Services
                     </a>
-                    <a href="shvya-services.html" class="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-red-700 transition-all inline-block">
+                    <a href="bookacall.html" class="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-red-700 transition-all inline-block">
                         Book a Demo Call
                         </a>
                 </div>

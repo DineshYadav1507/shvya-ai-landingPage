@@ -3,559 +3,207 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Shvya AI — Premium Booking</title>
-  <meta name="description" content="Premium booking: schedule your demo or deployment with Shvya AI.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <title>Book a Call — Shvya</title>
   <style>
     :root{
-      --bg-1:#061224;
-      --bg-2:#071a2b;
-      --card:#0b1220;
-      --muted:#94a3b8;
-      --accent:#0066ff;
-      --accent-2:#ff6b35;
-      --glass: rgba(255,255,255,0.04);
-      --radius:16px;
-      --success:#10b981;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color-scheme: dark;
+      --bg:#f7f9fc; --card:#ffffff; --accent:#0f62fe; --muted:#6b7280;
+      --success:#16a34a;
     }
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg-1),var(--bg-2));-webkit-font-smoothing:antialiased;color:#e6f0ff}
-    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;}
-    .container{width:100%;max-width:1100px;}
-
-    /* CARD */
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: 0 20px 60px rgba(2,6,23,0.6);
-      border: 1px solid rgba(255,255,255,0.04);
-      display:grid;
-      grid-template-columns: 1fr 420px;
-      gap:22px;
-      align-items:start;
-      overflow:hidden;
-    }
-    @media (max-width:980px){ .card { grid-template-columns: 1fr; } }
-
-    header.card-head{ display:flex; gap:12px; align-items:center; margin-bottom:6px;}
-    .logo-mark{ width:46px; height:46px; border-radius:10px; display:grid; place-items:center;
-      background: linear-gradient(135deg,var(--accent),var(--accent-2)); font-weight:800; color:white; font-size:18px; box-shadow:0 8px 30px rgba(0,102,255,0.12); }
-    h1.title{ margin:0; font-size:20px; letter-spacing:-0.2px; }
-    p.subtitle{ margin:4px 0 14px; color:var(--muted); font-size:13px; max-width:58ch; }
-
-    /* FORM LAYOUT */
-    form#bookForm { display:flex; flex-direction:column; gap:12px; }
-    .label{ font-weight:600; font-size:13px; color:#d7e9ff; margin-bottom:6px; display:block; }
-    input[type="text"], input[type="email"], select, textarea {
-      width:100%; padding:12px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.04);
-      background: rgba(255,255,255,0.02); color: #e9fbff; font-size:14px; outline:none;
-      transition: box-shadow .16s, border-color .16s;
-    }
-    input:focus, select:focus, textarea:focus { box-shadow: 0 10px 30px rgba(0,102,255,0.08); border-color: rgba(0,102,255,0.5); }
-
-    .row{ display:flex; gap:10px; }
-    .row .col{ flex:1; }
-
-    /* DATE PILL CALENDAR */
-    .calendar-strip { display:flex; gap:10px; overflow:auto; padding-bottom:6px; margin-bottom:2px; }
-    .date-pill{
-      min-width:88px; flex:0 0 auto; padding:10px;border-radius:12px; background:transparent; border:1px solid rgba(255,255,255,0.03);
-      text-align:center; cursor:pointer; transition: transform .15s, box-shadow .15s, border-color .15s;
-    }
-    .date-pill .dow{ font-size:12px; color:var(--muted); }
-    .date-pill .dom{ font-weight:800; font-size:16px; margin-top:6px; }
-    .date-pill.selected{ background: linear-gradient(90deg,var(--accent),var(--accent-2)); box-shadow:0 12px 30px rgba(0,102,255,0.12); border-color:transparent; color:white; transform:translateY(-4px); }
-    .date-pill.disabled{ opacity:0.36; cursor:not-allowed; transform:none; }
-
-    /* SLOTS */
-    .slots-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-top:8px; }
-    @media (max-width:640px){ .slots-grid { grid-template-columns: repeat(2, 1fr); } }
-    .slot {
-      padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);
-      background: rgba(255,255,255,0.015); color:#dfefff; text-align:center; cursor:pointer; font-weight:700;
-      transition: transform .12s, box-shadow .12s, background .12s;
-    }
-    .slot:hover { transform: translateY(-4px); box-shadow:0 10px 36px rgba(0,102,255,0.06); }
-    .slot.selected { background: linear-gradient(90deg,var(--accent),var(--accent-2)); color:white; box-shadow:0 12px 30px rgba(0,102,255,0.12); border-color:transparent; }
-    .slot.disabled { opacity:0.36; cursor:not-allowed; transform:none; box-shadow:none; }
-
-    /* RIGHT PANEL */
-    aside.right {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03);
-      min-height:260px;
-    }
-    .slot-box{ background: rgba(255,255,255,0.02); padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02); }
-    .slot-preview { font-weight:800; font-size:1.02rem; margin-top:6px; color:#fff; }
-
-    .muted { color:var(--muted); font-size:13px; }
-
-    /* CTA */
-    .cta-row{ display:flex; gap:10px; margin-top:6px; align-items:center; }
-    .btn { padding:11px 14px; border-radius:10px; font-weight:800; cursor:pointer; border:0; }
-    .btn-primary { background: linear-gradient(90deg,var(--accent),var(--accent-2)); color:white; box-shadow:0 12px 30px rgba(0,102,255,0.12); }
-    .btn-ghost { background:transparent; color:#dfefff; border:1px solid rgba(255,255,255,0.04); }
-
-    /* CONFIRM */
-    .confirm { margin-top:12px; padding:12px; border-radius:12px; background: linear-gradient(180deg, rgba(16,185,129,0.08), rgba(255,255,255,0.01)); color:#eafff5; border:1px solid rgba(16,185,129,0.12); display:none; }
-    .confirm.show { display:block; }
-
-    /* tiny */
-    .hint{ font-size:12px; color:var(--muted); margin-top:6px; }
-    .error { color:#ffb4b4; font-size:13px; margin-top:6px; display:none; }
-
-    footer.note{ text-align:center; margin-top:14px; color:var(--muted); font-size:13px; }
-
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); margin:0; color:#0f1724}
+    .container{max-width:920px;margin:40px auto;padding:28px}
+    .card{background:var(--card);border-radius:12px;padding:28px;box-shadow:0 6px 18px rgba(12,18,30,0.06)}
+    h1{margin:0 0 6px;font-size:20px}
+    p.lead{margin:0 0 18px;color:var(--muted)}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    label{display:block;font-size:13px;margin-bottom:6px}
+    input[type=text], input[type=email], input[type=tel], select, textarea{width:100%;padding:10px 12px;border:1px solid #e6e9ef;border-radius:8px;font-size:14px}
+    textarea{min-height:120px;resize:vertical}
+    .full{grid-column:1/-1}
+    .checkbox-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    .checkbox-item{display:flex;align-items:center;gap:10px;padding:8px;border:1px solid #eef2ff;border-radius:8px}
+    .muted{color:var(--muted);font-size:13px}
+    .actions{display:flex;gap:12px;align-items:center}
+    button{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;border:0;font-weight:600;cursor:pointer}
+    button.secondary{background:#fff;border:1px solid #e6e9ef;color:#0f1724}
+    .note{font-size:13px;color:var(--muted)}
+    .success{background:rgba(22,163,74,0.08);border:1px solid rgba(22,163,74,0.16);color:var(--success);padding:10px;border-radius:8px}
+    @media (max-width:740px){form{grid-template-columns:1fr} .checkbox-grid{grid-template-columns:1fr}}
+    .inline-row{display:flex;gap:8px;align-items:center}
+    .required::after{content:" *";color:#d33}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="container">
-      <div class="card" role="region" aria-label="Shvya booking card">
-        <!-- LEFT: Booking UI -->
+  <div class="container">
+    <div class="card">
+      <h1>Book a Call</h1>
+      <p class="lead">Tell us a little about your project and preferred times — we'll reach out to confirm.</p>
+
+      <form id="bookForm" novalidate>
         <div>
-          <header class="card-head" aria-hidden="false">
-            <div class="logo-mark">S</div>
-            <div>
-              <h1 class="title">Book a Demo or Deployment</h1>
-              <p class="subtitle">Select a date and time slot. Earliest available time is <strong>now + 8 hours 30 minutes</strong>. Session length: 30 minutes.</p>
-            </div>
-          </header>
-
-          <form id="bookForm" autocomplete="on" novalidate>
-            <!-- calendar strip -->
-            <div>
-              <label class="label" for="calendar">Choose a date</label>
-              <div id="calendar" class="calendar-strip" role="list" aria-label="Available dates"></div>
-            </div>
-
-            <!-- slots -->
-            <div>
-              <label class="label">Choose a time slot</label>
-              <div id="slots" class="slots-grid" aria-live="polite" aria-label="Available time slots">
-                <!-- generated -->
-              </div>
-              <div id="noSlots" class="hint" style="display:none;margin-top:8px;">No available slots for this day. Please pick another date.</div>
-            </div>
-
-            <!-- contact fields -->
-            <div class="row" style="margin-top:6px;">
-              <div class="col">
-                <label class="label" for="name">Full name</label>
-                <input id="name" name="name" type="text" placeholder="Your full name" required>
-                <div id="errName" class="error">Please enter your name.</div>
-              </div>
-              <div class="col">
-                <label class="label" for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="you@example.com" required>
-                <div id="errEmail" class="error">Enter a valid email.</div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col">
-                <label class="label" for="phone">WhatsApp / Mobile (+country code)</label>
-                <input id="phone" name="phone" type="text" placeholder="+91 98567 12345" required>
-                <div id="errPhone" class="error">Enter phone including country code.</div>
-              </div>
-              <div class="col">
-                <label class="label" for="team">Primary Team / Function</label>
-                <input id="team" name="team" type="text" placeholder="Sales, Finance, Operations..." required>
-                <div id="errTeam" class="error">Please mention the primary team.</div>
-              </div>
-            </div>
-
-            <div style="margin-top:6px;">
-              <label class="label" for="service">Service</label>
-              <select id="service" name="service">
-                <option value="one-time-deployment">One-time Deployment — Software</option>
-                <option value="custom-website">Custom Website</option>
-                <option value="view-demo">View Demo</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <div id="otherRow" style="display:none;margin-top:8px;">
-              <label class="label" for="otherText">Please specify</label>
-              <input id="otherText" name="otherText" type="text" placeholder="Describe your request">
-            </div>
-
-            <div class="cta-row" style="margin-top:12px;">
-              <button type="button" id="cancelBtn" class="btn btn-ghost" aria-label="Cancel">Cancel</button>
-              <button type="submit" id="confirmBtn" class="btn btn-primary" aria-label="Confirm booking" disabled>Confirm booking</button>
-            </div>
-
-            <div id="genericError" class="error" style="margin-top:8px;display:none;"></div>
-
-            <div id="confirmation" class="confirm" role="status" aria-live="polite">
-              <div style="display:flex;gap:12px;align-items:center;">
-                <div style="width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.14);font-weight:800;color:var(--success)">✓</div>
-                <div>
-                  <div id="confTitle" style="font-weight:800;">Booking confirmed</div>
-                  <div id="confText" class="muted" style="margin-top:6px;"></div>
-                </div>
-              </div>
-            </div>
-          </form>
-
-          <footer class="note">By booking you agree to be contacted by Shvya AI via WhatsApp and email.</footer>
+          <label class="required">Full Name</label>
+          <input type="text" id="fullName" placeholder="Your full name" required />
         </div>
 
-        <!-- RIGHT: Preview -->
-        <aside class="right" aria-label="Booking preview & info">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;">
-            <div>
-              <div style="font-size:13px;color:#d7e9ff;font-weight:700;">Selected slot</div>
-              <div class="slot-box" style="margin-top:10px;">
-                <div id="previewDate" class="muted">No date selected</div>
-                <div id="previewTime" class="slot-preview">No time selected</div>
-                <div class="hint" style="margin-top:8px;">Session length: 30 minutes</div>
-              </div>
-            </div>
+        <div>
+          <label class="required">Email Address</label>
+          <input type="email" id="email" placeholder="you@company.com" required />
+        </div>
 
-            <div style="text-align:right;">
-              <div style="font-size:12px;color:var(--muted)">Need help?</div>
-              <div style="font-weight:800;color:#fff;margin-top:8px;">WhatsApp: +91 85630 19149</div>
-              <div class="muted" style="margin-top:6px;">Sales will contact you shortly after confirmation</div>
-            </div>
+        <div>
+          <label>Company Name</label>
+          <input type="text" id="company" placeholder="Optional" />
+        </div>
+
+        <div>
+          <label class="required">Phone Number</label>
+          <input type="tel" id="phone" placeholder="+91 12345 67890" required />
+        </div>
+
+        <div class="full">
+          <label>Products &amp; Services of Interest</label>
+          <div class="checkbox-grid" id="servicesList">
+            <label class="checkbox-item"><input type="checkbox" value="Shvya CRM"/> <span>Shvya CRM</span></label>
+            <label class="checkbox-item"><input type="checkbox" value="Shvya Inventory"/> <span>Shvya Inventory</span></label>
+            <label class="checkbox-item"><input type="checkbox" value="Shvya School ERP"/> <span>Shvya School ERP</span></label>
+            <label class="checkbox-item"><input type="checkbox" value="Shvya Hospital ERP"/> <span>Shvya Hospital ERP</span></label>
+            <label class="checkbox-item"><input type="checkbox" value="Shvya Restaurant ERP"/> <span>Shvya Restaurant ERP</span></label>
+            <label class="checkbox-item"><input type="checkbox" value="Shvya HRM + Payroll"/> <span>Shvya HRM + Payroll</span></label>
+            <label class="checkbox-item"><input type="checkbox" value="Shvya Geofencing"/> <span>Shvya Geofencing</span></label>
+            <label class="checkbox-item"><input type="checkbox" value="Shvya AI"/> <span>Shvya AI</span></label>
+            <label class="checkbox-item"><input type="checkbox" value="Custom Website Development"/> <span>Custom Website Development</span></label>
+            <label class="checkbox-item"><input type="checkbox" value="App Development"/> <span>App Development</span></label>
+            <label class="checkbox-item"><input type="checkbox" value="Other" id="otherServiceChk"/> <span>Other (specify)</span></label>
           </div>
+        </div>
 
-          <hr style="border:none;height:1px;background:rgba(255,255,255,0.03);margin:14px 0;border-radius:2px;" />
+        <div class="full" id="otherServiceWrap" style="display:none;">
+          <label>Other Services (please specify)</label>
+          <input type="text" id="otherService" placeholder="Describe other services you want" />
+        </div>
 
-          <div>
-            <div style="font-weight:700;margin-bottom:8px;color:#fff;">How booking works</div>
-            <ol style="margin:0;padding-left:18px;color:var(--muted);font-size:13px;line-height:1.5;">
-              <li>Pick a date from the strip above.</li>
-              <li>Choose an available time slot (30-minute session).</li>
-              <li>Fill your contact details and confirm.</li>
-              <li>A confirmation email draft opens & our salesperson receives a WhatsApp alert.</li>
-              <li>You get an .ics calendar file to add to your calendar.</li>
-            </ol>
+        <div class="full">
+          <label class="required">Project Description &amp; Requirements</label>
+          <textarea id="description" placeholder="Briefly describe your project, goals and requirements" required></textarea>
+        </div>
+
+        <div>
+          <label class="required">Preferred Contact Method</label>
+          <div class="inline-row">
+            <label><input type="radio" name="contactMethod" value="Call" checked /> Call</label>
+            <label><input type="radio" name="contactMethod" value="WhatsApp" /> WhatsApp</label>
           </div>
-        </aside>
-      </div>
+        </div>
+
+        <div>
+          <label>Best Time to Contact — Day Slots</label>
+          <select id="daySlot">
+            <option value="">-- choose a day slot --</option>
+            <option>09:00 - 11:00</option>
+            <option>11:00 - 13:00</option>
+            <option>13:00 - 15:00</option>
+            <option>15:00 - 17:00</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Best Time to Contact — Night Slots</label>
+          <select id="nightSlot">
+            <option value="">-- choose a night slot --</option>
+            <option>18:00 - 20:00</option>
+            <option>20:00 - 22:00</option>
+            <option>22:00 - 00:00</option>
+            <option>00:00 - 02:00</option>
+          </select>
+        </div>
+
+        <div class="full actions">
+          <button type="submit">Request a Call</button>
+          <button type="button" class="secondary" id="resetBtn">Reset</button>
+          <div class="note">We will not share your data. Fields marked with * are required.</div>
+        </div>
+
+      </form>
+
+      <div id="formResult" class="full" style="margin-top:16px;display:none"></div>
     </div>
   </div>
 
   <script>
     (function(){
-      // ---------- CONFIG ----------
-      const SALES_WHATSAPP = '918563019149'; // salesperson number in international format without '+'
-      const SALES_EMAIL = 'dineshmca500@gmail.com';
-      const REDIRECT_URL = 'https://shvya-ai.com';
-      const SESSION_MINUTES = 30; // minutes
-      const SLOT_INTERVAL_MIN = 30; // 30 min slots
-      const BUSINESS_START_HOUR = 9; // start 09:00
-      const BUSINESS_END_HOUR = 18; // last slot until 18:00 (exclusive end)
-      const DAYS_AHEAD = 14; // show 14 days in calendar
-      const EARLIEST_OFFSET_HOURS = 8.5; // now + 8h30m earliest allowed
-      // ----------------------------
+      const form = document.getElementById('bookForm');
+      const otherChk = document.getElementById('otherServiceChk');
+      const otherWrap = document.getElementById('otherServiceWrap');
+      const resetBtn = document.getElementById('resetBtn');
+      const resultBox = document.getElementById('formResult');
 
-      // elements
-      const calendarEl = document.getElementById('calendar');
-      const slotsEl = document.getElementById('slots');
-      const noSlotsEl = document.getElementById('noSlots');
-      const previewDateEl = document.getElementById('previewDate');
-      const previewTimeEl = document.getElementById('previewTime');
-      const confirmBtn = document.getElementById('confirmBtn');
-      const cancelBtn = document.getElementById('cancelBtn');
-      const confirmationEl = document.getElementById('confirmation');
-      const confText = document.getElementById('confText');
-      const confTitle = document.getElementById('confTitle');
-      const otherRow = document.getElementById('otherRow');
-
-      // form fields & errors
-      const nameField = document.getElementById('name');
-      const emailField = document.getElementById('email');
-      const phoneField = document.getElementById('phone');
-      const teamField = document.getElementById('team');
-      const serviceField = document.getElementById('service');
-
-      const errName = document.getElementById('errName');
-      const errEmail = document.getElementById('errEmail');
-      const errPhone = document.getElementById('errPhone');
-      const errTeam = document.getElementById('errTeam');
-      const genericError = document.getElementById('genericError');
-
-      // state
-      let dates = []; // {date: Date, label..., availableSlots: []}
-      let selectedDateIndex = null;
-      let selectedSlot = null; // Date instance
-
-      // helpers
-      function pad(n){ return String(n).padStart(2,'0'); }
-      function cloneDate(d){ return new Date(d.getTime()); }
-
-      function addMinutes(d, m){ return new Date(d.getTime() + m*60000); }
-      function startOfDay(d){ const x = new Date(d); x.setHours(0,0,0,0); return x; }
-
-      // compute earliest allowed moment
-      function earliestAllowed() {
-        return addMinutes(new Date(), EARLIEST_OFFSET_HOURS * 60);
-      }
-
-      // generate date pills for next N days; each day gets available slots according to business hours and earliestAllowed
-      function generateDates() {
-        const today = startOfDay(new Date());
-        const earliest = earliestAllowed();
-        dates = [];
-        for (let i=0;i<DAYS_AHEAD;i++) {
-          const d = addMinutes(today, i*24*60);
-          // compute slots for the day
-          const slots = [];
-          for (let h = BUSINESS_START_HOUR; h < BUSINESS_END_HOUR; h++) {
-            for (let m=0; m<60; m += SLOT_INTERVAL_MIN) {
-              const slot = new Date(d);
-              slot.setHours(h, m, 0, 0);
-              // only include if slot >= earliest
-              if (slot.getTime() >= earliest.getTime()) {
-                slots.push(slot);
-              }
-            }
-          }
-          dates.push({ date: d, slots });
-        }
-      }
-
-      // Render calendar strip
-      function renderCalendar() {
-        calendarEl.innerHTML = '';
-        const today = new Date();
-        dates.forEach((dObj, idx) => {
-          const d = dObj.date;
-          const dow = d.toLocaleDateString(undefined,{ weekday:'short' });
-          const dom = d.getDate();
-          const mon = d.toLocaleDateString(undefined,{ month:'short' });
-          const pill = document.createElement('button');
-          pill.type='button';
-          pill.className = 'date-pill';
-          pill.setAttribute('role','listitem');
-          pill.setAttribute('aria-pressed','false');
-          pill.dataset.index = idx;
-
-          // disable if no slots
-          if (!dObj.slots.length) { pill.classList.add('disabled'); pill.disabled=true; }
-
-          pill.innerHTML = `<div class="dow">${dow}</div><div class="dom">${dom} ${mon}</div>`;
-          pill.addEventListener('click', () => {
-            if (dObj.slots.length===0) return;
-            selectDate(idx);
-          });
-          calendarEl.appendChild(pill);
-        });
-        // auto-select first day with slots
-        const firstIdx = dates.findIndex(dt => dt.slots.length>0);
-        if (firstIdx >= 0) selectDate(firstIdx);
-      }
-
-      // select date index
-      function selectDate(idx) {
-        selectedDateIndex = idx;
-        selectedSlot = null;
-        // update calendar selection UI
-        Array.from(calendarEl.children).forEach((child,i) => {
-          if (i === idx) { child.classList.add('selected'); child.setAttribute('aria-pressed','true'); }
-          else { child.classList.remove('selected'); child.setAttribute('aria-pressed','false'); }
-        });
-        renderSlotsForDate(idx);
-      }
-
-      // render slots for date index
-      function renderSlotsForDate(idx) {
-        slotsEl.innerHTML = '';
-        const dObj = dates[idx];
-        if (!dObj || dObj.slots.length===0) {
-          noSlotsEl.style.display = 'block';
-          confirmBtn.disabled = true;
-          previewDateEl.textContent = dObj ? formatDate(dObj.date) : 'No date selected';
-          previewTimeEl.textContent = 'No time selected';
-          return;
-        }
-        noSlotsEl.style.display = 'none';
-        previewDateEl.textContent = formatDate(dObj.date);
-        // group slots into human-friendly format
-        dObj.slots.forEach((slot, sIdx) => {
-          // create slot button
-          const btn = document.createElement('button');
-          btn.type='button';
-          btn.className = 'slot';
-          btn.textContent = formatTime(slot);
-          btn.dataset.idx = sIdx;
-          // if slot in past (shouldn't be) disable
-          if (slot.getTime() < new Date().getTime()) { btn.classList.add('disabled'); btn.disabled=true; }
-          btn.addEventListener('click', () => {
-            // unselect others
-            Array.from(slotsEl.children).forEach(ch => ch.classList.remove('selected'));
-            btn.classList.add('selected');
-            selectedSlot = cloneDate(slot);
-            previewTimeEl.textContent = formatSlotWithTZ(selectedSlot);
-            confirmBtn.disabled = false;
-          });
-          slotsEl.appendChild(btn);
-        });
-        // collapse long slot lists on mobile (slot grid handles wrapping)
-        confirmBtn.disabled = true; // until user selects a slot
-        previewTimeEl.textContent = 'No time selected';
-      }
-
-      // format helpers
-      function formatDate(d) {
-        return d.toLocaleDateString(undefined, { weekday:'short', day:'numeric', month:'short', year:'numeric' });
-      }
-      function formatTime(d) {
-        let h = d.getHours(); const m = pad(d.getMinutes()); const am = h>=12?'PM':'AM'; h = h%12||12; return `${h}:${m} ${am}`;
-      }
-      function formatSlotWithTZ(d) {
-        return `${formatTime(d)} • ${Intl.DateTimeFormat().resolvedOptions().timeZone}`;
-      }
-
-      // ICS download generator
-      function downloadICS(title, description, dtStart) {
-        const pad = n => String(n).padStart(2,'0');
-        const toUTC = d => {
-          return d.getUTCFullYear() + pad(d.getUTCMonth()+1) + pad(d.getUTCDate()) + 'T' +
-            pad(d.getUTCHours()) + pad(d.getUTCMinutes()) + pad(d.getUTCSeconds()) + 'Z';
-        };
-        const startUTC = toUTC(dtStart);
-        const endUTC = toUTC(addMinutes(dtStart, SESSION_MINUTES));
-        const uid = 'shvya-' + Date.now();
-        const nowUTC = toUTC(new Date());
-        const lines = [
-          'BEGIN:VCALENDAR',
-          'VERSION:2.0',
-          'PRODID:-//Shvya AI//EN',
-          'CALSCALE:GREGORIAN',
-          'BEGIN:VEVENT',
-          `UID:${uid}`,
-          `DTSTAMP:${nowUTC}`,
-          `DTSTART:${startUTC}`,
-          `DTEND:${endUTC}`,
-          `SUMMARY:${title}`,
-          `DESCRIPTION:${description}`,
-          'END:VEVENT',
-          'END:VCALENDAR'
-        ];
-        const blob = new Blob([lines.join('\\r\\n')], { type: 'text/calendar' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = 'shvya-booking.ics';
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-      }
-
-      // basic validators
-      function validateEmail(e){ return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(e); }
-      function validatePhone(p){ return /^(\\+)?[0-9\\s\\-]{7,20}$/.test(p); }
-
-      // open mail client
-      function openMail(to, subject, body) {
-        const href = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        window.location.href = href;
-      }
-      // open whatsapp
-      function openWhatsApp(to, message) {
-        const url = `https://wa.me/${to}?text=${encodeURIComponent(message)}`;
-        window.open(url, '_blank');
-      }
-
-      // initialize
-      function init() {
-        generateDates();
-        renderCalendar();
-        // show earliest slot on preview if exists
-        const firstWith = dates.find(dt => dt.slots.length>0);
-        if (firstWith) {
-          previewDateEl.textContent = formatDate(firstWith.date);
-        }
-      }
-
-      // events
-      serviceField.addEventListener('change', () => {
-        if (serviceField.value === 'other') otherRow.style.display = 'block'; else otherRow.style.display = 'none';
+      otherChk.addEventListener('change', ()=>{
+        otherWrap.style.display = otherChk.checked ? 'block' : 'none';
       });
 
-      cancelBtn.addEventListener('click', () => {
-        // reset everything
-        selectedDateIndex = null; selectedSlot=null;
-        Array.from(calendarEl.children).forEach(c => c.classList.remove('selected'));
-        slotsEl.innerHTML = '';
-        previewDateEl.textContent = 'No date selected';
-        previewTimeEl.textContent = 'No time selected';
-        document.getElementById('bookForm').reset();
-        confirmBtn.disabled = true;
-        confirmationEl.classList.remove('show');
-      });
+      resetBtn.addEventListener('click', ()=>{ form.reset(); otherWrap.style.display='none'; resultBox.style.display='none'; });
 
-      // submit
-      document.getElementById('bookForm').addEventListener('submit', (ev) => {
-        ev.preventDefault();
-        // hide errors
-        [errName, errEmail, errPhone, errTeam, genericError].forEach(x => x.style.display='none');
+      function validatePhone(p){
+        // simple international phone check: digits, + and spaces allowed, minimum 7 digits
+        const digits = p.replace(/[^0-9]/g,'');
+        return digits.length >= 7 && digits.length <= 15;
+      }
+
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        resultBox.style.display='none';
+
+        const name = document.getElementById('fullName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const desc = document.getElementById('description').value.trim();
+        const company = document.getElementById('company').value.trim();
+        const daySlot = document.getElementById('daySlot').value;
+        const nightSlot = document.getElementById('nightSlot').value;
+        const contactMethod = document.querySelector('input[name="contactMethod"]:checked').value;
+
+        let services = Array.from(document.querySelectorAll('#servicesList input[type=checkbox]:checked')).map(i=>i.value);
+        const otherText = document.getElementById('otherService').value.trim();
+        if(services.includes('Other') && otherText) services = services.filter(s=>s!=='Other').concat(otherText);
 
         // validation
-        const name = nameField.value.trim();
-        const email = emailField.value.trim();
-        const phone = phoneField.value.trim();
-        const team = teamField.value.trim();
-        const svc = (serviceField.value === 'other') ? (document.getElementById('otherText').value.trim() || 'Other') : serviceField.options[serviceField.selectedIndex].text;
+        const errors = [];
+        if(!name) errors.push('Full Name is required.');
+        if(!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) errors.push('A valid email is required.');
+        if(!phone || !validatePhone(phone)) errors.push('A valid phone number is required.');
+        if(!desc) errors.push('Project description is required.');
+        if(!daySlot && !nightSlot) errors.push('Please choose at least one preferred time slot (day or night).');
 
-        let ok = true;
-        if (!name){ errName.style.display='block'; ok=false; }
-        if (!validateEmail(email)){ errEmail.style.display='block'; ok=false; }
-        if (!validatePhone(phone)){ errPhone.style.display='block'; ok=false; }
-        if (!team){ errTeam.style.display='block'; ok=false; }
-        if (!selectedSlot){ genericError.textContent = 'Please select a date and time slot.'; genericError.style.display='block'; ok=false; }
-
-        if (!ok) { window.scrollTo({ top:0, behavior:'smooth' }); return; }
-
-        // prepare content
-        const slot = selectedSlot;
-        const slotText = formatDate(slot) + ' • ' + formatTime(slot) + ' (' + Intl.DateTimeFormat().resolvedOptions().timeZone + ')';
-
-        const userSubject = 'Shvya AI — Booking Confirmation';
-        const userBody = `Hi ${name},\\n\\nThank you for booking with Shvya AI.\\n\\nService: ${svc}\\nScheduled Slot: ${slotText}\\nTeam/Function: ${team}\\nPhone: ${phone}\\n\\nOur salesperson will contact you shortly via WhatsApp and email.\\n\\nRegards,\\nShvya AI Team`;
-
-        // open mail client (user must hit send)
-        try { openMail(email, userSubject, userBody); } catch(e){ console.warn(e); }
-
-        // prepare whatsapp message to sales
-        const waMessage = `New booking from website\\nName: ${name}\\nEmail: ${email}\\nPhone: ${phone}\\nTeam: ${team}\\nService: ${svc}\\nSlot: ${slotText}`;
-
-        // send whatsapp to sales in new tab
-        setTimeout(()=> openWhatsApp(SALES_WHATSAPP, waMessage), 350);
-
-        // download ICS
-        try { downloadICS(`Shvya AI Booking — ${svc}`, `Booked by ${name} (${phone})`, slot); } catch(e){ console.warn(e); }
-
-        // show confirmation
-        confirmationEl.classList.add('show');
-        confText.textContent = `Thanks ${name}. Your booking for "${svc}" is scheduled for ${slotText}. We'll contact you via WhatsApp shortly. Redirecting to Shvya AI...`;
-
-        // redirect after 3s
-        setTimeout(()=> window.location.href = REDIRECT_URL, 3000);
-      });
-
-      // auto-init
-      init();
-
-      // expose a small accessibility/keyboard support: left/right to move calendar
-      document.addEventListener('keydown', (e) => {
-        if (['ArrowLeft','ArrowRight'].includes(e.key) && selectedDateIndex !== null) {
-          const delta = e.key === 'ArrowLeft' ? -1 : 1;
-          let nx = Math.max(0, Math.min(dates.length-1, selectedDateIndex + delta));
-          // skip disabled
-          while (nx>=0 && nx<dates.length && dates[nx].slots.length===0) {
-            nx += delta;
-            if (nx<0 || nx>=dates.length) break;
-          }
-          if (nx>=0 && nx<dates.length && dates[nx].slots.length>0) selectDate(nx);
+        if(errors.length){
+          resultBox.innerHTML = '<div class="success" style="border-color:#f59e0b;color:#92400e;background:rgba(245,158,11,0.08)"><strong>Please fix the following:</strong><ul style="margin:8px 0 0">'+errors.map(e=>'<li>'+e+'</li>').join('')+'</ul></div>';
+          resultBox.style.display='block';
+          resultBox.scrollIntoView({behavior:'smooth'});
+          return;
         }
+
+        // build summary
+        const summary = {
+          name, email, phone, company, contactMethod,
+          preferredTime: daySlot || nightSlot,
+          services: services.length ? services.join(', ') : 'Not specified',
+          description: desc
+        };
+
+        // show a simulated success message
+        resultBox.innerHTML = `<div class="success"><strong>Request received!</strong>
+          <div style="margin-top:8px">Thanks, <strong>${escapeHtml(name)}</strong>. We will contact you via <strong>${escapeHtml(contactMethod)}</strong> at <strong>${escapeHtml(phone)}</strong> or <strong>${escapeHtml(email)}</strong>.</div>
+          <div style="margin-top:8px"><em>Summary</em>: ${escapeHtml(summary.services)} — Preferred time: ${escapeHtml(summary.preferredTime)}</div>
+        </div>`;
+        resultBox.style.display='block';
+        resultBox.scrollIntoView({behavior:'smooth'});
+
+        // In a real setup you would send `summary` to your server here using fetch()/XHR
+        console.log('Form payload ->', summary);
+        form.reset(); otherWrap.style.display='none';
       });
+
+      function escapeHtml(s){ return String(s).replace(/[&<>"']/g, function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[m];}); }
+
     })();
   </script>
 </body>

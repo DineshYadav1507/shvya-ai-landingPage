@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shvya-ai CRM ERP product</title>
     <meta name="description" content="Explore our complete suite of enterprise SaaS products. Inventory, School, Hospital, HRM, eCommerce, CRM, LMS solutions ready for 4-hour deployment.">
-    
+    <!-- Favicon -->
+       <link rel="icon" type="image/png" href="shvya-porduct/favicon.jpg">
+       <link rel="shortcut icon" href="shvya-porduct/favicon.jpg" type="image/png">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -92,35 +94,41 @@
 </head>
 <body class="bg-gray-50 font-inter">
    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <div class="text-2xl font-bold text-shvya-navy">
-                        <span class="text-shvya-blue">Shvya</span> Ai
-                    </div>
-                    <div class="ml-2 text-xs bg-shvya-orange text-white px-2 py-1 rounded font-mono">CRM ERP Inventory</div>
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-shvya-blue font-semibold">Home</a>
-                    <a href="products.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Products</a>
-                    <a href="shvya-services.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Services</a>
-                    <a href="shvya-about.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">About</a>
-                    <a href="shvya-deployment.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">4HR Deploy</a>
-                    <a href="shvya-contact.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Contact</a>
-                </div>
-                
-                <div class="flex items-center space-x-4">
-                    <button id="chat-toggle" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition-colors">
-                     Book a Call</button>
-                    <!-- <button class="bg-shvya-navy text-white px-6 py-2 rounded-lg hover:bg-shvya-navy/90 transition-colors font-semibold">
-                        Start Deploy
-                    </button> -->
-                </div>
-            </div>
+    <!-- Nav — uses standard Tailwind color classes so it will work without custom config -->
+<nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center flex-nowrap whitespace-nowrap">
+        <!-- Logo text -->
+        <div class="text-2xl font-bold flex items-center">
+          <span class="text-blue-600">Shvya</span>
+          <span class="text-black ml-1">AI</span>
         </div>
-    </nav>
+
+        <!-- Badge (inline) -->
+        <span class="ml-2 text-xs bg-orange-500 text-white px-2 py-1 rounded font-mono inline-flex items-center">
+          CRM ERP Inventory
+        </span>
+      </div>
+
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="text-blue-600 font-semibold">Home</a>
+        <a href="products.html" class="text-gray-700 hover:text-blue-600 transition-colors">Products</a>
+        <a href="shvya-services.html" class="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
+        <a href="shvya-about.html" class="text-gray-700 hover:text-blue-600 transition-colors">About</a>
+        <a href="shvya-deployment.html" class="text-gray-700 hover:text-blue-600 transition-colors">4HR Deploy</a>
+        <a href="shvya-contact.html" class="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+      </div>
+
+      <div class="flex items-center space-x-4">
+        <button id="chat-toggle" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition-colors">
+          Book a Call
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
     <!-- Hero Section -->
     <section class="bg-gradient-to-br from-navy to-charcoal pt-20 pb-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -516,7 +524,7 @@
           </div>
 
           <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <a href="inventory-billing.html" class="flex-1 bg-cyan text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-cyan/90 transition-all block">
+            <a href="Inventory Billing.html" class="flex-1 bg-cyan text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-cyan/90 transition-all block">
               View Full Demo
             </a>
             <a href="bookacall.html" class="flex-1 bg-navy text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-navy/90 transition-all block">
@@ -546,7 +554,7 @@
 
       <!-- LEFT SIDE: PRODUCT DETAILS (text) -->
       <div class="order-1 lg:order-none">
-        <h2 class="text-4xl font-bold text-shvya-charcoal mb-4">LeadMaster — AI CRM & Lead Management</h2>
+        <h2 class="text-4xl font-bold text-shvya-charcoal mb-4">Shvya CRM & Lead Management</h2>
         <p class="text-lg text-gray-600 mb-6">
           Smart CRM for sales teams — capture leads, automate follow-ups, manage pipelines, and close deals faster with AI-driven insights.
           Designed for rapid deployment and seamless integrations with your tech stack.
@@ -646,7 +654,7 @@
           </div>
 
           <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <a href="leadmaster-demo.html" class="flex-1 bg-cyan text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-cyan/90 transition-all block">
+            <a href="CRM & Lead Manager.html" class="flex-1 bg-cyan text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-cyan/90 transition-all block">
               View Full Demo
             </a>
             <a href="bookacall.html" class="flex-1 bg-navy text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-navy/90 transition-all block">
@@ -1243,7 +1251,7 @@
 <!-- CTA -->
 <div class="cta-buttons">
     <a href="bookacall.html" class="btn btn-primary">Request a Demo</a>
-    <a href="products.html" class="btn btn-secondary">Explore Shvya Services</a>
+    <a href="products.html" class="btn btn-secondary">Explore Shvya Products</a>
 </div>
 
 <!-- STATS -->
