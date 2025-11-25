@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shvya Ai - CRM CMS ERP Website</title>
+    <title>Shvya AI - CRM CMS ERP Solutions</title>
 <!-- Fonts -->
      
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -571,136 +571,144 @@
   </script>
 </section>
 
+<section class="ecosystem-section">
+    <style>
+        .ecosystem-section { padding: 80px 20px; background: linear-gradient(135deg,#667eea,#764ba2); overflow:hidden; }
+        .ecosystem-section * { box-sizing:border-box; font-family:'Segoe UI',sans-serif; }
 
-   <!-- Shvya Ecosystem -->
-<section class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
+        .ecosystem-section .container { max-width:1200px; margin:auto; }
+        .ecosystem-section .section-header { text-align:center; margin-bottom:60px; }
+        .ecosystem-section .section-title { font-size:3rem; color:white; font-weight:700; text-shadow:2px 2px 4px rgba(0,0,0,0.3); }
+        .ecosystem-section .section-subtitle { color:rgba(255,255,255,0.9); max-width:600px; margin:auto; }
 
-      <!-- LEFT SIDE: ECOSYSTEM IMAGE -->
-      <div class="relative order-1 lg:order-none">
-        <img src="shvya-resources/shvya-services.png" alt="Shvya Ecosystem" class="w-full h-auto rounded-lg shadow-sm">
-        <div class="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent rounded-lg pointer-events-none"></div>
-      </div>
+        .ecosystem-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:30px;
+            margin-bottom:60px;
+        }
 
-      <!-- RIGHT SIDE: TEXT -->
-      <div class="order-2 lg:order-none">
-        <h2 class="text-4xl font-bold text-shvya-charcoal mb-6">The Shvya Solution One Ecosystem for All Your Operations</h2>
-        <p class="text-xl text-gray-600 mb-8">
-          Instead of juggling 10 tools, Shvya brings everything into one connected SaaS platform built for clarity, speed, and growth.
-        </p>
+        .ecosystem-card {
+            background:rgba(255,255,255,0.95);
+            border-radius:20px;
+            padding:30px;
+            text-align:center;
+            transition:.3s;
+            border:1px solid rgba(255,255,255,0.2);
+        }
 
-        <div class="space-y-6">
-          <!-- Row 1: School ERP / Hospital ERP -->
-          <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="text-xl">🎓</span>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Shvya CRM</h3>
-              <p class="text-gray-600">Manage your leads, clients, and deals with simplicity.
-              No clutter,  just visibility, speed, and control.</p>
-            </div>
-          </div>
+        .ecosystem-card:hover {
+            transform:translateY(-10px) scale(1.02);
+            box-shadow:0 20px 40px rgba(0,0,0,0.2);
+        }
 
-          <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="text-xl">🏥</span>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Shvya Inventory System</h3>
-              <p class="text-gray-600">Stay in control of every item, vendor, and order, reduce stock chaos and improve planning.</p>
-            </div>
-          </div>
+        .card-icon {
+            font-size:3rem;
+            margin-bottom:20px;
+            background:linear-gradient(135deg,#667eea,#764ba2);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
 
-          <!-- Row 2: E-commerce / Inventory Billing -->
-          <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="text-xl">🛒</span>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Shvya HRM + Payroll</h3>
-              <p class="text-gray-600">Simplify attendance, performance, and salary management in one clean dashboard.</p>
-            </div>
-          </div>
+        .card-title { font-size:1.5rem; color:#333; font-weight:600; margin-bottom:15px; }
+        .card-description { color:#666; line-height:1.6; font-size:0.95rem; }
 
-          <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="text-xl">📦</span>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Shvya AI</h3>
-              <p class="text-gray-600">Your 24×7 smart assistant for lead qualification, follow-ups, and client engagement.
-               Never miss a lead again.</p>
-            </div>
-          </div>
+        .cta-section { text-align:center; }
+        .cta-button {
+            padding:15px 40px;
+            background:linear-gradient(135deg,#ff6b6b,#ee5a24);
+            color:white;
+            border-radius:50px;
+            font-size:1.1rem;
+            font-weight:600;
+            text-decoration:none;
+            box-shadow:0 10px 30px rgba(238,90,36,0.3);
+            display:inline-block;
+            transition:.3s;
+        }
 
-          <!-- Row 3: Lead CRM / Chatbot -->
-          <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="text-xl">📞</span>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Shvya School ERP</h3>
-              <p class="text-gray-600">Digitize attendance, exams, fees, and communication everything a modern institution needs.</p>
-            </div>
-          </div>
+        .cta-button:hover { transform:translateY(-3px); }
 
-          <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="text-xl">💬</span>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Shvya Hospital ERP</h3>
-              <p class="text-gray-600">From patient registration to billing, manage your hospital’s operations seamlessly.</p>
-            </div>
-          </div>
+        /* RESPONSIVE */
+        @media(max-width:768px){
+            .section-title{font-size:2rem;}
+            .ecosystem-grid{grid-template-columns:1fr;}
+        }
+    </style>
+
+    <div class="container">
+        <div class="section-header">
+            <h1 class="section-title">The Shvya Solution One Ecosystem for All Your Operations</h1>
+            <p class="section-subtitle">
+                Instead of juggling 10 tools, Shvya brings everything into one connected SaaS platform built for clarity, speed, and growth.
+            </p>
         </div>
-<!-- 3333333333333333333333333333333333333333333 -->
-  <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="text-xl">💬</span>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Shvya Restaurant ERP</h3>
-              <p class="text-gray-600">Simplify kitchen orders, table billing, and stock tracking all in real-time.</p>
-            </div>
-          </div>
-        </div>
-         <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="text-xl">💬</span>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Shvya Geo-Fencing Employee Management</h3>
-              <p class="text-gray-600">Track field staff, monitor attendance, and improve workforce accountability with live GPS tracking.</p>
-            </div>
-          </div>
-        </div>
-         <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="text-xl">💬</span>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-shvya-charcoal mb-1">Shvya Smart Billing System</h3>
-              <p class="text-gray-600">Create GST-compliant invoices, track payments, and get real-time financial clarity.</p>
-            </div>
-          </div>
-        </div>
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href="shvya-ecosystem.html" class="bg-shvya-navy text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-shvya-navy/90 transition-all inline-block">
-            Explore the Ecosystem
-          </a>
 
-          <a href="contact.html" class="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-red-700 transition-all inline-block">
-            Book a Demo Call
-          </a>
-        </div>
-    
+        <div class="ecosystem-grid">
 
+            <div class="ecosystem-card">
+                <div class="card-icon"><i class="fas fa-users"></i></div>
+                <h3 class="card-title">Shvya CRM</h3>
+                <p class="card-description">Manage your leads, clients, and deals with simplicity. No clutter, just visibility, speed, and control.</p>
+            </div>
+
+            <div class="ecosystem-card">
+                <div class="card-icon"><i class="fas fa-boxes-stacked"></i></div>
+                <h3 class="card-title">Shvya Inventory System</h3>
+                <p class="card-description">Stay in control of every item, vendor, and order, reduce stock chaos and improve planning.</p>
+            </div>
+
+            <div class="ecosystem-card">
+                <div class="card-icon"><i class="fas fa-user-check"></i></div>
+                <h3 class="card-title">Shvya HRM + Payroll</h3>
+                <p class="card-description">Simplify attendance, performance, and salary management in one clean dashboard.</p>
+            </div>
+
+            <div class="ecosystem-card">
+                <div class="card-icon"><i class="fas fa-robot"></i></div>
+                <h3 class="card-title">Shvya AI</h3>
+                <p class="card-description">Your 24×7 smart assistant for lead qualification, follow-ups, and client engagement. Never miss a lead again.</p>
+            </div>
+
+            <div class="ecosystem-card">
+                <div class="card-icon"><i class="fas fa-school"></i></div>
+                <h3 class="card-title">Shvya School ERP</h3>
+                <p class="card-description">Digitize attendance, exams, fees, and communication everything a modern institution needs.</p>
+            </div>
+
+            <div class="ecosystem-card">
+                <div class="card-icon"><i class="fas fa-hospital"></i></div>
+                <h3 class="card-title">Shvya Hospital ERP</h3>
+                <p class="card-description">From patient registration to billing, manage your hospital’s operations seamlessly.</p>
+            </div>
+
+            <div class="ecosystem-card">
+                <div class="card-icon"><i class="fas fa-utensils"></i></div>
+                <h3 class="card-title">Shvya Restaurant ERP</h3>
+                <p class="card-description">Simplify kitchen orders, table billing, and stock tracking all in real-time.</p>
+            </div>
+
+            <div class="ecosystem-card">
+                <div class="card-icon"><i class="fas fa-location-crosshairs"></i></div>
+                <h3 class="card-title">Shvya Geo-Fencing Employee Management</h3>
+                <p class="card-description">Track field staff, monitor attendance, and improve workforce accountability with live GPS tracking.</p>
+            </div>
+
+            <div class="ecosystem-card">
+                <div class="card-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                <h3 class="card-title">Shvya Smart Billing System</h3>
+                <p class="card-description">Create GST-compliant invoices, track payments, and get real-time financial clarity.</p>
+            </div>
+
+        </div>
+
+        <div class="cta-section">
+            <a href="bookacall.html" class="cta-button"><i class="fas fa-rocket"></i> Book a Demo Call</a>
+        </div>
     </div>
-  </div>
 </section>
+
+  
 
  <!-- Services Overview 3 -->
  
@@ -1067,56 +1075,123 @@
     </div>
 </section>
 <!-- CTA END  -->
-    <!-- Footer -->
-    <footer class="bg-shvya-navy text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <div class="text-2xl font-bold mb-4">
-                        <span class="text-shvya-blue">Shvya</span> Ai
-                    </div>
-                  <p class="text-gray-300 mb-4">
+  <!-- Footer -->
+<footer class="bg-shvya-navy text-white pt-12 pb-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- TOP GRID -->
+        <div class="grid md:grid-cols-4 gap-8">
+            <div>
+                <div class="text-2xl font-bold mb-4">
+                    <span class="text-shvya-blue">Shvya</span> AI
+                </div>
+                <p class="text-gray-300 mb-4">
                     AI solutions deployed in 4 hours. Ready-to-use CRM, CMS, and ERP systems with one-time fast deployment.
-                  </p>
-
-
-                    <div class="text-sm text-gray-400">
-                       <a href="https://shvya-ai.com">© 2025 ❤️ Shvya AI. All rights reserved.</a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Products</h3>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="leadcrm.html" class="hover:text-shvya-blue transition-colors">Shvya CRM</a></li>
-                        <li><a href="Inventory Billing.html" class="hover:text-shvya-blue transition-colors">Smart Billing Inventory</a></li>
-                        <li><a href="School ERP.html" class="hover:text-shvya-blue transition-colors">School ERP</a></li>
-                        <li><a href="Hospital ERP.html" class="hover:text-shvya-blue transition-colors">Hospital ERP</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Services</h3>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="Web Development.html" class="hover:text-shvya-blue transition-colors">Web Development</a></li>
-                        <li><a href="Digital Marketing.html" class="hover:text-shvya-blue transition-colors">Digital Marketing</a></li>
-                        <li><a href="AI Automation.html" class="hover:text-shvya-blue transition-colors">AI Automation</a></li>
-                        <li><a href="E-commerce Solutions.html" class="hover:text-shvya-blue transition-colors">E-commerce Solutions</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Support</h3>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="https://wa.me/918563019149" class="hover:text-shvya-blue transition-colors">WhatsApp Live</a></li>
-                        <li><a href="bookacall.html" class="hover:text-shvya-blue transition-colors">Book A Call</a></li>
-                        <li><a href="mailto:dineshmca500@gmail.com" class="hover:text-shvya-blue transition-colors">Email</a></li>
-                        <li><a href="shvya-contact.html" class="hover:text-shvya-blue transition-colors">Contact Support</a></li>
-                    </ul>
+                </p>
+                <div class="text-sm text-gray-400">
+                    <a href="https://shvya-ai.com">© 2025 ❤️ Shvya AI. All rights reserved.</a>
                 </div>
             </div>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Products</hh3>
+                <ul class="space-y-2 text-gray-300">
+                    <li><a href="leadcrm.html" class="hover:text-shvya-blue transition-colors">Shvya CRM</a></li>
+                    <li><a href="Inventory Billing.html" class="hover:text-shvya-blue transition-colors">Shvya Inventory System</a></li>
+                    <li><a href="School ERP.html" class="hover:text-shvya-blue transition-colors">Shvya School ERP</a></li>
+                    <li><a href="Hospital ERP.html" class="hover:text-shvya-blue transition-colors">Shvya Hospital ERP</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Services</h3>
+                <ul class="space-y-2 text-gray-300">
+                    <li><a href="Web Development.html" class="hover:text-shvya-blue transition-colors">Web Development</a></li>
+                    <li><a href="Digital Marketing.html" class="hover:text-shvya-blue transition-colors">Digital Marketing</a></li>
+                    <li><a href="AI Automation.html" class="hover:text-shvya-blue transition-colors">AI Automation</a></li>
+                    <li><a href="E-commerce Solutions.html" class="hover:text-shvya-blue transition-colors">E-commerce Solutions</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Policy</h3>
+                <ul class="space-y-2 text-gray-300">
+                    <li><a href="Refund Policy.html" class="hover:text-shvya-blue transition-colors">Refund Policy</a></li>
+                    <li><a href="Privacy Policy.html" class="hover:text-shvya-blue transition-colors">Privacy Policy</a></li>
+                    <li><a href="Terms & Conditions.html" class="hover:text-shvya-blue transition-colors">Terms & Conditions</a></li>
+                    <li><a href="Cookie Policy.html" class="hover:text-shvya-blue transition-colors">Cookie Policy</a></li>
+                </ul>
+            </div>
         </div>
-    </footer>
+
+        <!-- BOTTOM ACTION BAR -->
+        <div class="mt-10 border-t border-gray-700 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+
+            <!-- Buttons -->
+            <div class="flex items-center gap-4">
+                <a href="bookacall.html"
+                    class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full font-semibold transition">
+                    Book a Call
+                </a>
+
+                <a href="https://calendly.com/" target="_blank"
+                    class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-full font-semibold transition">
+                    Book Calendar
+                </a>
+            </div>
+
+            <!-- WhatsApp + Email -->
+            <div class="flex items-center gap-4">
+
+                <!-- WHATSAPP LIVE EFFECT BUTTON -->
+                <a href="https://wa.me/917302368149" target="_blank"
+                    class="whatsapp-live-btn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="w-7" />
+                </a>
+
+                <a href="mailto:shvyaai@gmail.com"
+                    class="text-gray-300 hover:text-white transition text-sm font-medium">
+                    shvyaai@gmail.com
+                </a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<!-- LIVE WHATSAPP EFFECT STYLE -->
+<style>
+.whatsapp-live-btn {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #25D366;
+    border-radius: 50%;
+    position: relative;
+    animation: whatsappPulse 2s infinite;
+    box-shadow: 0 0 12px rgba(37, 211, 102, 0.6);
+    transition: transform .2s ease-in-out;
+}
+
+.whatsapp-live-btn:hover {
+    transform: scale(1.08);
+}
+
+@keyframes whatsappPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 12px 10px rgba(37, 211, 102, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+}
+</style>
+<!-- Footer end -->
  <script src="shvya-main.js"></script>
     <script src="alljs.js"></script>
     <!-- Tailwind CSS -->
