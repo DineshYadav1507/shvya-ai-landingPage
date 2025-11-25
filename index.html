@@ -219,129 +219,222 @@
     <!-- AI Product Showcase -->
    
 <!-- Product Showcase (UPDATED: full product list & refreshed content) -->
-<section id="enrollment-section" aria-labelledby="enroll-head" class="enroll-section">
-  <div class="container">
+<!-- Updated Shvya Product Section - Namespaced (Style A) -->
+<style>
+  /* Namespaced (style A) - prevents collisions with existing site styles */
+  .shv-section{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:#0f172a}
+  .shv-container{max-width:1200px;margin:0 auto;padding:16px}
 
-    <div class="controls">
-      <div class="pill-group" role="tablist" aria-label="Product filters">
-        <button class="pill active" data-filter="all" aria-pressed="true">All</button>
-        <button class="pill" data-filter="inventory">Inventory Billing System (POS)</button>
-        <button class="pill" data-filter="school">School ERP</button>
-        <button class="pill" data-filter="hospital">Hospital</button>
-        <button class="pill" data-filter="hrm">HRM + Payroll</button>
-        <button class="pill" data-filter="ecom">Ecommerce</button>
-        <!-- <button class="pill" data-filter="crm">Lead CRM Master</button> -->
-        <button class="pill" data-filter="restaurant">Restaurant ERP</button>
+  /* Pills */
+  .shv-pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+  .shv-pill{padding:8px 12px;border-radius:999px;border:1px solid #e6e9ee;background:#fff;cursor:pointer}
+  .shv-pill--active{background:#0ea5e9;color:#fff;border-color:transparent}
+
+  /* Grid & Card */
+  .shv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+  .shv-card-link{text-decoration:none;color:inherit}
+  .shv-card{background:#fff;border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px;box-shadow:0 6px 18px rgba(9,30,66,0.04)}
+  .shv-card__header h3{margin:0;font-size:1.05rem;line-height:1.2}
+  .shv-card-desc{margin:0;color:#334155;font-size:.92rem}
+
+  /* Visual area keeps aspect ratio to avoid browser upscaling blur */
+  .shv-visual{width:100%;border-radius:8px;overflow:hidden;background:linear-gradient(180deg,#fff,#fbfdff);display:flex;align-items:center;justify-content:center}
+  .shv-visual--ratio{aspect-ratio:16/9;max-height:220px}
+
+  /* Image */
+  .shv-img{width:100%;height:100%;object-fit:cover;display:block;image-rendering:auto;transform:translateZ(0);-webkit-font-smoothing:antialiased}
+
+  @media (max-width:768px){.shv-visual--ratio{max-height:140px}}
+  @media (min-width:1200px){.shv-visual--ratio{max-height:260px}}
+
+  .shv-tag{padding:4px 8px;border-radius:999px;background:#fde68a;font-size:.8rem}
+  .shv-badge{background:#eef2ff;padding:6px 8px;border-radius:8px;font-size:.78rem}
+
+  .shv-hidden{display:none !important}
+  .shv-empty{text-align:center;color:#64748b;padding:18px 0}
+</style>
+
+<section id="shv-section" class="shv-section" aria-labelledby="shv-enroll-head">
+  <div class="shv-container">
+
+    <div class="shv-controls">
+      <div class="shv-pill-row" role="tablist" aria-label="Shvya product filters">
+        <button class="shv-pill shv-pill--active" data-shv-filter="all" aria-pressed="true">All</button>
+        <button class="shv-pill" data-shv-filter="crm">CRM</button>
+        <button class="shv-pill" data-shv-filter="erp">ERP</button>
+        <button class="shv-pill" data-shv-filter="cms">CMS</button>
       </div>
     </div>
 
-    <div class="grid" id="product-cards">
-
-      <!-- Inventory Billing System -->
-      <a class="card-link" href="Inventory Billing.html" data-tags="inventory,billing,pos">
-        <article class="card" tabindex="0">
-          <img class="card-img" src="shvya-resources/inventory2.png" alt="Inventory Billing">
-          <div class="card-header">
-            <h3>Inventory Billing System (POS)</h3>
-            <span class="tag">New</span>
+    <div class="shv-grid" id="shv-product-cards">
+      <!-- ERP -->
+      <a class="shv-card-link" href="Inventory Billing.html" data-shv-filter="erp" data-shv-product-id="sv_inv_001" data-shv-tags="erp,inventory">
+        <article class="shv-card" tabindex="0">
+          <div class="shv-visual shv-visual--ratio" aria-hidden="true">
+            <img class="shv-img" src="shvya-porduct/shvya Inventory.png" alt="Shvya Inventory System">
           </div>
-          <p class="card-desc">Complete POS + inventory control with barcode scanning, multi-location stock, billing and GST-ready invoices.</p>
-          <div class="card-meta">
-            <span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span>
-          </div>
+          <div class="shv-card__header"><h3>Shvya Inventory System</h3></div>
+          <p class="shv-card-desc">Complete stock & POS management, barcode scanning, multi-location inventory and GST-ready invoicing.</p>
+          <div class="shv-card-meta"><span class="shv-badge">ERP • Quick Deploy</span></div>
         </article>
       </a>
 
-      <!-- School ERP -->
-      <a class="card-link" href="School ERP.html" data-tags="school,education,erp">
-        <article class="card" tabindex="0">
-          <img class="card-img" src="shvya-resources/school.png" alt="School ERP">
-          <div class="card-header">
-            <h3>School ERP</h3>
+      <a class="shv-card-link" href="School ERP.html" data-shv-filter="erp" data-shv-product-id="sv_school_002" data-shv-tags="erp,school">
+        <article class="shv-card" tabindex="0">
+          <div class="shv-visual shv-visual--ratio" aria-hidden="true">
+            <img class="shv-img" src="shvya-porduct/shvya school erp.png" alt="Shvya School ERP">
           </div>
-          <p class="card-desc">Manage admissions, fees, attendance, timetables, parent communications and student records — centralised and secure.</p>
-          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+          <div class="shv-card__header"><h3>Shvya School ERP</h3></div>
+          <p class="shv-card-desc">Admissions, fees, timetables, parent communications and student records — secure and centralised.</p>
+          <div class="shv-card-meta"><span class="shv-badge">ERP • Education</span></div>
         </article>
       </a>
 
-      <!-- Hospital Management -->
-      <a class="card-link" href="Hospital ERP.html" data-tags="hospital,clinic,healthcare">
-        <article class="card" tabindex="0">
-          <img class="card-img" src="shvya-resources/docker.png" alt="Hospital Management">
-          <div class="card-header">
-            <h3>Hospital Management</h3>
-            <span class="tag" style="background:#fff4e6;color:#92400e">HIPAA-Ready</span>
+      <a class="shv-card-link" href="Hospital ERP.html" data-shv-filter="erp" data-shv-product-id="sv_hospital_003" data-shv-tags="erp,hospital">
+        <article class="shv-card" tabindex="0">
+          <div class="shv-visual shv-visual--ratio" aria-hidden="true">
+            <img class="shv-img" src="shvya-porduct/shvya crm.png" alt="Shvya Hospital ERP">
           </div>
-          <p class="card-desc">Patient records, appointments, pharmacy, lab integration and billing — built for clinics and hospitals.</p>
-          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+          <div class="shv-card__header"><h3>Shvya Hospital ERP</h3><span class="shv-tag" style="background:#fff4e6;color:#92400e">HIPAA-Ready</span></div>
+          <p class="shv-card-desc">Patient records, appointments, pharmacy, lab integration and billing for clinics & hospitals.</p>
+          <div class="shv-card-meta"><span class="shv-badge">ERP • Healthcare</span></div>
         </article>
       </a>
 
-      <!-- HRM + Payroll -->
-      <a class="card-link" href="hrm.html" data-tags="hrm,payroll,hr">
-        <article class="card" tabindex="0">
-          <img class="card-img" src="shvya-resources/hrm pic.png" alt="HRM Payroll">
-          <div class="card-header">
-            <h3>HRM + Payroll</h3>
+      <a class="shv-card-link" href="Hospital ERP.html" data-shv-filter="erp" data-shv-product-id="sv_rest_004" data-shv-tags="erp,restaurant">
+        <article class="shv-card" tabindex="0">
+          <div class="shv-visual shv-visual--ratio" aria-hidden="true">
+            <img class="shv-img" src="shvya-resources/restorent.png" alt="Shvya Restaurant ERP">
           </div>
-          <p class="card-desc">Employee lifecycle, attendance, payroll processing, statutory reports and compliance — automated and auditable.</p>
-          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+          <div class="shv-card__header"><h3>Shvya Restaurant ERP</h3></div>
+          <p class="shv-card-desc">Kitchen orders, table management, inventory-to-recipe mapping, billing and delivery management.</p>
+          <div class="shv-card-meta"><span class="shv-badge">ERP • Food & Beverage</span></div>
         </article>
       </a>
 
-      <!-- Ecommerce Website -->
-      <a class="card-link" href="Ecommerce.html" data-tags="ecom,ecommerce,shop">
-        <article class="card" tabindex="0">
-          <img class="card-img" src="shvya-resources/ecomerce.png" alt="Ecommerce Website">
-          <div class="card-header">
-            <h3>Ecommerce Website</h3>
+      <!-- CRM -->
+      <a class="shv-card-link" href="CRM & Lead Manager.html" data-shv-filter="crm" data-shv-product-id="sv_crm_005" data-shv-tags="crm,leads">
+        <article class="shv-card" tabindex="0">
+          <div class="shv-visual shv-visual--ratio" aria-hidden="true">
+            <img class="shv-img" src="shvya-porduct/shvya crm.png" alt="Shvya CRM">
           </div>
-          <p class="card-desc">Modern online storefronts, secure checkout, payments, shipping integrations and admin dashboards to scale sales.</p>
-          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+          <div class="shv-card__header"><h3>Shvya CRM</h3></div>
+          <p class="shv-card-desc">Lead capture, nurturing, pipeline automation and reporting to help sales close faster.</p>
+          <div class="shv-card-meta"><span class="shv-badge">CRM • Sales</span></div>
         </article>
       </a>
 
-      <!-- Lead CRM Master -->
-      <a class="card-link" href="Lead CRM Master.html" data-tags="crm,leads,marketing">
-        <article class="card" tabindex="0">
-          <img class="card-img" src="shvya-resources/lead.png" alt="Lead CRM Master">
-          <div class="card-header">
-            <h3>Lead CRM Master</h3>
+      <a class="shv-card-link" href="Shvya AI.html" data-shv-filter="crm" data-shv-product-id="sv_ai_006" data-shv-tags="crm,ai">
+        <article class="shv-card" tabindex="0">
+          <div class="shv-visual shv-visual--ratio" aria-hidden="true">
+            <img class="shv-img" src="shvya-porduct/shvya ai.png" alt="Shvya AI">
           </div>
-          <p class="card-desc">Lead capture, nurturing, pipeline management, automated workflows and reporting — close more deals, faster.</p>
-          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+          <div class="shv-card__header"><h3>Shvya AI</h3><span class="shv-tag">AI Powered</span></div>
+          <p class="shv-card-desc">AI-driven automation, smart insights and predictive analytics for your CRM and operations.</p>
+          <div class="shv-card-meta"><span class="shv-badge">CRM • AI</span></div>
         </article>
       </a>
 
-      <!-- Learn LMS Hub -->
-      <a class="card-link" href="Learn LMS Hub.html" data-tags="lms,learning,courses">
-        <article class="card" tabindex="0">
-          <img class="card-img" src="shvya-resources/lern lms.png" alt="Learn LMS Hub">
-          <div class="card-header">
-            <h3>Learn LMS Hub</h3>
+      <a class="shv-card-link" href="hrm.html" data-shv-filter="crm" data-shv-product-id="sv_hrm_007" data-shv-tags="crm,hrm">
+        <article class="shv-card" tabindex="0">
+          <div class="shv-visual shv-visual--ratio" aria-hidden="true">
+            <img class="shv-img" src="shvya-resources/hrm pic.png" alt="Shvya HRM + Payroll">
           </div>
-          <p class="card-desc">Course management, assessments, certificates, blended learning and analytics for institutions and enterprises.</p>
-          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+          <div class="shv-card__header"><h3>Shvya HRM + Payroll</h3></div>
+          <p class="shv-card-desc">Employee lifecycle, time & attendance, payroll processing and statutory compliance — automated.</p>
+          <div class="shv-card-meta"><span class="shv-badge">CRM • HR</span></div>
         </article>
       </a>
 
-      <!-- Restaurant ERP -->
-      <a class="card-link" href="Restaurant ERP.html" data-tags="restaurant,food,pos">
-        <article class="card" tabindex="0">
-          <img class="card-img" src="shvya-resources/restorent.png" alt="Restaurant ERP">
-          <div class="card-header">
-            <h3>Restaurant ERP</h3>
+      <a class="shv-card-link" href="geo-fencing.html" data-shv-filter="crm" data-shv-product-id="sv_geo_008" data-shv-tags="crm,geo">
+        <article class="shv-card" tabindex="0">
+          <div class="shv-visual shv-visual--ratio" aria-hidden="true">
+            <img class="shv-img" src="shvya-porduct/geo.png" alt="Shvya Geo-Fencing Employee Management">
           </div>
-          <p class="card-desc">Kitchen orders, table management, inventory-to-recipe, billing and delivery — one system for Dine-in & Cloud kitchens.</p>
-          <div class="card-meta"><span class="badge">Subscription or One-Time Purchase • Fully Deployed in Under 4 Hours</span></div>
+          <div class="shv-card__header"><h3>Shvya Geo-Fencing Employee Management</h3></div>
+          <p class="shv-card-desc">Geo-verified check-ins, shift tracking and location-based attendance for field teams.</p>
+          <div class="shv-card-meta"><span class="shv-badge">CRM • Field Ops</span></div>
+        </article>
+      </a>
+
+      <!-- CMS -->
+      <a class="shv-card-link" href="learn-lms.html" data-shv-filter="cms" data-shv-product-id="sv_lms_009" data-shv-tags="cms,lms">
+        <article class="shv-card" tabindex="0">
+          <div class="shv-visual shv-visual--ratio" aria-hidden="true">
+            <img class="shv-img" src="shvya-resources/lern lms.png" alt="Learn LMS Hub">
+          </div>
+          <div class="shv-card__header"><h3>Learn LMS Hub</h3></div>
+          <p class="shv-card-desc">Course management, assessments, certificates and analytics for institutions and enterprises.</p>
+          <div class="shv-card-meta"><span class="shv-badge">CMS • LMS</span></div>
+        </article>
+      </a>
+
+      <a class="shv-card-link" href="E-commerce Solutions.html" data-shv-filter="cms" data-shv-product-id="sv_ecom_010" data-shv-tags="cms,ecommerce">
+        <article class="shv-card" tabindex="0">
+          <div class="shv-visual shv-visual--ratio" aria-hidden="true">
+            <img class="shv-img" src="shvya-resources/ecomerce.png" alt="Ecommerce Website">
+          </div>
+          <div class="shv-card__header"><h3>Ecommerce Website</h3></div>
+          <p class="shv-card-desc">Modern storefront, secure checkout, payment & shipping integrations and admin dashboards to scale sales.</p>
+          <div class="shv-card-meta"><span class="shv-badge">CMS • Ecommerce</span></div>
+        </article>
+      </a>
+
+      <a class="shv-card-link" href="business-landing.html" data-shv-filter="cms" data-shv-product-id="sv_land_011" data-shv-tags="cms,landing">
+        <article class="shv-card" tabindex="0">
+          <div class="shv-visual shv-visual--ratio" aria-hidden="true">
+            <img class="shv-img" src="shvya-porduct/shvya school erp.png" alt="Business Landing Page CMS">
+          </div>
+          <div class="shv-card__header"><h3>Business Landing Page CMS</h3></div>
+          <p class="shv-card-desc">High-converting landing pages, SEO-ready content, forms and analytics for campaigns & businesses.</p>
+          <div class="shv-card-meta"><span class="shv-badge">CMS • Landing</span></div>
         </article>
       </a>
 
     </div>
 
-    <div id="no-results" class="empty" style="display:none">No products match your filter.</div>
+    <div id="shv-no-results" class="shv-empty" style="display:none">No products match your filter.</div>
 
   </div>
+
+  <script>
+    (function(){
+      const root = document.getElementById('shv-section');
+      const pills = Array.from(root.querySelectorAll('.shv-pill'));
+      const cards = Array.from(document.querySelectorAll('#shv-product-cards [data-shv-filter]'));
+      const empty = document.getElementById('shv-no-results');
+
+      function apply(filter){
+        let visible = 0;
+        cards.forEach(a=>{
+          const f = a.getAttribute('data-shv-filter') || 'all';
+          if(filter==='all' || f===filter){ a.classList.remove('shv-hidden'); a.style.display='block'; visible++; }
+          else { a.classList.add('shv-hidden'); a.style.display='none'; }
+        });
+        empty.style.display = visible? 'none' : 'block';
+      }
+
+      pills.forEach(p=>{
+        p.addEventListener('click', ()=>{
+          pills.forEach(x=>x.classList.remove('shv-pill--active'));
+          p.classList.add('shv-pill--active');
+          apply(p.dataset.shvFilter || 'all');
+        });
+        p.addEventListener('keydown', e=>{
+          const idx = pills.indexOf(p);
+          if(e.key==='ArrowRight') pills[(idx+1)%pills.length].focus();
+          if(e.key==='ArrowLeft') pills[(idx-1+pills.length)%pills.length].focus();
+        });
+      });
+
+      // initial
+      apply('all');
+
+      // dashboard card behaviour
+      const dash = document.querySelector('.shv-dashboard-card');
+      if(dash){ dash.addEventListener('click', e=>{ const t=new URL(dash.href, location.href); t.searchParams.set('call', dash.dataset.shvCall); t.searchParams.set('prop', dash.dataset.shvProp); location.href = t.toString(); e.preventDefault(); }); }
+    })();
+  </script>
 </section>
 
 <!-- MAP + FILTER SCRIPT (WORKING) -->
