@@ -57,3 +57,27 @@
                 }
             }
         }
+
+        <!-- MOBILE FIXES (add just before </head>) -->
+<style>
+/* 1. Stop horizontal overflow caused by long words / URLs */
+body{overflow-x:hidden;word-break:break-word}
+
+/* 2. Make the policy card truly responsive */
+.cookie-wrapper{
+    width:95%;
+    max-width:100%;
+    padding:25px 18px;
+    margin:auto;
+    box-sizing:border-box;
+}
+
+/* 3. Shrink headings so they never stick out */
+.cookie-wrapper h1{font-size:24px}
+.cookie-wrapper h2{font-size:17px}
+
+/* 4. Footer grid collapses to single column on small screens */
+@media (max-width:640px){
+    footer .md\:grid-cols-4{grid-template-columns:1fr}
+}
+</style>

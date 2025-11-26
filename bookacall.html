@@ -6,145 +6,418 @@
   <title>Book a Call — Shvya</title>
   <style>
     :root{
-      --bg:#f7f9fc; --card:#ffffff; --accent:#0f62fe; --muted:#6b7280;
+      --bg: #0f172a;
+      --bg-soft:#020617;
+      --card:#ffffff;
+      --accent:#2563eb;
+      --accent-soft:#dbeafe;
+      --muted:#6b7280;
       --success:#16a34a;
     }
-    *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); margin:0; color:#0f1724}
-    .container{max-width:920px;margin:40px auto;padding:28px}
-    .card{background:var(--card);border-radius:12px;padding:28px;box-shadow:0 6px 18px rgba(12,18,30,0.06)}
-    h1{margin:0 0 6px;font-size:20px}
-    p.lead{margin:0 0 18px;color:var(--muted)}
-    form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    label{display:block;font-size:13px;margin-bottom:6px}
-    input[type=text], input[type=email], input[type=tel], select, textarea{width:100%;padding:10px 12px;border:1px solid #e6e9ef;border-radius:8px;font-size:14px}
-    textarea{min-height:120px;resize:vertical}
-    .full{grid-column:1/-1}
-    .checkbox-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-    .checkbox-item{display:flex;align-items:center;gap:10px;padding:8px;border:1px solid #eef2ff;border-radius:8px}
+
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    body{
+      font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;
+      background: radial-gradient(circle at top, #1d4ed8 0, #020617 45%, #000 100%);
+      color:#0f1724;
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:32px 16px;
+    }
+
+    .container{
+      width:100%;
+      max-width:980px;
+    }
+
+    .card{
+      background:linear-gradient(145deg,#ffffff,#f8fafc);
+      border-radius:18px;
+      padding:28px 26px 24px;
+      box-shadow:
+        0 18px 45px rgba(15,23,42,0.45),
+        0 0 0 1px rgba(148,163,184,0.35);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0 -40%;
+      background:radial-gradient(circle at 0 0,rgba(56,189,248,.25),transparent 55%),
+                 radial-gradient(circle at 100% 0,rgba(129,140,248,.2),transparent 55%);
+      opacity:.7;
+      pointer-events:none;
+    }
+
+    .card-inner{
+      position:relative;
+      z-index:1;
+    }
+
+    h1{
+      margin:0 0 4px;
+      font-size:24px;
+      letter-spacing:.02em;
+      color:#020617;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      background:#e0edff;
+      color:#1d4ed8;
+      border:1px solid #bfdbfe;
+      margin-bottom:10px;
+    }
+    .badge-dot{
+      width:7px;height:7px;border-radius:999px;
+      background:#22c55e;
+      box-shadow:0 0 0 4px rgba(34,197,94,0.3);
+    }
+
+    p.lead{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    form{
+      display:grid;
+      grid-template-columns:1.15fr 1.15fr;
+      gap:16px 18px;
+      margin-top:6px;
+    }
+
+    label{
+      display:block;
+      font-size:13px;
+      margin-bottom:6px;
+      color:#111827;
+    }
+
+    .required::after{
+      content:" *";
+      color:#dc2626;
+      font-weight:600;
+    }
+
+    input[type=text],
+    input[type=email],
+    input[type=tel],
+    select,
+    textarea{
+      width:100%;
+      padding:10px 12px;
+      border-radius:9px;
+      border:1px solid #d4d8e3;
+      font-size:14px;
+      outline:none;
+      background:#f9fafb;
+      transition:border-color .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus{
+      border-color:#2563eb;
+      background:#ffffff;
+      box-shadow:0 0 0 1px rgba(37,99,235,0.22),
+                 0 0 0 6px rgba(191,219,254,0.7);
+    }
+
+    textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+
+    .full{grid-column:1 / -1;}
+
+    .inline-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      font-size:13px;
+      color:#111827;
+    }
+    .inline-row label{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      margin-bottom:0;
+      cursor:pointer;
+    }
+
     .muted{color:var(--muted);font-size:13px}
-    .actions{display:flex;gap:12px;align-items:center}
-    button{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;border:0;font-weight:600;cursor:pointer}
-    button.secondary{background:#fff;border:1px solid #e6e9ef;color:#0f1724}
-    .note{font-size:13px;color:var(--muted)}
-    .success{background:rgba(22,163,74,0.08);border:1px solid rgba(22,163,74,0.16);color:var(--success);padding:10px;border-radius:8px}
-    @media (max-width:740px){form{grid-template-columns:1fr} .checkbox-grid{grid-template-columns:1fr}}
-    .inline-row{display:flex;gap:8px;align-items:center}
-    .required::after{content:" *";color:#d33}
+
+    .actions{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-top:4px;
+    }
+
+    button{
+      background:linear-gradient(135deg,#2563eb,#1d4ed8);
+      color:#fff;
+      padding:10px 18px;
+      border-radius:999px;
+      border:0;
+      font-weight:600;
+      font-size:14px;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      box-shadow:0 12px 30px rgba(37,99,235,0.35);
+      transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+    }
+    button:hover{
+      transform:translateY(-1px);
+      box-shadow:0 18px 40px rgba(37,99,235,0.45);
+    }
+    button.secondary{
+      background:#ffffff;
+      color:#111827;
+      border:1px solid #d4d8e3;
+      box-shadow:none;
+    }
+
+    .note{font-size:12px;color:var(--muted);max-width:260px}
+
+    .success{
+      background:rgba(22,163,74,0.06);
+      border:1px solid rgba(22,163,74,0.4);
+      color:#14532d;
+      padding:10px 12px;
+      border-radius:10px;
+      font-size:13px;
+    }
+
+    ul{padding-left:18px;margin:4px 0 0;}
+
+    /* Time slot pills */
+    .time-slot-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .time-slot-label{
+      display:inline-flex;
+      align-items:center;
+      cursor:pointer;
+      font-size:12px;
+    }
+    .time-slot-label input{
+      display:none;
+    }
+    .time-slot-label span{
+      padding:6px 12px;
+      border-radius:999px;
+      border:1px solid #d4d8e3;
+      background:#f9fafb;
+      color:#111827;
+      transition:all .18s ease;
+      white-space:nowrap;
+    }
+    .time-slot-label input:checked + span{
+      background:var(--accent);
+      color:#fff;
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(37,99,235,0.15),
+                 0 10px 24px rgba(37,99,235,0.35);
+    }
+
+    @media (max-width:820px){
+      form{grid-template-columns:1fr;}
+      .note{max-width:none;}
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="card">
-      <h1>Book a Call</h1>
-      <p class="lead">Tell us a little about your project and preferred times — we'll reach out to confirm.</p>
-
-      <form id="bookForm" novalidate>
-        <div>
-          <label class="required">Full Name</label>
-          <input type="text" id="fullName" placeholder="Your full name" required />
+      <div class="card-inner">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          SHVYA CALL REQUEST
         </div>
 
-        <div>
-          <label class="required">Email Address</label>
-          <input type="email" id="email" placeholder="you@company.com" required />
-        </div>
+        <h1>Book a Call</h1>
+        <p class="lead">
+          Tell us what you want to build and when we should contact you.  
+          Shvya will get back within a few hours.
+        </p>
 
-        <div>
-          <label>Company Name</label>
-          <input type="text" id="company" placeholder="Optional" />
-        </div>
-
-        <div>
-          <label class="required">Phone Number</label>
-          <input type="tel" id="phone" placeholder="+91 12345 67890" required />
-        </div>
-
-        <div class="full">
-          <label>Products &amp; Services of Interest</label>
-          <div class="checkbox-grid" id="servicesList">
-            <label class="checkbox-item"><input type="checkbox" value="Shvya CRM"/> <span>Shvya CRM</span></label>
-            <label class="checkbox-item"><input type="checkbox" value="Shvya Inventory"/> <span>Shvya Inventory</span></label>
-            <label class="checkbox-item"><input type="checkbox" value="Shvya School ERP"/> <span>Shvya School ERP</span></label>
-            <label class="checkbox-item"><input type="checkbox" value="Shvya Hospital ERP"/> <span>Shvya Hospital ERP</span></label>
-            <label class="checkbox-item"><input type="checkbox" value="Shvya Restaurant ERP"/> <span>Shvya Restaurant ERP</span></label>
-            <label class="checkbox-item"><input type="checkbox" value="Shvya HRM + Payroll"/> <span>Shvya HRM + Payroll</span></label>
-            <label class="checkbox-item"><input type="checkbox" value="Shvya Geofencing"/> <span>Shvya Geofencing</span></label>
-            <label class="checkbox-item"><input type="checkbox" value="Shvya AI"/> <span>Shvya AI</span></label>
-            <label class="checkbox-item"><input type="checkbox" value="Custom Website Development"/> <span>Custom Website Development</span></label>
-            <label class="checkbox-item"><input type="checkbox" value="App Development"/> <span>App Development</span></label>
-            <label class="checkbox-item"><input type="checkbox" value="Other" id="otherServiceChk"/> <span>Other (specify)</span></label>
+        <form id="bookForm" novalidate>
+          <!-- Project Type dropdown -->
+          <div class="full">
+            <label class="required">Project Type</label>
+            <select id="projectType" required>
+              <option value="">-- Select what you want to build --</option>
+              <option>Shvya CRM</option>
+              <option>Shvya Inventory System</option>
+              <option>Shvya School ERP</option>
+              <option>Shvya Hospital ERP</option>
+              <option>Shvya Restaurant ERP</option>
+              <option>Shvya HRM + Payroll</option>
+              <option>Shvya Geo-Fencing</option>
+              <option>Shvya AI Automation</option>
+              <option>Custom Website Development</option>
+              <option>App Development</option>
+              <option>E-commerce Website / Store</option>
+              <option>Cloud Deployment & Support</option>
+              <option>Digital Marketing & Growth</option>
+              <option>Other (specify)</option>
+            </select>
           </div>
-        </div>
 
-        <div class="full" id="otherServiceWrap" style="display:none;">
-          <label>Other Services (please specify)</label>
-          <input type="text" id="otherService" placeholder="Describe other services you want" />
-        </div>
-
-        <div class="full">
-          <label class="required">Project Description &amp; Requirements</label>
-          <textarea id="description" placeholder="Briefly describe your project, goals and requirements" required></textarea>
-        </div>
-
-        <div>
-          <label class="required">Preferred Contact Method</label>
-          <div class="inline-row">
-            <label><input type="radio" name="contactMethod" value="Call" checked /> Call</label>
-            <label><input type="radio" name="contactMethod" value="WhatsApp" /> WhatsApp</label>
+          <div class="full" id="projectOtherWrap" style="display:none;">
+            <label>Other Project (please specify)</label>
+            <input type="text" id="projectOther" placeholder="Describe the project type you have in mind" />
           </div>
-        </div>
 
-        <div>
-          <label>Best Time to Contact — Day Slots</label>
-          <select id="daySlot">
-            <option value="">-- choose a day slot --</option>
-            <option>09:00 - 11:00</option>
-            <option>11:00 - 13:00</option>
-            <option>13:00 - 15:00</option>
-            <option>15:00 - 17:00</option>
-          </select>
-        </div>
+          <div>
+            <label class="required">Full Name</label>
+            <input type="text" id="fullName" placeholder="Your full name" required />
+          </div>
 
-        <div>
-          <label>Best Time to Contact — Night Slots</label>
-          <select id="nightSlot">
-            <option value="">-- choose a night slot --</option>
-            <option>18:00 - 20:00</option>
-            <option>20:00 - 22:00</option>
-            <option>22:00 - 00:00</option>
-            <option>00:00 - 02:00</option>
-          </select>
-        </div>
+          <div>
+            <label class="required">Email Address</label>
+            <input type="email" id="email" placeholder="you@company.com" required />
+          </div>
 
-        <div class="full actions">
-          <button type="submit">Request a Call</button>
-          <button type="button" class="secondary" id="resetBtn">Reset</button>
-          <div class="note">We will not share your data. Fields marked with * are required.</div>
-        </div>
+          <div>
+            <label>Company Name</label>
+            <input type="text" id="company" placeholder="Optional" />
+          </div>
 
-      </form>
+          <div>
+            <label class="required">Phone Number</label>
+            <input type="tel" id="phone" placeholder="+91 12345 67890" required />
+          </div>
 
-      <div id="formResult" class="full" style="margin-top:16px;display:none"></div>
+          <div class="full">
+            <label class="required">Project Description &amp; Requirements</label>
+            <textarea id="description" placeholder="Briefly describe your project, goals and requirements" required></textarea>
+          </div>
+
+          <div>
+            <label class="required">Preferred Contact Method</label>
+            <div class="inline-row">
+              <label><input type="radio" name="contactMethod" value="Call" checked /> Call</label>
+              <label><input type="radio" name="contactMethod" value="WhatsApp" /> WhatsApp</label>
+            </div>
+          </div>
+
+          <!-- Dynamic time slots (next 12 hours, 1hr gap) -->
+          <div class="full">
+            <label class="required">Preferred Time (next 12 hours)</label>
+            <div id="timeSlots" class="time-slot-row"></div>
+            <div class="muted" style="margin-top:4px;font-size:12px;">
+              Choose one 1-hour slot. Generated from your current local time.
+            </div>
+          </div>
+
+          <div class="full actions">
+            <button type="submit">🚀 Request a Call</button>
+            <button type="button" class="secondary" id="resetBtn">Reset</button>
+            <div class="note">
+              We will not share your data. Fields marked with * are required.
+            </div>
+          </div>
+        </form>
+
+        <div id="formResult" class="full" style="margin-top:16px;display:none"></div>
+      </div>
     </div>
   </div>
 
   <script>
     (function(){
       const form = document.getElementById('bookForm');
-      const otherChk = document.getElementById('otherServiceChk');
-      const otherWrap = document.getElementById('otherServiceWrap');
+      const projectSelect = document.getElementById('projectType');
+      const projectOtherWrap = document.getElementById('projectOtherWrap');
+      const projectOtherInput = document.getElementById('projectOther');
       const resetBtn = document.getElementById('resetBtn');
       const resultBox = document.getElementById('formResult');
+      const timeSlotsContainer = document.getElementById('timeSlots');
 
-      otherChk.addEventListener('change', ()=>{
-        otherWrap.style.display = otherChk.checked ? 'block' : 'none';
+      // 🔗 Your Google Apps Script Web App URL
+      const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzm2FcosM5FUr_tibRoNTVr5qZOStcb-nJ3F2icLAW7Ajulx4xUcgNEg9mIo1sG5Lcs/exec";
+
+      // Show/hide "Other project" input
+      projectSelect.addEventListener('change', () => {
+        if(projectSelect.value === 'Other (specify)'){
+          projectOtherWrap.style.display = 'block';
+        } else {
+          projectOtherWrap.style.display = 'none';
+          projectOtherInput.value = '';
+        }
       });
 
-      resetBtn.addEventListener('click', ()=>{ form.reset(); otherWrap.style.display='none'; resultBox.style.display='none'; });
+      // Generate dynamic time slots: next 12 hours, 1-hour gap
+      function pad(n){ return n < 10 ? '0'+n : ''+n; }
+
+      function formatTime12(date){
+        let h = date.getHours();
+        const m = date.getMinutes();
+        const ampm = h >= 12 ? 'PM' : 'AM';
+        h = h % 12;
+        if(h === 0) h = 12;
+        return h + ':' + pad(m) + ' ' + ampm;
+      }
+
+      function buildTimeSlots(){
+        timeSlotsContainer.innerHTML = '';
+        const now = new Date();
+        // Start from next full hour
+        now.setMinutes(0,0,0);
+        now.setHours(now.getHours() + 1);
+
+        for(let i=0; i<12; i++){
+          const start = new Date(now.getTime() + i*60*60*1000);
+          const end   = new Date(start.getTime() + 60*60*1000);
+          const labelStr = `${formatTime12(start)} - ${formatTime12(end)}`;
+
+          const label = document.createElement('label');
+          label.className = 'time-slot-label';
+
+          const input = document.createElement('input');
+          input.type = 'radio';
+          input.name = 'timeSlot';
+          input.value = labelStr;
+
+          const span = document.createElement('span');
+          span.textContent = labelStr;
+
+          label.appendChild(input);
+          label.appendChild(span);
+          timeSlotsContainer.appendChild(label);
+        }
+      }
+
+      buildTimeSlots();
+
+      resetBtn.addEventListener('click', () => {
+        form.reset();
+        projectOtherWrap.style.display = 'none';
+        resultBox.style.display = 'none';
+        buildTimeSlots(); // regenerate slots based on current time
+      });
 
       function validatePhone(p){
-        // simple international phone check: digits, + and spaces allowed, minimum 7 digits
         const digits = p.replace(/[^0-9]/g,'');
         return digits.length >= 7 && digits.length <= 15;
       }
@@ -153,57 +426,105 @@
         e.preventDefault();
         resultBox.style.display='none';
 
+        const projectType = projectSelect.value;
+        const projectOther = projectOtherInput.value.trim();
+
         const name = document.getElementById('fullName').value.trim();
         const email = document.getElementById('email').value.trim();
         const phone = document.getElementById('phone').value.trim();
         const desc = document.getElementById('description').value.trim();
         const company = document.getElementById('company').value.trim();
-        const daySlot = document.getElementById('daySlot').value;
-        const nightSlot = document.getElementById('nightSlot').value;
         const contactMethod = document.querySelector('input[name="contactMethod"]:checked').value;
+        const timeSlotInput = document.querySelector('input[name="timeSlot"]:checked');
+        const timeSlotVal = timeSlotInput ? timeSlotInput.value : '';
 
-        let services = Array.from(document.querySelectorAll('#servicesList input[type=checkbox]:checked')).map(i=>i.value);
-        const otherText = document.getElementById('otherService').value.trim();
-        if(services.includes('Other') && otherText) services = services.filter(s=>s!=='Other').concat(otherText);
-
-        // validation
         const errors = [];
+
+        if(!projectType){
+          errors.push('Please select a Project Type.');
+        }
+        if(projectType === 'Other (specify)' && !projectOther){
+          errors.push('Please describe your project in the "Other Project" field.');
+        }
         if(!name) errors.push('Full Name is required.');
-        if(!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) errors.push('A valid email is required.');
-        if(!phone || !validatePhone(phone)) errors.push('A valid phone number is required.');
+        if(!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+          errors.push('A valid email is required.');
+        }
+        if(!phone || !validatePhone(phone)){
+          errors.push('A valid phone number is required.');
+        }
         if(!desc) errors.push('Project description is required.');
-        if(!daySlot && !nightSlot) errors.push('Please choose at least one preferred time slot (day or night).');
+        if(!timeSlotVal){
+          errors.push('Please choose a preferred 1-hour time slot.');
+        }
 
         if(errors.length){
-          resultBox.innerHTML = '<div class="success" style="border-color:#f59e0b;color:#92400e;background:rgba(245,158,11,0.08)"><strong>Please fix the following:</strong><ul style="margin:8px 0 0">'+errors.map(e=>'<li>'+e+'</li>').join('')+'</ul></div>';
+          resultBox.innerHTML =
+            '<div class="success" style="border-color:#f59e0b;color:#92400e;background:rgba(245,158,11,0.08)">' +
+            '<strong>Please fix the following:</strong>' +
+            '<ul>' + errors.map(e=>'<li>'+e+'</li>').join('') + '</ul></div>';
           resultBox.style.display='block';
           resultBox.scrollIntoView({behavior:'smooth'});
           return;
         }
 
-        // build summary
+        const finalProject = projectType === 'Other (specify)'
+          ? (projectOther || 'Other project')
+          : projectType;
+
         const summary = {
+          projectType: finalProject,
           name, email, phone, company, contactMethod,
-          preferredTime: daySlot || nightSlot,
-          services: services.length ? services.join(', ') : 'Not specified',
+          preferredTime: timeSlotVal,
           description: desc
         };
 
-        // show a simulated success message
-        resultBox.innerHTML = `<div class="success"><strong>Request received!</strong>
-          <div style="margin-top:8px">Thanks, <strong>${escapeHtml(name)}</strong>. We will contact you via <strong>${escapeHtml(contactMethod)}</strong> at <strong>${escapeHtml(phone)}</strong> or <strong>${escapeHtml(email)}</strong>.</div>
-          <div style="margin-top:8px"><em>Summary</em>: ${escapeHtml(summary.services)} — Preferred time: ${escapeHtml(summary.preferredTime)}</div>
+        console.log('Form payload ->', summary);
+
+        // 🔗 SEND TO GOOGLE APPS SCRIPT (Google Sheet + Emails)
+        fetch(SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors", // we don't read response, just fire the request
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(summary)
+        }).catch(err => {
+          console.error("Error sending to Google Script:", err);
+          // still continue to show success + redirect
+        });
+
+        // ✅ Show success message on site
+        resultBox.innerHTML = `<div class="success">
+          <strong>Request received!</strong>
+          <div style="margin-top:6px">
+            Thanks, <strong>${escapeHtml(name)}</strong>. 
+            We’ll contact you via <strong>${escapeHtml(contactMethod)}</strong> at 
+            <strong>${escapeHtml(phone)}</strong> or <strong>${escapeHtml(email)}</strong>.
+          </div>
+          <div style="margin-top:6px">
+            <em>Project</em>: ${escapeHtml(finalProject)} —
+            <em>Preferred time</em>: ${escapeHtml(summary.preferredTime)}
+          </div>
+          <p style="margin-top:10px;color:#14532d;font-weight:600;">Redirecting to Shvya...</p>
         </div>`;
+
         resultBox.style.display='block';
         resultBox.scrollIntoView({behavior:'smooth'});
 
-        // In a real setup you would send `summary` to your server here using fetch()/XHR
-        console.log('Form payload ->', summary);
-        form.reset(); otherWrap.style.display='none';
+        // ⏩ Redirect to main site after 2 seconds
+        setTimeout(()=>{ window.location.href="https://shvya-ai.com"; }, 2000);
+
+        form.reset();
+        projectOtherWrap.style.display = 'none';
+        buildTimeSlots(); // regenerate fresh slots
       });
 
-      function escapeHtml(s){ return String(s).replace(/[&<>"']/g, function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[m];}); }
-
+      function escapeHtml(s){
+        return String(s).replace(/[&<>"']/g, function(m){
+          return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[m]);
+        });
+      }
     })();
   </script>
 </body>
