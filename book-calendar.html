@@ -145,6 +145,537 @@
 <!-- Booacall pAge  -->
 <!-- Book A calender   -->
 
+
+
+
+
+
+
+
+<section id="shvya-hero-demo">
+
+<style>
+#shvya-hero-demo{
+  padding:70px 16px;
+  background:radial-gradient(circle at top left,#fde1eb 0,#f5e7ff 40%,#f9fafb 80%);
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  display:flex;
+  justify-content:center;
+}
+
+/* Outer shell */
+.shvya-booking-shell{
+  width:100%;
+  max-width:720px;
+  background:#fff;
+  border-radius:26px;
+  box-shadow:0 20px 60px rgba(15,23,42,.18);
+  padding:26px 26px 28px;
+  border:1px solid #e5e7eb;
+}
+
+/* Step indicator */
+.step-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:20px;
+}
+.step-title-main{
+  font-size:20px;
+  font-weight:800;
+  color:#0f172a;
+}
+.step-sub{
+  font-size:13px;
+  color:#6b7280;
+}
+
+.step-progress{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.step-dot{
+  width:22px;
+  height:22px;
+  border-radius:999px;
+  border:1px solid #c4b5fd;
+  font-size:11px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#6b21a8;
+  background:#f5f3ff;
+}
+.step-dot.active{
+  background:linear-gradient(135deg,#e11d48,#8b5cf6);
+  color:#fff;
+  border-color:transparent;
+}
+.step-line{
+  width:34px;
+  height:3px;
+  border-radius:999px;
+  background:#e5e7eb;
+}
+.step-line.active{
+  background:linear-gradient(90deg,#e11d48,#8b5cf6);
+}
+
+/* Form layout */
+.step-body{ margin-top:4px; }
+.step{ display:none; }
+.step.active{ display:block; }
+
+.form-group{ margin-bottom:14px; }
+.label{
+  display:block;
+  font-size:13px;
+  font-weight:600;
+  color:#111827;
+  margin-bottom:4px;
+}
+.label span{ color:#e11d48; }
+
+.input,select,textarea{
+  width:100%;
+  padding:9px 11px;
+  border-radius:9px;
+  border:1px solid #d1d5db;
+  font-size:13px;
+  box-sizing:border-box;
+}
+.input:focus,select:focus,textarea:focus{
+  border-color:#8b5cf6;
+  outline:none;
+  box-shadow:0 0 0 1px rgba(139,92,246,.4);
+}
+textarea{ min-height:70px; }
+
+/* rows */
+.row{ display:flex; gap:12px; }
+@media(max-width:640px){
+  .row{flex-direction:column;}
+}
+
+/* Contact pills */
+.contact-options{ display:flex; gap:10px; flex-wrap:wrap;}
+.contact-pill{
+  flex:1;
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid #d1d5db;
+  font-size:13px;
+  text-align:center;
+  cursor:pointer;
+  transition:.15s;
+  min-width:100px;
+}
+.contact-pill input{ display:none; }
+.contact-pill:hover{
+  border-color:#a855f7;
+  background:#f5f3ff;
+}
+.contact-pill.active{
+  background:#8b5cf6;
+  border-color:#8b5cf6;
+  color:#fff;
+}
+
+/* Nav buttons */
+.nav-buttons{
+  margin-top:18px;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+.btn{
+  flex:1;
+  padding:11px;
+  border-radius:999px;
+  border:none;
+  cursor:pointer;
+  font-size:13px;
+  font-weight:600;
+}
+.btn-secondary{
+  background:#f3f4f6;
+  color:#374151;
+}
+.btn-primary{
+  background:linear-gradient(90deg,#e11d48,#8b5cf6);
+  color:#fff;
+  box-shadow:0 12px 30px rgba(139,92,246,.45);
+}
+.btn[disabled]{ opacity:.6; cursor:not-allowed; }
+
+.form-note{
+  margin-top:10px;
+  font-size:11px;
+  color:#9ca3af;
+  text-align:center;
+}
+
+.iti{width:100%;}
+</style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css">
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
+
+<div class="shvya-booking-shell">
+  <div class="step-header">
+    <div>
+      <div class="step-title-main">Book a clarity session with Shvya</div>
+      <div class="step-sub">Choose your meeting, pick a time, then share your details.</div>
+    </div>
+    <div class="step-progress">
+      <div class="step-dot step-dot-1 active">1</div>
+      <div class="step-line step-line-1 active"></div>
+      <div class="step-dot step-dot-2">2</div>
+      <div class="step-line step-line-2"></div>
+      <div class="step-dot step-dot-3">3</div>
+    </div>
+  </div>
+
+  <div class="step-body">
+    <form id="bookingForm">
+      <!-- STEP 1 -->
+      <div class="step step-1 active">
+        <div class="form-group">
+          <label class="label">Meeting Type (Typical call types) <span>*</span></label>
+          <select id="meetingType" required>
+            <option value="">Select meeting type</option>
+            <option value="Discovery (30 min)">Discovery (30 min)</option>
+            <option value="Demo + Q&A (60 min)">Demo + Q&A (60 min)</option>
+            <option value="Tech + Integration (60 min)">Tech + Integration (60 min)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="label">Which Shvya service do you want to discuss? <span>*</span></label>
+          <select id="serviceType" required>
+            <option value="">Select a service</option>
+            <option value="New Project or Custom">New Project or Custom</option> 
+            <option value="Shvya AI (general)">Shvya AI</option>
+            <option value="Shvya CRM – Leads & Pipeline">Shvya CRM – Leads & Pipeline</option>
+            <option value="Shvya Inventory + Billing – Stock & GST">Shvya Inventory + Billing – Stock & GST</option>
+            <option value="Shvya HRM + Payroll – Teams & Salary">Shvya HRM + Payroll – Teams & Salary</option>
+            <option value="Shvya AI – Automation & Chat">Shvya AI – Automation & Chat</option>
+            <option value="School ERP – Admissions & Fees">School ERP – Admissions & Fees</option>
+            <option value="Hospital ERP – OPD / IPD / Billing">Hospital ERP – OPD / IPD / Billing</option>
+            <option value="Restaurant ERP – KOT & POS">Restaurant ERP – KOT & POS</option>
+            <option value="Geo-Fencing – Field Workforce">Geo-Fencing – Field Workforce</option>
+            <option value="Learn LMS – Courses & Exams">Learn LMS – Courses & Exams</option>
+            <option value="E-commerce – Online Store">E-commerce – Online Store</option>
+            <option value="Landing CMS – Landing pages">Landing CMS – Landing pages</option>
+            <option value="Custom website / Other project">Custom website / Other project</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step step-2">
+        <div class="row">
+          <div class="form-group" style="flex:1;">
+            <label class="label">Preferred Date <span>*</span></label>
+            <input type="date" class="input" id="preferredDate" required>
+          </div>
+          <div class="form-group" style="flex:1;">
+            <label class="label">Preferred Time Slot <span>*</span></label>
+            <select id="timeSlot" required></select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="label">Preferred Contact <span>*</span></label>
+          <div class="contact-options">
+            <label class="contact-pill">
+              <input type="radio" name="contactMethod" value="Google Meet">
+              Google Meet
+            </label>
+            <!-- <label class="contact-pill">
+              <input type="radio" name="contactMethod" value="Zoom">
+              Zoom
+            </label> -->
+            <label class="contact-pill">
+              <input type="radio" name="contactMethod" value="Call">
+              Call
+            </label>
+            <label class="contact-pill">
+              <input type="radio" name="contactMethod" value="WhatsApp">
+              WhatsApp
+            </label>
+          </div>
+        </div>
+
+        <div class="form-note">
+          Slots are shown in <strong>UTC +05:30 (India)</strong>. For today, only remaining time slots appear.
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step step-3">
+        <div class="form-group">
+          <label class="label">Full Name <span>*</span></label>
+          <input type="text" class="input" id="fullName" required>
+        </div>
+
+        <div class="row">
+          <div class="form-group" style="flex:1;">
+            <label class="label">Work Email <span>*</span></label>
+            <input type="email" class="input" id="workEmail" required>
+          </div>
+          <div class="form-group" style="flex:1;">
+            <label class="label">Organisation Name</label>
+            <input type="text" class="input" id="orgName">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group" style="flex:1;">
+            <label class="label">Phone Number <span>*</span></label>
+            <input type="tel" id="phone" class="input" required>
+          </div>
+          <div class="form-group" style="flex:1;">
+            <label class="label">Company size</label>
+            <select id="companySize">
+              <option value="">Select</option>
+              <option value="Solo / 1 person">Solo / 1 person</option>
+              <option value="2-10 people">2–10 people</option>
+              <option value="11-50 people">11–50 people</option>
+              <option value="51-200 people">51–200 people</option>
+              <option value="200+ people">200+ people</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="label">You are looking Shvya service in which budget range?</label>
+          <select id="budgetRange">
+            <option value="">Select range</option>
+            <option value="10k – 50k INR">10k – 50k INR</option>
+            <option value="50k – 1 lakh INR">50k – 1 lakh INR</option>
+            <option value="1 lakh – 1.5 lakh INR">1 lakh – 1.5 lakh INR</option>
+            <option value="1.5 lakh – 3 lakh INR">1.5 lakh – 3 lakh INR</option>
+            <option value="3 lakh – 5 lakh INR">3 lakh – 5 lakh INR</option>
+            <option value="5 lakh+ INR">5 lakh+ INR</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="label">Other details</label>
+          <textarea id="extraDetails" placeholder="Share current tools, team size, or anything important for this call..."></textarea>
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button type="button" class="btn btn-secondary" id="prevBtn">Back</button>
+        <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+      </div>
+
+      <div class="form-note">
+        Once submitted, our team will confirm your slot and send a calendar invite with the Google Meet / Zoom link.
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+// 🔗 CHANGE THIS AFTER YOU DEPLOY APPS SCRIPT
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzEeUuww9L09DQWNwtMs0NM8Cfd-UiTRfPRAESCkRpP39t85BZOs8CtmTo3_xrONDyz/exec";
+
+let currentStep = 1;
+const totalSteps = 3;
+const steps = document.querySelectorAll('.step');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+function showStep(step){
+  steps.forEach((s,i)=>{ s.classList.toggle('active', i===step-1); });
+  document.querySelector('.step-dot-1').classList.toggle('active', step>=1);
+  document.querySelector('.step-dot-2').classList.toggle('active', step>=2);
+  document.querySelector('.step-dot-3').classList.toggle('active', step>=3);
+  document.querySelector('.step-line-1').classList.toggle('active', step>=2);
+  document.querySelector('.step-line-2').classList.toggle('active', step>=3);
+  prevBtn.disabled = (step===1);
+  nextBtn.textContent = (step===totalSteps) ? 'Confirm Booking' : 'Next';
+}
+showStep(currentStep);
+
+// contact pill UI
+document.querySelectorAll('.contact-pill').forEach(pill=>{
+  pill.addEventListener('click', ()=>{
+    document.querySelectorAll('.contact-pill').forEach(p=>p.classList.remove('active'));
+    pill.classList.add('active');
+    pill.querySelector('input').checked = true;
+  });
+});
+
+// intl-tel-input
+let itiPhone;
+const phoneEl = document.querySelector("#phone");
+if(phoneEl){
+  itiPhone = window.intlTelInput(phoneEl,{
+    initialCountry:"in",
+    separateDialCode:true,
+    preferredCountries:["in","us","gb","ae"],
+    utilsScript:"https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js"
+  });
+}
+
+// time slot data: only start times
+const timeSlotsData = [
+  { label:"12:30 PM", hour:12, minute:30 },
+  { label:"1:30 PM",  hour:13, minute:30 },
+  { label:"2:30 PM",  hour:14, minute:30 },
+  { label:"3:30 PM",  hour:15, minute:30 },
+  { label:"4:30 PM",  hour:16, minute:30 },
+  { label:"5:30 PM",  hour:17, minute:30 },
+  { label:"6:30 PM",  hour:18, minute:30 },
+  { label:"7:30 PM",  hour:19, minute:30 },
+  { label:"8:30 PM",  hour:20, minute:30 },
+  { label:"9:30 PM",  hour:21, minute:30 },
+  { label:"10:30 PM", hour:22, minute:30 },
+  { label:"11:30 PM", hour:23, minute:30 },
+  { label:"12:30 AM", hour:0,  minute:30 }
+];
+
+const timeSlotSelect = document.getElementById("timeSlot");
+const dateInput = document.getElementById("preferredDate");
+
+function populateTimeSlots(){
+  const selectedDate = dateInput.value;
+  timeSlotSelect.innerHTML = "";
+  const placeholder = document.createElement("option");
+  placeholder.value = "";
+  placeholder.textContent = "Choose a slot";
+  timeSlotSelect.appendChild(placeholder);
+  if(!selectedDate) return;
+
+  const today = new Date();
+  const todayY = today.getFullYear();
+  const todayM = today.getMonth();
+  const todayD = today.getDate();
+
+  const sel = new Date(selectedDate + "T00:00:00");
+  const isToday = sel.getFullYear()===todayY && sel.getMonth()===todayM && sel.getDate()===todayD;
+
+  timeSlotsData.forEach(slot=>{
+    if(isToday){
+      const slotTime = new Date();
+      slotTime.setHours(slot.hour, slot.minute, 0, 0);
+      if(slotTime <= today) return; // skip past slots
+    }
+    const opt = document.createElement("option");
+    opt.value = slot.label;
+    opt.textContent = slot.label;
+    timeSlotSelect.appendChild(opt);
+  });
+}
+
+// min date + default today
+(function(){
+  const d = new Date();
+  const yyyy = d.getFullYear();
+  const mm = String(d.getMonth()+1).padStart(2,"0");
+  const dd = String(d.getDate()).padStart(2,"0");
+  const todayStr = `${yyyy}-${mm}-${dd}`;
+  dateInput.min = todayStr;
+  dateInput.value = todayStr;
+  populateTimeSlots();
+})();
+dateInput.addEventListener("change", populateTimeSlots);
+
+function validateStep(step){
+  if(step===1){
+    if(!document.getElementById('meetingType').value) return false;
+    if(!document.getElementById('serviceType').value) return false;
+  }
+  if(step===2){
+    if(!dateInput.value) return false;
+    if(!timeSlotSelect.value) return false;
+    if(!document.querySelector('input[name="contactMethod"]:checked')) return false;
+  }
+  if(step===3){
+    if(!document.getElementById('fullName').value.trim()) return false;
+    if(!document.getElementById('workEmail').value.trim()) return false;
+    if(!phoneEl.value.trim()) return false; // phone required
+  }
+  return true;
+}
+
+nextBtn.addEventListener('click', ()=>{
+  if(!validateStep(currentStep)){
+    alert("Please complete required fields before continuing.");
+    return;
+  }
+
+  if(currentStep < totalSteps){
+    currentStep++;
+    showStep(currentStep);
+  }else{
+    // FINAL SUBMIT: send to Google Apps Script, then redirect
+    const contactMethodEl = document.querySelector('input[name="contactMethod"]:checked');
+    const bookingData = {
+      meetingType: document.getElementById('meetingType').value,
+      serviceType: document.getElementById('serviceType').value,
+      date: dateInput.value,
+      timeSlot: timeSlotSelect.value,
+      contactMethod: contactMethodEl ? contactMethodEl.value : "",
+      fullName: document.getElementById('fullName').value.trim(),
+      workEmail: document.getElementById('workEmail').value.trim(),
+      orgName: document.getElementById('orgName').value.trim(),
+      phone: itiPhone && phoneEl.value ? itiPhone.getNumber() : phoneEl.value.trim(),
+      companySize: document.getElementById('companySize').value,
+      budgetRange: document.getElementById('budgetRange').value,
+      extraDetails: document.getElementById('extraDetails').value.trim()
+    };
+
+    fetch(WEB_APP_URL, {
+      method: "POST",
+      mode: "no-cors", // simpler for beginner
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(bookingData)
+    })
+    .then(() => {
+      alert("Your Shvya clarity session request is submitted! 🚀\n\nWe’ll email you the confirmation and calendar invite shortly.");
+      window.location.href = "https://shvya-ai.com";
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Something went wrong while submitting. Please try again or contact us on WhatsApp.");
+    });
+  }
+});
+
+prevBtn.addEventListener('click', ()=>{
+  if(currentStep>1){
+    currentStep--;
+    showStep(currentStep);
+  }
+});
+</script>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Contact From End  -->
 <section id="shvya-success-stories">
 
