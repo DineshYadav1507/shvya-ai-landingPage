@@ -6,6 +6,7 @@
     <title>Shvya Ai - CRM ERP Products</title>
     <meta name="description" content="Deploy AI-powered business software solutions in just 4 hours. CRM, ERP, HRM, and automation tools ready for immediate use with Shvya AI.">
     <!-- Favicon -->
+     <link rel="stylesheet" href="allcss.css">
        <link rel="icon" type="image/png" href="shvya-porduct/favicon.jpg">
        <link rel="shortcut icon" href="shvya-porduct/favicon.jpg" type="image/png">
 
@@ -173,124 +174,211 @@
     </style>
 </head>
 <body class="bg-gray-50 font-inter">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <div class="text-2xl font-bold text-shvya-navy">
-                        <a href="index.html"><span class="text-shvya-blue">Shvya</span> AI</a>
-                    </div>
-                    <div class="ml-2 text-xs bg-shvya-orange text-white px-2 py-1 rounded font-mono">CRM ERP Inventory</div>
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-shvya-blue font-semibold">Home</a>
-                    <a href="products.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Products</a>
-                    <a href="shvya-services.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Services</a>
-                    <a href="shvya-about.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">About</a>
-                    <a href="shvya-deployment.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">4HR Deploy</a>
-                    <a href="shvya-contact.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Contact</a>
-                </div>
-                
-                <div class="flex items-center space-x-4">
-                   <a href="bookacall.html" class="bg-shvya-blue text-white px-4 py-2 rounded-lg hover:bg-shvya-blue/90 transition-colors">
-                    Book a Call</a>
-                    <!-- <button class="bg-shvya-navy text-white px-6 py-2 rounded-lg hover:bg-shvya-navy/90 transition-colors font-semibold">
-                        Start Deploy
-                    </button> -->
-                </div>
+   <!-- ===================== NAVIGATION ===================== -->
+<nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+
+            <!-- Logo -->
+            <a href="index.html" class="text-2xl font-bold text-shvya-navy">
+                <span class="text-shvya-blue">Shvya</span> AI
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="hover:text-shvya-blue">Home</a>
+                <a href="products.html" class="hover:text-shvya-blue">Products</a>
+                <a href="shvya-services.html" class="text-shvya-blue font-semibold">Services</a>
+                <a href="shvya-about.html" class="hover:text-shvya-blue">About</a>
+                <a href="shvya-deployment.html" class="hover:text-shvya-blue">4HR Deploy</a>
+                <a href="shvya-contact.html" class="hover:text-shvya-blue">Contact</a>
             </div>
+
+            <!-- Desktop CTA -->
+            <div class="hidden md:flex">
+                <a href="bookacall.html" class="bg-shvya-blue text-white px-4 py-2 rounded-lg hover:bg-shvya-blue/90">
+                    Book a Call
+                </a>
+            </div>
+
+            <!-- 📱 Mobile top right CTA + menu icon -->
+            <div class="flex md:hidden items-center gap-2">
+
+                <a href="bookacall.html" 
+                   class="bg-shvya-blue text-white px-3 py-2 text-sm rounded-lg shadow-sm active:scale-95">
+                    Book Call
+                </a>
+
+                <!-- 3-dot Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="p-2">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor"
+                         viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+            </div>
+
         </div>
-    </nav>
+    </div>
+
+    <!-- 📱 MOBILE SLIDE DROPDOWN MENU -->
+    <div id="mobile-menu"
+         class="hidden flex-col bg-white border-t border-gray-200 px-6 py-4 space-y-3 md:hidden">
+
+        <a href="index.html" class="block text-gray-700 font-medium">Home</a>
+        <a href="products.html" class="block text-gray-700 font-medium">Products</a>
+        <a href="shvya-services.html" class="text-shvya-blue font-bold">Services</a>
+        <a href="shvya-about.html" class="block text-gray-700 font-medium">About</a>
+        <a href="shvya-deployment.html" class="block text-gray-700 font-medium">4HR Deploy</a>
+        <a href="shvya-contact.html" class="block text-gray-700 font-medium">Contact</a>
+
+        <a href="bookacall.html"
+           class="block bg-shvya-blue text-white text-center py-3 rounded-lg font-semibold">
+           📞 Book a Call
+        </a>
+    </div>
+</nav>
+
+
+<!-- 📱 Mobile 3 Quick Action Bar (always visible bottom) -->
+<div class="fixed bottom-3 left-1/2 -translate-x-1/2 w-[94%] sm:hidden grid grid-cols-3 gap-2 z-[99999]">
+
+    <a href="shvya-contact.html"
+       class="bg-shvya-blue text-white text-xs font-semibold text-center py-3 rounded-xl shadow-md">
+       📞 Contact
+    </a>
+
+    <a href="https://wa.me/916393413211?text=Hi%2C+I+am+interested+in+Shvya+Services"
+       class="bg-green-500 text-white text-xs font-semibold text-center py-3 rounded-xl shadow-md">
+       💬 WhatsApp
+    </a>
+
+    <a href="bookacall.html"
+       class="bg-shvya-navy text-white text-xs font-semibold text-center py-3 rounded-xl shadow-md">
+       📝 Book Call
+    </a>
+
+</div>
+
+
+<!-- Mobile Menu Toggle Script -->
+<script>
+document.getElementById("mobile-menu-btn").addEventListener("click", function(){
+    document.getElementById("mobile-menu").classList.toggle("hidden");
+});
+</script>
+
 
     <!-- ========  ATTRACTIVE LIVE INVENTORY DEMO  ======== -->
 <section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
-    <div id="particle-container" class="particle-bg"></div>
+  <div id="particle-container" class="particle-bg"></div>
 
-    <div class="content-overlay max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center text-white">
-        <!-- Heading -->
-        <div class="mb-12">
-            <div class="inline-block bg-gradient-to-r from-shvya-orange to-rose-500 text-white px-5 py-2 rounded-full text-sm font-semibold mb-4 pulse-ai shadow-lg shadow-shvya-orange/40">
-                ⚡ Live Inventory & Billing – 4-Hour Deploy
-            </div>
-            <h1 class="text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
-                <span class="gradient-text">Try the Real Thing</span><br>
-                <span class="typewriter">Zero Setup. One Click.</span>
-            </h1>
-        </div>
-
-        <!-- Glass-morphic Card Deck -->
-        <div class="grid md:grid-cols-2 gap-8 perspective-1000">
-            <!-- Admin Card -->
-            <div class="group">
-                <div class="relative glass-card rounded-3xl p-8 text-white
-                            border border-white/20
-                            shadow-2xl shadow-shvya-blue/30
-                            transform-gpu transition-all duration-500
-                            hover:scale-105 hover:-translate-y-2
-                            hover:shadow-shvya-blue/50
-                            backdrop-blur-xl
-                            bg-gradient-to-br from-white/10 to-white/5">
-                    <div class="absolute -top-3 -right-3 bg-shvya-orange text-xs px-3 py-1 rounded-full font-bold shadow-lg">
-                        FULL ACCESS
-                    </div>
-                    <h3 class="text-2xl font-bold mb-5 flex items-center justify-center gap-3">
-                        <span class="text-3xl">👑</span> Admin Portal
-                    </h3>
-                    <div class="space-y-3 font-mono text-sm text-left">
-                        <div class="flex items-center gap-2"><span class="text-shvya-blue">URL:</span> <span class="truncate">digitalshop.blacksilvertechnology.com</span></div>
-                        <div class="flex items-center gap-2"><span class="text-shvya-blue">Email:</span> admin@gmail.com</div>
-                        <div class="flex items-center gap-2"><span class="text-shvya-blue">Pass:</span> Admin@123</div>
-                    </div>
-                    <a href="https://digitalshop.blacksilvertechnology.com/public" target="_blank" rel="noopener"
-                       class="mt-6 block w-full bg-gradient-to-r from-shvya-green to-emerald-500 text-center text-white font-semibold py-3 rounded-xl
-                              hover:from-emerald-500 hover:to-shvya-green transition-all transform hover:scale-105 shadow-lg shadow-emerald-500/30">
-                        Launch Admin →
-                    </a>
-                </div>
-            </div>
-
-            <!-- User Card -->
-            <div class="group">
-                <div class="relative glass-card rounded-3xl p-8 text-white
-                            border border-white/20
-                            shadow-2xl shadow-shvya-orange/30
-                            transform-gpu transition-all duration-500
-                            hover:scale-105 hover:-translate-y-2
-                            hover:shadow-shvya-orange/50
-                            backdrop-blur-xl
-                            bg-gradient-to-br from-white/10 to-white/5">
-                    <div class="absolute -top-3 -right-3 bg-shvya-blue text-xs px-3 py-1 rounded-full font-bold shadow-lg">
-                        LIMITED RIGHTS
-                    </div>
-                    <h3 class="text-2xl font-bold mb-5 flex items-center justify-center gap-3">
-                        <span class="text-3xl">🙂</span> User Portal
-                    </h3>
-                    <div class="space-y-3 font-mono text-sm text-left">
-                        <div class="flex items-center gap-2"><span class="text-shvya-orange">URL:</span> <span class="truncate">digitalshop.blacksilvertechnology.com</span></div>
-                        <div class="flex items-center gap-2"><span class="text-shvya-orange">Email:</span> user@gmail.com</div>
-                        <div class="flex items-center gap-2"><span class="text-shvya-orange">Pass:</span> User@123</div>
-                    </div>
-                    <a href="https://digitalshop.blacksilvertechnology.com/public" target="_blank" rel="noopener"
-                       class="mt-6 block w-full bg-gradient-to-r from-shvya-blue to-cyan-500 text-center text-white font-semibold py-3 rounded-xl
-                              hover:from-cyan-500 hover:to-shvya-blue transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/30">
-                        Launch User →
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Feature pills -->
-        <div class="flex flex-wrap justify-center gap-3 mt-12 text-xs font-semibold">
-            <span class="glass-card px-4 py-2 rounded-full border border-white/20">Stock-In</span>
-            <span class="glass-card px-4 py-2 rounded-full border border-white/20">Stock-Out</span>
-            <span class="glass-card px-4 py-2 rounded-full border border-white/20">Live Billing</span>
-            <span class="glass-card px-4 py-2 rounded-full border border-white/20">Analytics</span>
-            <span class="glass-card px-4 py-2 rounded-full border border-white/20">4-Hour Deploy</span>
-        </div>
+  <div class="content-overlay max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center text-white">
+    <!-- Heading -->
+    <div class="mb-10 sm:mb-12">
+      <div
+        class="inline-block bg-gradient-to-r from-shvya-orange to-rose-500 text-white px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-4 pulse-ai shadow-lg shadow-shvya-orange/40">
+        ⚡ Live Inventory & Billing – 4-Hour Deploy
+      </div>
+      <h1
+        class="text-3xl sm:text-4xl lg:text-6xl font-extrabold mb-3 sm:mb-4 leading-snug sm:leading-tight px-2 sm:px-0">
+        <span class="gradient-text block">Try the Real Thing</span>
+        <span class="typewriter block text-2xl sm:text-3xl lg:text-4xl mt-1">Zero Setup. One Click.</span>
+      </h1>
     </div>
+
+    <!-- Glass-morphic Card Deck -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 perspective-1000">
+      <!-- Admin Card -->
+      <div class="group">
+        <div
+          class="relative glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-8 text-white
+                     border border-white/20
+                     shadow-2xl shadow-shvya-blue/30
+                     transform-gpu transition-all duration-500
+                     hover:scale-105 hover:-translate-y-2
+                     hover:shadow-shvya-blue/50
+                     backdrop-blur-xl
+                     bg-gradient-to-br from-white/10 to-white/5">
+          <div
+            class="absolute -top-3 -right-3 bg-shvya-orange text-[10px] sm:text-xs px-2 sm:px-3 py-1 rounded-full font-bold shadow-lg">
+            FULL ACCESS
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-5 flex items-center justify-center gap-2 sm:gap-3">
+            <span class="text-2xl sm:text-3xl">👑</span> Admin Portal
+          </h3>
+          <div class="space-y-2.5 sm:space-y-3 font-mono text-[11px] sm:text-sm text-left break-all sm:break-normal">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-shvya-blue">URL:</span>
+              <span class="truncate sm:truncate">digitalshop.blacksilvertechnology.com</span>
+            </div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-shvya-blue">Email:</span> admin@gmail.com
+            </div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-shvya-blue">Pass:</span> Admin@123
+            </div>
+          </div>
+          <a href="https://digitalshop.blacksilvertechnology.com/public" target="_blank" rel="noopener"
+             class="mt-5 sm:mt-6 block w-full bg-gradient-to-r from-shvya-green to-emerald-500 text-center text-white font-semibold py-2.5 sm:py-3 rounded-xl
+                    hover:from-emerald-500 hover:to-shvya-green transition-all transform hover:scale-105 shadow-lg shadow-emerald-500/30 text-sm sm:text-base">
+            Launch Admin →
+          </a>
+        </div>
+      </div>
+
+      <!-- User Card -->
+      <div class="group">
+        <div
+          class="relative glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-8 text-white
+                     border border-white/20
+                     shadow-2xl shadow-shvya-orange/30
+                     transform-gpu transition-all duration-500
+                     hover:scale-105 hover:-translate-y-2
+                     hover:shadow-shvya-orange/50
+                     backdrop-blur-xl
+                     bg-gradient-to-br from-white/10 to-white/5">
+          <div
+            class="absolute -top-3 -right-3 bg-shvya-blue text-[10px] sm:text-xs px-2 sm:px-3 py-1 rounded-full font-bold shadow-lg">
+            LIMITED RIGHTS
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-5 flex items-center justify-center gap-2 sm:gap-3">
+            <span class="text-2xl sm:text-3xl">🙂</span> User Portal
+          </h3>
+          <div class="space-y-2.5 sm:space-y-3 font-mono text-[11px] sm:text-sm text-left break-all sm:break-normal">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-shvya-orange">URL:</span>
+              <span class="truncate sm:truncate">digitalshop.blacksilvertechnology.com</span>
+            </div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-shvya-orange">Email:</span> user@gmail.com
+            </div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-shvya-orange">Pass:</span> User@123
+            </div>
+          </div>
+          <a href="https://digitalshop.blacksilvertechnology.com/public" target="_blank" rel="noopener"
+             class="mt-5 sm:mt-6 block w-full bg-gradient-to-r from-shvya-blue to-cyan-500 text-center text-white font-semibold py-2.5 sm:py-3 rounded-xl
+                    hover:from-cyan-500 hover:to-shvya-blue transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/30 text-sm sm:text-base">
+            Launch User →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature pills -->
+    <div class="flex flex-wrap justify-center gap-2.5 sm:gap-3 mt-8 sm:mt-12 text-[11px] sm:text-xs md:text-sm font-semibold">
+      <span class="glass-card px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/20">Stock-In</span>
+      <span class="glass-card px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/20">Stock-Out</span>
+      <span class="glass-card px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/20">Live Billing</span>
+      <span class="glass-card px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/20">Analytics</span>
+      <span class="glass-card px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/20">4-Hour Deploy</span>
+    </div>
+  </div>
 </section>
+
 <!-- ========================================================= -->
 <!-- Inventory Billing Pro — Product Overview -->
 <section class="py-20 bg-white">

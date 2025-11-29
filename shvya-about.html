@@ -6,7 +6,7 @@
     <title>About Shvya-AI</title>
     <meta name="description" content="Learn about Shvya AI's mission to democratize artificial intelligence for businesses. Our team, values, and commitment to AI innovation.">
    <!-- ✅ Meta Pixel noscript (put just after <body>) -->
-
+<link rel="stylesheet" href="allcss.css">
  <!-- ✅ Meta Pixel Code (HEAD part) -->
   <script>
   !function(f,b,e,v,n,t,s)
@@ -106,35 +106,102 @@
     </style>
 </head>
 <body class="bg-gray-50 font-inter">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="text-2xl font-bold text-shvya-navy">
-                        <span class="text-shvya-blue">Shvya</span> AI
-                    </a>
-                    <div class="ml-2 text-xs bg-shvya-orange text-white px-2 py-1 rounded font-mono">4HR DEPLOY</div>
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Home</a>
-                    <a href="products.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Products</a>
-                    <a href="shvya-services.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Services</a>
-                    <a href="shvya-about.html" class="text-shvya-blue font-semibold">About</a>
-                    <a href="shvya-deployment.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">4HR Deploy</a>
-                    <a href="shvya-contact.html" class="text-shvya-charcoal hover:text-shvya-blue transition-colors">Contact</a>
-                </div>
-                
-                <div class="flex items-center space-x-4">
-                    
-                   <a href="bookacall.html"><button class="bg-shvya-navy text-white px-6 py-2 rounded-lg hover:bg-shvya-navy/90 transition-colors font-semibold">
-                       Book A Call
-                    </button></a>
-                </div>
+    <!-- ===================== NAVIGATION ===================== -->
+<nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+
+            <!-- Logo -->
+            <a href="index.html" class="text-2xl font-bold text-shvya-navy">
+                <span class="text-shvya-blue">Shvya</span> AI
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="hover:text-shvya-blue">Home</a>
+                <a href="products.html" class="hover:text-shvya-blue">Products</a>
+                <a href="shvya-services.html" class="text-shvya-blue font-semibold">Services</a>
+                <a href="shvya-about.html" class="hover:text-shvya-blue">About</a>
+                <a href="shvya-deployment.html" class="hover:text-shvya-blue">4HR Deploy</a>
+                <a href="shvya-contact.html" class="hover:text-shvya-blue">Contact</a>
             </div>
+
+            <!-- Desktop CTA -->
+            <div class="hidden md:flex">
+                <a href="bookacall.html" class="bg-shvya-blue text-white px-4 py-2 rounded-lg hover:bg-shvya-blue/90">
+                    Book a Call
+                </a>
+            </div>
+
+            <!-- 📱 Mobile top right CTA + menu icon -->
+            <div class="flex md:hidden items-center gap-2">
+
+                <a href="bookacall.html" 
+                   class="bg-shvya-blue text-white px-3 py-2 text-sm rounded-lg shadow-sm active:scale-95">
+                    Book Call
+                </a>
+
+                <!-- 3-dot Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="p-2">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor"
+                         viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+            </div>
+
         </div>
-    </nav>
+    </div>
+
+    <!-- 📱 MOBILE SLIDE DROPDOWN MENU -->
+    <div id="mobile-menu"
+         class="hidden flex-col bg-white border-t border-gray-200 px-6 py-4 space-y-3 md:hidden">
+
+        <a href="index.html" class="block text-gray-700 font-medium">Home</a>
+        <a href="products.html" class="block text-gray-700 font-medium">Products</a>
+        <a href="shvya-services.html" class="text-shvya-blue font-bold">Services</a>
+        <a href="shvya-about.html" class="block text-gray-700 font-medium">About</a>
+        <a href="shvya-deployment.html" class="block text-gray-700 font-medium">4HR Deploy</a>
+        <a href="shvya-contact.html" class="block text-gray-700 font-medium">Contact</a>
+
+        <a href="bookacall.html"
+           class="block bg-shvya-blue text-white text-center py-3 rounded-lg font-semibold">
+           📞 Book a Call
+        </a>
+    </div>
+</nav>
+
+
+<!-- 📱 Mobile 3 Quick Action Bar (always visible bottom) -->
+<div class="fixed bottom-3 left-1/2 -translate-x-1/2 w-[94%] sm:hidden grid grid-cols-3 gap-2 z-[99999]">
+
+    <a href="shvya-contact.html"
+       class="bg-shvya-blue text-white text-xs font-semibold text-center py-3 rounded-xl shadow-md">
+       📞 Contact
+    </a>
+
+    <a href="https://wa.me/916393413211?text=Hi%2C+I+am+interested+in+Shvya+Services"
+       class="bg-green-500 text-white text-xs font-semibold text-center py-3 rounded-xl shadow-md">
+       💬 WhatsApp
+    </a>
+
+    <a href="bookacall.html"
+       class="bg-shvya-navy text-white text-xs font-semibold text-center py-3 rounded-xl shadow-md">
+       📝 Book Call
+    </a>
+
+</div>
+
+
+<!-- Mobile Menu Toggle Script -->
+<script>
+document.getElementById("mobile-menu-btn").addEventListener("click", function(){
+    document.getElementById("mobile-menu").classList.toggle("hidden");
+});
+</script>
+
 
     <!-- Hero Section (updated for BlackSilver Technology) -->
 <section class="bg-gradient-to-br from-shvya-navy to-shvya-charcoal pt-20 pb-16">
