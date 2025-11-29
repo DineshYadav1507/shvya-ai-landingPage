@@ -314,4 +314,112 @@
   }
 
 
-  
+ 
+/* ========== GLOBAL MOBILE FIXES FOR INDEX PAGE ========== */
+
+/* Small screens: 0–640px */
+@media (max-width: 640px){
+
+  /* Stop sideways scroll everywhere */
+  html, body{
+    overflow-x:hidden;
+  }
+
+  /* Header height + body top padding sync */
+  body.pt-16{
+    padding-top:56px;
+  }
+
+  /* HERO SECTION (top) */
+  section.hero-bg{
+    padding-top:1.5rem;
+    padding-bottom:2rem;
+  }
+
+  /* Hero text sizes */
+  .hero-bg h1 span:first-child{
+    font-size:2rem;         /* "Shvya" */
+    line-height:1.1;
+  }
+  .hero-bg h1 span:nth-child(2){
+    font-size:1.25rem;      /* subtitle line */
+  }
+  .hero-bg p{
+    font-size:0.9rem;
+  }
+  .hero-bg .grid{
+    gap:1.5rem;
+  }
+
+  /* Product cards section – tighter on mobile */
+  .shv-container{
+    padding:10px 10px;
+  }
+  .shv-grid{
+    gap:10px;
+  }
+
+  /* "Problem / System Gap" section – force single column */
+  #problem-gap .container{
+    padding-left:12px !important;
+    padding-right:12px !important;
+  }
+  #problem-gap .grid{
+    grid-template-columns:1fr !important;
+  }
+
+  /* Purple “Ecosystem” section */
+  .ecosystem-section{
+    padding:50px 16px;
+  }
+  .ecosystem-section .section-title{
+    font-size:1.9rem;
+  }
+
+  /* Clean flow animation section */
+  #shvya-ecosystem-flow{
+    padding:50px 14px;
+  }
+
+  /* Orbit ecosystem (big circle) – shrink on mobile */
+  #shvya-ecosystem-orbit{
+    padding:50px 14px;
+  }
+  #shvya-ecosystem-orbit .eco-orbit-ring{
+    width:260px;
+    height:260px;
+  }
+  #shvya-ecosystem-orbit .eco-core{
+    width:140px;
+    height:140px;
+  }
+
+  /* WhatsApp hero block (shvya-hero-demo) */
+  #shvya-hero-demo{
+    padding:40px 12px;
+  }
+  #shvya-hero-demo .shvya-hero-shell{
+    padding:20px 16px;
+    border-radius:20px;
+  }
+  #shvya-hero-demo .shvya-main-title{
+    font-size:22px;
+    line-height:1.25;
+  }
+  #shvya-hero-demo .shvya-subtitle{
+    font-size:13px;
+  }
+}
+
+/* Extra small: <480px – make orbit even smaller */
+@media (max-width: 480px){
+  #shvya-ecosystem-orbit .eco-orbit-ring{
+    width:220px;
+    height:220px;
+  }
+  #shvya-ecosystem-orbit .eco-core{
+    width:120px;
+    height:120px;
+  }
+}
+
