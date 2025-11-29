@@ -631,237 +631,6 @@
             </div>
         </div>
     </section>
-<!-- Whassapp Start  -->
-<section id="shvya-hero-demo">
-
-<style>
-/* MAIN HERO BASE */
-#shvya-hero-demo{
-  padding:60px 16px;
-  background:radial-gradient(circle at top left,#fde1eb 0,#f5e7ff 40%,#f9fafb 80%);
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
-}
-.shvya-hero-shell{
-  max-width:1120px;margin:auto;background:#fff;border-radius:28px;
-  box-shadow:0 18px 60px rgba(15,23,42,.20);padding:36px 40px;
-  display:flex;gap:40px;align-items:flex-start;
-}
-
-/* LEFT TEXT */
-.shvya-hero-left{flex:1.1;}
-.shvya-logo-text{font-size:14px;font-weight:600;color:#6b21a8;margin-bottom:6px;}
-.shvya-main-title{font-size:34px;font-weight:800;line-height:1.2;color:#0f172a;margin-bottom:10px;}
-.shvya-main-title span{-webkit-background-clip:text;color:transparent;background:linear-gradient(90deg,#e11d48,#8b5cf6);}
-.shvya-subtitle{font-size:15px;color:#4b5563;max-width:420px;margin-bottom:15px;}
-.shvya-bullets{padding:0;margin:15px 0 18px;list-style:none;}
-.shvya-bullets li{display:flex;gap:10px;margin-bottom:8px;font-size:14px;color:#374151;}
-.shvya-check{color:#22c55e;font-size:18px;}
-.shvya-trust-line{font-size:13px;color:#6b7280;margin-top:6px;}
-
-/* RIGHT CARD — CTA BUTTON ONLY */
-.shvya-hero-right{flex:1;display:flex;justify-content:flex-end;}
-.form-box{
-  width:100%;max-width:380px;background:#fff;border-radius:20px;border:1px solid #e5e7eb;
-  padding:32px 24px;text-align:center;box-shadow:0 18px 55px rgba(15,23,42,.18);
-}
-.form-title{font-size:18px;font-weight:700;margin-bottom:4px;}
-.form-sub{font-size:13px;color:#6b7280;margin-bottom:20px;}
-.form-note{font-size:11px;color:#9ca3af;margin-top:10px;}
-
-a.submit-btn{
-  display:block;width:100%;padding:11px;font-size:14px;font-weight:700;border-radius:999px;
-  text-decoration:none;text-align:center;color:#fff;
-  background:linear-gradient(90deg,#e11d48,#8b5cf6);
-  transition:.2s;box-shadow:0 10px 30px rgba(139,92,246,.45);
-}
-a.submit-btn:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(139,92,246,.6);}
-
-/* ========== MODERN WHATSAPP POPUP ========== */
-#whatsapp-popup-overlay{
-  position:fixed;inset:0;background:rgba(0,0,0,.55);
-  display:flex;justify-content:center;align-items:center;
-  opacity:0;visibility:hidden;transition:.25s;z-index:9999;
-}
-#whatsapp-popup-overlay.show{opacity:1;visibility:visible;}
-
-.whatsapp-popup{
-  background:radial-gradient(circle at top left,#ecfdf5 0,#ffffff 45%,#eef2ff 100%);
-  max-width:380px;width:92%;padding:26px 22px;border-radius:20px;position:relative;
-  box-shadow:0 22px 65px rgba(0,0,0,.35);
-}
-.whatsapp-popup:before{
-  content:"";position:absolute;right:-40px;top:-40px;width:120px;height:120px;border-radius:999px;
-  background:radial-gradient(circle,#22c55e,rgba(34,197,94,0));opacity:.25;
-}
-
-/* CLOSE ICON FIXED VISIBLE */
-#whatsapp-close{
-  position:absolute;top:10px;right:12px;width:32px;height:32px;
-  border-radius:50%;background:#fff;font-size:22px;border:none;cursor:pointer;
-  display:flex;justify-content:center;align-items:center;color:#111;
-  box-shadow:0 0 10px rgba(0,0,0,.15);font-weight:700;
-}
-#whatsapp-close:hover{background:#f1f5f9;color:red;}
-
-/* WHATSAPP BUTTON */
-#whatsapp-open{
-  width:100%;padding:12px;border:none;border-radius:999px;font-size:15px;font-weight:700;
-  background:#22c55e;color:#fff;cursor:pointer;transition:.2s;
-  box-shadow:0 10px 28px rgba(34,197,94,.45);
-}
-#whatsapp-open:hover{transform:scale(1.05);}
-.wa-info-box{
-  background:#d1fae5;padding:8px;border-radius:8px;color:#065f46;font-size:13px;font-weight:600;margin-bottom:12px;
-}
-.wa-list{list-style:none;padding:0;margin:8px 0 15px;font-size:13px;color:#374151;line-height:1.4;}
-.wa-list li{margin-bottom:6px;}
-.wa-badge-4h{
-  display:inline-block;
-  padding:4px 9px;
-  margin-bottom:8px;
-  font-size:11px;
-  font-weight:700;
-  border-radius:999px;
-  background:#fbbf24;
-  color:#111827;
-}
-
-/* FLOAT WHATSAPP BUTTON – ICON + PULSE ANIMATION */
-#whatsapp-fab{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  z-index:99999;
-  width:60px;
-  height:60px;
-  border-radius:50%;
-  cursor:pointer;
-  background:#22c55e;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  animation:wa-pulse 2.2s infinite ease-out;
-  box-shadow:0 10px 25px rgba(0,0,0,.35);
-  transition:0.2s;
-}
-#whatsapp-fab:hover{
-  transform:scale(1.08);
-}
-#whatsapp-fab svg{
-  width:30px;
-  height:30px;
-  fill:#fff;
-}
-@keyframes wa-pulse {
-  0% { box-shadow:0 0 0 0 rgba(34,197,94,.50); }
-  50%{ box-shadow:0 0 0 16px rgba(34,197,94,0); }
-  100%{ box-shadow:0 0 0 0 rgba(34,197,94,0); }
-}
-
-/* Responsive */
-@media(max-width:900px){.shvya-hero-shell{flex-direction:column;}}
-@media(max-width:640px){.shvya-main-title{font-size:26px;}}
-</style>
-
-
-<div class="shvya-hero-shell">
-
-  <!-- LEFT CONTENT -->
-  <div class="shvya-hero-left">
-    <div class="shvya-logo-text">SHVYA BUSINESS SUITE</div>
-    <h1 class="shvya-main-title">
-      Run Your Business Smoothly,<br>
-      Not Stressfully with <span>Shvya</span>
-    </h1>
-    <p class="shvya-subtitle">Automate CRM → invoices → tasks → reporting in one dashboard.</p>
-
-    <ul class="shvya-bullets">
-      <li><span class="shvya-check">✔</span> Lead → Follow-up → Closure pipeline</li>
-      <li><span class="shvya-check">✔</span> Auto-task assignment & reminders</li>
-      <li><span class="shvya-check">✔</span> Invoice + collection dashboard</li>
-      <li><span class="shvya-check">✔</span> Team analytics in one screen</li>
-      <li>
-        <span class="shvya-check">✔</span>
-        <strong>4-HOUR DEPLOYMENT GUARANTEE</strong> – Get your solution live in just 4 hours.
-      </li>
-    </ul>
-
-    <div class="shvya-trust-line">Trusted by <strong>100+ businesses</strong> across India.</div>
-  </div>
-
-  <!-- RIGHT — CALL BOOKING BUTTON -->
-  <div class="shvya-hero-right">
-    <div class="form-box">
-      <div class="form-title">Experience Live Demo</div>
-      <div class="form-sub">Pick a slot — No form required</div>
-
-      <a href="bookacall.html" class="submit-btn">🚀 Book Live Demo</a>
-      <div class="form-note">Opens <strong>bookacall.html</strong></div>
-    </div>
-  </div>
-
-</div>
-
-
-<!-- ================= WHATSAPP POPUP ================= -->
-<div id="whatsapp-popup-overlay">
-  <div class="whatsapp-popup">
-
-    <button id="whatsapp-close">✕</button>
-
-    <h2 style="margin-bottom:5px;font-size:18px;font-weight:700;">Talk to Shvya Specialist</h2>
-
-    <div class="wa-badge-4h">4-HOUR DEPLOYMENT GUARANTEE</div>
-
-    <div class="wa-info-box">
-      Get your CRM + Billing + Task automation solution configured in as fast as 4 hours.
-    </div>
-
-    <ul class="wa-list">
-      <li>✔ Live CRM + pipeline walkthrough</li>
-      <li>✔ Automation for follow-ups & reminders</li>
-      <li>✔ Dashboard preview with key KPIs</li>
-      <li>✔ Plan to go live in 4 hours</li>
-    </ul>
-
-    <button id="whatsapp-open">💬 Start WhatsApp Chat</button>
-  </div>
-</div>
-
-
-<!-- FLOATING WHATSAPP CIRCLE WITH ICON -->
-<div id="whatsapp-fab">
-  <svg viewBox="0 0 32 32">
-    <path d="M16.043 3C9.398 3 4 8.318 4 14.875c0 2.625.863 5.063 2.332 7.07L4 29l7.246-2.285c1.873 1.023 4.011 1.574 6.297 1.574h.003C22.688 28.289 28 22.97 28 16.414 28 9.857 22.688 3 16.043 3zm5.324 17.316c-.273.77-1.584 1.469-2.176 1.566-.557.09-1.262.129-2.04-.129-.469-.15-1.07-.348-1.849-.678-3.252-1.404-5.37-4.682-5.533-4.9-.17-.227-1.323-1.761-1.323-3.36 0-1.598.84-2.384 1.137-2.707.296-.324.648-.406.863-.406.215 0 .431.002.621.011.2.009.467-.076.73.557.273.662.927 2.29 1.01 2.455.08.166.134.359.025.586-.104.227-.157.359-.297.553-.14.192-.295.429-.421.576-.14.147-.285.308-.122.598.17.289.756 1.244 1.624 2.016 1.115.994 2.055 1.303 2.346 1.448.24.122.53.094.707-.057.225-.197.5-.527.784-.951.2-.315.453-.354.718-.243.273.12 1.726.813 2.023.961.297.147.494.222.567.346.07.125.07.722-.203 1.492z"/>
-  </svg>
-</div>
-
-
-<script>
-document.addEventListener("DOMContentLoaded",()=>{
-
-  const overlay = document.getElementById("whatsapp-popup-overlay");
-  const closeBtn= document.getElementById("whatsapp-close");
-  const fabBtn  = document.getElementById("whatsapp-fab");
-  const openBtn = document.getElementById("whatsapp-open");
-  const WA="https://wa.me/916393413211?text=Hi%2C+I+want+to+see+Shvya+and+your+4-hour+deployment+plan";
-
-  openBtn.onclick = () => window.open(WA,"_blank");
-  fabBtn.onclick  = () => window.open(WA,"_blank");
-  closeBtn.onclick= () => overlay.classList.remove("show");
-
-  /* Click outside popup closes it */
-  overlay.addEventListener("click",(e)=>{
-    if(e.target===overlay){ overlay.classList.remove("show"); }
-  });
-
-  /* Auto show popup after 6 seconds */
-  setTimeout(()=>overlay.classList.add("show"),6000);
-});
-</script>
-
-</section>
-<!-- Whatsaap End  -->
 <!-- Offer Start  -->
 <section id="blackfriday-offer-popup">
 
@@ -891,6 +660,20 @@ document.addEventListener("DOMContentLoaded",()=>{
   color: #fff;
   position: relative;
   overflow: hidden;
+
+  /* still allow internal scroll if screen is small,
+     but HIDE the scroll bar */
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* 🔒 Hide scrollbar (still scrollable) */
+.bf-card::-webkit-scrollbar {
+  display: none;              /* Chrome / Safari / Edge */
+}
+.bf-card {
+  -ms-overflow-style: none;   /* IE / Edge */
+  scrollbar-width: none;      /* Firefox */
 }
 
 /* Soft glow bubbles */
@@ -907,6 +690,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   width:36px;height:36px;cursor:pointer;
   border-radius:999px;border:none;
   background:rgba(0,0,0,.45);
+  z-index: 2;
 }
 #bf-close:hover { background:#fff;color:#111827; }
 
@@ -964,20 +748,58 @@ document.addEventListener("DOMContentLoaded",()=>{
 /* CTA Button */
 .bf-cta {
   display:inline-flex;align-items:center;gap:8px;
-  padding:14px 30px;border-radius:999px;
-  font-size:17px;font-weight:800;text-decoration:none;
+  padding:14px 24px;
+  border-radius:999px;
+  font-size:16px;font-weight:800;text-decoration:none;
   background:#facc15;color:#111827;
   margin-top:14px;transition:0.2s;
   box-shadow:0 12px 32px rgba(0,0,0,.9);
 }
-.bf-cta:hover { transform:scale(1.08); }
+.bf-cta:hover { transform:scale(1.05); }
 
 /* Mobile */
-@media(max-width:600px){
-  .bf-card{padding:28px 18px;}
-  .bf-title{font-size:26px;}
-  .bf-sub{font-size:14.5px;}
-  .bf-list{font-size:14px;}
+@media(max-width:768px){
+  .bf-card{
+    padding:26px 18px 24px;
+    border-radius:20px;
+    max-width: 92%;
+    max-height: 86vh;
+  }
+  .bf-title{
+    font-size:24px;
+  }
+  .bf-sub{
+    font-size:14px;
+    margin-bottom:18px;
+  }
+  .bf-grid{
+    flex-direction:column;
+    gap:18px;
+  }
+  .bf-left, .bf-right{
+    min-width:0;
+  }
+  .bf-list{
+    font-size:13px;
+  }
+  .bf-cta{
+    width:100%;
+    justify-content:center;
+    font-size:15px;
+    padding:12px 20px;
+  }
+  #bf-close{
+    top:10px;
+    right:12px;
+    width:30px;
+    height:30px;
+    font-size:20px;
+  }
+}
+@media(max-width:480px){
+  .bf-title{font-size:21px;}
+  .bf-sub{font-size:13px;}
+  .bf-tag{font-size:11px;}
 }
 </style>
 
@@ -1051,6 +873,267 @@ document.addEventListener("DOMContentLoaded",function(){
 
 </section>
  <!-- offer End  -->
+<!-- ================= WHATSAPP SECTION ONLY ================= -->
+<section id="shvya-whatsapp-support">
+
+<style>
+/* Popup overlay background */
+#whatsapp-popup-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(15,23,42,.55);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .25s ease, visibility .25s ease;
+  z-index:9999;
+}
+#whatsapp-popup-overlay.show{
+  opacity:1;
+  visibility:visible;
+}
+
+/* Popup card with animation */
+.whatsapp-popup{
+  background:radial-gradient(circle at top left,#ecfdf5 0,#ffffff 45%,#eef2ff 100%);
+  width:92%;
+  max-width:380px;
+  padding:24px 22px 20px;
+  border-radius:20px;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-shadow:0 22px 65px rgba(15,23,42,.45);
+  position:relative;
+
+  opacity:0;
+  transform:translateY(18px) scale(.96);
+  transition:opacity .28s ease-out, transform .28s ease-out;
+}
+#whatsapp-popup-overlay.show .whatsapp-popup{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+
+/* Close icon */
+#whatsapp-close{
+  position:absolute;
+  top:10px;
+  right:12px;
+  width:30px;
+  height:30px;
+  border-radius:999px;
+  border:none;
+  background:#ffffff;
+  cursor:pointer;
+  font-weight:700;
+  font-size:18px;
+  box-shadow:0 0 10px rgba(15,23,42,.18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Small “status” badge */
+.wa-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:11px;
+  font-weight:700;
+  padding:4px 9px;
+  border-radius:999px;
+  background:#f97316;
+  color:#111827;
+  margin-bottom:8px;
+}
+.wa-pulse-dot{
+  width:8px;
+  height:8px;
+  border-radius:999px;
+  background:#16a34a;
+  box-shadow:0 0 0 0 rgba(22,163,74,.6);
+  animation:wa-dot-pulse 1.4s infinite ease-out;
+}
+@keyframes wa-dot-pulse{
+  0%{ box-shadow:0 0 0 0 rgba(22,163,74,.6); }
+  70%{ box-shadow:0 0 0 10px rgba(22,163,74,0); }
+  100%{ box-shadow:0 0 0 0 rgba(22,163,74,0); }
+}
+
+/* CTA button – WhatsApp */
+#whatsapp-open{
+  width:100%;
+  padding:11px 12px;
+  border:none;
+  border-radius:999px;
+  font-size:15px;
+  font-weight:700;
+  background:linear-gradient(90deg,#16a34a,#22c55e);
+  color:white;
+  cursor:pointer;
+  margin-top:10px;
+  box-shadow:0 10px 28px rgba(22,163,74,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+}
+#whatsapp-open span.wa-pill-icon{
+  font-size:17px;
+}
+
+/* Floating WhatsApp icon */
+#whatsapp-fab{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:60px;
+  height:60px;
+  background:#22c55e;
+  border-radius:50%;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,.35);
+  animation:wa-fab-pulse 2.1s infinite ease-out;
+  transition:transform .18s ease-out;
+}
+#whatsapp-fab svg{
+  width:30px;
+  height:30px;
+  fill:#fff;
+}
+
+/* Bounce animation on hover */
+#whatsapp-fab:hover{
+  animation:wa-fab-bounce 0.6s ease-out;
+}
+@keyframes wa-fab-pulse{
+  0%  { box-shadow:0 0 0 0 rgba(34,197,94,.55); }
+  60% { box-shadow:0 0 0 14px rgba(34,197,94,0); }
+  100%{ box-shadow:0 0 0 0 rgba(34,197,94,0); }
+}
+@keyframes wa-fab-bounce{
+  0%   { transform:translateY(0) scale(1); }
+  30%  { transform:translateY(-6px) scale(1.05); }
+  60%  { transform:translateY(1px) scale(0.98); }
+  100% { transform:translateY(0) scale(1); }
+}
+
+/* 📱 Auto move up on mobile (avoid bottom bar / footer) */
+@media (max-width:640px){
+  #whatsapp-fab{
+    bottom:80px;
+  }
+}
+</style>
+
+
+<!-- Popup HTML -->
+<div id="whatsapp-popup-overlay">
+  <div class="whatsapp-popup">
+    
+    <button id="whatsapp-close">✕</button>
+
+    <div class="wa-badge">
+      <span class="wa-pulse-dot"></span>
+      LIVE SHVYA SPECIALIST • 4H DEPLOY
+    </div>
+
+    <h2 style="font-weight:700;font-size:18px;margin-bottom:6px;color:#0f172a;">
+      Talk to a Shvya Specialist
+    </h2>
+
+    <p style="font-size:13px;margin-bottom:8px;color:#4b5563;">
+      Get a quick WhatsApp walkthrough of CRM, Billing & Task Automation tailored to your business.
+    </p>
+
+    <ul style="font-size:13px;line-height:1.5;margin:0 0 10px;padding-left:0;list-style:none;color:#374151;">
+      <li>✔ Live CRM + pipeline walkthrough</li>
+      <li>✔ Follow-up & reminder automation ideas</li>
+      <li>✔ Dashboard KPIs preview</li>
+      <li>✔ Plan to go live in 4 hours</li>
+    </ul>
+
+    <button id="whatsapp-open">
+      <span class="wa-pill-icon">💬</span>
+      <span>Start WhatsApp Chat</span>
+    </button>
+
+  </div>
+</div>
+
+
+<!-- Floating WhatsApp Icon Always Visible -->
+<div id="whatsapp-fab" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32">
+    <path d="M16.043 3C9.398 3 4 8.318 4 14.875c0 2.625.863 5.063 2.332 7.07L4 29l7.246-2.285
+    c1.873 1.023 4.011 1.574 6.297 1.574h.003C22.688 28.289 28 22.97 28 16.414
+    28 9.857 22.688 3 16.043 3zm5.324 17.316c-.273.77-1.584 1.469-2.176 1.566-.557.09-1.262.129-2.04-.129-.469-.15-1.07-.348-1.849-.678C12.05
+    19.671 9.93 16.393 9.767 16.175c-.17-.227-1.323-1.761-1.323-3.36 0-1.598.84-2.384
+    1.137-2.707.296-.324.648-.406.863-.406.215 0 .431.002.621.011.2.009.467-.076.73.557.273.662.927
+    2.29 1.01 2.455.08.166.134.359.025.586-.104.227-.157.359-.297.553-.14.192-.295.429-.421.576-.14.147-.285.308-.122.598.17.289.756
+    1.244 1.624 2.016 1.115.994 2.055 1.303 2.346 1.448.24.122.53.094.707-.057.225-.197.5-.527.784-.951.2-.315.453-.354.718-.243.273.12
+    1.726.813 2.023.961.297.147.494.222.567.346.07.125.07.722-.203 1.492z"/>
+  </svg>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+
+  const overlay    = document.getElementById("whatsapp-popup-overlay");
+  const closePopup = document.getElementById("whatsapp-close");
+  const popupBtn   = document.getElementById("whatsapp-open");
+  const fabBtn     = document.getElementById("whatsapp-fab");
+
+  const WA = "https://wa.me/916393413211?text=Hi%2C+I+want+to+see+Shvya+and+your+4-hour+deployment+plan";
+
+  const POPUP_DELAY_MS = 5000;  // show after 5s
+  const AUTO_CLOSE_MS  = 4000;  // auto-close after 4s
+
+  let autoCloseTimer = null;
+
+  function openWhatsApp(){
+    window.open(WA, "_blank");
+  }
+
+  function showPopup(){
+    overlay.classList.add("show");
+    // auto close after 4s
+    autoCloseTimer = setTimeout(function(){
+      overlay.classList.remove("show");
+    }, AUTO_CLOSE_MS);
+  }
+
+  // show popup after 5 seconds EVERY time page loads
+  setTimeout(showPopup, POPUP_DELAY_MS);
+
+  // Both buttons lead to WhatsApp
+  popupBtn.addEventListener("click", openWhatsApp);
+  fabBtn.addEventListener("click", openWhatsApp);
+
+  // Close popup actions
+  closePopup.addEventListener("click", function(){
+    overlay.classList.remove("show");
+    if (autoCloseTimer) clearTimeout(autoCloseTimer);
+  });
+
+  // Close if clicking outside popup card
+  overlay.addEventListener("click", function(e){
+    if(e.target === overlay){
+      overlay.classList.remove("show");
+      if (autoCloseTimer) clearTimeout(autoCloseTimer);
+    }
+  });
+});
+</script>
+
+</section>
+<!-- ================= END ================= -->
     <!-- Footer -->
 <footer class="bg-shvya-navy text-white pt-12 pb-4">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
