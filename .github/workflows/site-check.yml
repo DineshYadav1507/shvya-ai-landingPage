@@ -1,0 +1,43 @@
+name: Site checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate HTML files
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, sys
+          files=list(Path('.').glob('*.html'))
+          failed=False
+          for path in files:
+              text=path.read_text(encoding='utf-8',errors='ignore')
+              if '<html' not in text.lower() or '</html>' not in text.lower():
+                  print(f'Invalid HTML shell: {path}')
+                  failed=True
+              for src in re.findall(r'(?:src|href)=["\']([^"\']+)["\']', text):
+                  if src.startswith(('http://','https://','#','mailto:','tel:','data:','javascript:')):
+                      continue
+                  target=(path.parent/src).resolve()
+                  if not target.exists():
+                      print(f'Missing local asset: {path} -> {src}')
+                      failed=True
+          if failed:
+              sys.exit(1)
+          print(f'Validated {len(files)} HTML files')
+          PY
+      - name: Validate JavaScript syntax
+        run: |
+          node --check alljs.js
+          node --check main.js
+          node --check shvya-main.js
+          node --check assets/js/core/site-config.js
+          node --check assets/js/core/performance.js
+          node --check assets/js/components/site-shell.js
+          node --check assets/js/data/products.js
