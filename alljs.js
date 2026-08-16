@@ -9,6 +9,18 @@
     });
   }
 
+  async function loadSharedModules(){
+    try{
+      const shell=await import('./assets/js/components/site-shell.js');
+      if(qs('[data-shvya-nav]')) shell.initSiteShell();
+      window.ShvyaArchitecture=window.ShvyaArchitecture||{};
+      window.ShvyaArchitecture.config=(await import('./assets/js/core/site-config.js')).SHVYA_CONFIG;
+      window.ShvyaArchitecture.products=(await import('./assets/js/data/products.js')).SHVYA_PRODUCTS;
+    }catch(error){
+      console.warn('[Shvya] Shared module bootstrap skipped:',error);
+    }
+  }
+
   function initMobileMenu(){
     const button=qs('#mobile-menu-btn'), menu=qs('#mobile-menu'); if(!button||!menu||button.dataset.shvyaBound==='true') return;
     button.dataset.shvyaBound='true';
@@ -36,6 +48,6 @@
   function initHeaderState(){const header=qs('nav.fixed,[data-site-header]');if(!header)return;const sync=()=>header.classList.toggle('is-scrolled',scrollY>8);sync();addEventListener('scroll',sync,{passive:true});}
   function initExpandableProblemCards(){qsa('#problem-gap .gap-card').forEach(card=>{const details=qs('.details',card),toggle=qs('.toggle-arrow',card);if(!details||!toggle||toggle.dataset.shvyaBound)return;toggle.dataset.shvyaBound='true';const setOpen=open=>{card.classList.toggle('open',open);toggle.setAttribute('aria-expanded',String(open));details.setAttribute('aria-hidden',String(!open));};setOpen(false);toggle.addEventListener('click',e=>{e.stopPropagation();setOpen(!card.classList.contains('open'));});toggle.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setOpen(!card.classList.contains('open'));}});});}
   function initAnalytics(){window.ShvyaAnalytics=window.ShvyaAnalytics||{track(name,payload={}){if(typeof gtag==='function')gtag('event',name,payload);if(typeof fbq==='function')fbq('trackCustom',name,payload);}};qsa('[data-track]').forEach(el=>{if(el.dataset.shvyaTracked)return;el.dataset.shvyaTracked='true';el.addEventListener('click',()=>window.ShvyaAnalytics.track(el.dataset.track,{location:el.dataset.trackLocation||'site'}));});}
-  function boot(){loadSharedStyles();initMobileMenu();initLegacyProductFilter();initShvyaProductFilter();initReveal();initHeaderState();initExpandableProblemCards();initAnalytics();document.documentElement.dataset.shvyaReady='true';}
+  function boot(){loadSharedStyles();loadSharedModules();initMobileMenu();initLegacyProductFilter();initShvyaProductFilter();initReveal();initHeaderState();initExpandableProblemCards();initAnalytics();document.documentElement.dataset.shvyaReady='true';}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })();
