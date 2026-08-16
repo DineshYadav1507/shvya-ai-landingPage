@@ -1,0 +1,10 @@
+:root{--shvya-glow:rgba(0,102,255,.18)}
+nav.fixed{transition:background-color .25s ease,box-shadow .25s ease,backdrop-filter .25s ease}nav.fixed.is-scrolled{box-shadow:0 10px 35px rgba(15,23,42,.10);background:rgba(255,255,255,.96)}
+nav.fixed a.is-active{color:var(--shvya-blue,#0066ff);font-weight:700}
+.hero-bg{position:relative;background-image:radial-gradient(circle at 15% 20%,rgba(0,102,255,.20),transparent 28%),radial-gradient(circle at 85% 70%,rgba(255,107,53,.12),transparent 30%),linear-gradient(135deg,#101522 0%,#1a1d29 48%,#273449 100%)}
+.hero-bg:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(10,15,25,.2),transparent 45%,rgba(0,102,255,.06));mix-blend-mode:screen}
+.hero-bg>.content-overlay{position:relative;z-index:2}
+.shvya-btn,.hero-bg a[href]{will-change:transform}
+.shvya-card{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}.shvya-card:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(15,23,42,.12)}
+@media(max-width:768px){.hero-bg{min-height:auto}.hero-bg h1{letter-spacing:-.025em}.hero-bg .content-overlay{padding-top:2.5rem;padding-bottom:3rem}}
+@media(prefers-reduced-motion:reduce){nav.fixed,.shvya-card{transition:none}.shvya-card:hover{transform:none}}
