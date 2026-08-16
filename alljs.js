@@ -1,50 +1,11 @@
 (() => {
   'use strict';
   const qs=(s,r=document)=>r.querySelector(s), qsa=(s,r=document)=>[...r.querySelectorAll(s)], normalize=v=>String(v||'').trim().toLowerCase();
-
-  function loadSharedStyles(){
-    ['assets/css/tokens.css','assets/css/components.css'].forEach(href=>{
-      if(document.querySelector(`link[href="${href}"]`)) return;
-      const link=document.createElement('link'); link.rel='stylesheet'; link.href=href; document.head.appendChild(link);
-    });
-  }
-
-  async function loadSharedModules(){
-    try{
-      const shell=await import('./assets/js/components/site-shell.js');
-      const nav=qs('nav.fixed,[data-site-header]');
-      if(nav){nav.setAttribute('data-shvya-nav','true');shell.initSiteShell();}
-      window.ShvyaArchitecture=window.ShvyaArchitecture||{};
-      window.ShvyaArchitecture.config=(await import('./assets/js/core/site-config.js')).SHVYA_CONFIG;
-      window.ShvyaArchitecture.products=(await import('./assets/js/data/products.js')).SHVYA_PRODUCTS;
-    }catch(error){
-      console.warn('[Shvya] Shared module bootstrap skipped:',error);
-    }
-  }
-
-  function initMobileMenu(){
-    const button=qs('#mobile-menu-btn'), menu=qs('#mobile-menu'); if(!button||!menu||button.dataset.shvyaBound==='true') return;
-    button.dataset.shvyaBound='true';
-    const setOpen=open=>{menu.classList.toggle('hidden',!open);button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'Close menu':'Open menu');};
-    setOpen(false); button.addEventListener('click',()=>setOpen(menu.classList.contains('hidden')));
-    qsa('a',menu).forEach(a=>a.addEventListener('click',()=>setOpen(false)));
-    document.addEventListener('keydown',e=>{if(e.key==='Escape')setOpen(false);});
-  }
-
-  function initLegacyProductFilter(){
-    const section=qs('#enrollment-section'); if(!section)return;
-    const pills=qsa('.pill',section), input=qs('#search-input'), cards=qsa('#product-cards .card-link'), empty=qs('#no-results'); if(!cards.length)return;
-    const apply=()=>{const active=qs('.pill.active',section)||pills[0],filter=normalize(active?.dataset.filter||'all'),query=normalize(input?.value);let visible=0;
-      cards.forEach(card=>{const tags=normalize(card.dataset.tags).split(/\s+/).filter(Boolean),show=(filter==='all'||tags.includes(filter))&&(!query||normalize(card.textContent).includes(query));card.hidden=!show;if(show)visible++;});if(empty)empty.hidden=visible>0;};
-    pills.forEach(p=>p.addEventListener('click',()=>{pills.forEach(x=>{x.classList.toggle('active',x===p);x.setAttribute('aria-pressed',String(x===p));});apply();})); input?.addEventListener('input',apply);apply();
-  }
-
-  function initShvyaProductFilter(){
-    const section=qs('#shv-section');if(!section)return;const pills=qsa('[data-shv-filter]',section).filter(x=>x.tagName==='BUTTON'),cards=qsa('#shv-product-cards .shv-card-link'),empty=qs('#shv-no-results');if(!cards.length)return;
-    const apply=filter=>{let visible=0;cards.forEach(card=>{const show=filter==='all'||card.dataset.shvFilter===filter;card.hidden=!show;if(show)visible++;});if(empty)empty.hidden=visible>0;};
-    pills.forEach(p=>p.addEventListener('click',()=>{const f=normalize(p.dataset.shvFilter||'all');pills.forEach(x=>{x.classList.toggle('shv-pill--active',x===p);x.setAttribute('aria-pressed',String(x===p));});apply(f);}));apply('all');
-  }
-
+  function loadSharedStyles(){['assets/css/tokens.css','assets/css/components.css','assets/css/landing.css'].forEach(href=>{if(document.querySelector(`link[href="${href}"]`))return;const link=document.createElement('link');link.rel='stylesheet';link.href=href;document.head.appendChild(link);});}
+  async function loadSharedModules(){try{const shell=await import('./assets/js/components/site-shell.js');shell.initSiteShell();const [{SHVYA_CONFIG},{SHVYA_PRODUCTS},{initPerformance}]=await Promise.all([import('./assets/js/core/site-config.js'),import('./assets/js/data/products.js'),import('./assets/js/core/performance.js')]);window.ShvyaArchitecture={config:SHVYA_CONFIG,products:SHVYA_PRODUCTS};initPerformance();}catch(error){console.warn('[Shvya] Shared module bootstrap skipped:',error);}}
+  function initMobileMenu(){const button=qs('#mobile-menu-btn'),menu=qs('#mobile-menu');if(!button||!menu||button.dataset.shvyaBound==='true')return;button.dataset.shvyaBound='true';const setOpen=open=>{menu.classList.toggle('hidden',!open);menu.hidden=!open;button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'Close menu':'Open menu');};setOpen(false);button.addEventListener('click',()=>setOpen(menu.hidden));qsa('a',menu).forEach(a=>a.addEventListener('click',()=>setOpen(false)));document.addEventListener('keydown',e=>{if(e.key==='Escape')setOpen(false);});}
+  function initLegacyProductFilter(){const section=qs('#enrollment-section');if(!section)return;const pills=qsa('.pill',section),input=qs('#search-input'),cards=qsa('#product-cards .card-link'),empty=qs('#no-results');if(!cards.length)return;const apply=()=>{const active=qs('.pill.active',section)||pills[0],filter=normalize(active?.dataset.filter||'all'),query=normalize(input?.value);let visible=0;cards.forEach(card=>{const tags=normalize(card.dataset.tags).split(/\s+/).filter(Boolean),show=(filter==='all'||tags.includes(filter))&&(!query||normalize(card.textContent).includes(query));card.hidden=!show;if(show)visible++;});if(empty)empty.hidden=visible>0;};pills.forEach(p=>p.addEventListener('click',()=>{pills.forEach(x=>{x.classList.toggle('active',x===p);x.setAttribute('aria-pressed',String(x===p));});apply();}));input?.addEventListener('input',apply);apply();}
+  function initShvyaProductFilter(){const section=qs('#shv-section');if(!section)return;const pills=qsa('[data-shv-filter]',section).filter(x=>x.tagName==='BUTTON'),cards=qsa('#shv-product-cards .shv-card-link'),empty=qs('#shv-no-results');if(!cards.length)return;const apply=filter=>{let visible=0;cards.forEach(card=>{const show=filter==='all'||card.dataset.shvFilter===filter;card.hidden=!show;if(show)visible++;});if(empty)empty.hidden=visible>0;};pills.forEach(p=>p.addEventListener('click',()=>{const f=normalize(p.dataset.shvFilter||'all');pills.forEach(x=>{x.classList.toggle('shv-pill--active',x===p);x.setAttribute('aria-pressed',String(x===p));});apply(f);}));apply('all');}
   function initReveal(){const items=qsa('[data-reveal]');if(!items.length)return;if(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver'in window)){items.forEach(x=>x.classList.add('is-visible'));return;}const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target);}}),{threshold:.12,rootMargin:'0px 0px -40px'});items.forEach(x=>io.observe(x));}
   function initHeaderState(){const header=qs('nav.fixed,[data-site-header]');if(!header)return;const sync=()=>header.classList.toggle('is-scrolled',scrollY>8);sync();addEventListener('scroll',sync,{passive:true});}
   function initExpandableProblemCards(){qsa('#problem-gap .gap-card').forEach(card=>{const details=qs('.details',card),toggle=qs('.toggle-arrow',card);if(!details||!toggle||toggle.dataset.shvyaBound)return;toggle.dataset.shvyaBound='true';const setOpen=open=>{card.classList.toggle('open',open);toggle.setAttribute('aria-expanded',String(open));details.setAttribute('aria-hidden',String(!open));};setOpen(false);toggle.addEventListener('click',e=>{e.stopPropagation();setOpen(!card.classList.contains('open'));});toggle.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setOpen(!card.classList.contains('open'));}});});}
