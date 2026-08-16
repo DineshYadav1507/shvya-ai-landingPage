@@ -12,7 +12,8 @@
   async function loadSharedModules(){
     try{
       const shell=await import('./assets/js/components/site-shell.js');
-      if(qs('[data-shvya-nav]')) shell.initSiteShell();
+      const nav=qs('nav.fixed,[data-site-header]');
+      if(nav){nav.setAttribute('data-shvya-nav','true');shell.initSiteShell();}
       window.ShvyaArchitecture=window.ShvyaArchitecture||{};
       window.ShvyaArchitecture.config=(await import('./assets/js/core/site-config.js')).SHVYA_CONFIG;
       window.ShvyaArchitecture.products=(await import('./assets/js/data/products.js')).SHVYA_PRODUCTS;
